@@ -1,0 +1,140 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+var imagen = document.createElement('img');
+setInterval(function() {
+  imgen.src = 'https://source.unsplash.com/random/' + Math.random();
+}, 3000);
+imagen.src = 'https://source.unsplash.com/random/' + Math.random();
+document.body.appendChild(imagen);
+
+imagen.style.position = 'absolute';
+imagen.style.left = '50%';
+imagen.style.top = '50%';
+imagen.style.transform = 'translate(-50%, -50%)';
+
+var rect = document.createElement('div');
+rect.style.position = 'absolute';
+rect.style.left = '50%';
+rect.style.top = '50%';
+rect.style.transform = 'translate(-50%, -50%)';
+rect.style.width = '100px';
+rect.style.height = '100px';
+rect.style.backgroundColor = 'black';
+document.body.appendChild(rect);
+
+rect.style.transformOrigin = '50% 50%';
+
+rect.style.clip = 'rect(50px, auto, 200px, auto)';
+
+rect.style.transform = 'translate(-50%, -50%) scale(2)';
+
+rect.style.transform = 'translate(-50%, -50%) scale(4)';
+
+rect.style.transform = 'translate(-50%, -50%) scale(8)';
+
+rect.style.backgroundColor = 'white';
+
+rect.style.transition = 'top 1s';
+rect.style.top = '100%';
+
+rect.style.top = '50%';
+
+setInterval(function() {
+  rect.style.top = '100%';
+  setTimeout(function() {
+    rect.style.top = '50%';
+  }, 1000);
+}, 3000);
+
+var rect2 = document.createElement('div');
+rect2.style.position = 'absolute';
+rect2.style.left = '50%';
+rect2.style.top = '50%';
+rect2.style.transform = 'translate(-50%, -50%)';
+rect2.style.width = '100px';
+rect2.style.height = '100px';
+rect2.style.backgroundColor = 'black';
+document.body.appendChild(rect2);
+
+rect2.style.transformOrigin = '50% 50%';
+
+rect2.style.clip = 'rect(0px, auto, 50px, auto)';
+
+rect2.style.transform = 'translate(-50%, -50%) scale(8)';
+
+rect2.style.backgroundColor = 'white';
+
+rect2.style.transition = 'top 1s';
+rect2.style.top = '0%';
+
+rect2.style.top = '50%';
+
+setInterval(function() {
+  rect2.style.top = '0%';
+  setTimeout(function() {
+    rect2.style.top = '50%';
+  }, 1000);
+}, 3000);
+
+rect.style.zIndex = '-1';
+
+rect2.style.zIndex = '-1';
+
+imagen.style.zIndex = '-2';
+
+var imagen4 = document.createElement('img');
+imagen4.src = 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png';
+document.body.appendChild(imagen4);
+imagen4.style.position = 'absolute';
+imagen4.style.left = '50%';
+imagen4.style.top = '50%';
+imagen4.style.transform = 'translate(-50%, -50%)';
+
+imagen4.style.transformOrigin = '50% 50%';
+
+imagen4.style.clip = 'rect(0px, auto, 100px, auto)';
+
+imagen4.style.transition = 'top 1s';
+imagen4.style.top = '0%';
+
+imagen4.style.top = '50%';
+
+setInterval(function() {
+  imagen4.style.top = '0%';
+  setTimeout(function() {
+    imagen4.style.top = '50%';
+  }, 1000);
+}, 3000);
+
+var imagen5 = document.createElement('img');
+imagen5.src = 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png';
+document.body.appendChild(imagen5);
+imagen5.style.position = 'absolute';
+imagen5.style.left = '50%';
+imagen5.style.top = '50%';
+imagen5.style.transform = 'translate(-50%, -50%)';
+
+imagen5.style.transformOrigin = '50% 50%';
+
+imagen5.style.transition = 'top 1s';
+imagen5.style.top = '100%';
+
+imagen5.style.top = '50%';
+
+setInterval(function() {
+  imagen5.style.top = '100%';
+  setTimeout(function() {
+    imagen5.style.top = '50%';
+  }, 1000);
+}, 3000);
+
+imagen5.style.clip = 'rect(100px, auto, 200px, auto)';
+});
+        </script>
+    </head>
+   
+</html>

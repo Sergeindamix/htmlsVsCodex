@@ -1,0 +1,145 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+/* css */
+var css = document.createElement('style');
+css.innerHTML = 'body { background-color: #000; color: #fff; }';
+document.body.appendChild(css);
+/* 4 subcontenedores horizontales diferente color */
+var subcontenedor1 = document.createElement('div');
+subcontenedor1.style.width = '55%';
+subcontenedor1.style.height = '100px';
+subcontenedor1.style.backgroundColor = 'blue';
+subcontenedor1.style.display = 'inline-block';
+document.body.appendChild(subcontenedor1);
+var subcontenedor2 = document.createElement('div');
+subcontenedor2.style.width = '15%';
+subcontenedor2.style.height = '25px';
+subcontenedor2.style.backgroundColor = 'green';
+subcontenedor2.style.display = 'inline-block';
+document.body.appendChild(subcontenedor2);
+var subcontenedor3 = document.createElement('div');
+subcontenedor3.style.width = '15%';
+subcontenedor3.style.height = '25px';
+subcontenedor3.style.backgroundColor = 'yellow';
+subcontenedor3.style.display = 'inline-block';
+document.body.appendChild(subcontenedor3);
+var subcontenedor4 = document.createElement('div');
+subcontenedor4.style.width = '15%';
+subcontenedor4.style.height = '25px';
+subcontenedor4.style.backgroundColor = 'orange';
+subcontenedor4.style.display = 'inline-block';
+document.body.appendChild(subcontenedor4);
+/* ajustar link */
+var link = document.createElement('a');
+link.innerHTML = 'Link';
+link.style.color = 'white';
+link.style.textDecoration = 'none';
+link.style.fontSize = '50px';
+link.style.textAlign = 'left';
+link.style.display = 'block';
+link.style.lineHeight = '100px';
+subcontenedor1.appendChild(link);
+/* subcontenedores no se mueven de su lugar */
+subcontenedor1.style.float = 'left';
+subcontenedor2.style.float = 'left';
+subcontenedor3.style.float = 'left';
+subcontenedor4.style.float = 'left';
+/* links para los restantes */
+var link2 = document.createElement('a');
+link2.innerHTML = 'Link';
+link2.style.color = 'white';
+link2.style.textDecoration = 'none';
+link2.style.fontSize = '25px';
+link2.style.textAlign = 'center';
+link2.style.display = 'block';
+link2.style.lineHeight = '25px';
+subcontenedor2.appendChild(link2);
+var link3 = document.createElement('a');
+link3.innerHTML = 'Link';
+link3.style.color = 'white';
+link3.style.textDecoration = 'none';
+link3.style.fontSize = '25px';
+link3.style.textAlign = 'center';
+link3.style.display = 'block';
+link3.style.lineHeight = '25px';
+subcontenedor3.appendChild(link3);
+var link4 = document.createElement('a');
+link4.innerHTML = 'Link';
+link4.style.color = 'white';
+link4.style.textDecoration = 'none';
+link4.style.fontSize = '25px';
+link4.style.textAlign = 'center';
+link4.style.display = 'block';
+link4.style.lineHeight = '25px';
+subcontenedor4.appendChild(link4);
+/* ocultar links 2 3 y 4 */
+subcontenedor2.style.visibility = 'hidden';
+subcontenedor3.style.visibility = 'hidden';
+subcontenedor4.style.visibility = 'hidden';
+/* mouse over link muestra los links ocultos */
+subcontenedor1.addEventListener('mouseover', function() {
+  subcontenedor2.style.visibility = 'visible';
+  subcontenedor3.style.visibility = 'visible';
+  subcontenedor4.style.visibility = 'visible';
+});
+/* else hide */
+subcontenedor1.addEventListener('mouseout', function() {
+  subcontenedor2.style.visibility = 'hidden';
+  subcontenedor3.style.visibility = 'hidden';
+  subcontenedor4.style.visibility = 'hidden';
+});
+
+/* reset animations y aplicas a todos los links */
+subcontenedor1.addEventListener('mouseover', function() {
+  /*link.style.animation = 'bouncing 1s infinite';
+  link.style.animation = 'rotate 1s infinite';
+  link.style.animation = 'scale 1s infinite';
+  link.style.animation = 'color 1s infinite';
+  link.style.animation = 'move 1s infinite';*/
+  link2.style.animation = 'bouncing 1s infinite';
+  /*link2.style.animation = 'rotate 1s infinite';
+  link2.style.animation = 'scale 1s infinite';
+  link2.style.animation = 'color 1s infinite';
+  link2.style.animation = 'move 1s infinite';
+  link3.style.animation = 'bouncing 1s infinite';*/
+  link3.style.animation = 'rotate 1s infinite';
+  /*link3.style.animation = 'scale 1s infinite';
+  link3.style.animation = 'color 1s infinite';
+  link3.style.animation = 'move 1s infinite';
+  link4.style.animation = 'bouncing 1s infinite';
+  link4.style.animation = 'rotate 1s infinite';
+  link4.style.animation = 'scale 1s infinite';*/
+  link4.style.animation = 'color 1s infinite';
+  //link4.style.animation = 'move 1s infinite';
+});
+subcontenedor1.addEventListener('mouseout', function() {
+  link.style.animation = 'none';
+  link2.style.animation = 'none';
+  link3.style.animation = 'none';
+  link4.style.animation = 'none';
+});
+/* animar */
+var bouncing = document.createElement('style');
+bouncing.innerHTML = '@keyframes bouncing { 0% { transform: translateY(0px); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0px); } }';
+document.body.appendChild(bouncing);
+var rotate = document.createElement('style');
+rotate.innerHTML = '@keyframes rotate { 0% { transform: rotate(0deg); } 50% { transform: rotate(180deg); } 100% { transform: rotate(0deg); } }';
+document.body.appendChild(rotate);
+var scale = document.createElement('style');
+scale.innerHTML = '@keyframes scale { 0% { transform: scale(1); } 50% { transform: scale(1.5); } 100% { transform: scale(1); } }';
+document.body.appendChild(scale);
+var color = document.createElement('style');
+color.innerHTML = '@keyframes color { 0% { color: white; } 50% { color: red; } 100% { color: white; } }';
+document.body.appendChild(color);
+var move = document.createElement('style');
+move.innerHTML = '@keyframes move { 0% { transform: translateX(0px); } 50% { transform: translateX(10px); } 100% { transform: translateX(0px); } }';
+document.body.appendChild(move);
+});
+        </script>
+    </head>
+    
+</html>

@@ -1,0 +1,351 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+/* <header>        <h1 id="titulo">            Sergeindamix */
+var header = document.createElement('header');
+var h1 = document.createElement('h1');
+h1.id = 'titulo';
+h1.innerHTML = 'Sergeindamix';
+header.appendChild(h1);
+document.body.appendChild(header);
+/* <a href="google.com">google</a> */
+var a = document.createElement('a');
+a.href = 'https://google.com';
+a.innerHTML = 'google';
+document.body.appendChild(a);
+/* target="_blank" --> abre en una nueva pestaña */
+a.target = '_blank';
+/* <img src="img/img.png" height="500px"/> */
+var img = document.createElement('img');
+img.src = 'img/img.png';
+img.height = '500px';
+document.body.appendChild(img);
+/* <form action="formulario" method="GET"> */
+var form = document.createElement('form');
+form.action = 'formulario';
+form.method = 'GET';
+document.body.appendChild(form);
+/* label and input para nombre */
+var label = document.createElement('label');
+label.innerHTML = 'Nombre';
+form.appendChild(label);
+var input = document.createElement('input');
+input.type = 'text';
+input.name = 'nombre';
+form.appendChild(input);
+/* mail */
+var label = document.createElement('label');
+label.innerHTML = 'Mail';
+form.appendChild(label);
+var input = document.createElement('input');
+input.type = 'text';
+input.name = 'mail';
+form.appendChild(input);
+/* br */
+var br = document.createElement('br');
+form.appendChild(br);
+/* file, radio, checkbox */
+var input = document.createElement('input');
+input.type = 'file';
+input.name = 'file';
+form.appendChild(input);
+var input = document.createElement('input');
+input.type = 'radio';
+input.name = 'radio';
+form.appendChild(input);
+var input = document.createElement('input');
+input.type = 'checkbox';
+input.name = 'checkbox';
+form.appendChild(input);
+/* pasword, date, time, con label y placeholder */
+var label = document.createElement('label');
+label.innerHTML = 'Password';
+form.appendChild(label);
+var input = document.createElement('input');
+input.type = 'password';
+input.name = 'password';
+input.placeholder = 'password';
+form.appendChild(input);
+var label = document.createElement('label');
+label.innerHTML = 'Date';
+form.appendChild(label);
+var input = document.createElement('input');
+input.type = 'date';
+input.name = 'date';
+input.placeholder = 'date';
+form.appendChild(input);
+var label = document.createElement('label');
+label.innerHTML = 'Time';
+form.appendChild(label);
+var input = document.createElement('input');
+input.type = 'time';
+input.name = 'time';
+input.placeholder = 'time';
+form.appendChild(input);
+/* br */
+var br = document.createElement('br');
+form.appendChild(br);
+/* datetime, datetimelocal, month, week, color, con label */
+
+var label = document.createElement('label');
+label.innerHTML = 'Month';
+form.appendChild(label);
+var input = document.createElement('input');
+input.type = 'month';
+input.name = 'month';
+form.appendChild(input);
+var label = document.createElement('label');
+label.innerHTML = 'Week';
+form.appendChild(label);
+var input = document.createElement('input');
+input.type = 'week';
+input.name = 'week';
+form.appendChild(input);
+var label = document.createElement('label');
+label.innerHTML = 'Color';
+form.appendChild(label);
+var input = document.createElement('input');
+input.type = 'color';
+input.name = 'color';
+form.appendChild(input);
+/* datetime-local */
+var label = document.createElement('label');
+label.innerHTML = 'Datetime-local';
+form.appendChild(label);
+var input = document.createElement('input');
+input.type = 'datetime-local';
+input.name = 'datetime-local';
+form.appendChild(input);
+/* br */
+var br = document.createElement('br');
+form.appendChild(br);
+/* range, number, search, con label */
+var label = document.createElement('label');
+label.innerHTML = 'Range';
+form.appendChild(label);
+var input = document.createElement('input');
+input.type = 'range';
+input.name = 'range';
+form.appendChild(input);
+var label = document.createElement('label');
+label.innerHTML = 'Number';
+form.appendChild(label);
+var input = document.createElement('input');
+input.type = 'number';
+input.name = 'number';
+form.appendChild(input);
+var label = document.createElement('label');
+label.innerHTML = 'Search';
+form.appendChild(label);
+var input = document.createElement('input');
+input.type = 'search';
+input.name = 'search';
+form.appendChild(input);
+/* url */
+var label = document.createElement('label');
+label.innerHTML = 'Url';
+form.appendChild(label);
+var input = document.createElement('input');
+input.type = 'url';
+input.name = 'url';
+form.appendChild(input);
+/* br */
+var br = document.createElement('br');
+form.appendChild(br);
+/* <textarea name="comentario" id="comentario" placeholder="comenta" cols="30" rows="10"></textarea> con label */
+var label = document.createElement('label');
+label.innerHTML = 'Comentario';
+form.appendChild(label);
+var textarea = document.createElement('textarea');
+textarea.name = 'comentario';
+textarea.id = 'comentario';
+textarea.placeholder = 'comenta';
+textarea.cols = '30';
+textarea.rows = '10';
+form.appendChild(textarea);
+/* br */
+var br = document.createElement('br');
+form.appendChild(br);
+/* cada boton con salto de linea */
+var input = document.createElement('input');
+input.type = 'submit';
+input.name = 'submit';
+form.appendChild(input);
+var br = document.createElement('br');
+form.appendChild(br);
+var input = document.createElement('input');
+input.type = 'reset';
+input.name = 'reset';
+form.appendChild(input);
+var br = document.createElement('br');
+form.appendChild(br);
+var input = document.createElement('input');
+input.type = 'button';
+input.name = 'button';
+input.value = 'boton';
+form.appendChild(input);
+var br = document.createElement('br');
+form.appendChild(br);
+/* lista ordenada y no ordenada */
+var ol = document.createElement('ol');
+var li = document.createElement('li');
+li.innerHTML = 'uno';
+ol.appendChild(li);
+var li = document.createElement('li');
+li.innerHTML = 'dos';
+ol.appendChild(li);
+var li = document.createElement('li');
+li.innerHTML = 'tres';
+ol.appendChild(li);
+document.body.appendChild(ol);
+var ul = document.createElement('ul');
+var li = document.createElement('li');
+li.innerHTML = 'uno';
+ul.appendChild(li);
+var li = document.createElement('li');
+li.innerHTML = 'dos';
+ul.appendChild(li);
+var li = document.createElement('li');
+li.innerHTML = 'tres';
+ul.appendChild(li);
+document.body.appendChild(ul);
+/* sublistas ordenadas style="list-style-type: lower-alpha y roman */
+var ol = document.createElement('ol');
+ol.style = 'list-style-type: lower-alpha';
+var li = document.createElement('li');
+li.innerHTML = 'uno';
+ol.appendChild(li);
+var li = document.createElement('li');
+li.innerHTML = 'dos';
+ol.appendChild(li);
+var li = document.createElement('li');
+li.innerHTML = 'tres';
+ol.appendChild(li);
+document.body.appendChild(ol);
+var ol = document.createElement('ol');
+ol.style = 'list-style-type: lower-roman';
+var li = document.createElement('li');
+li.innerHTML = 'uno';
+ol.appendChild(li);
+var li = document.createElement('li');
+li.innerHTML = 'dos';
+ol.appendChild(li);
+var li = document.createElement('li');
+li.innerHTML = 'tres';
+ol.appendChild(li);
+document.body.appendChild(ol);
+/* <table style="width: 500px;"> */
+var table = document.createElement('table');
+table.style = 'width: 500px;';
+document.body.appendChild(table);
+/* <thead> con dias de la semana */
+var thead = document.createElement('thead');
+table.appendChild(thead);
+var tr = document.createElement('tr');
+thead.appendChild(tr);
+var th = document.createElement('th');
+th.innerHTML = 'Lunes';
+tr.appendChild(th);
+var th = document.createElement('th');
+th.innerHTML = 'Martes';
+tr.appendChild(th);
+var th = document.createElement('th');
+th.innerHTML = 'Miercoles';
+tr.appendChild(th);
+var th = document.createElement('th');
+th.innerHTML = 'Jueves';
+tr.appendChild(th);
+var th = document.createElement('th');
+th.innerHTML = 'Viernes';
+tr.appendChild(th);
+var th = document.createElement('th');
+th.innerHTML = 'Sabado';
+tr.appendChild(th);
+var th = document.createElement('th');
+th.innerHTML = 'Domingo';
+tr.appendChild(th);
+/* <tbody> con horarios de comida */
+var tbody = document.createElement('tbody');
+table.appendChild(tbody);
+var tr = document.createElement('tr');
+tbody.appendChild(tr);
+var td = document.createElement('td');
+td.innerHTML = 'Desayuno';
+tr.appendChild(td);
+var td = document.createElement('td');
+td.innerHTML = 'Almuerzo';
+tr.appendChild(td);
+var td = document.createElement('td');
+td.innerHTML = 'Merienda';
+tr.appendChild(td);
+var td = document.createElement('td');
+td.innerHTML = 'Cena';
+tr.appendChild(td);
+var td = document.createElement('td');
+td.innerHTML = 'Merienda';
+tr.appendChild(td);
+var td = document.createElement('td');
+td.innerHTML = 'Cena';
+tr.appendChild(td);
+var td = document.createElement('td');
+td.innerHTML = 'Merienda';
+tr.appendChild(td);
+/* <tfoot> con un dia de descanso */
+var tfoot = document.createElement('tfoot');
+table.appendChild(tfoot);
+var tr = document.createElement('tr');
+tfoot.appendChild(tr);
+var td = document.createElement('td');
+td.innerHTML = 'Descanso';
+tr.appendChild(td);
+/* table, th, td {        border: 1px solid black; */
+table.style = 'border: 1px solid black;';
+th.style = 'border: 1px solid black;';
+td.style = 'border: 1px solid black;';
+/* collapse */
+table.style = 'border-collapse: collapse;';
+/* <section> <article> <h2>news</h2> <p>contenido</p> <img src="img/img.png" width="400" alt=""> <p>acerca de la imagen se muestra shadrtoy</p> */
+var section = document.createElement('section');
+document.body.appendChild(section);
+var article = document.createElement('article');
+section.appendChild(article);
+var h2 = document.createElement('h2');
+h2.innerHTML = 'News';
+article.appendChild(h2);
+var p = document.createElement('p');
+p.innerHTML = 'contenido';
+article.appendChild(p);
+var img = document.createElement('img');
+img.src = 'img/img.png';
+img.width = '400';
+img.alt = 'img';
+article.appendChild(img);
+var p = document.createElement('p');
+p.innerHTML = 'acerca de la imagen se muestra shadrtoy';
+article.appendChild(p);
+/* <footer> <a href="#titulo">ir arriba</a> <br> <a href mailto: "   @gmail.com">@gmail.com</a> <br> <p>2022</p> */
+var footer = document.createElement('footer');
+document.body.appendChild(footer);
+var a = document.createElement('a');
+a.href = '#titulo';
+a.innerHTML = 'ir arriba';
+footer.appendChild(a);
+var br = document.createElement('br');
+footer.appendChild(br);
+var a = document.createElement('a');
+a.href = 'mailto: @gmail.com';
+a.innerHTML = '@gmail.com';
+footer.appendChild(a);
+var br = document.createElement('br');
+footer.appendChild(br);
+var p = document.createElement('p');
+p.innerHTML = '2022';
+footer.appendChild(p);
+});
+        </script>
+    </head>
+    
+</html>

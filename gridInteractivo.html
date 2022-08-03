@@ -1,0 +1,37 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+/* grid 5x5 fullscreen, cells random neon color */
+var grid = document.createElement('div');
+grid.style.position = 'absolute';
+grid.style.top = '0';
+grid.style.left = '0';
+grid.style.width = '100%';
+grid.style.height = '100%';
+grid.style.display = 'grid';
+grid.style.gridTemplateColumns = 'repeat(5, 1fr)';
+grid.style.gridTemplateRows = 'repeat(5, 1fr)';
+for (var i = 0; i < 25; i++) {
+  var cell = document.createElement('div');
+  cell.style.backgroundColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+  grid.appendChild(cell);
+}
+document.body.appendChild(grid);
+/* cells mouse over opacity .25, else return */
+var cells = document.getElementsByTagName('div');
+for (var i = 0; i < cells.length; i++) {
+  cells[i].addEventListener('mouseover', function(e) {
+    e.target.style.opacity = '.25';
+  });
+  cells[i].addEventListener('mouseout', function(e) {
+    e.target.style.opacity = '1';
+  });
+}
+});
+        </script>
+    </head>
+    
+</html>

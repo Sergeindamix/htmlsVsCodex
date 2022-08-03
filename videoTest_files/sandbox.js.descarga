@@ -1,0 +1,21 @@
+document.addEventListener("DOMContentLoaded", function () {
+    window.addEventListener("message", (event) => {
+        // eslint-disable-next-line no-eval
+        window.eval(event.data);
+    });
+
+    // Intercept errors
+    window.onerror = function (msg, url, line) {
+        window.top.postMessage(
+            { type: "oai_sandbox_error", msg, url, line },
+            window.location.origin
+        );
+    };
+
+    // Intercept console logs
+    const log = console.log.bind(console);
+    console.log = (...args) => {
+        window.top.postMessage({ type: "oai_sandbox_log", args }, window.location.origin);
+        log(...args);
+    };
+});

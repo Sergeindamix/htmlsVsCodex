@@ -1,0 +1,77 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+var imagen = document.createElement('img');
+imagen.src = 'https://source.unsplash.com/random/800x600';
+document.body.style.backgroundImage = 'url(' + imagen.src + ')';
+
+var css = document.createElement('style');
+css.innerHTML = 'body { background-size: cover; background-repeat: no-repeat; }';
+document.body.appendChild(css);
+
+for (var i = 0; i < 10; i++) {
+var cubo = document.createElement('div');
+cubo.style.width = '100px';
+cubo.style.height = '100px';
+cubo.style.backgroundColor = 'red';
+cubo.style.position = 'absolute';
+
+cubo.style.top = Math.random() * 100 + '%';
+cubo.style.left = Math.random() * 100 + '%';
+
+cubo.style.marginLeft = '-50px';
+cubo.style.marginTop = '-50px';
+document.body.appendChild(cubo);
+
+var sombra = document.createElement('div');
+sombra.style.width = '100px';
+sombra.style.height = '100px';
+sombra.style.backgroundColor = 'black';
+sombra.style.position = 'absolute';
+sombra.style.top = Math.random() * 100 + '%';
+
+sombra.style.left = Math.random() * 100 + '%';
+
+sombra.style.marginLeft = '-50px';
+sombra.style.marginTop = '-50px';
+sombra.style.opacity = '0.5';
+document.body.appendChild(sombra);
+
+var fantasma = document.createElement('div');
+fantasma.style.width = '100px';
+fantasma.style.height = '100px';
+fantasma.style.backgroundColor = 'white';
+fantasma.style.position = 'absolute';
+fantasma.style.top = Math.random() * 100 + '%';
+
+fantasma.style.left = Math.random() * 100 + '%';
+
+fantasma.style.marginLeft = '-50px';
+fantasma.style.marginTop = '-50px';
+fantasma.style.border = '1px solid black';
+document.body.appendChild(fantasma);
+
+
+
+var imagen = document.createElement('img');
+imagen.src = 'https://source.unsplash.com/random/800x600';
+imagen.style.width = '100px';
+imagen.style.height = '100px';
+imagen.style.position = 'absolute';
+imagen.style.top = Math.random() * 100 + '%';
+
+imagen.style.left = Math.random() * 100 + '%';
+
+imagen.style.marginLeft = '-50px';
+imagen.style.marginTop = '-50px';
+document.body.appendChild(imagen);
+}
+
+});
+        </script>
+    </head>
+    
+</html>

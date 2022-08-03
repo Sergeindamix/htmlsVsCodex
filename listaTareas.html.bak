@@ -1,0 +1,49 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+/* css */
+var css = document.createElement('style');
+css.innerHTML = 'body { background-color: #000; color: #fff; }';
+document.body.appendChild(css);
+/* caja de texto y boton para agregar a la lista */
+var caja = document.createElement('input');
+caja.setAttribute('type', 'text');
+caja.setAttribute('id', 'caja');
+document.body.appendChild(caja);
+var boton = document.createElement('button');
+boton.innerHTML = 'Agregar';
+document.body.appendChild(boton);
+/* boton borrar ultimo */
+var borrar = document.createElement('button');
+borrar.innerHTML = 'Borrar ultimo';
+document.body.appendChild(borrar);
+/* lista como desplegable */
+var desplegable = document.createElement('select');
+desplegable.setAttribute('id', 'desplegable');
+document.body.appendChild(desplegable);
+/* al pulsar agregar caja a lista */
+boton.addEventListener('click', function() {
+  var item = document.createElement('option');
+  item.innerHTML = caja.value;
+  desplegable.appendChild(item);
+});
+/* al pulsar borrar eliminar ultimo elemento de lista */
+borrar.addEventListener('click', function() {
+  desplegable.removeChild(desplegable.lastChild);
+});
+/* boton borrar solo se mostrara cuando lista tenga al menos un elemento */
+desplegable.addEventListener('change', function() {
+  if (desplegable.childElementCount > 0) {
+    borrar.style.display = 'block';
+  } else {
+    borrar.style.display = 'none';
+  }
+});
+});
+        </script>
+    </head>
+    
+</html>

@@ -1,0 +1,241 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+/* css */
+var css = document.createElement('style');
+css.innerHTML = 'body { background-color: #000; color: #fff; }';
+document.body.appendChild(css);
+/* encabezado con imagen random, alto 250px, ancho auto */
+var encabezado = document.createElement('div');
+encabezado.style.height = '250px';
+encabezado.style.backgroundImage = 'url(https://source.unsplash.com/random/1600x900)';
+encabezado.style.backgroundSize = 'cover';
+encabezado.style.backgroundPosition = 'center';
+document.body.appendChild(encabezado);
+/* agregar palabra techno al encabezado */
+var palabra = document.createElement('div');
+palabra.innerHTML = 'TECHNO';
+palabra.style.fontSize = '100px';
+palabra.style.textAlign = 'center';
+palabra.style.color = '#fff';
+palabra.style.position = 'absolute';
+palabra.style.top = '50%';
+palabra.style.left = '50%';
+palabra.style.transform = 'translate(-50%, -50%)';
+encabezado.appendChild(palabra);
+/* en altura */
+palabra.style.top = '25%';
+/* crear seccion */
+var seccion = document.createElement('div');
+seccion.style.height = '500px';
+seccion.style.backgroundColor = '#fff';
+document.body.appendChild(seccion);
+/* la seccion tiene una pestaña de home */
+var home = document.createElement('div');
+home.innerHTML = 'HOME';
+home.style.fontSize = '20px';
+home.style.textAlign = 'center';
+home.style.color = '#000';
+home.style.position = 'absolute';
+home.style.top = '50%';
+home.style.left = '50%';
+home.style.transform = 'translate(-50%, -50%)';
+seccion.appendChild(home);
+/* actualizar seccion, tiene 4 pestañas: home, info, contacto, comentarios */
+var info = document.createElement('div');
+info.innerHTML = 'INFO';
+info.style.fontSize = '20px';
+info.style.textAlign = 'center';
+info.style.color = '#000';
+info.style.position = 'absolute';
+info.style.top = '50%';
+info.style.left = '50%';
+info.style.transform = 'translate(-50%, -50%)';
+seccion.appendChild(info);
+var contacto = document.createElement('div');
+contacto.innerHTML = 'CONTACTO';
+contacto.style.fontSize = '20px';
+contacto.style.textAlign = 'center';
+contacto.style.color = '#000';
+contacto.style.position = 'absolute';
+contacto.style.top = '50%';
+contacto.style.left = '50%';
+contacto.style.transform = 'translate(-50%, -50%)';
+seccion.appendChild(contacto);
+var comentarios = document.createElement('div');
+comentarios.innerHTML = 'COMENTARIOS';
+comentarios.style.fontSize = '20px';
+comentarios.style.textAlign = 'center';
+comentarios.style.color = '#000';
+comentarios.style.position = 'absolute';
+comentarios.style.top = '50%';
+comentarios.style.left = '50%';
+comentarios.style.transform = 'translate(-50%, -50%)';
+seccion.appendChild(comentarios);
+/* ajustar en espacios proporcionales */
+home.style.width = '25%';
+home.style.left = '15%';
+info.style.width = '25%';
+info.style.left = '40%';
+contacto.style.width = '25%';
+contacto.style.left = '65%';
+comentarios.style.width = '25%';
+comentarios.style.left = '90%';
+/* cada pestaña tiene fondo de color random */
+home.style.backgroundColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+info.style.backgroundColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+contacto.style.backgroundColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+comentarios.style.backgroundColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+/* al pulsar cada pestañe lleva a un sitio de redes sociales */
+home.addEventListener('click', function() {
+  window.location.href = 'https://www.facebook.com/';
+});
+info.addEventListener('click', function() {
+  window.location.href = 'https://www.instagram.com/';
+});
+contacto.addEventListener('click', function() {
+  window.location.href = 'https://www.twitter.com/';
+});
+comentarios.addEventListener('click', function() {
+  window.location.href = 'https://www.youtube.com/';
+});
+/* mostrar bordes con su respectivo nombre */
+home.style.border = '1px solid #000';
+home.style.borderBottom = 'none';
+info.style.border = '1px solid #000';
+info.style.borderBottom = 'none';
+contacto.style.border = '1px solid #000';
+contacto.style.borderBottom = 'none';
+comentarios.style.border = '1px solid #000';
+comentarios.style.borderBottom = 'none';
+/* el fondo de la seccion es orange crush */
+seccion.style.backgroundColor = '#ff6600';
+/* mouse over pestañas destaca borde en azul neon */
+home.addEventListener('mouseover', function() {
+  home.style.border = '1px solid #00ffff';
+});
+info.addEventListener('mouseover', function() {
+  info.style.border = '1px solid #00ffff';
+});
+contacto.addEventListener('mouseover', function() {
+  contacto.style.border = '1px solid #00ffff';
+});
+comentarios.addEventListener('mouseover', function() {
+  comentarios.style.border = '1px solid #00ffff';
+});
+/* else regresar */
+home.addEventListener('mouseout', function() {
+  home.style.border = '1px solid #000';
+});
+info.addEventListener('mouseout', function() {
+  info.style.border = '1px solid #000';
+});
+contacto.addEventListener('mouseout', function() {
+  contacto.style.border = '1px solid #000';
+});
+comentarios.addEventListener('mouseout', function() {
+  comentarios.style.border = '1px solid #000';
+});
+/* la seccion tiene una imagen y un cuadro de texto de 10 palabras, en posicion y tamaño random ambos */
+var imagen = document.createElement('div');
+imagen.style.height = '25%';
+imagen.style.width = '25%';
+imagen.style.backgroundImage = 'url(https://source.unsplash.com/random/1600x900)';
+imagen.style.backgroundSize = 'cover';
+imagen.style.backgroundPosition = 'center';
+imagen.style.position = 'absolute';
+imagen.style.top = Math.floor(Math.random() * (500 - 250 + 1)) + 250;
+imagen.style.left = Math.floor(Math.random() * (500 - 250 + 1)) + 250;
+seccion.appendChild(imagen);
+var texto = document.createElement('div');
+texto.innerHTML = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl eget congue congue, nisl nisl tincidunt nisi, eget euismod nisl nisl eget nisl. Nullam euismod, nisl eget congue congue, nisl nisl tincidunt nisi, eget euismod nisl nisl eget nisl.';
+texto.style.fontSize = '20px';
+texto.style.textAlign = 'center';
+texto.style.color = '#000';
+texto.style.position = 'absolute';
+texto.style.top = Math.floor(Math.random() * (500 - 250 + 1)) + 250;
+texto.style.left = Math.floor(Math.random() * (500 - 250 + 1)) + 250;
+seccion.appendChild(texto);
+/* la imagen tiene sombra marcada */
+imagen.style.boxShadow = '0px 0px 10px #000';
+/* imagen y texto simpre por arriba de 100px en posicion altura */
+imagen.style.top = Math.floor(Math.random() * (500 - 250 + 1)) + 350;
+texto.style.top = Math.floor(Math.random() * (500 - 250 + 1)) + 350;
+/* texto siempre visible */
+texto.style.backgroundColor = '#fff';
+
+/* mouseover imagen centra la imagen en pantalla, la escala a un 80% y su sombra ocupa el 20% */
+imagen.addEventListener('mouseover', function() {
+  imagen.style.top = '50%';
+  imagen.style.left = '50%';
+  imagen.style.transform = 'translate(-50%, -50%)';
+  imagen.style.width = '80%';
+  imagen.style.height = '80%';
+  imagen.style.boxShadow = '0px 0px 100% #000';
+});
+/* else regresar */
+imagen.addEventListener('mouseout', function() {
+  imagen.style.top = Math.floor(Math.random() * (500 - 250 + 1)) + 250;
+  imagen.style.left = Math.floor(Math.random() * (500 - 250 + 1)) + 250;
+  imagen.style.width = '25%';
+  imagen.style.height = '25%';
+  imagen.style.boxShadow = '0px 0px 10px #000';
+});
+/* mouseover imagen blur todo, excepto imagen */
+imagen.addEventListener('mouseover', function() {
+  home.style.filter = 'blur(5px)';
+  info.style.filter = 'blur(5px)';
+  contacto.style.filter = 'blur(5px)';
+  comentarios.style.filter = 'blur(5px)';
+  texto.style.filter = 'blur(5px)';
+  //seccion.style.filter = 'blur(5px)';
+  imagen.style.filter = 'blur(0px)';
+});
+/* else regresar */
+imagen.addEventListener('mouseout', function() {
+  seccion.style.filter = 'blur(0px)';
+  home.style.filter = 'blur(0px)';
+  info.style.filter = 'blur(0px)';
+  contacto.style.filter = 'blur(0px)';
+  comentarios.style.filter = 'blur(0px)';
+  texto.style.filter = 'blur(0px)';
+});
+/* transicion suave */
+imagen.style.transition = 'all 0.5s ease';
+/* mouseover imagen muestra un popup a pie de pagina con la url de la imagen, popup se oculta en mouseuot */
+var popup = document.createElement('div');
+popup.innerHTML = 'https://source.unsplash.com/random/1600x900';
+popup.style.backgroundColor = '#fff';
+/* esquinas redondeadas */
+popup.style.borderRadius = '10px';
+popup.style.boxShadow = '0px 0px 10px #000';
+popup.style.fontSize = '20px';
+popup.style.textAlign = 'center';
+popup.style.color = '#000';
+popup.style.position = 'absolute';
+popup.style.top = '50%';
+popup.style.left = '50%';
+popup.style.transform = 'translate(-50%, -50%)';
+popup.style.display = 'none';
+document.body.appendChild(popup);
+imagen.addEventListener('mouseover', function() {
+  popup.style.display = 'block';
+});
+imagen.addEventListener('mouseout', function() {
+  popup.style.display = 'none';
+});
+/* mouse over imagen pone imagen al frente y mouseout regresa */
+imagen.addEventListener('mouseover', function() {
+  imagen.style.zIndex = '1';
+});
+imagen.addEventListener('mouseout', function() {
+  imagen.style.zIndex = '0';
+});
+});
+        </script>
+    </head>
+    
+</html>

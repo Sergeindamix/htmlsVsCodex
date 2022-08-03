@@ -1,0 +1,49 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+/* css */
+var css = document.createElement('style');
+css.innerHTML = 'body { background-color: #000; color: #fff; }';
+document.body.appendChild(css);
+/* cabeza con titulo techno, dos pestañas centradas con texto home y creditos */
+var cabeza = document.createElement('div');
+cabeza.innerHTML = '<h1>Techno</h1>';
+document.body.appendChild(cabeza);
+var pestañas = document.createElement('div');
+pestañas.innerHTML = '<a href="#">Home</a> <a href="#">Creditos</a>';
+document.body.appendChild(pestañas);
+/* cabeza tiene fondo de imagen random */
+var cabeza = document.createElement('div');
+cabeza.innerHTML = '<h1>Techno</h1>';
+cabeza.style.backgroundImage = 'url(https://source.unsplash.com/random)';
+document.body.appendChild(cabeza);
+/* la pestaña home cambia la imagen home y la pestaña creditos cambia la imagen de la pestaña creditos */
+var home = document.createElement('div');
+home.innerHTML = '<img src="https://source.unsplash.com/random">';
+home.style.display = 'none';
+document.body.appendChild(home);
+var creditos = document.createElement('div');
+creditos.innerHTML = '<img src="https://source.unsplash.com/random">';
+creditos.style.display = 'none';
+document.body.appendChild(creditos);
+var pestañas = document.createElement('div');
+pestañas.innerHTML = '<a href="#">Home</a> <a href="#">Creditos</a>';
+pestañas.style.backgroundColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+document.body.appendChild(pestañas);
+pestañas.addEventListener('click', function(e) {
+  if (e.target.innerHTML === 'Home') {
+    home.style.display = 'block';
+    creditos.style.display = 'none';
+  } else if (e.target.innerHTML === 'Creditos') {
+    creditos.innerHTML = '<img src="https://source.unsplash.com/random/' + Math.random() + '">';
+    home.style.display = 'none';
+    creditos.style.display = 'block';
+  }
+});
+});
+        </script>
+    </head>
+    
+</html>

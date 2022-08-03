@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+#example1 {
+  background-image: url(img_flwr.gif), url(paper.gif);
+  background-position: right bottom, left top;
+  background-repeat: no-repeat, repeat;
+  padding: 15px;
+}
+</style>
+</head>
+<body>
+
+/* fondo imagen random */
+var fondo = document.createElement('div');
+fondo.style.backgroundImage = "url('https://source.unsplash.com/random')";
+fondo.style.backgroundSize = "cover";
+fondo.style.backgroundPosition = "center";
+fondo.style.backgroundRepeat = "no-repeat";
+fondo.style.width = "100%";
+fondo.style.height = "100%";
+fondo.style.position = "fixed";
+fondo.style.top = "0";
+fondo.style.left = "0";
+fondo.style.zIndex = "-1";
+document.body.appendChild(fondo);
+/* logo esquina derecha */
+var logo = document.createElement('div');
+logo.style.backgroundImage = "url('https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png')";
+logo.style.backgroundSize = "contain";
+logo.style.backgroundPosition = "center";
+logo.style.backgroundRepeat = "no-repeat";
+logo.style.width = "100px";
+logo.style.height = "100px";
+logo.style.position = "fixed";
+logo.style.top = "0";
+logo.style.right = "0";
+logo.style.zIndex = "1";
+document.body.appendChild(logo);
+
+</body>
+</html>
+
+

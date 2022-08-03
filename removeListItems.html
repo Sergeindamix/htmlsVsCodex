@@ -1,0 +1,84 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+/* remove items from list */
+var list = document.createElement('ul');
+list.innerHTML = '<li>Item 1</li><li>Item 2</li><li>Item 3</li>';
+document.body.appendChild(list);
+var items = list.getElementsByTagName('li');
+for (var i = 0; i < items.length; i++) {
+  items[i].addEventListener('click', function(e) {
+    list.removeChild(e.target);
+  });
+}
+/* crear lista */
+var lista = document.createElement('ul');
+document.body.appendChild(lista);
+/* con 5 elementos */
+for (var i = 0; i < 5; i++) {
+  var elemento = document.createElement('li');
+  elemento.innerHTML = 'Elemento ' + i;
+  lista.appendChild(elemento);
+}
+/* add element */
+var elemento = document.createElement('li');
+elemento.innerHTML = 'Elemento ' + i;
+lista.appendChild(elemento);
+/* remove element */
+lista.removeChild(lista.lastChild);
+/* lista remove lista.length elements */
+for (var i = 0; i < lista.length; i++) {
+  lista.removeChild(lista.lastChild);
+}
+/* si lista tiene algun elemento, removerlo y agregar 3 elementos */
+if (lista.length > 0) {
+  lista.removeChild(lista.lastChild);
+  for (var i = 0; i < 3; i++) {
+    var elemento = document.createElement('li');
+    elemento.innerHTML = 'Elemento ' + i;
+    lista.appendChild(elemento);
+  }
+}
+/* crear funcion */
+function crearElemento(texto) {
+  var elemento = document.createElement('li');
+  elemento.innerHTML = texto;
+  return elemento;
+}
+/* llamar funcion */
+var elemento = crearElemento('Elemento');
+lista.appendChild(elemento);
+/* funcion para remover all elements */
+function removerElementos() {
+  while (lista.firstChild) {
+    lista.removeChild(lista.firstChild);
+  }
+}
+/* boton para llamar funcion */
+var boton = document.createElement('button');
+boton.innerHTML = 'Remover elementos';
+boton.onclick = removerElementos;
+document.body.appendChild(boton);
+/* boton deshacer */
+var botonDeshacer = document.createElement('button');
+botonDeshacer.innerHTML = 'Deshacer';
+botonDeshacer.onclick = function() {
+  lista.removeChild(lista.lastChild);
+};
+document.body.appendChild(botonDeshacer);
+/* boton agregar elemento */
+var botonAgregar = document.createElement('button');
+botonAgregar.innerHTML = 'Agregar elemento';
+botonAgregar.onclick = function() {
+  var elemento = crearElemento('Elemento ' + lista.length);
+  lista.appendChild(elemento);
+};
+document.body.appendChild(botonAgregar);
+});
+        </script>
+    </head>
+    
+</html>

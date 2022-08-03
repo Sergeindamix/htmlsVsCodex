@@ -1,0 +1,344 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+var i = 0;
+while (i < 10) {
+  console.log(i);
+  i++;
+}
+
+var arr = [];
+for (var i = 0; i < 10; i++) {
+  arr.push(i);
+}
+
+
+while (arr.length > 4) {
+	arr.pop();
+  console.log(arr);
+  i++;
+}
+var arreglo = [];
+for(var i = 0; i<10; i+=2){//pares
+	arreglo.push(i);
+}
+console.log(arreglo);
+
+var arreglo = [];
+for(var i = 1; i<20; i+=2){//impares
+	arreglo.push(i);
+}
+console.log(arreglo);
+
+for(var i = 15; i>=10; i--){//rango 10 a 15
+	console.log(i);
+}
+
+var arreglo = [];
+for(var i = 10; i>=0; i-=2){//agregar pares al array inluyendo 0
+	arreglo.push(i);
+}
+console.log(arreglo);
+
+/* array de 5 lenguajes de programa */
+var arr = ['JavaScript', 'Python', 'Ruby', 'Java', 'C++'];
+/* for loop para mostrar en mayusculas */
+for (var i = 0; i < arr.length; i++) {
+  console.log(arr[i].toUpperCase());
+}
+
+function contarPares(arreglo){
+	var total =0;
+  
+  for(var i = 0; i<arreglo.length; i++){
+  	if(arreglo[i] % 2 == 0){//detectar numeros pares
+    	total++;
+    }
+  }
+  return total;
+}
+console.log(contarPares([5,3,8,23]),"numeros pares encontrados");
+
+var arreglo = [[1,2,3],[4,5,6],[7,8,9]];
+for(var i =0; i<arreglo.length; i++){
+	console.log(arreglo[i]);//muestra array
+	var arrAnidado = arreglo[i];
+  for(var j =0; j<arrAnidado.length; j++){
+  	console.log(arrAnidado[j]);//muestra cada elemento de array
+  }
+}
+
+var x = 16;
+do{
+    console.log(x);//si es falso se detiene
+	x++;
+  } while(x<10);
+
+/*random entre 0 y .99, max 19.99*/
+console.log(Math.floor(Math.random()*20));//random entre 0 y .99, max 19.99
+
+function randoMax(maximo){
+	return Math.floor(Math.random()*maximo);
+}
+
+for(i = 0; i < 5; i++){
+	console.log(randoMax(500));
+}
+function randoMinMax(min, max){
+	return Math.floor(Math.random()*(max-min+1) + min);
+}
+
+for(i = 0; i < 5; i++){
+	console.log(randoMinMax(500, 1000));
+}
+
+//parseInt convierte en entero string
+var a = parseInt("a");//alerta NAN no es un numero
+var b = parseInt("20");
+var c = parseInt("3.10");
+var d = parseInt("4.50");
+
+function mul(a, b){
+	return a * b;
+}
+console.log(mul(a,b));
+
+function noSuma(c,d){
+	return c+d;
+}
+console.log(noSuma(c,d),noSuma("1","50.7"));//string solo concatena
+
+//sistema binario       
+console.log(parseInt("110111", 2));
+//sistema hexadecimal       
+console.log(parseInt("3E0A", 16));
+
+function returnMin(x,y){
+	return x < y ? x : y;//operador ternario
+}
+
+console.log("el minimo es: "+returnMin(10,5.8));
+
+var a = 5;
+var b = 12;
+console.log(a < b ? a+2 : b/10);//variaciones si se cumple
+
+function comparar(a,b){//multiples operadores ternarios
+	return a == b ? "a y b son iguales"
+		 : a > b ? "a es mayor que b"
+		 : "b es mayor que a"
+}
+
+console.log(comparar(a,b));
+
+function tipoLet(){
+	let restrictivo = 1;
+	return restrictivo;
+	}
+//console.log(restrictivo);//error
+console.log(tipoLet);
+
+//const es casi estatico
+const PI = 3.1416
+
+function circunferencia(radio){
+	if(radio < 0){
+		return undefined;
+	}
+	return PI *(radio ** 2);//** es elevar al cuadrado
+}
+
+console.log("la circunferencia es de:" + circunferencia(100));
+
+const ARREGLO = [1,2,3,4];
+console.log(ARREGLO);
+//mutar arreglo constante
+ARREGLO[0]=88;
+ARREGLO[1]=8;
+ARREGLO[2]=7;
+ARREGLO[3]=6;
+console.log(ARREGLO);
+
+//impedir modificacion de variables
+let colores = {
+	"verde": "#10e04b",
+	"azul": "#1b50e0",
+	"negro": "#000000",
+	"blanco": "fffff"	
+};
+Object.freeze(colores);
+
+//funciones flecha(anonimas) solo si es una linea
+const sumar = (x) => x+3;
+console.log("la suma es: "+sumar(5));
+
+const concatarray =(arr1,arr2)=>arr1.concat(arr2);
+console.log(concatarray([0,0,0,0],[1,2,3,4]));
+
+//valor por defecto
+const numRand =(num,valor = -5)=>Math.random()*num+valor;
+console.log(numRand(10));
+
+//convierte argumentos en array
+function arg2arr(...args){
+	console.log(args);
+}
+//facil arreglar elementos y resultados de funciones
+arg2arr("10"+10, numRand(10),concatarray([0,0,0,0],[1,2,3,4]),
+"la suma es: "+sumar(5)
+);
+//convierte argumentos en array
+function arg2arr(...args){
+	console.log(args.length);//regresa numero de argumentos
+}
+
+arg2arr("10"+10, numRand(10),concatarray([0,0,0,0],[1,2,3,4]),
+"la suma es: "+sumar(5)
+);
+
+//pasar un array a los argumentos de una funciones
+const numeros = [1,2,3];
+function sum(x,y,z){
+	return x+y+z;
+}
+console.log(sum(...numeros));
+
+//acceder a propiedades de un objeto en una linea(destructuracion)
+const user ={
+	nombre: "señor x",
+	edad: 40
+};
+const {nombre, edad} = user;
+console.log(nombre, edad);
+
+//acceder a propiedades de un objeto anidado en una linea(destructuracion)
+const usuario ={
+	preso12345:{
+	name: "señor nuevo",
+	age: 5
+	}
+
+	
+};
+const {preso12345:{name: nm, age: ag}} = usuario;//renombrar propiedades
+console.log(nm, ag);
+
+//separacion por un espacio de resultados
+const abc = usuario.preso12345.name;
+const def = usuario.preso12345.age;
+console.log(abc,def);
+
+//asignar valores especificando lugar en array
+var a;
+var b;
+var c;
+[a,b,,,c] = [1,2,3,4,5];
+console.log(a,b,c);
+
+//asignar el resto a otro arreglo
+var a; var b; var arr;
+[a,b,...arr]=[1,2,3,4,5,6,7];
+console.log(a,b,arr);
+
+//remover lelementos
+const arrInicial = [1,2,3,4,5,6,7];
+function del(arreglo){
+[,,,...nuevo]=arreglo;
+return nuevo;
+}
+const arrFinal = del(arrInicial)
+console.log(arrFinal);
+
+//deconstruir objeto como argumentos de funcion
+
+const objeto = {
+	nombre: "jacko",
+	edad: 23,
+	sexo: "h"
+}
+
+const actualizar = ({nombre,edad,sexo}) => {	
+	console.log(nombre,edad,sexo);
+}
+actualizar(objeto);
+
+const estadisticas ={
+	max: 55.3,
+	min: 11.8,
+	moda: 23.87
+}
+
+const mitad = ({max,min}) => (max+min)/2.0;
+console.log("la mitad es: "+mitad(estadisticas));
+
+//usar valor de variable en cadena de texto con acento grave alt+96 ` y shift+4 $ alt+36 $ para simbolo dolar
+console.log(`esto es una prueba para llamar a la variable desde 
+cadena de texto. el valor de arr es: ${arr} y el de arreglo 
+con JSON: ${JSON.stringify(arreglo)}`);
+
+//crear objeto conciso
+const crearObj=(nombre, edad, sexo) =>{
+	return{
+		nombre: nombre,
+		edad: edad,
+		sexo: sexo
+	};//ojo con puntuacion ;
+};
+console.log(crearObj("serge", 47,"masc"));
+
+//crear objeto en una linea
+const crearObj2=(nombre, edad, sexo) =>({ nombre, edad, sexo });
+	
+console.log(crearObj2("serge", 47,"masc"));
+
+//la funcion dentro de un objeto se llama metodo
+const persona = {	
+		nombre: "serge",
+		edad: "41",
+		sexo: "mas",
+		presentar(){
+			return `hi, mi name is ${this.nombre}.`;
+		}
+	
+};
+console.log(persona.presentar());
+
+//construct crear objetos desde class, convencion first uppercase
+class Header{
+	constructor(titulo, fuente){
+	this.titulo = titulo;
+	this.fuente = fuente;
+	}
+}
+
+var miTitle = new Header("MiStore", "arial")
+var miTitle2 = new Header("MiShop", "sans")
+var miTitle3 = new Header("MiEx", "roman")
+console.log(miTitle);
+console.log(miTitle2);
+console.log(miTitle3);
+
+//GET & SET
+class libro{
+	constructor(autor){
+		this._autor = autor;//el guion bajo proteje de modificacion
+	}
+	get autor(){
+		return this._autor;//retorna get antes de setting 
+	}
+	set autor(nuevoAutor){			
+			this._autor = nuevoAutor;
+		}
+}
+
+const libro = new libro("anonimo");
+console.log(libro.autor);
+});
+
+        </script>
+    </head>
+    
+</html>

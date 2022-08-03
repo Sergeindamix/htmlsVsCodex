@@ -1,0 +1,269 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+/* division 1 alt 250 ancho auto padding 5 negro */
+var div1 = document.createElement('div');
+div1.style.height = '250px';
+div1.style.width = 'auto';
+div1.style.padding = '5px';
+div1.style.backgroundColor = 'black';
+document.body.appendChild(div1);
+/* imagen de sitio random dentro  de div1 ajustada con padding 5 */
+var img1 = document.createElement('img');
+img1.src = 'https://source.unsplash.com/random';
+div1.appendChild(img1);
+/* ajusta a tamaño de div1 */
+img1.style.width = '100%';
+img1.style.height = '100%';
+/* sin perder aspecto */
+img1.style.objectFit = 'cover';
+/* agregar 10 imagenes mas y ocultar si rebasan div1 */
+var img2 = document.createElement('img');
+img2.src = 'https://source.unsplash.com/random';
+div1.appendChild(img2);
+img2.style.width = '100%';
+img2.style.height = '100%';
+img2.style.objectFit = 'cover';
+var img3 = document.createElement('img');
+img3.src = 'https://source.unsplash.com/random';
+div1.appendChild(img3);
+img3.style.width = '100%';
+img3.style.height = '100%';
+img3.style.objectFit = 'cover';
+var img4 = document.createElement('img');
+img4.src = 'https://source.unsplash.com/random';
+div1.appendChild(img4);
+img4.style.width = '100%';
+img4.style.height = '100%';
+img4.style.objectFit = 'cover';
+var img5 = document.createElement('img');
+img5.src = 'https://source.unsplash.com/random';
+div1.appendChild(img5);
+img5.style.width = '100%';
+img5.style.height = '100%';
+img5.style.objectFit = 'cover';
+var img6 = document.createElement('img');
+img6.src = 'https://source.unsplash.com/random';
+div1.appendChild(img6);
+img6.style.width = '100%';
+img6.style.height = '100%';
+img6.style.objectFit = 'cover';
+var img7 = document.createElement('img');
+img7.src = 'https://source.unsplash.com/random';
+div1.appendChild(img7);
+img7.style.width = '100%';
+img7.style.height = '100%';
+img7.style.objectFit = 'cover';
+var img8 = document.createElement('img');
+img8.src = 'https://source.unsplash.com/random';
+div1.appendChild(img8);
+img8.style.width = '100%';
+img8.style.height = '100%';
+img8.style.objectFit = 'cover';
+var img9 = document.createElement('img');
+img9.src = 'https://source.unsplash.com/random';
+div1.appendChild(img9);
+img9.style.width = '100%';
+img9.style.height = '100%';
+img9.style.objectFit = 'cover';
+var img10 = document.createElement('img');
+img10.src = 'https://source.unsplash.com/random';
+div1.appendChild(img10);
+img10.style.width = '100%';
+img10.style.height = '100%';
+img10.style.objectFit = 'cover';
+/* acomodar en hor */
+div1.style.display = 'flex';
+/* move */
+div1.style.overflowX = 'scroll';
+/* scroll smooth */
+div1.style.scrollBehavior = 'smooth';
+/* division 2 */
+var div2 = document.createElement('div');
+div2.style.height = '20px';
+div2.style.width = 'auto';
+div2.style.padding = '5px';
+div2.style.backgroundColor = 'black';
+document.body.appendChild(div2);
+/* botones de igual numero que imagenes */
+var btn1 = document.createElement('button');
+btn1.innerHTML = '1';
+div2.appendChild(btn1);
+var btn2 = document.createElement('button');
+btn2.innerHTML = '2';
+div2.appendChild(btn2);
+var btn3 = document.createElement('button');
+btn3.innerHTML = '3';
+div2.appendChild(btn3);
+var btn4 = document.createElement('button');
+btn4.innerHTML = '4';
+div2.appendChild(btn4);
+var btn5 = document.createElement('button');
+btn5.innerHTML = '5';
+div2.appendChild(btn5);
+var btn6 = document.createElement('button');
+btn6.innerHTML = '6';
+div2.appendChild(btn6);
+var btn7 = document.createElement('button');
+btn7.innerHTML = '7';
+div2.appendChild(btn7);
+var btn8 = document.createElement('button');
+btn8.innerHTML = '8';
+div2.appendChild(btn8);
+var btn9 = document.createElement('button');
+btn9.innerHTML = '9';
+div2.appendChild(btn9);
+var btn10 = document.createElement('button');
+btn10.innerHTML = '10';
+div2.appendChild(btn10);
+/* centrados */
+div2.style.textAlign = 'center';
+/* ver como circulos semi transparentes sin texto */
+btn1.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
+btn1.style.borderRadius = '50%';
+btn1.style.width = '20px';
+btn1.style.height = '20px';
+btn1.style.border = 'none';
+btn1.style.outline = 'none';
+btn2.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
+btn2.style.borderRadius = '50%';
+btn2.style.width = '20px';
+btn2.style.height = '20px';
+btn2.style.border = 'none';
+btn2.style.outline = 'none';
+btn3.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
+btn3.style.borderRadius = '50%';
+btn3.style.width = '20px';
+btn3.style.height = '20px';
+btn3.style.border = 'none';
+btn3.style.outline = 'none';
+btn4.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
+btn4.style.borderRadius = '50%';
+btn4.style.width = '20px';
+btn4.style.height = '20px';
+btn4.style.border = 'none';
+btn4.style.outline = 'none';
+btn5.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
+btn5.style.borderRadius = '50%';
+btn5.style.width = '20px';
+btn5.style.height = '20px';
+btn5.style.border = 'none';
+btn5.style.outline = 'none';
+btn6.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
+btn6.style.borderRadius = '50%';
+btn6.style.width = '20px';
+btn6.style.height = '20px';
+btn6.style.border = 'none';
+btn6.style.outline = 'none';
+btn7.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
+btn7.style.borderRadius = '50%';
+btn7.style.width = '20px';
+btn7.style.height = '20px';
+btn7.style.border = 'none';
+btn7.style.outline = 'none';
+btn8.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
+btn8.style.borderRadius = '50%';
+btn8.style.width = '20px';
+btn8.style.height = '20px';
+btn8.style.border = 'none';
+btn8.style.outline = 'none';
+btn9.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
+btn9.style.borderRadius = '50%';
+btn9.style.width = '20px';
+btn9.style.height = '20px';
+btn9.style.border = 'none';
+btn9.style.outline = 'none';
+btn10.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
+btn10.style.borderRadius = '50%';
+btn10.style.width = '20px';
+btn10.style.height = '20px';
+btn10.style.border = 'none';
+btn10.style.outline = 'none';
+/* cada boton muestra imagen con mismo indice */
+btn1.onclick = function() {
+  div1.scrollLeft = 0;
+};
+btn2.onclick = function() {
+  div1.scrollLeft = 250;
+};
+btn3.onclick = function() {
+  div1.scrollLeft = 500;
+};
+btn4.onclick = function() {
+  div1.scrollLeft = 750;
+};
+btn5.onclick = function() {
+  div1.scrollLeft = 1000;
+};
+btn6.onclick = function() {
+  div1.scrollLeft = 1250;
+};
+btn7.onclick = function() {
+  div1.scrollLeft = 1500;
+};
+btn8.onclick = function() {
+  div1.scrollLeft = 1750;
+};
+btn9.onclick = function() {
+  div1.scrollLeft = 2000;
+};
+btn10.onclick = function() {
+  div1.scrollLeft = 2250;
+};
+/* division 3 250 auto pading 5 */
+var div3 = document.createElement('div');
+div3.style.height = '250px';
+div3.style.width = 'auto';
+div3.style.padding = '5px';
+div3.style.backgroundColor = 'black';
+document.body.appendChild(div3);
+/* cambiar color div3 a color random cada segundo */
+setInterval(function() {
+  div3.style.backgroundColor =
+    'rgb(' +
+    Math.floor(Math.random() * 256) +
+    ',' +
+    Math.floor(Math.random() * 256) +
+    ',' +
+    Math.floor(Math.random() * 256) +
+    ')';
+}, 1000);
+/* colores neon */
+div3.style.backgroundColor = 'rgb(255, 0, 0)';
+setInterval(function() {
+  div3.style.backgroundColor = 'rgb(255, 255, 0)';
+}, 1000);
+setInterval(function() {
+  div3.style.backgroundColor = 'rgb(0, 255, 0)';
+}, 2000);
+setInterval(function() {
+  div3.style.backgroundColor = 'rgb(0, 255, 255)';
+}, 3000);
+setInterval(function() {
+  div3.style.backgroundColor = 'rgb(0, 0, 255)';
+}, 4000);
+setInterval(function() {
+  div3.style.backgroundColor = 'rgb(255, 0, 255)';
+}, 5000);
+setInterval(function() {
+  div3.style.backgroundColor = 'rgb(255, 0, 0)';
+}, 6000);
+/* imagen random en div3 */
+var img11 = document.createElement('img');
+img11.src = 'https://source.unsplash.com/random';
+div3.appendChild(img11);
+img11.style.width = '100%';
+img11.style.height = '100%';
+img11.style.objectFit = 'cover';
+/* cambiar cada segundo */
+setInterval(function() {
+  img11.src = 'https://source.unsplash.com/random/' + Math.random();
+}, 1000);
+});
+        </script>
+    </head>
+    
+</html>

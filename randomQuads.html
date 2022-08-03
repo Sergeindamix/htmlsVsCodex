@@ -1,0 +1,65 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+
+
+/* css */
+var css = document.createElement('style');
+css.innerHTML = 'body { background-color: #000; color: #fff; }';
+document.body.appendChild(css);
+/* 100 rects, posicion contigua, tamaño y color random, ajustados en rectangulo de 1000px */
+var css = document.createElement('style');
+css.innerHTML = 'body { background-color: #000; color: #fff; }';
+document.body.appendChild(css);
+var rects = [];
+for (var i = 0; i < 100; i++) {
+  var rect = document.createElement('div');
+  rect.style.position = 'absolute';
+  rect.style.width = Math.random() * 100 + 'px';
+  rect.style.height = Math.random() * 100 + 'px';
+  rect.style.backgroundColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+  rect.style.left = Math.random() * 500 + 'px';
+  rect.style.top = Math.random() * 250 + 'px';
+  document.body.appendChild(rect);
+  rects.push(rect);
+}
+/* fade out elemento por elemento con pausa de .1 segundo */
+var i = 0;
+var interval = setInterval(function() {
+  if (i < rects.length) {
+    rects[i].style.opacity = 0;
+    i++;
+  } else {
+    clearInterval(interval);
+  }
+}, 100);
+/* si todo esta oculto, fade in elemento por elemento, reacomodar auto compactando mas el espacio */
+var i = 0;
+var interval = setInterval(function() {
+  if (i < rects.length) {
+    rects[i].style.opacity = 1;
+    rects[i].style.left = Math.random() * 500 + 'px';
+    rects[i].style.top = Math.random() * 250 + 'px';
+    i++;
+  } else {
+    clearInterval(interval);
+  }
+}, 100);
+/* marco en cada elemento */
+var i = 0;
+var interval = setInterval(function() {
+  if (i < rects.length) {
+    rects[i].style.border = '1px solid #fff';
+    i++;
+  } else {
+    clearInterval(interval);
+  }
+}, 10);
+});
+        </script>
+    </head>
+    
+</html>

@@ -1,0 +1,56 @@
+
+<!-- saved from url=(0050)file:///C:/Users/tech-/Downloads/index%20(43).html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><style></style><style>body {   background-color:white; } ul {   list-style-type: none;   margin: 0;   padding: 0;   overflow: hidden;   background-color: #38444d; }  li {   float: left; }  li a, .dropbtn {   display: inline-block;   color: white;   text-align: center;   padding: 14px 16px;   text-decoration: none; }  li a:hover, .dropdown:hover .dropbtn {   background-color: red; }  li.dropdown {   display: inline-block; }  .dropdown-content {   display: none;   position: absolute;   background-color: #f9f9f9;   min-width: 160px;   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);   z-index: 1; }  .dropdown-content a {   color: black;   padding: 12px 16px;   text-decoration: none;   display: block;   text-align: left; }  .dropdown-content a:hover {background-color: #f1f1f1;}  .dropdown:hover .dropdown-content {   display: block; }</style><style>caja de texto</style></head><body><script>/* caja de texto */
+var input = document.createElement('input');
+input.type = 'text';
+input.value = 'caja de texto';
+document.body.appendChild(input);
+/* el contenido de la caja se agrega a style.innerHTML */
+var style = document.createElement('style');
+style.innerHTML = input.value;
+document.head.appendChild(style);
+/* aplicar caja de texto con boton */
+var button = document.createElement('button');
+button.innerHTML = 'Aplicar';
+button.onclick = function() {
+  style.innerHTML = input.value;
+};
+document.body.appendChild(button);
+/* <ul>  <li><a href="#home">Home</a></li>  <li><a href="#news">News</a></li>  <li class="dropdown">    <a href="javascript:void(0)" class="dropbtn">Dropdown</a>    <div class="dropdown-content">      <a href="#">Link 1</a>      <a href="#">Link 2</a><a href="#">Link 3</a> */
+var ul = document.createElement('ul');
+var li = document.createElement('li');
+var a = document.createElement('a');
+a.href = '#home';
+a.innerHTML = 'Home';
+li.appendChild(a);
+ul.appendChild(li);
+li = document.createElement('li');
+a = document.createElement('a');
+a.href = '#news';
+a.innerHTML = 'News';
+li.appendChild(a);
+ul.appendChild(li);
+li = document.createElement('li');
+li.className = 'dropdown';
+var a = document.createElement('a');
+a.href = 'javascript:void(0)';
+a.className = 'dropbtn';
+a.innerHTML = 'Dropdown';
+li.appendChild(a);
+var div = document.createElement('div');
+div.className = 'dropdown-content';
+a = document.createElement('a');
+a.href = '#';
+a.innerHTML = 'Link 1';
+div.appendChild(a);
+a = document.createElement('a');
+a.href = '#';
+a.innerHTML = 'Link 2';
+div.appendChild(a);
+a = document.createElement('a');
+a.href = '#';
+a.innerHTML = 'Link 3';
+div.appendChild(a);
+li.appendChild(div);
+ul.appendChild(li);
+document.body.appendChild(ul);</script><input type="text"><button>Aplicar</button><ul><li><a href="file:///C:/Users/tech-/Downloads/index%20(43).html#home">Home</a></li><li><a href="file:///C:/Users/tech-/Downloads/index%20(43).html#news">News</a></li><li class="dropdown"><a href="javascript:void(0)" class="dropbtn">Dropdown</a><div class="dropdown-content"><a href="file:///C:/Users/tech-/Downloads/index%20(43).html#">Link 1</a><a href="file:///C:/Users/tech-/Downloads/index%20(43).html#">Link 2</a><a href="file:///C:/Users/tech-/Downloads/index%20(43).html#">Link 3</a></div></li></ul><input type="text"><button>Aplicar</button><ul><li><a href="file:///C:/Users/tech-/Downloads/index%20(43).html#home">Home</a></li><li><a href="file:///C:/Users/tech-/Downloads/index%20(43).html#news">News</a></li><li class="dropdown"><a href="javascript:void(0)" class="dropbtn">Dropdown</a><div class="dropdown-content"><a href="file:///C:/Users/tech-/Downloads/index%20(43).html#">Link 1</a><a href="file:///C:/Users/tech-/Downloads/index%20(43).html#">Link 2</a><a href="file:///C:/Users/tech-/Downloads/index%20(43).html#">Link 3</a></div></li></ul></body></html>

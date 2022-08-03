@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Produ-Serge</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+/* caja de texto */
+var texto = document.createElement('input');
+texto.type = 'text';
+texto.id = 'texto';
+texto.placeholder = 'Hello World';
+texto.title = 'Hello World';
+document.body.appendChild(texto);
+/* lista de estructuras html */
+var lista = document.createElement('select');
+lista.id = 'lista';
+lista.setAttribute('title', 'Lista');
+lista.setAttribute('placeholder', 'Lista');
+var opcion1 = document.createElement('option');
+opcion1.value = 'p';
+opcion1.innerHTML = 'p';
+var opcion2 = document.createElement('option');
+opcion2.value = 'h1';
+opcion2.innerHTML = 'h1';
+var opcion3 = document.createElement('option');
+opcion3.value = 'h2';
+opcion3.innerHTML = 'h2';
+var opcion4 = document.createElement('option');
+opcion4.value = 'h3';
+opcion4.innerHTML = 'h3';
+var opcion5 = document.createElement('option');
+opcion5.value = 'h4';
+opcion5.innerHTML = 'h4';
+var opcion6 = document.createElement('option');
+opcion6.value = 'h5';
+opcion6.innerHTML = 'h5';
+var opcion7 = document.createElement('option');
+opcion7.value = 'h6';
+opcion7.innerHTML = 'h6';
+var opcion8 = document.createElement('option');
+opcion8.value = 'div';
+opcion8.innerHTML = 'div';
+lista.appendChild(opcion1);
+lista.appendChild(opcion2);
+lista.appendChild(opcion3);
+lista.appendChild(opcion4);
+lista.appendChild(opcion5);
+lista.appendChild(opcion6);
+lista.appendChild(opcion7);
+lista.appendChild(opcion8);
+document.body.appendChild(lista);
+/* al cambiar seleccion de lista, agregar caja de texto a esa estructura html y mostrar */
+lista.addEventListener('change', function() {
+  var texto = document.getElementById('texto');
+  var lista = document.getElementById('lista');
+  var estructura = document.createElement(lista.value);
+  estructura.innerHTML = '<div id="estructura" style="color:red">Hola</div>';
+  estructura.innerHTML = texto.value;
+  texto.value = '';
+  document.body.appendChild(estructura);
+});
+/* lista de alineamiento de texto */
+var lista2 = document.createElement('select');
+lista2.id = 'lista2';
+lista2.setAttribute('title', 'Lista2');
+lista2.setAttribute('placeholder', 'Lista2');
+var opcion1 = document.createElement('option');
+opcion1.value = 'left';
+opcion1.innerHTML = 'left';
+var opcion2 = document.createElement('option');
+opcion2.value = 'center';
+opcion2.innerHTML = 'center';
+var opcion3 = document.createElement('option');
+opcion3.value = 'right';
+opcion3.innerHTML = 'right';
+var opcion4 = document.createElement('option');
+opcion4.value = 'justify';
+opcion4.innerHTML = 'justify';
+lista2.appendChild(opcion1);
+lista2.appendChild(opcion2);
+lista2.appendChild(opcion3);
+lista2.appendChild(opcion4);
+document.body.appendChild(lista2);
+/* al cambia seleccion, aplicar a la seccion creada */
+lista2.addEventListener('change', function() {
+  var lista2 = document.getElementById('lista2');
+  var estructura = document.getElementsByTagName(lista.value);
+  estructura[estructura.length - 1].style.textAlign = lista2.value;
+});
+/* lista fonts */
+var lista3 = document.createElement('select');
+lista3.id = 'lista3';
+lista3.setAttribute('title', 'Lista3');
+lista3.setAttribute('placeholder', 'Lista3');
+var opcion1 = document.createElement('option');
+opcion1.value = 'Arial';
+opcion1.innerHTML = 'Arial';
+var opcion2 = document.createElement('option');
+opcion2.value = 'Helvetica';
+opcion2.innerHTML = 'Helvetica';
+var opcion3 = document.createElement('option');
+opcion3.value = 'Times New Roman';
+opcion3.innerHTML = 'Times New Roman';
+var opcion4 = document.createElement('option');
+opcion4.value = 'Courier New';
+opcion4.innerHTML = 'Courier New';
+var opcion5 = document.createElement('option');
+opcion5.value = 'Verdana';
+opcion5.innerHTML = 'Verdana';
+var opcion6 = document.createElement('option');
+opcion6.value = 'Georgia';
+opcion6.innerHTML = 'Georgia';
+var opcion7 = document.createElement('option');
+opcion7.value = 'Palatino';
+opcion7.innerHTML = 'Palatino';
+var opcion8 = document.createElement('option');
+opcion8.value = 'Garamond';
+opcion8.innerHTML = 'Garamond';
+var opcion9 = document.createElement('option');
+opcion9.value = 'Bookman';
+opcion9.innerHTML = 'Bookman';
+var opcion10 = document.createElement('option');
+opcion10.value = 'Comic Sans MS';
+opcion10.innerHTML = 'Comic Sans MS';
+var opcion11 = document.createElement('option');
+opcion11.value = 'Trebuchet MS';
+opcion11.innerHTML = 'Trebuchet MS';
+var opcion12 = document.createElement('option');
+opcion12.value = 'Arial Black';
+opcion12.innerHTML = 'Arial Black';
+var opcion13 = document.createElement('option');
+opcion13.value = 'Impact';
+opcion13.innerHTML = 'Impact';
+lista3.appendChild(opcion1);
+lista3.appendChild(opcion2);
+lista3.appendChild(opcion3);
+lista3.appendChild(opcion4);
+lista3.appendChild(opcion5);
+lista3.appendChild(opcion6);
+lista3.appendChild(opcion7);
+lista3.appendChild(opcion8);
+lista3.appendChild(opcion9);
+lista3.appendChild(opcion10);
+lista3.appendChild(opcion11);
+lista3.appendChild(opcion12);
+lista3.appendChild(opcion13);
+document.body.appendChild(lista3);
+/* importar y mostrar una fuente cada segundo */
+var fonts = [
+  'Abril+Fatface',
+  'Acme',
+  'Alegreya',
+  'Alegreya+Sans',
+  'Alegreya+Sans+SC',
+  'Alegreya+SC',
+  'Alex+Brush',
+  'Alfa+Slab+One',
+  'Alice',
+  'Alike',
+  'Alike+Angular',
+  'Allan',
+  'Allerta',
+  'Allerta+Stencil',
+  'Allura',
+  'Almendra',
+  'Almendra+Display',
+  'Almendra+SC',
+  'Amarante',
+  'Amaranth',
+  'Amatic+SC',
+  'Amethysta',
+  'Amiri',
+  'Amita',
+  'Anaheim',
+  'Andada',
+  'Andika',
+  'Angkor',
+  'Annie+Use+Your+Telescope',
+  'Anonymous+Pro',
+  'Antic',
+  'Antic+Didone',
+  'Antic+Slab',
+  'Anton',
+  'Arapey',
+  'Arbutus',
+  'Arbutus+Slab',
+  'Architects+Daughter',
+  'Archivo',
+  'Archivo+Black',
+  'Archivo+Narrow',
+  'Aref+Ruqaa',
+  'Arima+Madurai',
+  'Arimo',
+  'Arizonia',
+  'Armata',
+  'Arsenal',
+  'Artifika',
+  'Arvo',
+  'Arya',
+  'Asap',
+  'Asap+Condensed',
+  'Asar',
+  'Asset',
+  'Assistant',
+  'Astloch',
+  'Asul',
+  'Athiti',
+  'Atma',
+  'Atomic+Age',
+  'Aubrey',
+  'Audiowide',
+  'Autour+One',
+  'Average',
+  'Average+Sans',
+  'Averia+Gruesa+Libre',
+  'Averia+Libre',
+  'Averia+Sans+Libre',
+  'Averia+Serif+Libre',
+  'Bad+Script',
+  'Bahiana',
+  'Baloo',
+  'Baloo+Bhai',
+  'Baloo+Bhaijaan',
+  'Baloo+Bhaina',
+  'Baloo+Chettan',
+  'Baloo+Da',
+  'Baloo+Paaji',
+  'Baloo+Tamma',
+  'Baloo+Tammudu',
+  'Baloo+Thambi',
+  'Balthazar',
+  'Bangers',
+  'Barlow',
+  'Barlow+Condensed',
+  'Barlow+Semi+Condensed',
+  'Barrio',
+  'Basic',
+  'Battambang',
+  'Baumans',
+  'Bayon',
+  'Belgrano',
+  'Bellefair',
+  'Belleza',
+  'BenchNine',
+  'Bentham',
+  'Berkshire+Swash',
+  'Bevan',
+  'Bigelow+Rules',
+  'Bigshot+One',
+  'Bilbo',
+  'Bilbo+Swash+Caps',
+  'BioRhyme',
+  'BioRhyme+Expanded',
+  'Biryani',
+  'Bitter',
+  'Black+And+White+Picture',
+  'Black+Han+Sans',
+  'Black+Ops+One',
+  'Bokor',
+  'Bonbon',
+  'Boogaloo',
+  'Bowlby+One',
+  'Bowlby+One+SC',
+  'Brawler',
+  'Bree+Serif',
+  'Bubblegum+Sans',
+  'Bubbler+One',  
+  'Buenard',
+  'Bungee',
+  'Bungee+Hairline',
+  'Bungee+Inline',
+  'Bungee+Outline',
+  'Bungee+Shade',
+  'Butcherman',
+  'Butterfly+Kids',
+  'Cabin',
+  'Cabin+Condensed',
+  'Cabin+Sketch',
+  'Caesar+Dressing',
+  'Cagliostro',
+  'Cairo',
+  'Calligraffitti',
+  'Cambay',
+  'Cambo',
+  'Candal',
+  'Cantarell',
+  'Cantata+One',
+  'Cantora+One',
+  'Capriola',
+  'Cardo',
+  'Carme',
+  'Carrois+Gothic',
+  'Carrois+Gothic+SC',
+  'Carter+One',
+  'Catamaran',
+  'Caudex',
+  'Caveat',
+  'Caveat+Brush',
+  'Cedarville+Cursive',
+  'Ceviche+One',
+  'Changa',
+  'Changa+One',
+  'Chango',
+  'Chathura',
+  'Chau+Philomene+One',
+  'Chela+One',
+  'Chelsea+Market',
+  'Chenla',
+  'Cherry+Cream+Soda',
+  'Cherry+Swash',
+  'Chewy',
+  'Chicle',
+  'Chivo',
+  'Chonburi',
+  'Cinzel',
+  'Cinzel+Decorative',
+  'Clicker+Script',
+  'Coda',  
+  'Codystar',
+  'Coiny',
+  'Combo',
+  'Comfortaa',
+  'Coming+Soon',
+  'Concert+One',
+  'Condiment',
+  'Content',
+  'Contrail+One',
+  'Convergence',
+  'Cookie',
+  'Copse',
+  'Corben',
+  'Cormorant',
+  'Cormorant+Garamond',
+  'Cormorant+Infant',
+  'Cormorant+SC',
+  'Cormorant+Unicase',
+  'Cormorant+Upright',
+  'Courgette',
+  'Cousine',
+  'Coustard',
+  'Covered+By+Your+Grace',
+  'Crafty+Girls',
+  'Creepster',
+  'Crete+Round',
+  'Crimson+Text',
+  'Croissant+One',
+  'Crushed',
+  'Cuprum',
+  'Cutive',
+  'Cutive+Mono',
+  'Damion',
+  'Dancing+Script',
+  'Dangrek',
+  'David+Libre',
+  'Dawning+of+a+New+Day',
+  'Days+One',
+  'Dekko',
+  'Delius',
+  'Delius+Swash+Caps',
+  'Delius+Unicase',
+  'Della+Respira',
+  'Denk+One',
+  'Devonshire',
+  'Dhurjati',
+  'Didact+Gothic',
+  'Diplomata',
+  'Diplomata+SC',
+  'Domine',
+  'Donegal+One',
+  'Doppio+One',
+  'Dorsa',
+  'Dosis',
+  'Dr+Sugiyama',
+  'Droid+Sans',
+  'Droid+Sans+Mono',
+  'Droid+Serif',
+  'Duru+Sans',
+  'Dynalight',
+  'EB+Garamond',
+  'Eagle+Lake',
+  'Eater',
+  'Economica',
+  'Eczar',
+  'El+Messiri',
+  'Electrolize',
+  'Elsie',
+  'Elsie+Swash+Caps',
+  'Emblema+One',
+  'Emilys+Candy',
+  'Engagement',
+  'Englebert',
+  'Enriqueta',
+  'Erica+One',  
+  'Euphoria+Script',
+  'Ewert',
+  'Exo',
+  'Exo+2',
+  'Expletus+Sans',
+  'Fanwood+Text',
+  'Farsan',
+  'Fascinate',
+  'Fascinate+Inline',
+  'Faster+One',
+  'Fasthand',
+  'Fauna+One',
+  'Faustina',
+  'Federant',
+  'Federo',
+  'Felipa',
+  'Fenix',
+  'Finger+Paint',
+  'Fira+Mono',
+  'Fira+Sans',
+  'Fira+Sans+Condensed',
+  'Fira+Sans+Extra+Condensed',
+  'Fjalla+One',
+  'Fjord+One',
+  'Flamenco',
+  'Flavors',
+  'Fondamento',
+  'Fontdiner+Swanky',
+  'Forum',
+  'Francois+One',
+  'Frank+Ruhl+Libre',
+  'Freckle+Face',
+  'Fredericka+the+Great',
+  'Fredoka+One',
+  'Freehand',
+  'Fresca',
+  'Frijole',
+  'Fruktur',
+  'Fugaz+One',
+  'GFS+Didot',
+  'GFS+Neohellenic',
+  'Gabriela',
+  'Gafata',
+  'Galada',
+  'Galdeano',
+  'Galindo',
+  'Gentium+Basic',
+  'Gentium+Book+Basic',
+  'Geo',
+  'Geostar',
+  'Geostar+Fill',
+  'Germania+One',
+  'Gidugu',
+  'Gilda+Display',
+  'Give+You+Glory',
+  'Glass+Antiqua',
+  'Glegoo',
+  'Gloria+Hallelujah',
+  'Goblin+One',
+  'Gochi+Hand',
+  'Gorditas',
+  'Goudy+Bookletter+1911',
+  'Graduate',
+  'Grand+Hotel',
+  'Gravitas+One',
+  'Great+Vibes',
+  'Griffy',
+  'Gruppo',
+  'Gudea',
+  'Gurajada',
+  'Habibi',
+  'Halant',
+  'Hammersmith+One',
+  'Hanalei',
+  'Hanalei+Fill',
+  'Handlee',
+  'Hanuman',
+  'Happy+Monkey',
+  'Harmattan',
+  'Headland+One',
+  'Heebo',
+  'Henny+Penny',
+  'Herr+Von+Muellerhoff',
+  'Hind',
+  'Hind+Guntur',
+  'Hind+Madurai',
+  'Hind+Siliguri',
+  'Hind+Vadodara',
+  'Holtwood+One+SC',
+  'Homemade+Apple',
+  'Homenaje',
+  'IM+Fell+DW+Pica',
+  'IM+Fell+DW+Pica+SC',
+  'IM+Fell+Double+Pica',
+  'IM+Fell+Double+Pica+SC',
+  'IM+Fell+English',
+  'IM+Fell+English+SC',
+  'IM+Fell+French+Canon',
+  'IM+Fell+French+Canon+SC',
+  'IM+Fell+Great+Primer',
+  'IM+Fell+Great+Primer+SC',
+  'Iceberg',
+  'Iceland',
+  'Imprima',
+  'Inconsolata',
+  'Inder',
+  'Indie+Flower',
+  'Inika',
+  'Inknut+Antiqua',
+  'Irish+Grover',
+  'Istok+Web',
+  'Italiana',
+  'Italianno',
+  'Itim',
+  'Jacques+Francois',  
+  'Jaldi',
+  'Jim+Nightshade',
+  'Jockey+One',
+  'Jolly+Lodger',
+  'Jomhuria',
+  'Josefin+Sans',
+  'Josefin+Slab',
+  'Joti+One',
+  'Judson',
+  'Julee',
+  'Julius+Sans+One',
+  'Junge',
+  'Jura',
+  'Just+Another+Hand',
+  'Just+Me+Again+Down+Here',
+  'Kadwa',
+  'Kalam',
+  'Kameron',
+  'Kanit',
+  'Kantumruy',
+  'Karla',
+  'Karma',
+  'Katibeh',
+  'Kaushan+Script',
+  'Kavivanar',
+  'Kavoon',
+  'Kdam+Thmor',
+  'Keania+One',
+  'Kelly+Slab',
+  'Kenia',
+  'Khand',
+  'Khmer',
+  'Khula',
+  'Kite+One',
+  'Knewave',
+  'Kotta+One',
+  'Koulen',
+  'Kranky',
+  'Kreon',
+  'Kristi',
+  'Krona+One',
+  'Kumar+One',
+  'Kumar+One+Outline',
+  'Kurale',
+  'La+Belle+Aurore',
+  'Laila',
+  'Lakki+Reddy',
+  'Lalezar',
+  'Lancelot',
+  'Lateef',
+  'Lato',
+  'League+Script',
+  'Leckerli+One',
+  'Ledger',
+  'Lekton',
+  'Lemon',
+  'Lemonada',
+  'Libre+Barcode+128',
+  'Libre+Barcode+128+Text',
+  'Libre+Barcode+39',
+  'Libre+Barcode+39+Extended',
+  'Libre+Barcode+39+Extended+Text',
+  'Libre+Barcode+39+Text',
+  'Libre+Baskerville',
+  'Libre+Franklin',
+  'Life+Savers',
+  'Lilita+One',
+  'Lily+Script+One',
+  'Limelight',
+  'Linden+Hill',
+  'Lobster',
+  'Lobster+Two',
+  'Londrina+Outline',
+  'Londrina+Shadow',
+  'Londrina+Sketch',
+  'Londrina+Solid',
+  'Lora',
+  'Love+Ya+Like+A+Sister',
+  'Loved+by+the+King',
+  'Lovers+Quarrel',
+  'Luckiest+Guy',
+  'Lusitana',
+  'Lustria',
+  'Macondo',
+  'Macondo+Swash+Caps',
+  'Mada',
+  'Magra',
+  'Maiden+Orange',
+  'Maitree',
+  'Mako',
+  'Mallanna',
+  'Mandali',
+  'Marcellus',
+  'Marcellus+SC',
+  'Marck+Script',
+  'Margarine',
+  'Marko+One',
+  'Marmelad',
+  'Martel',
+  'Martel+Sans',
+  'Marvel',
+  'Mate',
+  'Mate+SC',
+  'Maven+Pro',
+  'McLaren',
+  'Meddon',
+  'MedievalSharp',
+  'Medula+One',
+  'Meera+Inimai',
+  'Megrim',
+  'Meie+Script',
+  'Merienda',
+  'Merienda+One',
+  'Merriweather',
+  'Merriweather+Sans',
+  'Metal',
+  'Metal+Mania',
+  'Metamorphous',
+  'Metrophobic',
+  'Michroma',
+  'Milonga',
+  'Miltonian',
+  'Miltonian+Tattoo',
+  'Miniver',
+  'Miriam+Libre',
+  'Mirza',
+  'Miss+Fajardose',
+  'Mitr',
+  'Modak',
+  'Modern+Antiqua',
+  'Mogra',
+  'Molengo',  
+  'Monda',
+  'Monofett',
+  'Monoton',
+  'Monsieur+La+Doulaise',
+  'Montaga',
+  'Montez',
+  'Montserrat',
+  'Montserrat+Alternates',
+  'Montserrat+Subrayada',
+  'Moul',
+  'Moulpali',
+  'Mountains+of+Christmas',
+  'Mouse+Memoirs',
+  'Mr+Bedfort',
+  'Mr+Dafoe',
+  'Mr+De+Haviland',
+  'Mrs+Saint+Delafield',
+  'Mrs+Sheppards',
+  'Mukta',
+  'Mukta+Mahee',
+  'Mukta+Malar',
+  'Mukta+Vaani',
+  'Muli',
+  'Mystery+Quest',
+  'NTR',
+  'Neucha',
+  'Neuton',
+  'New+Rocker',
+  'News+Cycle',
+  'Niconne',
+  'Nixie+One',
+  'Nobile',
+  'Nokora',
+  'Norican',
+  'Nosifer',
+  'Nothing+You+Could+Do',
+  'Noticia+Text',
+  'Noto+Sans',
+  'Noto+Serif',
+  'Nova+Cut',
+  'Nova+Flat',
+  'Nova+Mono',
+  'Nova+Oval',
+  'Nova+Round',
+  'Nova+Script',
+  'Nova+Slim',
+  'Nova+Square',
+  'Numans',
+  'Nunito',
+  'Nunito+Sans',
+  'Odor+Mean+Chey',
+  'Offside',
+  'Old+Standard+TT',
+  'Oldenburg',
+  'Oleo+Script',
+  'Oleo+Script+Swash+Caps',
+  'Open+Sans',  
+  'Oranienbaum',
+  'Orbitron',
+  'Oregano',
+  'Orienta',
+  'Original+Surfer',
+  'Oswald',
+  'Over+the+Rainbow',
+  'Overlock',
+  'Overlock+SC',
+  'Overpass',
+  'Overpass+Mono',
+  'Ovo',
+  'Oxygen',
+  'Oxygen+Mono',
+  'PT+Mono',
+  'PT+Sans',
+  'PT+Sans+Caption',
+  'PT+Sans+Narrow',
+  'PT+Serif',
+  'PT+Serif+Caption',
+  'Pacifico',
+  'Padauk',
+  'Palanquin',
+  'Palanquin+Dark',
+  'Pangolin',
+  'Paprika',
+  'Parisienne',
+  'Passero+One',
+  'Passion+One',
+  'Pathway+Gothic+One',
+  'Patrick+Hand',
+  'Patrick+Hand+SC',
+  'Pattaya',
+  'Patua+One',
+  'Pavanam',
+  'Paytone+One',
+  'Peddana',
+  'Peralta',
+  'Permanent+Marker',
+  'Petit+Formal+Script',
+  'Petrona',
+  'Philosopher',
+  'Piedra',
+  'Pinyon+Script',
+  'Pirata+One',
+  'Plaster',
+  'Play',
+  'Playball',
+  'Playfair+Display',
+  'Playfair+Display+SC',
+  'Podkova',
+  'Poiret+One',
+  'Poller+One',
+  'Poly',
+  'Pompiere',
+  'Pontano+Sans',
+  'Poppins',
+  'Port+Lligat+Sans',
+  'Port+Lligat+Slab',
+  'Pragati+Narrow',
+  'Prata',
+  'Preahvihear',
+  'Press+Start+2P',
+  'Pridi',
+  'Princess+Sofia',
+  'Prociono',
+  'Prompt',
+  'Prosto+One',
+  'Proza+Libre',
+  'Puritan',
+  'Purple+Purse',
+  'Quando',
+  'Quantico',
+  'Quattrocento',
+  'Quattrocento+Sans',
+  'Questrial',
+  'Quicksand',
+  'Quintessential',
+  'Qwigley',
+  'Racing+Sans+One',
+  'Radley',
+  'Rajdhani',
+  'Rakkas',
+  'Raleway',
+  'Raleway+Dots',
+  'Ramabhadra',
+  'Ramaraja',
+  'Rambla',
+  'Rammetto+One',
+  'Ranchers',
+  'Rancho',
+  'Ranga',
+  'Rasa',
+  'Rationale',
+  'Ravi+Prakash',
+  'Redressed',
+  'Reem+Kufi',
+  'Reenie+Beanie',
+  'Revalia',
+  'Rhodium+Libre',
+  'Ribeye',
+  'Ribeye+Marrow',
+  'Righteous',
+  'Risque',
+  'Roboto',
+  'Roboto+Condensed',
+  'Roboto+Mono',
+  'Roboto+Slab',
+  'Rochester',
+  'Rock+Salt',
+  'Rokkitt',
+  'Romanesco',
+  'Ropa+Sans',
+  'Rosario',
+  'Rosarivo',
+  'Rouge+Script',
+  'Rozha+One',
+  'Rubik',
+  'Rubik+Mono+One',
+  'Ruda',
+  'Rufina',
+  'Ruge+Boogie',
+  'Ruluko',
+  'Rum+Raisin',
+  'Ruslan+Display',
+  'Russo+One',
+  'Ruthie',
+  'Rye',
+  'Sacramento',
+  'Sahitya',
+  'Sail',
+  'Saira',
+  'Saira+Condensed',
+  'Saira+Extra+Condensed',
+  'Saira+Semi+Condensed',
+  'Salsa',
+  'Sanchez',
+  'Sancreek',
+  'Sansita',
+  'Sarala',
+  'Sarina',
+  'Sarpanch',
+  'Satisfy',
+  'Scada',
+  'Scheherazade',
+  'Schoolbell',
+  'Scope+One',
+  'Seaweed+Script',
+  'Secular+One',
+  'Sedgwick+Ave',
+  'Sedgwick+Ave+Display',
+  'Sevillana',
+  'Seymour+One',
+  'Shadows+Into+Light',
+  'Shadows+Into+Light+Two',
+  'Shanti',
+  'Share',
+  'Share+Tech',
+  'Share+Tech+Mono',
+  'Shojumaru',
+  'Short+Stack',
+  'Shrikhand',
+  'Siemreap',
+  'Sigmar+One',
+  'Signika',
+  'Signika+Negative',
+  'Simonetta',
+  'Sintony',
+  'Sirin+Stencil',
+  'Six+Caps',
+  'Skranji',
+  'Slabo+13px',
+  'Slabo+27px',
+  'Slackey',
+  'Smokum',
+  'Smythe',
+  'Sniglet',
+  'Snippet',
+  'Snowburst+One',
+  'Sofadi+One',
+  'Sofia',
+  'Sonsie+One',  
+  'Sorts+Mill+Goudy',
+  'Source+Code+Pro',
+  'Source+Sans+Pro',
+  'Source+Serif+Pro',
+  'Space+Mono',
+  'Special+Elite',
+  'Spectral',
+  'Spectral+SC',
+  'Spicy+Rice',
+  'Spinnaker',
+  'Spirax',
+  'Squada+One',
+  'Sree+Krushnadevaraya',
+  'Sriracha',
+  'Stalemate',
+  'Stalinist+One',
+  'Stardos+Stencil',
+  'Stint+Ultra+Condensed',
+  'Stint+Ultra+Expanded',
+  'Stoke',
+  'Strait',
+  'Sue+Ellen+Francisco',
+  'Suez+One',
+  'Sumana',
+  'Sunshiney',
+  'Supermercado+One',
+  'Sura',
+  'Suranna',
+  'Suravaram',
+  'Suwannaphum',
+  'Swanky+and+Moo+Moo',
+  'Syncopate',
+  'Tangerine',
+  'Taprom',
+  'Tauri',
+  'Taviraj',
+  'Teko',
+  'Telex',
+  'Tenali+Ramakrishna',
+  'Tenor+Sans',
+  'Text+Me+One',
+  'The+Girl+Next+Door',
+  'Tienne',
+  'Tillana',
+  'Timmana',
+  'Tinos',
+  'Titan+One',
+  'Titillium+Web',
+  'Trade+Winds',
+  'Trirong',
+  'Trocchi',
+  'Trochut',
+  'Trykker',
+  'Tulpen+One',
+  'Ubuntu',
+  'Ubuntu+Condensed',
+  'Ubuntu+Mono',
+  'Ultra',
+  'Uncial+Antiqua',
+  'Underdog',
+  'Unica+One',  
+  'UnifrakturMaguntia',
+  'Unkempt',
+  'Unlock',
+  'Unna',
+  'VT323',
+  'Vampiro+One',
+  'Varela',
+  'Varela+Round',
+  'Vast+Shadow',
+  'Vesper+Libre',
+  'Vibur',
+  'Vidaloka',
+  'Viga',
+  'Voces',
+  'Volkhov',
+  'Vollkorn',
+  'Vollkorn+SC',
+  'Voltaire',
+  'Waiting+for+the+Sunrise',
+  'Wallpoet',
+  'Walter+Turncoat',
+  'Warnes',
+  'Wellfleet',
+  'Wendy+One',
+  'Wire+One',
+  'Work+Sans',
+  'Yanone+Kaffeesatz',
+  'Yantramanav',
+  'Yatra+One',
+  'Yellowtail',
+  'Yeon+Sung',
+  'Yeseva+One',
+  'Yesteryear',
+  'Yrsa',
+  'Zeyada',
+  'Zilla+Slab',
+  'Zilla+Slab+Highlight'];
+  
+  /* crear dropdown con array */
+var array = fonts;
+//var lista = document.createElement('select');
+for (var i = 0; i < array.length; i++) {
+  var item = document.createElement('option');
+  item.value = array[i];
+  item.innerHTML = array[i];
+  lista3.appendChild(item);
+}
+var i = 0;
+var interval = setInterval(function() {
+  var font = fonts[i];
+  var link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  link.href = 'https://fonts.googleapis.com/css?family=' + font;
+  document.head.appendChild(link);
+  var div = document.createElement('div');
+  div.innerHTML = font;
+  div.style.fontFamily = font;
+  div.style.fontSize = '20px';
+  div.style.color = 'red';
+  //document.body.appendChild(div);
+  i++;
+  if (i >= fonts.length) {
+    clearInterval(interval);
+  }
+}, 0);
+/* al cambiar seleccion en lista3 aplicar esa fuente */
+lista3.addEventListener('change', function() {
+  var lista3 = document.getElementById('lista3');
+  var estructura = document.getElementsByTagName(lista.value);
+  estructura[estructura.length - 1].style.fontFamily = lista3.value;
+});
+/* crear color picker */
+var colorPicker = document.createElement('input');
+colorPicker.type = 'color';
+colorPicker.value = '#ff0000';
+colorPicker.setAttribute('title', 'Color Picker');
+colorPicker.setAttribute('placeholder', '#000000');
+colorPicker.addEventListener('change', function(e) {
+  var estructura = document.getElementsByTagName(lista.value);
+    estructura[estructura.length - 1].style.color = e.target.value;
+});
+document.body.appendChild(colorPicker);
+/* size font slider */
+var sizeSlider = document.createElement('input');
+sizeSlider.type = 'range';
+sizeSlider.min = '10';
+sizeSlider.max = '100';
+sizeSlider.value = '10';
+sizeSlider.addEventListener('change', function(e) {
+  document.body.style.fontSize = e.target.value + 'px';
+});
+document.body.appendChild(sizeSlider);
+/* sizeSlider se aplica a texto */
+sizeSlider.addEventListener('change', function(e) {
+	var estructura = document.getElementsByTagName(lista.value);
+    estructura[estructura.length - 1].style.fontSize = e.target.value + 'px';
+	estructura[estructura.length - 1].style.backgroundColor = '#eee';
+});
+/* al pulsar buscar y cargar imagen desde mi pc */
+var input = document.createElement('input');
+input.type = 'file';
+input.id = 'file';
+input.name = 'file';
+input.accept = 'image/*';
+input.style.display = 'none';
+document.body.appendChild(input);
+var button = document.createElement('button');
+button.innerHTML = 'Imagen';
+button.onclick = function() {
+  input.click();
+};
+document.body.appendChild(button);
+var img = document.createElement('img');
+img.style.display = 'none';
+document.body.appendChild(img);
+input.onchange = function() {
+  var file = input.files[0];
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    img.src = e.target.result;
+    img.style.display = 'block';
+  };
+  reader.readAsDataURL(file);
+};
+/* img fit cover */
+img.style.width = '100%';
+img.style.height = '100%';
+img.style.objectFit = 'cover';
+});
+        </script>
+    </head>
+    
+</html>

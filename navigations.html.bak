@@ -1,0 +1,35 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+/* css */
+var css = document.createElement('style');
+css.innerHTML = 'body { background-color: #000; color: #fff; }';
+document.body.appendChild(css);
+/* crear tabs estilo html5 */
+var tabs = document.createElement('div');
+tabs.innerHTML = '<div class="tabs"><input id="tab-1" type="radio" name="radio-set" class="tab-selector-1" checked="checked" /><label for="tab-1" class="tab-label-1">Tab One</label><input id="tab-2" type="radio" name="radio-set" class="tab-selector-2" /><label for="tab-2" class="tab-label-2">Tab Two</label><input id="tab-3" type="radio" name="radio-set" class="tab-selector-3" /><label for="tab-3" class="tab-label-3">Tab Three</label><div class="clear-shadow"></div><div class="content"> <div class="content-1"><p>Content of tab 1</p></div><div class="content-2"><p>Content of tab 2</p></div><div class="content-3"><p>Content of tab 3</p></div></div></div>';
+document.body.appendChild(tabs);
+/* navigation bar */
+var nav = document.createElement('div');
+nav.innerHTML = '<a href="http://www.google.com">Google</a> | <a href="http://www.yahoo.com">Yahoo</a> | <a href="http://www.bing.com">Bing</a>';
+document.body.appendChild(nav);
+/* With Forms */
+var form = document.createElement('form');
+form.innerHTML = '<input type="text" name="search" placeholder="Search..."> <input type="submit" value="Search">';
+document.body.appendChild(form);
+/* With Buttons */
+var button = document.createElement('button');
+button.innerHTML = 'Click Me';
+document.body.appendChild(button);
+/* With Text */
+var text = document.createElement('div');
+text.innerHTML = 'Hello World';
+document.body.appendChild(text);
+});
+        </script>
+    </head>
+    
+</html>

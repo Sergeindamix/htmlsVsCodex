@@ -1,0 +1,31 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+
+
+/* caja de texto */
+var texto = document.createElement('input');
+texto.type = 'text';
+texto.id = 'texto';
+texto.style.whiteSpace = 'nowrap';
+document.body.appendChild(texto);
+/* texto en caja se muestra en nuevo div */
+var boton = document.createElement('input');
+boton.type = 'button';
+boton.value = 'css';
+boton.onclick = function() {
+  var texto = document.getElementById('texto').value;
+  var div = document.createElement('div');
+  div.innerHTML = texto;
+  document.body.appendChild(div);  
+};
+document.body.appendChild(boton);
+
+});
+        </script>
+    </head>
+    
+</html>

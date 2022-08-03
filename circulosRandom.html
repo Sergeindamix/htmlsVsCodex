@@ -1,0 +1,33 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+var lienzo = document.createElement('div');
+lienzo.style.width = '100%';
+lienzo.style.height = '100%';
+lienzo.style.backgroundColor = '#ccc';
+document.body.appendChild(lienzo);
+
+setInterval(function() {
+  while (lienzo.firstChild) {
+    lienzo.removeChild(lienzo.firstChild);
+  }
+  for (var i = 0; i < Math.floor(Math.random() * 10); i++) {
+    var circulo = document.createElement('div');
+    circulo.style.width = '100px';
+    circulo.style.height = '100px';
+    circulo.style.borderRadius = '50%';
+    circulo.style.backgroundColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+    circulo.style.position = 'absolute';
+    circulo.style.left = Math.floor(Math.random() * (window.innerWidth - 50)) + 'px';
+    circulo.style.top = Math.floor(Math.random() * (window.innerHeight - 50)) + 'px';
+    lienzo.appendChild(circulo);
+  }
+}, 1000);
+});
+        </script>
+    </head>
+    
+</html>

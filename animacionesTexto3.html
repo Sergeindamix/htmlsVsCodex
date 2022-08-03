@@ -1,0 +1,392 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+/* css */
+var css = document.createElement('style');
+css.innerHTML = 'body { background-color: #000; color: #fff; }';
+document.body.appendChild(css);
+/* hola flashing */
+var hola = document.createElement('div');
+hola.innerHTML = 'Hola';
+hola.style.color = '#fff';
+hola.style.fontSize = '100px';
+hola.style.fontFamily = 'sans-serif';
+hola.style.textAlign = 'center';
+hola.style.position = 'absolute';
+hola.style.top = '50%';
+hola.style.left = '50%';
+hola.style.transform = 'translate(-50%, -50%)';
+hola.style.transition = 'color 1s';
+hola.style.webkitTransition = 'color 1s';
+hola.style.mozTransition = 'color 1s';
+hola.style.oTransition = 'color 1s';
+hola.style.msTransition = 'color 1s';
+document.body.appendChild(hola);
+var colors = ['#f00', '#0f0', '#00f', '#ff0', '#0ff', '#f0f'];
+var colorIndex = 0;
+function changeColor() {
+  hola.style.color = colors[colorIndex];
+  colorIndex = (colorIndex + 1) % colors.length;
+}
+setInterval(changeColor, 1000);
+/* hinge */
+var hinge = document.createElement('div');
+hinge.innerHTML = 'Hinge';
+hinge.style.color = '#fff';
+hinge.style.fontSize = '100px';
+hinge.style.fontFamily = 'sans-serif';
+hinge.style.textAlign = 'center';
+hinge.style.position = 'absolute';
+hinge.style.top = '50%';
+hinge.style.left = '50%';
+hinge.style.transform = 'translate(-50%, -50%)';
+hinge.style.transition = 'transform 1s';
+hinge.style.webkitTransition = 'transform 1s';
+hinge.style.mozTransition = 'transform 1s';
+hinge.style.oTransition = 'transform 1s';
+hinge.style.msTransition = 'transform 1s';
+document.body.appendChild(hinge);
+function rotate() {
+  hinge.style.transform = 'translate(-50%, -50%) rotate(90deg)';
+}
+setTimeout(rotate, 1000);
+/* rollIn */
+var rollIn = document.createElement('div');
+rollIn.innerHTML = 'Roll In';
+rollIn.style.color = '#fff';
+rollIn.style.fontSize = '100px';
+rollIn.style.fontFamily = 'sans-serif';
+rollIn.style.textAlign = 'center';
+rollIn.style.position = 'absolute';
+rollIn.style.top = '50%';
+rollIn.style.left = '50%';
+rollIn.style.transform = 'translate(-50%, -50%)';
+rollIn.style.transition = 'transform 1s';
+rollIn.style.webkitTransition = 'transform 1s';
+rollIn.style.mozTransition = 'transform 1s';
+rollIn.style.oTransition = 'transform 1s';
+rollIn.style.msTransition = 'transform 1s';
+document.body.appendChild(rollIn);
+function roll() {
+  rollIn.style.transform = 'translate(-50%, -50%) rotate(360deg)';
+}
+setTimeout(roll, 1000);
+/* zoomIn */
+var zoomIn = document.createElement('div');
+zoomIn.innerHTML = 'Zoom In';
+zoomIn.style.color = '#fff';
+zoomIn.style.fontSize = '100px';
+zoomIn.style.fontFamily = 'sans-serif';
+zoomIn.style.textAlign = 'center';
+zoomIn.style.position = 'absolute';
+zoomIn.style.top = '50%';
+zoomIn.style.left = '50%';
+zoomIn.style.transform = 'translate(-50%, -50%)';
+zoomIn.style.transition = 'transform 1s';
+zoomIn.style.webkitTransition = 'transform 1s';
+zoomIn.style.mozTransition = 'transform 1s';
+zoomIn.style.oTransition = 'transform 1s';
+zoomIn.style.msTransition = 'transform 1s';
+document.body.appendChild(zoomIn);
+function zoom() {
+  zoomIn.style.transform = 'translate(-50%, -50%) scale(2)';
+}
+setTimeout(zoom, 1000);
+/* zoomInDown */
+var zoomInDown = document.createElement('div');
+zoomInDown.innerHTML = 'Zoom In Down';
+zoomInDown.style.color = '#fff';
+zoomInDown.style.fontSize = '100px';
+zoomInDown.style.fontFamily = 'sans-serif';
+zoomInDown.style.textAlign = 'center';
+zoomInDown.style.position = 'absolute';
+zoomInDown.style.top = '50%';
+zoomInDown.style.left = '50%';
+zoomInDown.style.transform = 'translate(-50%, -50%)';
+zoomInDown.style.transition = 'transform 1s';
+zoomInDown.style.webkitTransition = 'transform 1s';
+zoomInDown.style.mozTransition = 'transform 1s';
+zoomInDown.style.oTransition = 'transform 1s';
+zoomInDown.style.msTransition = 'transform 1s';
+document.body.appendChild(zoomInDown);
+function zoomDown() {
+  zoomInDown.style.transform = 'translate(-50%, -50%) scale(2) translateY(100px)';
+}
+setTimeout(zoomDown, 1000);
+/* zoomInLeft */
+var zoomInLeft = document.createElement('div');
+zoomInLeft.innerHTML = 'Zoom In Left';
+zoomInLeft.style.color = '#fff';
+zoomInLeft.style.fontSize = '100px';
+zoomInLeft.style.fontFamily = 'sans-serif';
+zoomInLeft.style.textAlign = 'center';
+zoomInLeft.style.position = 'absolute';
+zoomInLeft.style.top = '50%';
+zoomInLeft.style.left = '50%';
+zoomInLeft.style.transform = 'translate(-50%, -50%)';
+zoomInLeft.style.transition = 'transform 1s';
+zoomInLeft.style.webkitTransition = 'transform 1s';
+zoomInLeft.style.mozTransition = 'transform 1s';
+zoomInLeft.style.oTransition = 'transform 1s';
+zoomInLeft.style.msTransition = 'transform 1s';
+document.body.appendChild(zoomInLeft);
+function zoomLeft() {
+  zoomInLeft.style.transform = 'translate(-50%, -50%) scale(2) translateX(-100px)';
+}
+setTimeout(zoomLeft, 1000);
+/* zoomInRight */
+var zoomInRight = document.createElement('div');
+zoomInRight.innerHTML = 'Zoom In Right';
+zoomInRight.style.color = '#fff';
+zoomInRight.style.fontSize = '100px';
+zoomInRight.style.fontFamily = 'sans-serif';
+zoomInRight.style.textAlign = 'center';
+zoomInRight.style.position = 'absolute';
+zoomInRight.style.top = '50%';
+zoomInRight.style.left = '50%';
+zoomInRight.style.transform = 'translate(-50%, -50%)';
+zoomInRight.style.transition = 'transform 1s';
+zoomInRight.style.webkitTransition = 'transform 1s';
+zoomInRight.style.mozTransition = 'transform 1s';
+zoomInRight.style.oTransition = 'transform 1s';
+zoomInRight.style.msTransition = 'transform 1s';
+document.body.appendChild(zoomInRight);
+function zoomRight() {
+  zoomInRight.style.transform = 'translate(-50%, -50%) scale(2) translateX(100px)';
+}
+setTimeout(zoomRight, 1000);
+/* zoomInUp */
+var zoomInUp = document.createElement('div');
+zoomInUp.innerHTML = 'Zoom In Up';
+zoomInUp.style.color = '#fff';
+zoomInUp.style.fontSize = '100px';
+zoomInUp.style.fontFamily = 'sans-serif';
+zoomInUp.style.textAlign = 'center';
+zoomInUp.style.position = 'absolute';
+zoomInUp.style.top = '50%';
+zoomInUp.style.left = '50%';
+zoomInUp.style.transform = 'translate(-50%, -50%)';
+zoomInUp.style.transition = 'transform 1s';
+zoomInUp.style.webkitTransition = 'transform 1s';
+zoomInUp.style.mozTransition = 'transform 1s';
+zoomInUp.style.oTransition = 'transform 1s';
+zoomInUp.style.msTransition = 'transform 1s';
+document.body.appendChild(zoomInUp);
+function zoomUp() {
+  zoomInUp.style.transform = 'translate(-50%, -50%) scale(2) translateY(-100px)';
+}
+setTimeout(zoomUp, 1000);
+/* zoomOutDown */
+var zoomOutDown = document.createElement('div');
+zoomOutDown.innerHTML = 'Zoom Out Down';
+zoomOutDown.style.color = '#fff';
+zoomOutDown.style.fontSize = '100px';
+zoomOutDown.style.fontFamily = 'sans-serif';
+zoomOutDown.style.textAlign = 'center';
+zoomOutDown.style.position = 'absolute';
+zoomOutDown.style.top = '50%';
+zoomOutDown.style.left = '50%';
+zoomOutDown.style.transform = 'translate(-50%, -50%)';
+zoomOutDown.style.transition = 'transform 1s';
+zoomOutDown.style.webkitTransition = 'transform 1s';
+zoomOutDown.style.mozTransition = 'transform 1s';
+zoomOutDown.style.oTransition = 'transform 1s';
+zoomOutDown.style.msTransition = 'transform 1s';
+document.body.appendChild(zoomOutDown);
+function zoomOut() {
+  zoomOutDown.style.transform = 'translate(-50%, -50%) scale(0.5) translateY(100px)';
+}
+setTimeout(zoomOut, 1000);
+/* slideInDown */
+var slideInDown = document.createElement('div');
+slideInDown.innerHTML = 'Slide In Down';
+slideInDown.style.color = '#fff';
+slideInDown.style.fontSize = '100px';
+slideInDown.style.fontFamily = 'sans-serif';
+slideInDown.style.textAlign = 'center';
+slideInDown.style.position = 'absolute';
+slideInDown.style.top = '50%';
+slideInDown.style.left = '50%';
+slideInDown.style.transform = 'translate(-50%, -50%)';
+slideInDown.style.transition = 'transform 1s';
+slideInDown.style.webkitTransition = 'transform 1s';
+slideInDown.style.mozTransition = 'transform 1s';
+slideInDown.style.oTransition = 'transform 1s';
+slideInDown.style.msTransition = 'transform 1s';
+document.body.appendChild(slideInDown);
+function slideDown() {
+  slideInDown.style.transform = 'translate(-50%, -50%) translateY(100px)';
+}
+setTimeout(slideDown, 1000);
+/* slideInLeft */
+var slideInLeft = document.createElement('div');
+slideInLeft.innerHTML = 'Slide In Left';
+slideInLeft.style.color = '#fff';
+slideInLeft.style.fontSize = '100px';
+slideInLeft.style.fontFamily = 'sans-serif';
+slideInLeft.style.textAlign = 'center';
+slideInLeft.style.position = 'absolute';
+slideInLeft.style.top = '50%';
+slideInLeft.style.left = '50%';
+slideInLeft.style.transform = 'translate(-50%, -50%)';
+slideInLeft.style.transition = 'transform 1s';
+slideInLeft.style.webkitTransition = 'transform 1s';
+slideInLeft.style.mozTransition = 'transform 1s';
+slideInLeft.style.oTransition = 'transform 1s';
+slideInLeft.style.msTransition = 'transform 1s';
+document.body.appendChild(slideInLeft);
+function slideLeft() {
+  slideInLeft.style.transform = 'translate(-50%, -50%) translateX(-100px)';
+}
+setTimeout(slideLeft, 1000);
+/* slideInRight */
+var slideInRight = document.createElement('div');
+slideInRight.innerHTML = 'Slide In Right';
+slideInRight.style.color = '#fff';
+slideInRight.style.fontSize = '100px';
+slideInRight.style.fontFamily = 'sans-serif';
+slideInRight.style.textAlign = 'center';
+slideInRight.style.position = 'absolute';
+slideInRight.style.top = '50%';
+slideInRight.style.left = '50%';
+slideInRight.style.transform = 'translate(-50%, -50%)';
+slideInRight.style.transition = 'transform 1s';
+slideInRight.style.webkitTransition = 'transform 1s';
+slideInRight.style.mozTransition = 'transform 1s';
+slideInRight.style.oTransition = 'transform 1s';
+slideInRight.style.msTransition = 'transform 1s';
+document.body.appendChild(slideInRight);
+function slideRight() {
+  slideInRight.style.transform = 'translate(-50%, -50%) translateX(100px)';
+}
+setTimeout(slideRight, 1000);
+/* slideInUp */
+var slideInUp = document.createElement('div');
+slideInUp.innerHTML = 'Slide In Up';
+slideInUp.style.color = '#fff';
+slideInUp.style.fontSize = '100px';
+slideInUp.style.fontFamily = 'sans-serif';
+slideInUp.style.textAlign = 'center';
+slideInUp.style.position = 'absolute';
+slideInUp.style.top = '50%';
+slideInUp.style.left = '50%';
+slideInUp.style.transform = 'translate(-50%, -50%)';
+slideInUp.style.transition = 'transform 1s';
+slideInUp.style.webkitTransition = 'transform 1s';
+slideInUp.style.mozTransition = 'transform 1s';
+slideInUp.style.oTransition = 'transform 1s';
+slideInUp.style.msTransition = 'transform 1s';
+document.body.appendChild(slideInUp);
+function slideUp() {
+  slideInUp.style.transform = 'translate(-50%, -50%) translateY(-100px)';
+}
+setTimeout(slideUp, 1000);
+/* slideOutDown */
+var slideOutDown = document.createElement('div');
+slideOutDown.innerHTML = 'Slide Out Down';
+slideOutDown.style.color = '#fff';
+slideOutDown.style.fontSize = '100px';
+slideOutDown.style.fontFamily = 'sans-serif';
+slideOutDown.style.textAlign = 'center';
+slideOutDown.style.position = 'absolute';
+slideOutDown.style.top = '50%';
+slideOutDown.style.left = '50%';
+slideOutDown.style.transform = 'translate(-50%, -50%)';
+slideOutDown.style.transition = 'transform 1s';
+slideOutDown.style.webkitTransition = 'transform 1s';
+slideOutDown.style.mozTransition = 'transform 1s';
+slideOutDown.style.oTransition = 'transform 1s';
+slideOutDown.style.msTransition = 'transform 1s';
+document.body.appendChild(slideOutDown);
+function slideOut() {
+  slideOutDown.style.transform = 'translate(-50%, -50%) translateY(100px)';
+}
+setTimeout(slideOut, 1000);
+/* enumerar todas las animaciones */
+var animaciones = [
+  'bounce',
+  'flash',
+  'rubberBand',
+  'shakeX',
+  'tada',
+  'wobble',
+  'heartBeat',
+  'backInDown'
+];
+/* cuales faltan? */
+var faltan = [
+  'bounceIn',
+  'bounceInDown',
+  'bounceInLeft',
+  'bounceInRight',
+  'bounceInUp',
+  'bounceOut',
+  'bounceOutDown',
+  'bounceOutLeft',
+  'bounceOutRight',
+  'bounceOutUp',
+  'fadeIn',
+  'fadeInDown',
+  'fadeInDownBig',
+  'fadeInLeft',
+  'fadeInLeftBig',
+  'fadeInRight',
+  'fadeInRightBig',
+  'fadeInUp',
+  'fadeInUpBig',
+  'fadeOut',
+  'fadeOutDown',
+  'fadeOutDownBig',
+  'fadeOutLeft',
+  'fadeOutLeftBig',
+  'fadeOutRight',
+  'fadeOutRightBig',
+  'fadeOutUp',
+  'fadeOutUpBig',
+  'flip',
+  'flipInX',
+  'flipInY',
+  'flipOutX',
+  'flipOutY',
+  'lightSpeedIn',
+  'lightSpeedOut',
+  'rotateIn',
+  'rotateInDownLeft',
+  'rotateInDownRight',
+  'rotateInUpLeft',
+  'rotateInUpRight',
+  'rotateOut',
+  'rotateOutDownLeft',
+  'rotateOutDownRight',
+  'rotateOutUpLeft',
+  'rotateOutUpRight',
+  'hinge',
+  'rollIn',
+  'rollOut',
+  'zoomIn',
+  'zoomInDown',
+  'zoomInLeft',
+  'zoomInRight',
+  'zoomInUp',
+  'zoomOut',
+  'zoomOutDown',
+  'zoomOutLeft',
+  'zoomOutRight',
+  'zoomOutUp',
+  'slideInDown',
+  'slideInLeft',
+  'slideInRight',
+  'slideInUp',
+  'slideOutDown',
+  'slideOutLeft',
+  'slideOutRight',
+  'slideOutUp'
+];
+});
+        </script>
+    </head>
+    
+</html>

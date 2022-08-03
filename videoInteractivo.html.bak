@@ -1,0 +1,197 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+/* css */
+var css = document.createElement('style');
+css.innerHTML = 'body { background-color: #000; color: #fff; }';
+document.body.appendChild(css);
+/* video 500 x 800 */
+var video = document.createElement('video');
+video.width = 500;
+video.height = 800;
+video.src = 'http://www.w3schools.com/html/mov_bbb.mp4';
+video.autoplay = true;
+video.loop = true;
+document.body.appendChild(video);
+/* sin perder aspecto */
+video.style.width = '100%';
+video.style.height = 'auto';
+/* recortar orillas 250px */
+video.style.marginLeft = '-50%';
+video.style.marginRight = '-50%';
+
+/* crear flecha drop up */
+var arrow = document.createElement('div');
+arrow.style.width = '0';
+arrow.style.height = '0';
+arrow.style.borderLeft = '50px solid transparent';
+arrow.style.borderRight = '50px solid transparent';
+arrow.style.borderBottom = '100px solid #fff';
+arrow.style.position = 'absolute';
+arrow.style.bottom = '0';
+arrow.style.left = '50%';
+arrow.style.marginLeft = '-50px';
+document.body.appendChild(arrow);
+/* crear opuesto */
+var arrow2 = document.createElement('div');
+arrow2.style.width = '0';
+arrow2.style.height = '0';
+arrow2.style.borderLeft = '50px solid transparent';
+arrow2.style.borderRight = '50px solid transparent';
+arrow2.style.borderTop = '100px solid #fff';
+arrow2.style.position = 'absolute';
+arrow2.style.top = '0';
+arrow2.style.left = '50%';
+arrow2.style.marginLeft = '-50px';
+document.body.appendChild(arrow2);
+/* hacer lo mismo a los lados */
+var arrow3 = document.createElement('div');
+arrow3.style.width = '0';
+arrow3.style.height = '0';
+arrow3.style.borderTop = '50px solid transparent';
+arrow3.style.borderBottom = '50px solid transparent';
+arrow3.style.borderLeft = '100px solid #fff';
+arrow3.style.position = 'absolute';
+arrow3.style.top = '50%';
+arrow3.style.left = '0';
+arrow3.style.marginTop = '-50px';
+document.body.appendChild(arrow3);
+var arrow4 = document.createElement('div');
+arrow4.style.width = '0';
+arrow4.style.height = '0';
+arrow4.style.borderTop = '50px solid transparent';
+arrow4.style.borderBottom = '50px solid transparent';
+arrow4.style.borderRight = '100px solid #fff';
+arrow4.style.position = 'absolute';
+arrow4.style.top = '50%';
+arrow4.style.right = '0';
+arrow4.style.marginTop = '-50px';
+document.body.appendChild(arrow4);
+/* flecha uno se acerca smooth al centro */
+arrow.style.transition = 'all 1s ease-in-out';
+arrow.style.bottom = '50%';
+arrow.style.marginBottom = '-50px';
+/* regresar */
+arrow.style.bottom = '0';
+arrow.style.marginBottom = '0';
+/* crear loop */
+var loop = function() {
+  arrow.style.bottom = '50%';
+  arrow.style.marginBottom = '-50px';
+  setTimeout(function() {
+    arrow.style.bottom = '0';
+    arrow.style.marginBottom = '0';
+    setTimeout(loop, 1000);
+  }, 1000);
+};
+loop();
+/* hacer lo mismo con las demas flechas */
+var loop2 = function() {
+  arrow2.style.top = '50%';
+  arrow2.style.marginTop = '-50px';
+  setTimeout(function() {
+    arrow2.style.top = '0';
+    arrow2.style.marginTop = '0';
+    setTimeout(loop2, 1000);
+  }, 1000);
+};
+loop2();
+var loop3 = function() {
+  arrow3.style.left = '50%';
+  arrow3.style.marginLeft = '-50px';
+  setTimeout(function() {
+    arrow3.style.left = '0';
+    arrow3.style.marginLeft = '0';
+    setTimeout(loop3, 1000);
+  }, 1000);
+};
+loop3();
+var loop4 = function() {
+  arrow4.style.right = '50%';
+  arrow4.style.marginRight = '-50px';
+  setTimeout(function() {
+    arrow4.style.right = '0';
+    arrow4.style.marginRight = '0';
+    setTimeout(loop4, 1000);
+  }, 1000);
+};
+loop4();
+/* smooth */
+arrow.style.transition = 'all 1s ease-in-out';
+arrow2.style.transition = 'all 1s ease-in-out';
+arrow3.style.transition = 'all 1s ease-in-out';
+arrow4.style.transition = 'all 1s ease-in-out';
+/* solo acepta archivos de video */
+var boton = document.createElement('button');
+boton.innerHTML = 'Cargar archivos de video';
+
+boton.onclick = function() {
+  var input = document.createElement('input');
+  input.type = 'file';
+  input.multiple = true;
+  input.accept = 'video/*';
+  input.onchange = function() {
+    for (var i = 0; i < input.files.length; i++) {
+      var file = input.files[i];
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        
+        video.src = e.target.result;
+        video.controls = true;
+        document.body.appendChild(video);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+  input.click();
+};
+document.body.appendChild(boton);
+/* boton */
+/* al cargar video reproducir en fondo */
+/* ocultar al finalizar */
+/* reproducir carpeta de videos */
+/* ocultar boton al cargar archivos y mostrar al terminar de reproducilsos */
+/* mostrar boton al termino de la reproduccion */
+var video = document.createElement('input');
+video.type = 'file';
+video.accept = 'video/*';
+video.webkitdirectory = true;
+video.addEventListener('change', function(e) {
+  var files = e.target.files;
+  var i = 0;
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    var url = e.target.result;
+    var video = document.createElement('video');
+    video.src = url;
+    video.autoplay = true;
+    video.style.width = '100%';
+    video.style.height = '100%';
+    video.style.position = 'absolute';
+    video.style.top = '0';
+    video.style.left = '0';
+    video.style.zIndex = '-1';
+    video.style.objectFit = 'cover';
+    document.body.appendChild(video);
+    video.addEventListener('ended', function() {
+      document.body.removeChild(video);
+      i++;
+      if (i < files.length) {
+        reader.readAsDataURL(files[i]);
+      }
+    });
+  };
+  reader.readAsDataURL(files[i]);
+  video.style.display = 'none';
+});
+document.body.appendChild(video);
+video.style.display = 'block';
+document.body.appendChild(button);
+});
+        </script>
+    </head>
+    
+</html>

@@ -1,0 +1,63 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+/* css */
+var css = document.createElement('style');
+css.innerHTML = 'body { background-color: #000; color: #fff; }';
+document.body.appendChild(css);
+/* crear division carrusel, alto 250, ancho auto, pading 5, blanco */
+var carrusel = document.createElement('div');
+carrusel.style.height = '250px';
+carrusel.style.width = 'auto';
+carrusel.style.padding = '5px';
+carrusel.style.backgroundColor = '#fff';
+document.body.appendChild(carrusel);
+/* boton abrir carpeta de archivos */
+var boton = document.createElement('input');
+boton.type = 'file';
+boton.multiple = true;
+boton.id = 'boton';
+document.body.appendChild(boton);
+/* solo archivos html */
+boton.accept = '.html';
+/* al abrir carpeta crear array de los archivos */
+boton.addEventListener('change', function(e) {
+  var files = e.target.files;
+  for (var i = 0, f; f = files[i]; i++) {
+    if (f.name.indexOf('.html') > -1) {
+      htmls.push(f);
+    }
+  }
+});
+/* mostrar cada uno de los html */
+boton.addEventListener('change', function(e) {
+  var archivos = e.target.files;
+  for (var i = 0; i < archivos.length; i++) {
+    var archivo = archivos[i];
+    var reader = new FileReader();
+    reader.addEventListener('load', function(e) {
+      var iframe = document.createElement('iframe');
+      iframe.src = e.target.result;	  
+      document.body.appendChild(iframe);
+    });
+    reader.readAsDataURL(archivo);
+  }
+});
+/* cambiar elegir archivos por abrir carpeta */
+boton.directory = true;
+boton.webkitdirectory = true;
+
+/* si ya se cargaron los archivos ocultar boton y texto */
+boton.addEventListener('change', function(e) {
+  boton.style.display = 'none';
+  boton.nextSibling.style.display = 'none';
+});
+
+});
+        </script>
+    </head>
+    
+</html>

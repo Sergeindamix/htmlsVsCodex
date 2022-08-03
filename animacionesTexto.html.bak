@@ -1,0 +1,583 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+/* css */
+var css = document.createElement('style');
+css.innerHTML = 'body { background-color: #000; color: #fff; }';
+document.body.appendChild(css);
+/* hola flashing */
+var hola = document.createElement('div');
+hola.innerHTML = 'Hola';
+hola.style.color = '#fff';
+hola.style.fontSize = '100px';
+hola.style.fontFamily = 'sans-serif';
+hola.style.textAlign = 'center';
+hola.style.position = 'absolute';
+hola.style.top = '50%';
+hola.style.left = '50%';
+hola.style.transform = 'translate(-50%, -50%)';
+hola.style.transition = 'color 1s';
+hola.style.webkitTransition = 'color 1s';
+hola.style.mozTransition = 'color 1s';
+hola.style.oTransition = 'color 1s';
+hola.style.msTransition = 'color 1s';
+document.body.appendChild(hola);
+var colors = ['#f00', '#0f0', '#00f', '#ff0', '#0ff', '#f0f'];
+var colorIndex = 0;
+function changeColor() {
+  hola.style.color = colors[colorIndex];
+  colorIndex = (colorIndex + 1) % colors.length;
+}
+setInterval(changeColor, 1000);
+/* 'bounceIn' */
+var bounceIn = document.createElement('div');
+bounceIn.innerHTML = 'Bounce In';
+bounceIn.style.color = '#fff';
+bounceIn.style.fontSize = '100px';
+bounceIn.style.fontFamily = 'sans-serif';
+bounceIn.style.textAlign = 'center';
+bounceIn.style.position = 'absolute';
+bounceIn.style.top = '50%';
+bounceIn.style.left = '50%';
+bounceIn.style.transform = 'translate(-50%, -50%)';
+bounceIn.style.transition = 'all 1s';
+bounceIn.style.webkitTransition = 'all 1s';
+bounceIn.style.mozTransition = 'all 1s';
+bounceIn.style.oTransition = 'all 1s';
+bounceIn.style.msTransition = 'all 1s';
+bounceIn.style.opacity = '0';
+bounceIn.style.transform = 'translate(-50%, -50%) scale(0.5)';
+document.body.appendChild(bounceIn);
+setTimeout(function() {
+  bounceIn.style.opacity = '1';
+  bounceIn.style.transform = 'translate(-50%, -50%) scale(1)';
+}, 1000);
+/* bounceInDown */
+var bounceInDown = document.createElement('div');
+bounceInDown.innerHTML = 'Bounce In Down';
+bounceInDown.style.color = '#fff';
+bounceInDown.style.fontSize = '100px';
+bounceInDown.style.fontFamily = 'sans-serif';
+bounceInDown.style.textAlign = 'center';
+bounceInDown.style.position = 'absolute';
+bounceInDown.style.top = '50%';
+bounceInDown.style.left = '50%';
+bounceInDown.style.transform = 'translate(-50%, -50%)';
+bounceInDown.style.transition = 'all 1s';
+bounceInDown.style.webkitTransition = 'all 1s';
+bounceInDown.style.mozTransition = 'all 1s';
+bounceInDown.style.oTransition = 'all 1s';
+bounceInDown.style.msTransition = 'all 1s';
+bounceInDown.style.opacity = '0';
+bounceInDown.style.transform = 'translate(-50%, -50%) translateY(-1000px)';
+document.body.appendChild(bounceInDown);
+setTimeout(function() {
+  bounceInDown.style.opacity = '1';
+  bounceInDown.style.transform = 'translate(-50%, -50%) translateY(0)';
+}, 1000);
+/* bounceInLeft */
+var bounceInLeft = document.createElement('div');
+bounceInLeft.innerHTML = 'Bounce In Left';
+bounceInLeft.style.color = '#fff';
+bounceInLeft.style.fontSize = '100px';
+bounceInLeft.style.fontFamily = 'sans-serif';
+bounceInLeft.style.textAlign = 'center';
+bounceInLeft.style.position = 'absolute';
+bounceInLeft.style.top = '50%';
+bounceInLeft.style.left = '50%';
+bounceInLeft.style.transform = 'translate(-50%, -50%)';
+bounceInLeft.style.transition = 'all 1s';
+bounceInLeft.style.webkitTransition = 'all 1s';
+bounceInLeft.style.mozTransition = 'all 1s';
+bounceInLeft.style.oTransition = 'all 1s';
+bounceInLeft.style.msTransition = 'all 1s';
+bounceInLeft.style.opacity = '0';
+bounceInLeft.style.transform = 'translate(-50%, -50%) translateX(-1000px)';
+document.body.appendChild(bounceInLeft);
+setTimeout(function() {
+  bounceInLeft.style.opacity = '1';
+  bounceInLeft.style.transform = 'translate(-50%, -50%) translateX(0)';
+}, 1000);
+/* bounceInRight */
+var bounceInRight = document.createElement('div');
+bounceInRight.innerHTML = 'Bounce In Right';
+bounceInRight.style.color = '#fff';
+bounceInRight.style.fontSize = '100px';
+bounceInRight.style.fontFamily = 'sans-serif';
+bounceInRight.style.textAlign = 'center';
+bounceInRight.style.position = 'absolute';
+bounceInRight.style.top = '50%';
+bounceInRight.style.left = '50%';
+bounceInRight.style.transform = 'translate(-50%, -50%)';
+bounceInRight.style.transition = 'all 1s';
+bounceInRight.style.webkitTransition = 'all 1s';
+bounceInRight.style.mozTransition = 'all 1s';
+bounceInRight.style.oTransition = 'all 1s';
+bounceInRight.style.msTransition = 'all 1s';
+bounceInRight.style.opacity = '0';
+bounceInRight.style.transform = 'translate(-50%, -50%) translateX(1000px)';
+document.body.appendChild(bounceInRight);
+setTimeout(function() {
+  bounceInRight.style.opacity = '1';
+  bounceInRight.style.transform = 'translate(-50%, -50%) translateX(0)';
+}, 1000);
+/* bounceInUp */
+var bounceInUp = document.createElement('div');
+bounceInUp.innerHTML = 'Bounce In Up';
+bounceInUp.style.color = '#fff';
+bounceInUp.style.fontSize = '100px';
+bounceInUp.style.fontFamily = 'sans-serif';
+bounceInUp.style.textAlign = 'center';
+bounceInUp.style.position = 'absolute';
+bounceInUp.style.top = '50%';
+bounceInUp.style.left = '50%';
+bounceInUp.style.transform = 'translate(-50%, -50%)';
+bounceInUp.style.transition = 'all 1s';
+bounceInUp.style.webkitTransition = 'all 1s';
+bounceInUp.style.mozTransition = 'all 1s';
+bounceInUp.style.oTransition = 'all 1s';
+bounceInUp.style.msTransition = 'all 1s';
+bounceInUp.style.opacity = '0';
+bounceInUp.style.transform = 'translate(-50%, -50%) translateY(1000px)';
+document.body.appendChild(bounceInUp);
+setTimeout(function() {
+  bounceInUp.style.opacity = '1';
+  bounceInUp.style.transform = 'translate(-50%, -50%) translateY(0)';
+}, 1000);
+/* bounceOut */
+var bounceOut = document.createElement('div');
+bounceOut.innerHTML = 'Bounce Out';
+bounceOut.style.color = '#fff';
+bounceOut.style.fontSize = '100px';
+bounceOut.style.fontFamily = 'sans-serif';
+bounceOut.style.textAlign = 'center';
+bounceOut.style.position = 'absolute';
+bounceOut.style.top = '50%';
+bounceOut.style.left = '50%';
+bounceOut.style.transform = 'translate(-50%, -50%)';
+bounceOut.style.transition = 'all 1s';
+bounceOut.style.webkitTransition = 'all 1s';
+bounceOut.style.mozTransition = 'all 1s';
+bounceOut.style.oTransition = 'all 1s';
+bounceOut.style.msTransition = 'all 1s';
+bounceOut.style.opacity = '1';
+bounceOut.style.transform = 'translate(-50%, -50%) scale(1)';
+document.body.appendChild(bounceOut);
+setTimeout(function() {
+  bounceOut.style.opacity = '0';
+  bounceOut.style.transform = 'translate(-50%, -50%) scale(0.5)';
+}, 1000);
+/* bounceOutDown */
+var bounceOutDown = document.createElement('div');
+bounceOutDown.innerHTML = 'Bounce Out Down';
+bounceOutDown.style.color = '#fff';
+bounceOutDown.style.fontSize = '100px';
+bounceOutDown.style.fontFamily = 'sans-serif';
+bounceOutDown.style.textAlign = 'center';
+bounceOutDown.style.position = 'absolute';
+bounceOutDown.style.top = '50%';
+bounceOutDown.style.left = '50%';
+bounceOutDown.style.transform = 'translate(-50%, -50%)';
+bounceOutDown.style.transition = 'all 1s';
+bounceOutDown.style.webkitTransition = 'all 1s';
+bounceOutDown.style.mozTransition = 'all 1s';
+bounceOutDown.style.oTransition = 'all 1s';
+bounceOutDown.style.msTransition = 'all 1s';
+bounceOutDown.style.opacity = '1';
+bounceOutDown.style.transform = 'translate(-50%, -50%) translateY(0)';
+document.body.appendChild(bounceOutDown);
+setTimeout(function() {
+  bounceOutDown.style.opacity = '0';
+  bounceOutDown.style.transform = 'translate(-50%, -50%) translateY(1000px)';
+}, 1000);
+/* bounceOutLeft */
+var bounceOutLeft = document.createElement('div');
+bounceOutLeft.innerHTML = 'Bounce Out Left';
+bounceOutLeft.style.color = '#fff';
+bounceOutLeft.style.fontSize = '100px';
+bounceOutLeft.style.fontFamily = 'sans-serif';
+bounceOutLeft.style.textAlign = 'center';
+bounceOutLeft.style.position = 'absolute';
+bounceOutLeft.style.top = '50%';
+bounceOutLeft.style.left = '50%';
+bounceOutLeft.style.transform = 'translate(-50%, -50%)';
+bounceOutLeft.style.transition = 'all 1s';
+bounceOutLeft.style.webkitTransition = 'all 1s';
+bounceOutLeft.style.mozTransition = 'all 1s';
+bounceOutLeft.style.oTransition = 'all 1s';
+bounceOutLeft.style.msTransition = 'all 1s';
+bounceOutLeft.style.opacity = '1';
+bounceOutLeft.style.transform = 'translate(-50%, -50%) translateX(0)';
+document.body.appendChild(bounceOutLeft);
+setTimeout(function() {
+  bounceOutLeft.style.opacity = '0';
+  bounceOutLeft.style.transform = 'translate(-50%, -50%) translateX(-1000px)';
+}, 1000);
+/* bounceOutRight */
+var bounceOutRight = document.createElement('div');
+bounceOutRight.innerHTML = 'Bounce Out Right';
+bounceOutRight.style.color = '#fff';
+bounceOutRight.style.fontSize = '100px';
+bounceOutRight.style.fontFamily = 'sans-serif';
+bounceOutRight.style.textAlign = 'center';
+bounceOutRight.style.position = 'absolute';
+bounceOutRight.style.top = '50%';
+bounceOutRight.style.left = '50%';
+bounceOutRight.style.transform = 'translate(-50%, -50%)';
+bounceOutRight.style.transition = 'all 1s';
+bounceOutRight.style.webkitTransition = 'all 1s';
+bounceOutRight.style.mozTransition = 'all 1s';
+bounceOutRight.style.oTransition = 'all 1s';
+bounceOutRight.style.msTransition = 'all 1s';
+bounceOutRight.style.opacity = '1';
+bounceOutRight.style.transform = 'translate(-50%, -50%) translateX(0)';
+document.body.appendChild(bounceOutRight);
+setTimeout(function() {
+  bounceOutRight.style.opacity = '0';
+  bounceOutRight.style.transform = 'translate(-50%, -50%) translateX(1000px)';
+}, 1000);
+/* bounceOutUp */
+var bounceOutUp = document.createElement('div');
+bounceOutUp.innerHTML = 'Bounce Out Up';
+bounceOutUp.style.color = '#fff';
+bounceOutUp.style.fontSize = '100px';
+bounceOutUp.style.fontFamily = 'sans-serif';
+bounceOutUp.style.textAlign = 'center';
+bounceOutUp.style.position = 'absolute';
+bounceOutUp.style.top = '50%';
+bounceOutUp.style.left = '50%';
+bounceOutUp.style.transform = 'translate(-50%, -50%)';
+bounceOutUp.style.transition = 'all 1s';
+bounceOutUp.style.webkitTransition = 'all 1s';
+bounceOutUp.style.mozTransition = 'all 1s';
+bounceOutUp.style.oTransition = 'all 1s';
+bounceOutUp.style.msTransition = 'all 1s';
+bounceOutUp.style.opacity = '1';
+bounceOutUp.style.transform = 'translate(-50%, -50%) translateY(0)';
+document.body.appendChild(bounceOutUp);
+setTimeout(function() {
+  bounceOutUp.style.opacity = '0';
+  bounceOutUp.style.transform = 'translate(-50%, -50%) translateY(-1000px)';
+}, 1000);
+/* fadeIn */
+var fadeIn = document.createElement('div');
+fadeIn.innerHTML = 'Fade In';
+fadeIn.style.color = '#fff';
+fadeIn.style.fontSize = '100px';
+fadeIn.style.fontFamily = 'sans-serif';
+fadeIn.style.textAlign = 'center';
+fadeIn.style.position = 'absolute';
+fadeIn.style.top = '50%';
+fadeIn.style.left = '50%';
+fadeIn.style.transform = 'translate(-50%, -50%)';
+fadeIn.style.transition = 'all 1s';
+fadeIn.style.webkitTransition = 'all 1s';
+fadeIn.style.mozTransition = 'all 1s';
+fadeIn.style.oTransition = 'all 1s';
+fadeIn.style.msTransition = 'all 1s';
+fadeIn.style.opacity = '0';
+document.body.appendChild(fadeIn);
+setTimeout(function() {
+  fadeIn.style.opacity = '1';
+}, 1000);
+/* fadeInDown */
+var fadeInDown = document.createElement('div');
+fadeInDown.innerHTML = 'Fade In Down';
+fadeInDown.style.color = '#fff';
+fadeInDown.style.fontSize = '100px';
+fadeInDown.style.fontFamily = 'sans-serif';
+fadeInDown.style.textAlign = 'center';
+fadeInDown.style.position = 'absolute';
+fadeInDown.style.top = '50%';
+fadeInDown.style.left = '50%';
+fadeInDown.style.transform = 'translate(-50%, -50%)';
+fadeInDown.style.transition = 'all 1s';
+fadeInDown.style.webkitTransition = 'all 1s';
+fadeInDown.style.mozTransition = 'all 1s';
+fadeInDown.style.oTransition = 'all 1s';
+fadeInDown.style.msTransition = 'all 1s';
+fadeInDown.style.opacity = '0';
+fadeInDown.style.transform = 'translate(-50%, -50%) translateY(-1000px)';
+document.body.appendChild(fadeInDown);
+setTimeout(function() {
+  fadeInDown.style.opacity = '1';
+  fadeInDown.style.transform = 'translate(-50%, -50%) translateY(0)';
+}, 1000);
+/* fadeInDownBig */
+var fadeInDownBig = document.createElement('div');
+fadeInDownBig.innerHTML = 'Fade In Down Big';
+fadeInDownBig.style.color = '#fff';
+fadeInDownBig.style.fontSize = '100px';
+fadeInDownBig.style.fontFamily = 'sans-serif';
+fadeInDownBig.style.textAlign = 'center';
+fadeInDownBig.style.position = 'absolute';
+fadeInDownBig.style.top = '50%';
+fadeInDownBig.style.left = '50%';
+fadeInDownBig.style.transform = 'translate(-50%, -50%)';
+fadeInDownBig.style.transition = 'all 1s';
+fadeInDownBig.style.webkitTransition = 'all 1s';
+fadeInDownBig.style.mozTransition = 'all 1s';
+fadeInDownBig.style.oTransition = 'all 1s';
+fadeInDownBig.style.msTransition = 'all 1s';
+fadeInDownBig.style.opacity = '0';
+fadeInDownBig.style.transform = 'translate(-50%, -50%) translateY(-2000px)';
+document.body.appendChild(fadeInDownBig);
+setTimeout(function() {
+  fadeInDownBig.style.opacity = '1';
+  fadeInDownBig.style.transform = 'translate(-50%, -50%) translateY(0)';
+}, 1000);
+/* fadeInLeft */
+var fadeInLeft = document.createElement('div');
+fadeInLeft.innerHTML = 'Fade In Left';
+fadeInLeft.style.color = '#fff';
+fadeInLeft.style.fontSize = '100px';
+fadeInLeft.style.fontFamily = 'sans-serif';
+fadeInLeft.style.textAlign = 'center';
+fadeInLeft.style.position = 'absolute';
+fadeInLeft.style.top = '50%';
+fadeInLeft.style.left = '50%';
+fadeInLeft.style.transform = 'translate(-50%, -50%)';
+fadeInLeft.style.transition = 'all 1s';
+fadeInLeft.style.webkitTransition = 'all 1s';
+fadeInLeft.style.mozTransition = 'all 1s';
+fadeInLeft.style.oTransition = 'all 1s';
+fadeInLeft.style.msTransition = 'all 1s';
+fadeInLeft.style.opacity = '0';
+fadeInLeft.style.transform = 'translate(-50%, -50%) translateX(-1000px)';
+document.body.appendChild(fadeInLeft);
+setTimeout(function() {
+  fadeInLeft.style.opacity = '1';
+  fadeInLeft.style.transform = 'translate(-50%, -50%) translateX(0)';
+}, 1000);
+/* fadeInLeftBig */
+var fadeInLeftBig = document.createElement('div');
+fadeInLeftBig.innerHTML = 'Fade In Left Big';
+fadeInLeftBig.style.color = '#fff';
+fadeInLeftBig.style.fontSize = '100px';
+fadeInLeftBig.style.fontFamily = 'sans-serif';
+fadeInLeftBig.style.textAlign = 'center';
+fadeInLeftBig.style.position = 'absolute';
+fadeInLeftBig.style.top = '50%';
+fadeInLeftBig.style.left = '50%';
+fadeInLeftBig.style.transform = 'translate(-50%, -50%)';
+fadeInLeftBig.style.transition = 'all 1s';
+fadeInLeftBig.style.webkitTransition = 'all 1s';
+fadeInLeftBig.style.mozTransition = 'all 1s';
+fadeInLeftBig.style.oTransition = 'all 1s';
+fadeInLeftBig.style.msTransition = 'all 1s';
+fadeInLeftBig.style.opacity = '0';
+fadeInLeftBig.style.transform = 'translate(-50%, -50%) translateX(-2000px)';
+document.body.appendChild(fadeInLeftBig);
+setTimeout(function() {
+  fadeInLeftBig.style.opacity = '1';
+  fadeInLeftBig.style.transform = 'translate(-50%, -50%) translateX(0)';
+}, 1000);
+/* fadeInRight */
+var fadeInRight = document.createElement('div');
+fadeInRight.innerHTML = 'Fade In Right';
+fadeInRight.style.color = '#fff';
+fadeInRight.style.fontSize = '100px';
+fadeInRight.style.fontFamily = 'sans-serif';
+fadeInRight.style.textAlign = 'center';
+fadeInRight.style.position = 'absolute';
+fadeInRight.style.top = '50%';
+fadeInRight.style.left = '50%';
+fadeInRight.style.transform = 'translate(-50%, -50%)';
+fadeInRight.style.transition = 'all 1s';
+fadeInRight.style.webkitTransition = 'all 1s';
+fadeInRight.style.mozTransition = 'all 1s';
+fadeInRight.style.oTransition = 'all 1s';
+fadeInRight.style.msTransition = 'all 1s';
+fadeInRight.style.opacity = '0';
+fadeInRight.style.transform = 'translate(-50%, -50%) translateX(1000px)';
+document.body.appendChild(fadeInRight);
+setTimeout(function() {
+  fadeInRight.style.opacity = '1';
+  fadeInRight.style.transform = 'translate(-50%, -50%) translateX(0)';
+}, 1000);
+/* fadeInRightBig */
+var fadeInRightBig = document.createElement('div');
+fadeInRightBig.innerHTML = 'Fade In Right Big';
+fadeInRightBig.style.color = '#fff';
+fadeInRightBig.style.fontSize = '100px';
+fadeInRightBig.style.fontFamily = 'sans-serif';
+fadeInRightBig.style.textAlign = 'center';
+fadeInRightBig.style.position = 'absolute';
+fadeInRightBig.style.top = '50%';
+fadeInRightBig.style.left = '50%';
+fadeInRightBig.style.transform = 'translate(-50%, -50%)';
+fadeInRightBig.style.transition = 'all 1s';
+fadeInRightBig.style.webkitTransition = 'all 1s';
+fadeInRightBig.style.mozTransition = 'all 1s';
+fadeInRightBig.style.oTransition = 'all 1s';
+fadeInRightBig.style.msTransition = 'all 1s';
+fadeInRightBig.style.opacity = '0';
+fadeInRightBig.style.transform = 'translate(-50%, -50%) translateX(2000px)';
+document.body.appendChild(fadeInRightBig);
+setTimeout(function() {
+  fadeInRightBig.style.opacity = '1';
+  fadeInRightBig.style.transform = 'translate(-50%, -50%) translateX(0)';
+}, 1000);
+/* fadeInUp */
+var fadeInUp = document.createElement('div');
+fadeInUp.innerHTML = 'Fade In Up';
+fadeInUp.style.color = '#fff';
+fadeInUp.style.fontSize = '100px';
+fadeInUp.style.fontFamily = 'sans-serif';
+fadeInUp.style.textAlign = 'center';
+fadeInUp.style.position = 'absolute';
+fadeInUp.style.top = '50%';
+fadeInUp.style.left = '50%';
+fadeInUp.style.transform = 'translate(-50%, -50%)';
+fadeInUp.style.transition = 'all 1s';
+fadeInUp.style.webkitTransition = 'all 1s';
+fadeInUp.style.mozTransition = 'all 1s';
+fadeInUp.style.oTransition = 'all 1s';
+fadeInUp.style.msTransition = 'all 1s';
+fadeInUp.style.opacity = '0';
+fadeInUp.style.transform = 'translate(-50%, -50%) translateY(1000px)';
+document.body.appendChild(fadeInUp);
+setTimeout(function() {
+  fadeInUp.style.opacity = '1';
+  fadeInUp.style.transform = 'translate(-50%, -50%) translateY(0)';
+}, 1000);
+/* fadeInUpBig */
+var fadeInUpBig = document.createElement('div');
+fadeInUpBig.innerHTML = 'Fade In Up Big';
+fadeInUpBig.style.color = '#fff';
+fadeInUpBig.style.fontSize = '100px';
+fadeInUpBig.style.fontFamily = 'sans-serif';
+fadeInUpBig.style.textAlign = 'center';
+fadeInUpBig.style.position = 'absolute';
+fadeInUpBig.style.top = '50%';
+fadeInUpBig.style.left = '50%';
+fadeInUpBig.style.transform = 'translate(-50%, -50%)';
+fadeInUpBig.style.transition = 'all 1s';
+fadeInUpBig.style.webkitTransition = 'all 1s';
+fadeInUpBig.style.mozTransition = 'all 1s';
+fadeInUpBig.style.oTransition = 'all 1s';
+fadeInUpBig.style.msTransition = 'all 1s';
+fadeInUpBig.style.opacity = '0';
+fadeInUpBig.style.transform = 'translate(-50%, -50%) translateY(2000px)';
+document.body.appendChild(fadeInUpBig);
+setTimeout(function() {
+  fadeInUpBig.style.opacity = '1';
+  fadeInUpBig.style.transform = 'translate(-50%, -50%) translateY(0)';
+}, 1000);
+/* fadeOut */
+var fadeOut = document.createElement('div');
+fadeOut.innerHTML = 'Fade Out';
+fadeOut.style.color = '#fff';
+fadeOut.style.fontSize = '100px';
+fadeOut.style.fontFamily = 'sans-serif';
+fadeOut.style.textAlign = 'center';
+fadeOut.style.position = 'absolute';
+fadeOut.style.top = '50%';
+fadeOut.style.left = '50%';
+fadeOut.style.transform = 'translate(-50%, -50%)';
+fadeOut.style.transition = 'all 1s';
+fadeOut.style.webkitTransition = 'all 1s';
+fadeOut.style.mozTransition = 'all 1s';
+fadeOut.style.oTransition = 'all 1s';
+fadeOut.style.msTransition = 'all 1s';
+fadeOut.style.opacity = '1';
+document.body.appendChild(fadeOut);
+setTimeout(function() {
+  fadeOut.style.opacity = '0';
+}, 1000);
+/* enumerar todas las animaciones */
+var animaciones = [
+  'bounce',
+  'flash',
+  'rubberBand',
+  'shakeX',
+  'tada',
+  'wobble',
+  'heartBeat',
+  'backInDown'
+];
+/* cuales faltan? */
+var faltan = [
+  'bounceIn',
+  'bounceInDown',
+  'bounceInLeft',
+  'bounceInRight',
+  'bounceInUp',
+  'bounceOut',
+  'bounceOutDown',
+  'bounceOutLeft',
+  'bounceOutRight',
+  'bounceOutUp',
+  'fadeIn',
+  'fadeInDown',
+  'fadeInDownBig',
+  'fadeInLeft',
+  'fadeInLeftBig',
+  'fadeInRight',
+  'fadeInRightBig',
+  'fadeInUp',
+  'fadeInUpBig',
+  'fadeOut',
+  'fadeOutDown',
+  'fadeOutDownBig',
+  'fadeOutLeft',
+  'fadeOutLeftBig',
+  'fadeOutRight',
+  'fadeOutRightBig',
+  'fadeOutUp',
+  'fadeOutUpBig',
+  'flip',
+  'flipInX',
+  'flipInY',
+  'flipOutX',
+  'flipOutY',
+  'lightSpeedIn',
+  'lightSpeedOut',
+  'rotateIn',
+  'rotateInDownLeft',
+  'rotateInDownRight',
+  'rotateInUpLeft',
+  'rotateInUpRight',
+  'rotateOut',
+  'rotateOutDownLeft',
+  'rotateOutDownRight',
+  'rotateOutUpLeft',
+  'rotateOutUpRight',
+  'hinge',
+  'rollIn',
+  'rollOut',
+  'zoomIn',
+  'zoomInDown',
+  'zoomInLeft',
+  'zoomInRight',
+  'zoomInUp',
+  'zoomOut',
+  'zoomOutDown',
+  'zoomOutLeft',
+  'zoomOutRight',
+  'zoomOutUp',
+  'slideInDown',
+  'slideInLeft',
+  'slideInRight',
+  'slideInUp',
+  'slideOutDown',
+  'slideOutLeft',
+  'slideOutRight',
+  'slideOutUp'
+];
+});
+        </script>
+    </head>
+    <body style="margin: 0;">
+        <div style="background-color: black; position: fixed; bottom: 0; width: 100%; height: 20px; padding: 20px; opacity: .85; z-index: 1000;">
+            <svg id="Layer_1" data-name="Layer 1" height="40px" width="40px" style="top: -8px;
+            position: relative;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800"><defs><style>.cls-1{fill:#fff;}</style></defs><title>openai-symbol-flat-white</title><path class="cls-1" d="M617.24,354a126.36,126.36,0,0,0-10.86-103.79,127.8,127.8,0,0,0-137.65-61.32,126.36,126.36,0,0,0-95.31-42.49A127.81,127.81,0,0,0,251.5,234.89,126.4,126.4,0,0,0,167,296.19a127.82,127.82,0,0,0,15.72,149.86,126.36,126.36,0,0,0,10.86,103.79,127.81,127.81,0,0,0,137.65,61.32,126.36,126.36,0,0,0,95.31,42.49A127.81,127.81,0,0,0,548.5,565.11,126.4,126.4,0,0,0,633,503.81,127.82,127.82,0,0,0,617.24,354ZM426.58,620.49a94.79,94.79,0,0,1-60.85-22c.77-.42,2.12-1.16,3-1.7l101-58.34a16.42,16.42,0,0,0,8.3-14.37V381.69l42.69,24.65a1.52,1.52,0,0,1,.83,1.17V525.43A95.18,95.18,0,0,1,426.58,620.49ZM222.34,533.26A94.74,94.74,0,0,1,211,469.56c.75.45,2.06,1.25,3,1.79l101,58.34a16.44,16.44,0,0,0,16.59,0l123.31-71.2v49.3a1.53,1.53,0,0,1-.61,1.31L352.19,568.05A95.16,95.16,0,0,1,222.34,533.26ZM195.77,312.77a94.71,94.71,0,0,1,49.48-41.68c0,.87-.05,2.41-.05,3.48V391.25a16.41,16.41,0,0,0,8.29,14.36L376.8,476.8l-42.69,24.65a1.53,1.53,0,0,1-1.44.13l-102.11-59A95.16,95.16,0,0,1,195.77,312.77Zm350.74,81.62L423.2,323.19l42.69-24.64a1.53,1.53,0,0,1,1.44-.13l102.11,58.95a95.08,95.08,0,0,1-14.69,171.55c0-.88,0-2.42,0-3.49V408.75A16.4,16.4,0,0,0,546.51,394.39ZM589,330.44c-.75-.46-2.06-1.25-3-1.79L485,270.31a16.46,16.46,0,0,0-16.59,0l-123.31,71.2v-49.3a1.53,1.53,0,0,1,.61-1.31L447.81,232A95.07,95.07,0,0,1,589,330.44ZM321.89,418.31l-42.7-24.65a1.52,1.52,0,0,1-.83-1.17V274.57a95.07,95.07,0,0,1,155.9-73c-.77.42-2.11,1.16-3,1.7l-101,58.34a16.41,16.41,0,0,0-8.3,14.36Zm23.19-50L400,336.59l54.92,31.7v63.42L400,463.41l-54.92-31.7Z"/></svg>
+            <div style="display: inline-block; color: white; vertical-align: top; margin-top: 4px; font-family: Helvetica, sans-serif;">
+                Code generated by <a style="color: white; text-decoration: none; font-weight: bold;" href="https://openai.com/blog/openai-codex/">OpenAI Codex</a>
+            </div>
+        </div>
+    </body>
+</html>

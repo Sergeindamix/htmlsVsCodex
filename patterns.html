@@ -1,0 +1,645 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+/* float Grid1Pattern(in vec2 uv) { float col = max(sin(uv.x*10.1), sin(uv.y*10.1)); return smoothstep(0.5,1.,col); } */
+var grid1Pattern = document.createElement('canvas');
+grid1Pattern.width = grid1Pattern.height = 256;
+var grid1PatternContext = grid1Pattern.getContext('2d');
+var grid1PatternImageData = grid1PatternContext.createImageData(grid1Pattern.width, grid1Pattern.height);
+for (var i = 0; i < grid1PatternImageData.data.length; i += 4) {
+  var uv = [
+    (i / 4) % grid1Pattern.width / grid1Pattern.width,
+    Math.floor((i / 4) / grid1Pattern.width) / grid1Pattern.height
+  ];
+  var col = Math.max(Math.sin(uv[0] * 10.1), Math.sin(uv[1] * 10.1));
+  col = (col + 1) / 2;
+  col = Math.pow(col, 0.5);
+  grid1PatternImageData.data[i + 0] = col * 255;
+  grid1PatternImageData.data[i + 1] = col * 255;
+  grid1PatternImageData.data[i + 2] = col * 255;
+  grid1PatternImageData.data[i + 3] = 255;
+}
+grid1PatternContext.putImageData(grid1PatternImageData, 0, 0);
+/* , */
+var grid1PatternStyle = document.createElement('style');
+grid1PatternStyle.innerHTML = 'body { background-image: url(' + grid1Pattern.toDataURL() + '); }';
+document.head.appendChild(grid1PatternStyle);
+/* float Grid2Pattern(in vec2 uv) { return 0.5*clamp(10.*sin(PI*uv.x), 0.0, 1.0) / 0.5*clamp(10.*sin(PI*uv.y), 0.0, 1.0); } */
+var grid2Pattern = document.createElement('canvas');
+grid2Pattern.width = grid2Pattern.height = 256;
+var grid2PatternContext = grid2Pattern.getContext('2d');
+var grid2PatternImageData = grid2PatternContext.createImageData(grid2Pattern.width, grid2Pattern.height);
+for (var i = 0; i < grid2PatternImageData.data.length; i += 4) {
+  var uv = [
+    (i / 4) % grid2Pattern.width / grid2Pattern.width,
+    Math.floor((i / 4) / grid2Pattern.width) / grid2Pattern.height
+  ];
+  var col = 0.5 * Math.max(10 * Math.sin(Math.PI * uv[0]), 0) / 0.5 * Math.max(10 * Math.sin(Math.PI * uv[1]), 0);
+  col = (col + 1) / 2;
+  col = Math.pow(col, 0.5);
+  grid2PatternImageData.data[i + 0] = col * 255;
+  grid2PatternImageData.data[i + 1] = col * 255;
+  grid2PatternImageData.data[i + 2] = col * 255;
+  grid2PatternImageData.data[i + 3] = 255;
+}
+grid2PatternContext.putImageData(grid2PatternImageData, 0, 0);
+/* , */
+var grid2PatternStyle = document.createElement('style');
+grid2PatternStyle.innerHTML = 'body { background-image: url(' + grid2Pattern.toDataURL() + '); }';
+document.head.appendChild(grid2PatternStyle);
+/* float SquareHolePattern(in vec2 uv) { float thickness = 0.8; float t = cos(uv.x*2.0) * cos(uv.y*2.0) / thickness; return smoothstep(0.1, 0.0, t*t); } */
+var squareHolePattern = document.createElement('canvas');
+squareHolePattern.width = squareHolePattern.height = 256;
+var squareHolePatternContext = squareHolePattern.getContext('2d');
+var squareHolePatternImageData = squareHolePatternContext.createImageData(squareHolePattern.width, squareHolePattern.height);
+for (var i = 0; i < squareHolePatternImageData.data.length; i += 4) {
+  var uv = [
+    (i / 4) % squareHolePattern.width / squareHolePattern.width,
+    Math.floor((i / 4) / squareHolePattern.width) / squareHolePattern.height
+  ];
+  var thickness = 0.8;
+  var t = Math.cos(uv[0] * 2) * Math.cos(uv[1] * 2) / thickness;
+  t = Math.pow(t, 2);
+  t = Math.pow(t, 0.5);
+  t = Math.max(t, 0);
+  t = Math.min(t, 1);
+  t = (t - 0.1) / (0 - 0.1);
+  t = Math.pow(t, 0.5);
+  t = Math.max(t, 0);
+  t = Math.min(t, 1);
+  squareHolePatternImageData.data[i + 0] = t * 255;
+  squareHolePatternImageData.data[i + 1] = t * 255;
+  squareHolePatternImageData.data[i + 2] = t * 255;
+  squareHolePatternImageData.data[i + 3] = 255;
+}
+squareHolePatternContext.putImageData(squareHolePatternImageData, 0, 0);
+/* , */
+var squareHolePatternStyle = document.createElement('style');
+squareHolePatternStyle.innerHTML = 'body { background-image: url(' + squareHolePattern.toDataURL() + '); }';
+document.head.appendChild(squareHolePatternStyle);
+/* float SquarePattern(in vec2 uv)   // no AA { return fract(uv.x)*fract(uv.y); } */
+var squarePattern = document.createElement('canvas');
+squarePattern.width = squarePattern.height = 256;
+var squarePatternContext = squarePattern.getContext('2d');
+var squarePatternImageData = squarePatternContext.createImageData(squarePattern.width, squarePattern.height);
+for (var i = 0; i < squarePatternImageData.data.length; i += 4) {
+  var uv = [
+    (i / 4) % squarePattern.width / squarePattern.width,
+    Math.floor((i / 4) / squarePattern.width) / squarePattern.height
+  ];
+  var col = uv[0] % 1 * uv[1] % 1;
+  col = (col + 1) / 2;
+  col = Math.pow(col, 0.5);
+  squarePatternImageData.data[i + 0] = col * 255;
+  squarePatternImageData.data[i + 1] = col * 255;
+  squarePatternImageData.data[i + 2] = col * 255;
+  squarePatternImageData.data[i + 3] = 255;
+}
+squarePatternContext.putImageData(squarePatternImageData, 0, 0);
+/* , */
+var squarePatternStyle = document.createElement('style');
+squarePatternStyle.innerHTML = 'body { background-image: url(' + squarePattern.toDataURL() + '); }';
+document.head.appendChild(squarePatternStyle);
+/* float CheckerPattern(in vec2 uv)   // no AA { uv = 0.5 - fract(uv); return 0.5 + 0.5*sign(uv.x*uv.y); } */
+var checkerPattern = document.createElement('canvas');
+checkerPattern.width = checkerPattern.height = 256;
+var checkerPatternContext = checkerPattern.getContext('2d');
+var checkerPatternImageData = checkerPatternContext.createImageData(checkerPattern.width, checkerPattern.height);
+for (var i = 0; i < checkerPatternImageData.data.length; i += 4) {
+  var uv = [
+    (i / 4) % checkerPattern.width / checkerPattern.width,
+    Math.floor((i / 4) / checkerPattern.width) / checkerPattern.height
+  ];
+  uv = [
+    0.5 - uv[0] % 1,
+    0.5 - uv[1] % 1
+  ];
+  var col = 0.5 + 0.5 * Math.sign(uv[0] * uv[1]);
+  col = (col + 1) / 2;
+  col = Math.pow(col, 0.5);
+  checkerPatternImageData.data[i + 0] = col * 255;
+  checkerPatternImageData.data[i + 1] = col * 255;
+  checkerPatternImageData.data[i + 2] = col * 255;
+  checkerPatternImageData.data[i + 3] = 255;
+}
+checkerPatternContext.putImageData(checkerPatternImageData, 0, 0);
+/* , */
+var checkerPatternStyle = document.createElement('style');
+checkerPatternStyle.innerHTML = 'body { background-image: url(' + checkerPattern.toDataURL() + '); }';
+document.head.appendChild(checkerPatternStyle);
+/* float TrianglePattern(in vec2 uv)   // no AA { uv.y = uv.y * 0.866 + uv.x * 0.5; if(fract(uv.y) > fract(uv.x)) return 1.0; return 0.0; } */
+var trianglePattern = document.createElement('canvas');
+trianglePattern.width = trianglePattern.height = 256;
+var trianglePatternContext = trianglePattern.getContext('2d');
+var trianglePatternImageData = trianglePatternContext.createImageData(trianglePattern.width, trianglePattern.height);
+for (var i = 0; i < trianglePatternImageData.data.length; i += 4) {
+  var uv = [
+    (i / 4) % trianglePattern.width / trianglePattern.width,
+    Math.floor((i / 4) / trianglePattern.width) / trianglePattern.height
+  ];
+  uv = [
+    uv[0],
+    uv[1] * 0.866 + uv[0] * 0.5
+  ];
+  var col = uv[1] % 1 > uv[0] % 1 ? 1 : 0;
+  col = (col + 1) / 2;
+  col = Math.pow(col, 0.5);
+  trianglePatternImageData.data[i + 0] = col * 255;
+  trianglePatternImageData.data[i + 1] = col * 255;
+  trianglePatternImageData.data[i + 2] = col * 255;
+  trianglePatternImageData.data[i + 3] = 255;
+}
+trianglePatternContext.putImageData(trianglePatternImageData, 0, 0);
+/* , */
+var trianglePatternStyle = document.createElement('style');
+trianglePatternStyle.innerHTML = 'body { background-image: url(' + trianglePattern.toDataURL() + '); }';
+document.head.appendChild(trianglePatternStyle);
+/* float Rhomb1Pattern(in vec2 uv)   // no AA { uv.y = uv.y * 0.866 + uv.x * 0.5; float t = fract(uv.y) - fract(uv.x); return smoothstep(.50, 0.0, t*t); } */
+var rhomb1Pattern = document.createElement('canvas');
+rhomb1Pattern.width = rhomb1Pattern.height = 256;
+var rhomb1PatternContext = rhomb1Pattern.getContext('2d');
+var rhomb1PatternImageData = rhomb1PatternContext.createImageData(rhomb1Pattern.width, rhomb1Pattern.height);
+for (var i = 0; i < rhomb1PatternImageData.data.length; i += 4) {
+  var uv = [
+    (i / 4) % rhomb1Pattern.width / rhomb1Pattern.width,
+    Math.floor((i / 4) / rhomb1Pattern.width) / rhomb1Pattern.height
+  ];
+  uv = [
+    uv[0],
+    uv[1] * 0.866 + uv[0] * 0.5
+  ];
+  var t = uv[1] % 1 - uv[0] % 1;
+  t = Math.pow(t, 2);
+  t = Math.pow(t, 0.5);
+  t = Math.max(t, 0);
+  t = Math.min(t, 1);
+  t = (t - 0.5) / (0 - 0.5);
+  t = Math.pow(t, 0.5);
+  t = Math.max(t, 0);
+  t = Math.min(t, 1);
+  rhomb1PatternImageData.data[i + 0] = t * 255;
+  rhomb1PatternImageData.data[i + 1] = t * 255;
+  rhomb1PatternImageData.data[i + 2] = t * 255;
+  rhomb1PatternImageData.data[i + 3] = 255;
+}
+rhomb1PatternContext.putImageData(rhomb1PatternImageData, 0, 0);
+/* , */
+var rhomb1PatternStyle = document.createElement('style');
+rhomb1PatternStyle.innerHTML = 'body { background-image: url(' + rhomb1Pattern.toDataURL() + '); }';
+document.head.appendChild(rhomb1PatternStyle);
+/* float HexagonalGrid (in vec2 position ,in float gridSize ,in float gridThickness) { vec2 pos = position / gridSize; pos.x *= 0.57735 * 2.0; pos.y += 0.5 * mod(floor(pos.x), 2.0); pos = abs(fract(pos) - 0.5); float d = abs(max(pos.x*1.5 + pos.y, pos.y*2.0) - 1.0); return smoothstep(0.0, gridThickness, d); } */
+var hexagonalGrid = document.createElement('canvas');
+hexagonalGrid.width = hexagonalGrid.height = 256;
+var hexagonalGridContext = hexagonalGrid.getContext('2d');
+var hexagonalGridImageData = hexagonalGridContext.createImageData(hexagonalGrid.width, hexagonalGrid.height);
+for (var i = 0; i < hexagonalGridImageData.data.length; i += 4) {
+  var position = [
+    (i / 4) % hexagonalGrid.width / hexagonalGrid.width,
+    Math.floor((i / 4) / hexagonalGrid.width) / hexagonalGrid.height
+  ];
+  var gridSize = 1;
+  var gridThickness = 0.1;
+  var pos = [
+    position[0] / gridSize,
+    position[1] / gridSize
+  ];
+  pos = [
+    pos[0] * 0.57735 * 2,
+    pos[1] + 0.5 * (Math.floor(pos[0]) % 2)
+  ];
+  pos = [
+    Math.abs(pos[0] % 1 - 0.5),
+    Math.abs(pos[1] % 1 - 0.5)
+  ];
+  var d = Math.abs(Math.max(pos[0] * 1.5 + pos[1], pos[1] * 2) - 1);
+  d = Math.pow(d, 0.5);
+  d = Math.max(d, 0);
+  d = Math.min(d, 1);
+  d = (d - 0) / (gridThickness - 0);
+  d = Math.pow(d, 0.5);
+  d = Math.max(d, 0);
+  d = Math.min(d, 1);
+  hexagonalGridImageData.data[i + 0] = d * 255;
+  hexagonalGridImageData.data[i + 1] = d * 255;
+  hexagonalGridImageData.data[i + 2] = d * 255;
+  hexagonalGridImageData.data[i + 3] = 255;
+}
+hexagonalGridContext.putImageData(hexagonalGridImageData, 0, 0);
+/* , */
+var hexagonalGridStyle = document.createElement('style');
+hexagonalGridStyle.innerHTML = 'body { background-image: url(' + hexagonalGrid.toDataURL() + '); }';
+document.head.appendChild(hexagonalGridStyle);
+/* float Hexagonal3Pattern(in vec2 p)   // no AA { p.y = p.y * 0.866 + p.x*0.5; p = mod(p, vec2(3.0)); if(p.y < p.x+1.0 && p.y > 0.0 && p.x > 0.0 && p.y > p.x-1.0 && p.x < 2.0 && p.y < 2.0) return 0.0; else if(p.y > 1.0 && (p.y < p.x || p.x < 1.0)) return 0.5; return 1.0; } */
+var hexagonal3Pattern = document.createElement('canvas');
+hexagonal3Pattern.width = hexagonal3Pattern.height = 256;
+var hexagonal3PatternContext = hexagonal3Pattern.getContext('2d');
+var hexagonal3PatternImageData = hexagonal3PatternContext.createImageData(hexagonal3Pattern.width, hexagonal3Pattern.height);
+for (var i = 0; i < hexagonal3PatternImageData.data.length; i += 4) {
+  var p = [
+    (i / 4) % hexagonal3Pattern.width / hexagonal3Pattern.width,
+    Math.floor((i / 4) / hexagonal3Pattern.width) / hexagonal3Pattern.height
+  ];
+  p = [
+    p[0],
+    p[1] * 0.866 + p[0] * 0.5
+  ];
+  p = [
+    p[0] % 3,
+    p[1] % 3
+  ];
+  var col = p[1] < p[0] + 1 && p[1] > 0 && p[0] > 0 && p[1] > p[0] - 1 && p[0] < 2 && p[1] < 2 ? 0 : p[1] > 1 && (p[1] < p[0] || p[0] < 1) ? 0.5 : 1;
+  col = (col + 1) / 2;
+  col = Math.pow(col, 0.5);
+  hexagonal3PatternImageData.data[i + 0] = col * 255;
+  hexagonal3PatternImageData.data[i + 1] = col * 255;
+  hexagonal3PatternImageData.data[i + 2] = col * 255;
+  hexagonal3PatternImageData.data[i + 3] = 255;
+}
+hexagonal3PatternContext.putImageData(hexagonal3PatternImageData, 0, 0);
+/* , */
+var hexagonal3PatternStyle = document.createElement('style');
+hexagonal3PatternStyle.innerHTML = 'body { background-image: url(' + hexagonal3Pattern.toDataURL() + '); }';
+document.head.appendChild(hexagonal3PatternStyle);
+/* float HexagonalGrid2 (in vec2 position ,in float gridSize ,in float gridThickness) { vec2 pos = position / gridSize; pos.x *= 1.1; pos.y += 0.5 * mod(floor(pos.x), 2.0); pos = abs(fract(pos) - 0.5); float d = abs(max(pos.x*2.5 + pos.y, pos.y*3.0) - 1.0); return smoothstep(0.30, gridThickness, d); } */
+var hexagonalGrid2 = document.createElement('canvas');
+hexagonalGrid2.width = hexagonalGrid2.height = 256;
+var hexagonalGrid2Context = hexagonalGrid2.getContext('2d');
+var hexagonalGrid2ImageData = hexagonalGrid2Context.createImageData(hexagonalGrid2.width, hexagonalGrid2.height);
+for (var i = 0; i < hexagonalGrid2ImageData.data.length; i += 4) {
+  var position = [
+    (i / 4) % hexagonalGrid2.width / hexagonalGrid2.width,
+    Math.floor((i / 4) / hexagonalGrid2.width) / hexagonalGrid2.height
+  ];
+  var gridSize = 1;
+  var gridThickness = 0.1;
+  var pos = [
+    position[0] / gridSize,
+    position[1] / gridSize
+  ];
+  pos = [
+    pos[0] * 1.1,
+    pos[1] + 0.5 * (Math.floor(pos[0]) % 2)
+  ];
+  pos = [
+    Math.abs(pos[0] % 1 - 0.5),
+    Math.abs(pos[1] % 1 - 0.5)
+  ];
+  var d = Math.abs(Math.max(pos[0] * 2.5 + pos[1], pos[1] * 3) - 1);
+  d = Math.pow(d, 0.5);
+  d = Math.max(d, 0);
+  d = Math.min(d, 1);
+  d = (d - 0.3) / (gridThickness - 0.3);
+  d = Math.pow(d, 0.5);
+  d = Math.max(d, 0);
+  d = Math.min(d, 1);
+  hexagonalGrid2ImageData.data[i + 0] = d * 255;
+  hexagonalGrid2ImageData.data[i + 1] = d * 255;
+  hexagonalGrid2ImageData.data[i + 2] = d * 255;
+  hexagonalGrid2ImageData.data[i + 3] = 255;
+}
+hexagonalGrid2Context.putImageData(hexagonalGrid2ImageData, 0, 0);
+/* , */
+var hexagonalGrid2Style = document.createElement('style');
+hexagonalGrid2Style.innerHTML = 'body { background-image: url(' + hexagonalGrid2.toDataURL() + '); }';
+document.head.appendChild(hexagonalGrid2Style);
+/* float HexagonalTruchetPattern(vec2 p) { vec2 h = p + vec2(0.58, 0.15)*p.y; vec2 f = fract(h); h -= f; float v = fract((h.x + h.y) / 3.0); (v < 0.6) ? (v < 0.3) ?  h : h++ : h += step(f.yx,f); p += vec2(0.5, 0.13)*h.y - h;        // -1/2, sqrt(3)/2 v = RandomSign; return 0.06 / abs(0.5 - min (min (length(p - v*vec2(-1., 0.00)  ),  // closest neighbor (even or odd set, dep. s) length(p - v*vec2(0.5, 0.87)) ),  // 1/2, sqrt(3)/2 length(p - v*vec2(0.5,-0.87)))); } */
+var hexagonalTruchetPattern = document.createElement('canvas');
+hexagonalTruchetPattern.width = hexagonalTruchetPattern.height = 256;
+var hexagonalTruchetPatternContext = hexagonalTruchetPattern.getContext('2d');
+var hexagonalTruchetPatternImageData = hexagonalTruchetPatternContext.createImageData(hexagonalTruchetPattern.width, hexagonalTruchetPattern.height);
+for (var i = 0; i < hexagonalTruchetPatternImageData.data.length; i += 4) {
+  var p = [
+    (i / 4) % hexagonalTruchetPattern.width / hexagonalTruchetPattern.width,
+    Math.floor((i / 4) / hexagonalTruchetPattern.width) / hexagonalTruchetPattern.height
+  ];
+  var h = [
+    p[0] + 0.58 * p[1],
+    p[1] + 0.15 * p[1]
+  ];
+  var f = [
+    h[0] % 1,
+    h[1] % 1
+  ];
+  h = [
+    h[0] - f[0],
+    h[1] - f[1]
+  ];
+  var v = (h[0] + h[1]) / 3 % 1;
+  h = v < 0.6 ? v < 0.3 ? h : [
+    h[0] + 1,
+    h[1]
+  ] : f[1] > f[0] ? [
+    h[0] + 1,
+    h[1]
+  ] : h;
+  p = [
+    p[0] + 0.5 * h[1],
+    p[1] + 0.13 * h[1] - h[1]
+  ];
+  v = Math.random() < 0.5 ? -1 : 1;
+  var d = 0.06 / Math.abs(0.5 - Math.min(Math.min(Math.pow(p[0] - v * -1, 2) + Math.pow(p[1] - 0, 2), Math.pow(p[0] - v * 0.5, 2) + Math.pow(p[1] - 0.87, 2)), Math.pow(p[0] - v * 0.5, 2) + Math.pow(p[1] + 0.87, 2)));
+  d = Math.pow(d, 0.5);
+  d = Math.max(d, 0);
+  d = Math.min(d, 1);
+  hexagonalTruchetPatternImageData.data[i + 0] = d * 255;
+  hexagonalTruchetPatternImageData.data[i + 1] = d * 255;
+  hexagonalTruchetPatternImageData.data[i + 2] = d * 255;
+  hexagonalTruchetPatternImageData.data[i + 3] = 255;
+}
+hexagonalTruchetPatternContext.putImageData(hexagonalTruchetPatternImageData, 0, 0);
+/* , */
+var hexagonalTruchetPatternStyle = document.createElement('style');
+hexagonalTruchetPatternStyle.innerHTML = 'body { background-image: url(' + hexagonalTruchetPattern.toDataURL() + '); }';
+document.head.appendChild(hexagonalTruchetPatternStyle);
+/* float SinePattern(in vec2 p) { return sin(p.x * 20.0 + cos(p.y * 12.0 )); } */
+var sinePattern = document.createElement('canvas');
+sinePattern.width = sinePattern.height = 256;
+var sinePatternContext = sinePattern.getContext('2d');
+var sinePatternImageData = sinePatternContext.createImageData(sinePattern.width, sinePattern.height);
+for (var i = 0; i < sinePatternImageData.data.length; i += 4) {
+  var p = [
+    (i / 4) % sinePattern.width / sinePattern.width,
+    Math.floor((i / 4) / sinePattern.width) / sinePattern.height
+  ];
+  var col = Math.sin(p[0] * 20 + Math.cos(p[1] * 12));
+  col = (col + 1) / 2;
+  col = Math.pow(col, 0.5);
+  sinePatternImageData.data[i + 0] = col * 255;
+  sinePatternImageData.data[i + 1] = col * 255;
+  sinePatternImageData.data[i + 2] = col * 255;
+  sinePatternImageData.data[i + 3] = 255;
+}
+sinePatternContext.putImageData(sinePatternImageData, 0, 0);
+/* , */
+var sinePatternStyle = document.createElement('style');
+sinePatternStyle.innerHTML = 'body { background-image: url(' + sinePattern.toDataURL() + '); }';
+document.head.appendChild(sinePatternStyle);
+/* float StarPattern(in vec2 p) { p = abs(fract(p*1.5)-0.5); return max(max(p.x, p.y), min(p.x, p.y)*2.); } */
+var starPattern = document.createElement('canvas');
+starPattern.width = starPattern.height = 256;
+var starPatternContext = starPattern.getContext('2d');
+var starPatternImageData = starPatternContext.createImageData(starPattern.width, starPattern.height);
+var starPatternData = starPatternImageData.data;
+for (var i = 0; i < starPatternData.length; i += 4) {
+  var x = (i / 4) % starPattern.width;
+  var y = Math.floor((i / 4) / starPattern.width);
+  var p = [x / starPattern.width, y / starPattern.height];
+  p = [Math.abs(p[0] * 1.5 - 0.5), Math.abs(p[1] * 1.5 - 0.5)];
+  var v = Math.max(Math.max(p[0], p[1]), Math.min(p[0], p[1]) * 2);
+  starPatternData[i + 0] = starPatternData[i + 1] = starPatternData[i + 2] = v * 255;
+  starPatternData[i + 3] = 255;
+}
+starPatternContext.putImageData(starPatternImageData, 0, 0);
+/* starPatternStyle.innerHTML = 'body { background-image: url(' + starPattern.toDataURL() + '); }'; */
+var starPatternStyle = document.createElement('style');
+starPatternStyle.innerHTML = 'body { background-image: url(' + starPattern.toDataURL() + '); }';
+document.head.appendChild(starPatternStyle);
+/* #define S1(x,y) abs(fract(x))<0.8 ? 0.65 +0.35* sin(3.1415*(y-ceil(x))) : 0.0 #define S2(x,y) abs(fract(x))<0.8 ? 0.65 +0.35* sin(1.5707*(y-ceil(x))) : 0.0 float Basketwork1Pattern(in vec2 uv) { vec2 p = uv * 4.0; return max (S1(p.x, p.y), S1(p.y+1.0, p.x)); } */
+var basketwork1Pattern = document.createElement('canvas');
+basketwork1Pattern.width = basketwork1Pattern.height = 256;
+var basketwork1PatternContext = basketwork1Pattern.getContext('2d');
+var basketwork1PatternImageData = basketwork1PatternContext.createImageData(basketwork1Pattern.width, basketwork1Pattern.height);
+var basketwork1PatternData = basketwork1PatternImageData.data;
+for (var i = 0; i < basketwork1PatternData.length; i += 4) {
+  var x = (i / 4) % basketwork1Pattern.width;
+  var y = Math.floor((i / 4) / basketwork1Pattern.width);
+  var p = [x / basketwork1Pattern.width, y / basketwork1Pattern.height];
+  p = [p[0] * 4, p[1] * 4];
+  var S1 = function(x, y) {
+    return Math.abs(x - Math.floor(x)) < 0.8 ? 0.65 + 0.35 * Math.sin(3.1415 * (y - Math.ceil(x))) : 0.0;
+  };
+  var v = Math.max(S1(p[0], p[1]), S1(p[1] + 1, p[0]));
+  basketwork1PatternData[i + 0] = basketwork1PatternData[i + 1] = basketwork1PatternData[i + 2] = v * 255;
+  basketwork1PatternData[i + 3] = 255;
+}
+basketwork1PatternContext.putImageData(basketwork1PatternImageData, 0, 0);
+/* basketwork1PatternStyle */
+var basketwork1PatternStyle = document.createElement('style');
+basketwork1PatternStyle.innerHTML = 'body { background-image: url(' + basketwork1Pattern.toDataURL() + '); }';
+document.head.appendChild(basketwork1PatternStyle);
+/* float Basketwork2Pattern(in vec2 uv) { vec2 p = uv * 4.0; return max (S2( p.x, p.y), S2(p.y, p.x+1.) ); } */
+var basketwork2Pattern = document.createElement('canvas');
+basketwork2Pattern.width = basketwork2Pattern.height = 256;
+var basketwork2PatternContext = basketwork2Pattern.getContext('2d');
+var basketwork2PatternImageData = basketwork2PatternContext.createImageData(basketwork2Pattern.width, basketwork2Pattern.height);
+var basketwork2PatternData = basketwork2PatternImageData.data;
+for (var i = 0; i < basketwork2PatternData.length; i += 4) {
+  var x = (i / 4) % basketwork2Pattern.width;
+  var y = Math.floor((i / 4) / basketwork2Pattern.width);
+  var p = [x / basketwork2Pattern.width, y / basketwork2Pattern.height];
+  p = [p[0] * 4, p[1] * 4];
+  var S2 = function(x, y) {
+    return Math.abs(x - Math.floor(x)) < 0.8 ? 0.65 + 0.35 * Math.sin(1.5707 * (y - Math.ceil(x))) : 0.0;
+  };
+  var v = Math.max(S2(p[0], p[1]), S2(p[1], p[0] + 1));
+  basketwork2PatternData[i + 0] = basketwork2PatternData[i + 1] = basketwork2PatternData[i + 2] = v * 255;
+  basketwork2PatternData[i + 3] = 255;
+}
+basketwork2PatternContext.putImageData(basketwork2PatternImageData, 0, 0);
+/* basketwork2Patternstyle */
+var basketwork2PatternStyle = document.createElement('style');
+basketwork2PatternStyle.innerHTML = 'body { background-image: url(' + basketwork2Pattern.toDataURL() + '); }';
+document.head.appendChild(basketwork2PatternStyle);
+/* float DiamondPattern(in vec2 uv) { vec2 dp = abs (fract(uv*2.) - 0.5); return 0.3 - cos (19. * max(dp.x, dp.y)); } */
+var diamondPattern = document.createElement('canvas');
+diamondPattern.width = diamondPattern.height = 256;
+var diamondPatternContext = diamondPattern.getContext('2d');
+var diamondPatternImageData = diamondPatternContext.createImageData(diamondPattern.width, diamondPattern.height);
+var diamondPatternData = diamondPatternImageData.data;
+for (var i = 0; i < diamondPatternData.length; i += 4) {
+  var x = (i / 4) % diamondPattern.width;
+  var y = Math.floor((i / 4) / diamondPattern.width);
+  var p = [x / diamondPattern.width, y / diamondPattern.height];
+  p = [Math.abs(p[0] * 2 - Math.floor(p[0] * 2)), Math.abs(p[1] * 2 - Math.floor(p[1] * 2))];
+  p = [p[0] - 0.5, p[1] - 0.5];
+  var v = 0.3 - Math.cos(19 * Math.max(Math.abs(p[0]), Math.abs(p[1])));
+  diamondPatternData[i + 0] = diamondPatternData[i + 1] = diamondPatternData[i + 2] = v * 255;
+  diamondPatternData[i + 3] = 255;
+}
+diamondPatternContext.putImageData(diamondPatternImageData, 0, 0);
+/* DiamondPatternStyle */
+var diamondPatternStyle = document.createElement('style');
+diamondPatternStyle.innerHTML = 'body { background-image: url(' + diamondPattern.toDataURL() + '); }';
+document.head.appendChild(diamondPatternStyle);
+/* #define D(U) .004/abs(length(mod(U,d+d)-d)-d.x) float RosettePattern(in vec2 p) { vec2 d = vec2(0.58,1); vec4 O = vec4(0); for (; O.a++ < 4.; O += D(p) +D(p += d*.5)) p.x += d.x; return O.x; } */
+var rosettePattern = document.createElement('canvas');
+rosettePattern.width = rosettePattern.height = 256;
+var rosettePatternContext = rosettePattern.getContext('2d');
+var rosettePatternImageData = rosettePatternContext.createImageData(rosettePattern.width, rosettePattern.height);
+var rosettePatternData = rosettePatternImageData.data;
+for (var i = 0; i < rosettePatternData.length; i += 4) {
+  var x = (i / 4) % rosettePattern.width;
+  var y = Math.floor((i / 4) / rosettePattern.width);
+  var p = [x / rosettePattern.width, y / rosettePattern.height];
+  var d = [0.58, 1];
+  var O = [0, 0, 0, 0];
+  var D = function(U) {
+    return 0.004 / Math.abs(Math.sqrt(Math.pow(U[0] % (d[0] + d[0]) - d[0], 2) + Math.pow(U[1] % (d[1] + d[1]) - d[1], 2)) - d[0]);
+  };
+  for (; O[3]++ < 4; O[0] += D(p) + D(p = [p[0] + d[0] * 0.5, p[1] + d[1] * 0.5])) {
+    p[0] += d[0];
+  }
+  var v = O[0];
+  rosettePatternData[i + 0] = rosettePatternData[i + 1] = rosettePatternData[i + 2] = v * 255;
+  rosettePatternData[i + 3] = 255;
+}
+rosettePatternContext.putImageData(rosettePatternImageData, 0, 0);
+/* rosettePatternstyle */
+var rosettePatternStyle = document.createElement('style');
+rosettePatternStyle.innerHTML = 'body { background-image: url(' + rosettePattern.toDataURL() + '); }';
+document.head.appendChild(rosettePatternStyle);
+/* float Wallpaper70sPattern(vec2 p, float time) { p.x *= sign(cos(length(ceil(p))*time)); return cos(min(length(p = fract(p)), length(--p))*44.); } */
+var wallpaper70sPattern = document.createElement('canvas');
+wallpaper70sPattern.width = wallpaper70sPattern.height = 256;
+var wallpaper70sPatternContext = wallpaper70sPattern.getContext('2d');
+var wallpaper70sPatternImageData = wallpaper70sPatternContext.createImageData(wallpaper70sPattern.width, wallpaper70sPattern.height);
+var wallpaper70sPatternData = wallpaper70sPatternImageData.data;
+for (var i = 0; i < wallpaper70sPatternData.length; i += 4) {
+  var x = (i / 4) % wallpaper70sPattern.width;
+  var y = Math.floor((i / 4) / wallpaper70sPattern.width);
+  var p = [x / wallpaper70sPattern.width, y / wallpaper70sPattern.height];
+  p[0] *= Math.sign(Math.cos(Math.sqrt(Math.pow(Math.ceil(p[0]), 2) + Math.pow(Math.ceil(p[1]), 2)) * 0));
+  var v = Math.cos(Math.min(Math.sqrt(Math.pow(p[0] - Math.floor(p[0]), 2) + Math.pow(p[1] - Math.floor(p[1]), 2)), Math.sqrt(Math.pow(p[0] - Math.floor(p[0]) - 1, 2) + Math.pow(p[1] - Math.floor(p[1]) - 1, 2))) * 44);
+  wallpaper70sPatternData[i + 0] = wallpaper70sPatternData[i + 1] = wallpaper70sPatternData[i + 2] = v * 255;
+  wallpaper70sPatternData[i + 3] = 255;
+}
+wallpaper70sPatternContext.putImageData(wallpaper70sPatternImageData, 0, 0);
+/* style */
+var wallpaper70sPatternStyle = document.createElement('style');
+wallpaper70sPatternStyle.innerHTML = 'body { background-image: url(' + wallpaper70sPattern.toDataURL() + '); }';
+document.head.appendChild(wallpaper70sPatternStyle);
+/* float Sine2Pattern(in vec2 p) { return 0.5+sin(p.x * 20.0 + cos(p.y * 10.0 )) *sin(p.y * 20.0 + cos(p.x * 10.0 )); } */
+var sine2Pattern = document.createElement('canvas');
+sine2Pattern.width = sine2Pattern.height = 256;
+var sine2PatternContext = sine2Pattern.getContext('2d');
+var sine2PatternImageData = sine2PatternContext.createImageData(sine2Pattern.width, sine2Pattern.height);
+var sine2PatternData = sine2PatternImageData.data;
+for (var i = 0; i < sine2PatternData.length; i += 4) {
+  var x = (i / 4) % sine2Pattern.width;
+  var y = Math.floor((i / 4) / sine2Pattern.width);
+  var p = [x / sine2Pattern.width, y / sine2Pattern.height];
+  var v = 0.5 + Math.sin(p[0] * 20 + Math.cos(p[1] * 10)) * Math.sin(p[1] * 20 + Math.cos(p[0] * 10));
+  sine2PatternData[i + 0] = sine2PatternData[i + 1] = sine2PatternData[i + 2] = v * 255;
+  sine2PatternData[i + 3] = 255;
+}
+sine2PatternContext.putImageData(sine2PatternImageData, 0, 0);
+/* style */
+var sine2PatternStyle = document.createElement('style');
+sine2PatternStyle.innerHTML = 'body { background-image: url(' + sine2Pattern.toDataURL() + '); }';
+document.head.appendChild(sine2PatternStyle);
+/* float BrickPattern(in vec2 p) { p *= vec2 (1.0, 2.8);  // scale vec2 f = floor (p); if (2. * floor (f.y * 0.5) != f.y) p.x += 0.5;  // brick shift p = smoothstep (0.03, 0.08, abs (fract (p + 0.5) - 0.5)); return 1. - 0.9 * p.x * p.y; } */
+var brickPattern = document.createElement('canvas');
+brickPattern.width = brickPattern.height = 256;
+var brickPatternContext = brickPattern.getContext('2d');
+var brickPatternImageData = brickPatternContext.createImageData(brickPattern.width, brickPattern.height);
+var brickPatternData = brickPatternImageData.data;
+for (var i = 0; i < brickPatternData.length; i += 4) {
+  var x = (i / 4) % brickPattern.width;
+  var y = Math.floor((i / 4) / brickPattern.width);
+  var p = [x / brickPattern.width, y / brickPattern.height];
+  p = [p[0] * 1, p[1] * 2.8];
+  var f = [Math.floor(p[0]), Math.floor(p[1])];
+  if (2 * Math.floor(f[1] * 0.5) != f[1]) {
+    p[0] += 0.5;
+  }
+  p = [Math.abs(p[0] + 0.5 - Math.floor(p[0] + 0.5)), Math.abs(p[1] + 0.5 - Math.floor(p[1] + 0.5))];
+  p = [Math.min(Math.max((p[0] - 0.03) / (0.08 - 0.03), 0), 1), Math.min(Math.max((p[1] - 0.03) / (0.08 - 0.03), 0), 1)];
+  var v = 1 - 0.9 * p[0] * p[1];
+  brickPatternData[i + 0] = brickPatternData[i + 1] = brickPatternData[i + 2] = v * 255;
+  brickPatternData[i + 3] = 255;
+}
+brickPatternContext.putImageData(brickPatternImageData, 0, 0);
+/* style */
+var brickPatternStyle = document.createElement('style');
+brickPatternStyle.innerHTML = 'body { background-image: url(' + brickPattern.toDataURL() + '); }';
+document.head.appendChild(brickPatternStyle);
+/* float BrickPattern2(in vec2 p)    // no AA { const float vSize = 0.10; const float hSize = 0.05; p.y *= 2.5;    // scale y if(mod(p.y, 2.0) < 1.0) p.x += 0.5; p = p - floor(p); if((p.x+hSize) > 1.0 || (p.y < vSize)) return 1.0; return 0.0; } */
+var brickPattern2 = document.createElement('canvas');
+brickPattern2.width = brickPattern2.height = 256;
+var brickPattern2Context = brickPattern2.getContext('2d');
+var brickPattern2ImageData = brickPattern2Context.createImageData(brickPattern2.width, brickPattern2.height);
+var brickPattern2Data = brickPattern2ImageData.data;
+for (var i = 0; i < brickPattern2Data.length; i += 4) {
+  var x = (i / 4) % brickPattern2.width;
+  var y = Math.floor((i / 4) / brickPattern2.width);
+  var p = [x / brickPattern2.width, y / brickPattern2.height];
+  p = [p[0], p[1] * 2.5];
+  if (p[1] % 2 < 1) {
+    p[0] += 0.5;
+  }
+  p = [p[0] - Math.floor(p[0]), p[1] - Math.floor(p[1])];
+  if ((p[0] + 0.05) > 1 || (p[1] < 0.1)) {
+    var v = 1;
+  } else {
+    var v = 0;
+  }
+  brickPattern2Data[i + 0] = brickPattern2Data[i + 1] = brickPattern2Data[i + 2] = v * 255;
+  brickPattern2Data[i + 3] = 255;
+}
+brickPattern2Context.putImageData(brickPattern2ImageData, 0, 0);
+/* style */
+var brickPattern2Style = document.createElement('style');
+brickPattern2Style.innerHTML = 'body { background-image: url(' + brickPattern2.toDataURL() + '); }';
+document.head.appendChild(brickPattern2Style);
+/* float GearPattern(in vec2 uv     // coordinates ,in float wn    // vertical wheel count ,in int tn      // tooth count ,in float time) // rotation time { float g = (step(1.0, uv.x * wn) - 0.5) * time; uv = fract(uv * wn) - 0.5; float r = clamp(0.48, 0.4, 0.45 + 0.12*sin(atan(uv.x,uv.y) * float(tn) + g)); return smoothstep(r, r + 0.01, 1.1*length(uv)); } */
+var gearPattern = document.createElement('canvas');
+gearPattern.width = gearPattern.height = 256;
+var gearPatternContext = gearPattern.getContext('2d');
+var gearPatternImageData = gearPatternContext.createImageData(gearPattern.width, gearPattern.height);
+var gearPatternData = gearPatternImageData.data;
+for (var i = 0; i < gearPatternData.length; i += 4) {
+  var x = (i / 4) % gearPattern.width;
+  var y = Math.floor((i / 4) / gearPattern.width);
+  var uv = [x / gearPattern.width, y / gearPattern.height];
+  var wn = 1;
+  var tn = 8;
+  var time = 0;
+  var g = (uv[0] * wn > 1 ? 1 : 0) - 0.5 * time;
+  uv = [uv[0] * wn - Math.floor(uv[0] * wn), uv[1] * wn - Math.floor(uv[1] * wn)];
+  uv = [uv[0] - 0.5, uv[1] - 0.5];
+  var r = Math.min(Math.max(0.48, 0.4), 0.45 + 0.12 * Math.sin(Math.atan2(uv[0], uv[1]) * tn + g));
+  var v = Math.min(Math.max((Math.sqrt(Math.pow(uv[0], 2) + Math.pow(uv[1], 2)) - r) / (0.01), 0), 1);
+  gearPatternData[i + 0] = gearPatternData[i + 1] = gearPatternData[i + 2] = v * 255;
+  gearPatternData[i + 3] = 255;
+}
+gearPatternContext.putImageData(gearPatternImageData, 0, 0);
+/* style */
+var gearPatternStyle = document.createElement('style');
+gearPatternStyle.innerHTML = 'body { background-image: url(' + gearPattern.toDataURL() + '); }';
+document.head.appendChild(gearPatternStyle);
+/* float QCirclePattern(in vec2 p) { vec2 p2 = mod(p*8.0, 4.0)-2.0; return sin(lengthN(p2, 4.0)*16.0); } */
+var qCirclePattern = document.createElement('canvas');
+qCirclePattern.width = qCirclePattern.height = 256;
+var qCirclePatternContext = qCirclePattern.getContext('2d');
+var qCirclePatternImageData = qCirclePatternContext.createImageData(qCirclePattern.width, qCirclePattern.height);
+var qCirclePatternData = qCirclePatternImageData.data;
+for (var i = 0; i < qCirclePatternData.length; i += 4) {
+  var x = (i / 4) % qCirclePattern.width;
+  var y = Math.floor((i / 4) / qCirclePattern.width);
+  var p = [x / qCirclePattern.width, y / qCirclePattern.height];
+  var p2 = [p[0] * 8 - Math.floor(p[0] * 8), p[1] * 8 - Math.floor(p[1] * 8)];
+  p2 = [p2[0] - 2, p2[1] - 2];
+  var v = Math.sin(Math.sqrt(Math.pow(p2[0], 4) + Math.pow(p2[1], 4)) * 16);
+  qCirclePatternData[i + 0] = qCirclePatternData[i + 1] = qCirclePatternData[i + 2] = v * 255;
+  qCirclePatternData[i + 3] = 255;
+}
+qCirclePatternContext.putImageData(qCirclePatternImageData, 0, 0);
+/* style */
+var qCirclePatternStyle = document.createElement('style');
+qCirclePatternStyle.innerHTML = 'body { background-image: url(' + qCirclePattern.toDataURL() + '); }';
+document.head.appendChild(qCirclePatternStyle);
+/* bucle cada 1 segundos cambia patron */
+var patterns = [grid1Pattern, grid2Pattern, squareHolePattern, squarePattern, checkerPattern, trianglePattern, rhomb1Pattern, hexagonalGrid, hexagonal3Pattern, hexagonalGrid2, hexagonalTruchetPattern, sinePattern, starPattern, basketwork1Pattern, basketwork2Pattern, diamondPattern, rosettePattern, wallpaper70sPattern, sine2Pattern, brickPattern, brickPattern2, gearPattern, qCirclePattern];
+var patternIndex = 0;
+setInterval(function() {
+  patternIndex = (patternIndex + 1) % patterns.length;
+  document.body.style.backgroundImage = 'url(' + patterns[patternIndex].toDataURL() + ')';
+}, 1000);
+});
+        </script>
+    </head>
+    
+</html>

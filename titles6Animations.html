@@ -1,0 +1,56 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+var section = document.createElement('section');
+document.body.appendChild(section);
+
+var cover = document.createElement('div');
+cover.className = 'cover';
+section.appendChild(cover);
+
+var stack = document.createElement('p');
+stack.className = 'stack';
+stack.innerHTML = 'Computation';
+cover.appendChild(stack);
+
+var style = document.createElement('style');
+style.innerHTML = '* { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }';
+document.head.appendChild(style);
+
+var style = document.createElement('style');
+style.innerHTML = '@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700);';
+document.head.appendChild(style);
+
+var style = document.createElement('style');
+style.innerHTML = 'body { background-color: black; font-size: 100%; width: 80%; margin: 2em auto 0; font-family: Open Sans Condensed, sans-serif; font-weight: 700; }';
+document.head.appendChild(style);
+
+var style = document.createElement('style');
+style.innerHTML = 'section { width: 60em; margin: 0 auto; }';
+document.head.appendChild(style);
+
+var style = document.createElement('style');
+style.innerHTML = 'p { margin: 0; }';
+document.head.appendChild(style);
+
+var style = document.createElement('style');
+style.innerHTML = '.cover { color: white; width: 40%;margin: 0; padding: 1% 7% 1% 10%; float: left; margin-right: 2em; display: block; }';
+document.head.appendChild(style);
+
+var style = document.createElement('style');
+style.innerHTML = '.stack { text-transform: uppercase;font-size: 12em; line-height: 0.7em; word-wrap: break-word; overflow-wrap: break-word; }';
+document.head.appendChild(style);
+
+var style = document.createElement('style');
+style.innerHTML = 'span { position: relative; }';
+document.head.appendChild(style);
+
+
+});
+        </script>
+    </head>
+    
+</html>

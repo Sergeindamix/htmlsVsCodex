@@ -1,0 +1,23 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+/* la sombra se difumina cada segundo */
+var techno = document.createElement('div');
+techno.innerHTML = 'TECHNO';
+techno.style.textAlign = 'center';
+techno.style.fontFamily = 'Roboto';
+techno.style.fontSize = '100px';
+techno.style.textShadow = '0 0 5px #fff';
+document.body.appendChild(techno);
+setInterval(function() {
+  var color = '#' + Math.floor(Math.random() * 16777215).toString(16);
+  techno.style.textShadow = '0 0 25px ' + color;
+}, 1000);
+});
+        </script>
+    </head>
+    
+</html>

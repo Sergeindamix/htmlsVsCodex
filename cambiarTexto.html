@@ -1,0 +1,105 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+var raxa = document.createElement('div');
+raxa.innerHTML = 'raxa';
+raxa.style.position = 'absolute';
+raxa.style.left = '0px';
+raxa.style.top = '0px';
+document.body.appendChild(raxa);
+
+var x = 0;
+var y = 0;
+var dx = 1;
+var dy = 1;
+var width = window.innerWidth;
+var height = window.innerHeight;
+
+function animate() {
+  x += dx;
+  y += dy;
+  if (x > width || x < 0) {
+    dx = -dx;
+  }
+  if (y > height || y < 0) {
+    dy = -dy;
+  }
+  raxa.style.left = x + 'px';
+  raxa.style.top = y + 'px';
+  raxa.style.transform = 'scale(' + (x / width) * 3 + ') rotate(' + x + 'deg)';
+  requestAnimationFrame(animate);
+}
+
+animate();
+
+var raxa = document.createElement('div');
+raxa.innerHTML = 'raxa';
+raxa.style.position = 'absolute';
+raxa.style.left = '0px';
+raxa.style.top = '0px';
+document.body.appendChild(raxa);
+
+var x = 0;
+var y = 0;
+var dx = 1;
+var dy = 1;
+var width = window.innerWidth;
+var height = window.innerHeight;
+
+function animate() {
+  x += dx;
+  y += dy;
+  if (x > width || x < 0) {
+    dx = -dx;
+  }
+  if (y > height || y < 0) {
+    dy = -dy;
+  }
+  raxa.style.left = x + 'px';
+  raxa.style.top = y + 'px';
+  raxa.style.transform = 'scale(' + (x / width) * 3 + ') rotate(' + x + 'deg)';
+  raxa.style.color = 'rgb(' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ')';
+  requestAnimationFrame(animate);
+}
+
+animate();
+
+var input = document.createElement('input');
+input.type = 'text';
+input.style.position = 'absolute';
+input.style.left = '0px';
+input.style.top = '0px';
+document.body.appendChild(input);
+
+var button = document.createElement('button');
+button.innerHTML = 'Click me!';
+button.style.position = 'absolute';
+button.style.left = '0px';
+button.style.top = '30px';
+document.body.appendChild(button);
+
+var input = document.createElement('input');
+input.type = 'text';
+input.style.position = 'absolute';
+input.style.left = '0px';
+input.style.top = '0px';
+document.body.appendChild(input);
+
+var button = document.createElement('button');
+button.innerHTML = 'Click me!';
+button.style.position = 'absolute';
+button.style.left = '0px';
+button.style.top = '30px';
+document.body.appendChild(button);
+
+button.onclick = function() {
+  raxa.innerHTML = input.value;
+};
+});
+        </script>
+    </head>
+   
+</html>

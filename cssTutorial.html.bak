@@ -1,0 +1,1001 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+/* numerar 5 divs */
+for (var i = 0; i < 5; i++) {
+  var div = document.createElement('div');
+  div.innerHTML = i;
+  document.body.appendChild(div);
+}
+/* o,1,2 red */
+var divs = document.getElementsByTagName('div');
+divs[0].style.color = 'red';
+divs[1].style.color = 'red';
+divs[2].style.color = 'red';
+/* 3,4 blue */
+divs[3].style.color = 'blue';
+divs[4].style.color = 'blue';
+/* 0 #primer */
+divs[0].id = 'primer';
+/* 1 .numero */
+divs[1].className = 'numero';
+/* 2 txt[text] */
+divs[2].innerHTML = 'text';
+/* 3:hover */
+divs[3].onmouseover = function() {
+  this.style.color = 'green';
+};
+/* descargar https://fonts.googleapis.com/css2?family=Open+Sans" rel="stylesheet" type="text/css" */
+var link = document.createElement('link');
+link.href = 'https://fonts.googleapis.com/css2?family=Open+Sans';
+link.rel = 'stylesheet';
+link.type = 'text/css';
+document.head.appendChild(link);
+/* font-size: 10px; */
+document.body.style.fontSize = '10px';
+/* font-family: "Open Sans", sans-serif; */
+document.body.style.fontFamily = '"Open Sans", sans-serif';
+/* 0   font-size: 60px;  text-align: center; */
+divs[0].style.fontSize = '60px';
+divs[0].style.textAlign = 'center';
+/* 1, 2 font-size: 16px;  line-height: 2;  letter-spacing: 1px; */
+divs[1].style.fontSize = '16px';
+divs[1].style.lineHeight = '2';
+divs[1].style.letterSpacing = '1px';
+divs[2].style.fontSize = '16px';
+divs[2].style.lineHeight = '2';
+divs[2].style.letterSpacing = '1px';
+/* padding 100 */
+document.body.style.padding = '100px';
+/* show borders */
+document.body.style.border = '1px solid black';
+/* marge 100 */
+document.body.style.margin = '100px';
+/* ancho full */
+document.body.style.width = '100%';
+/* 0,1,2,3,4{shadow} */
+for (var i = 0; i < 5; i++) {
+  divs[i].style.boxShadow = '0 0 10px black';
+}
+/* background-color: #00539F; */
+document.body.style.backgroundColor = '#00539F';
+/* body {  width: 600px;  margin: 0 auto;  background-color: #FF9500;  padding: 0 20px 20px 20px;  border: 5px solid black;} */
+document.body.style.width = '600px';
+document.body.style.margin = '0 auto';
+document.body.style.backgroundColor = '#FF9500';
+//arriba, derecha, abajo e izquierda
+document.body.style.padding = '0 20px 20px 20px';
+document.body.style.border = '5px solid black';
+/* 0{  margin: 0;  padding: 20px 0;  color: #00539F;  text-shadow: 3px 3px 1px black;} */
+divs[0].style.margin = '0';
+// el primer valor afectará los lados superior (top) e inferior (bottom), y el segundo valor los lados izquierdo (left) y derecho (right)
+divs[0].style.padding = '20px 0';
+divs[0].style.color = '#00539F';
+//El primer valor en píxeles asigna el desplazamiento horizontal de la sombra desde el texto —qué tan lejos la mueve a la derecha—. Un valor negativo la moverá a la izquierda.
+//El segundo valor en píxeles asigna el desplazamiento vertical de la sombra desde el texto —qué tan lejos la mueve hacia abajo—. En este ejemplo, un valor negativo la desplazaría hacia arriba.
+//El tercer valor en píxeles asigna radio de desenfoque de la sombra —un valor grande es igual a una sombra borrosa—.
+//El cuarto valor asigna el color base de la sombra.
+divs[0].style.textShadow = '3px 3px 1px black';
+/* imagen {  display: block;  margin: 0 auto;} */
+var img = document.createElement('img');
+img.src = 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png';
+img.style.display = 'block';
+img.style.margin = '0 auto';
+document.body.appendChild(img);
+/* background-image */
+document.body.style.backgroundImage = 'url(https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png)';
+/* background-repeat: repeat-x; */
+document.body.style.backgroundRepeat = 'repeat-x';
+/* background-repeat: no-repeat;  background-position: right top;  margin-right: 200px; */
+document.body.style.backgroundRepeat = 'no-repeat';
+document.body.style.backgroundPosition = 'right top';
+document.body.style.marginRight = '200px';
+/* background-attachment: fixed; */
+//mantiene inmovil imagen
+document.body.style.backgroundAttachment = 'fixed';
+/* p.one {  border-style: solid;  border-width: 5px;} */
+var p = document.createElement('p');
+p.innerHTML = 'one';
+p.style.borderStyle = 'solid';
+p.style.borderWidth = '5px';
+document.body.appendChild(p);
+/* p.two {  border-style: solid;  border-width: medium;} */
+var p = document.createElement('p');
+p.innerHTML = 'two';
+p.style.borderStyle = 'solid';
+p.style.borderWidth = 'medium';
+document.body.appendChild(p);
+/* p.three {  border-style: dotted;  border-width: 2px;} */
+var p = document.createElement('p');
+p.innerHTML = 'three';
+p.style.borderStyle = 'dotted';
+p.style.borderWidth = '2px';
+document.body.appendChild(p);
+/* p.four {  border-style: dotted;  border-width: thick;} */
+var p = document.createElement('p');
+p.innerHTML = 'four';
+p.style.borderStyle = 'dotted';
+p.style.borderWidth = 'thick';
+document.body.appendChild(p);
+/* p.five {  border-style: double;  border-width: 15px;} */
+var p = document.createElement('p');
+p.innerHTML = 'five';
+p.style.borderStyle = 'double';
+p.style.borderWidth = '15px';
+document.body.appendChild(p);
+/* p.six {  border-style: double;  border-width: thick;} */
+var p = document.createElement('p');
+p.innerHTML = 'six';
+p.style.borderStyle = 'double';
+p.style.borderWidth = 'thick';
+document.body.appendChild(p);
+/* p {  border-style: solid;  border-top-width: 15px;} */
+var p = document.createElement('p');
+p.innerHTML = 'seven';
+p.style.borderStyle = 'solid';
+p.style.borderTopWidth = '15px';
+document.body.appendChild(p);
+/* p {  border-style: solid;  border-bottom-width: 15px;} */
+var p = document.createElement('p');
+p.innerHTML = 'eight';
+p.style.borderStyle = 'solid';
+p.style.borderBottomWidth = '15px';
+document.body.appendChild(p);
+/* p {  border-style: solid;  border-left-width: 15px;} */
+var p = document.createElement('p');
+p.innerHTML = 'nine';
+p.style.borderStyle = 'solid';
+p.style.borderLeftWidth = '15px';
+document.body.appendChild(p);
+/* p {  border-style: solid;  border-right-width: 15px;} */
+var p = document.createElement('p');
+p.innerHTML = 'ten';
+p.style.borderStyle = 'solid';
+p.style.borderRightWidth = '15px';
+document.body.appendChild(p);
+/* p.dotted {border-style: dotted;} */
+var p = document.createElement('p');
+p.innerHTML = 'eleven';
+p.className = 'dotted';
+p.style.borderStyle = 'dotted';
+document.body.appendChild(p);
+/* p.dashed {border-style: dashed;} */
+var p = document.createElement('p');
+p.innerHTML = 'twelve';
+p.className = 'dashed';
+p.style.borderStyle = 'dashed';
+document.body.appendChild(p);
+/* p.solid {border-style: solid;} */
+var p = document.createElement('p');
+p.innerHTML = 'thirteen';
+p.className = 'solid';
+p.style.borderStyle = 'solid';
+document.body.appendChild(p);
+/* p.double {border-style: double;} */
+var p = document.createElement('p');
+p.innerHTML = 'fourteen';
+p.className = 'double';
+p.style.borderStyle = 'double';
+document.body.appendChild(p);
+/* p.groove {border-style: groove;} */
+var p = document.createElement('p');
+p.innerHTML = 'fifteen';
+p.className = 'groove';
+p.style.borderStyle = 'groove';
+document.body.appendChild(p);
+/* p.ridge {border-style: ridge;} */
+var p = document.createElement('p');
+p.innerHTML = 'sixteen';
+p.className = 'ridge';
+p.style.borderStyle = 'ridge';
+document.body.appendChild(p);
+/* p.inset {border-style: inset;} */
+var p = document.createElement('p');
+p.innerHTML = 'seventeen';
+p.className = 'inset';
+p.style.borderStyle = 'inset';
+document.body.appendChild(p);
+/* p.outset {border-style: outset;} */
+var p = document.createElement('p');
+p.innerHTML = 'eighteen';
+p.className = 'outset';
+p.style.borderStyle = 'outset';
+document.body.appendChild(p);
+/* p.none {border-style: none;} */
+var p = document.createElement('p');
+p.innerHTML = 'no border';
+p.className = 'none';
+p.style.borderStyle = 'none';
+document.body.appendChild(p);
+/* p.hidden {border-style: hidden;} */
+var p = document.createElement('p');
+p.innerHTML = 'hidden border';
+p.className = 'hidden';
+p.style.borderStyle = 'hidden';
+document.body.appendChild(p);
+/* p.mix {border-style: dotted dashed solid double;} */
+var p = document.createElement('p');
+p.innerHTML = 'twenty-one';
+p.className = 'mix';
+p.style.borderStyle = 'dotted dashed solid double';
+document.body.appendChild(p);
+/* p.none {border-top-style: none;} */
+var p = document.createElement('p');
+p.innerHTML = 'twenty-two';
+p.className = 'none';
+p.style.borderTopStyle = 'none';
+document.body.appendChild(p);
+/* p.dotted {border-top-style: dotted;} */
+var p = document.createElement('p');
+p.innerHTML = 'twenty-three';
+p.className = 'dotted';
+p.style.borderTopStyle = 'dotted';
+document.body.appendChild(p);
+/* p.dashed {border-top-style: dashed;} */
+var p = document.createElement('p');
+p.innerHTML = 'twenty-four';
+p.className = 'dashed';
+p.style.borderTopStyle = 'dashed';
+document.body.appendChild(p);
+/* p.solid {border-top-style: solid;} */
+var p = document.createElement('p');
+p.innerHTML = 'twenty-five';
+p.className = 'solid';
+p.style.borderTopStyle = 'solid';
+document.body.appendChild(p);
+/* p.double {border-top-style: double;} */
+var p = document.createElement('p');
+p.innerHTML = 'twenty-six';
+p.className = 'double';
+p.style.borderTopStyle = 'double';
+document.body.appendChild(p);
+/* p.groove {border-top-style: groove;} */
+var p = document.createElement('p');
+p.innerHTML = 'twenty-seven';
+p.className = 'groove';
+p.style.borderTopStyle = 'groove';
+document.body.appendChild(p);
+/* p.ridge {border-top-style: ridge;} */
+var p = document.createElement('p');
+p.innerHTML = 'twenty-eight';
+p.className = 'ridge';
+p.style.borderTopStyle = 'ridge';
+document.body.appendChild(p);
+/* p.inset {border-top-style: inset;} */
+var p = document.createElement('p');
+p.innerHTML = 'twenty-nine';
+p.className = 'inset';
+p.style.borderTopStyle = 'inset';
+document.body.appendChild(p);
+/* p.outset {border-top-style: outset;} */
+var p = document.createElement('p');
+p.innerHTML = 'thirty';
+p.className = 'outset';
+p.style.borderTopStyle = 'outset';
+document.body.appendChild(p);
+/* p {border-style: solid;} */
+var p = document.createElement('p');
+p.innerHTML = 'thirty-one';
+p.style.borderStyle = 'solid';
+document.body.appendChild(p);
+/* p.none {border-bottom-style: none;} */
+var p = document.createElement('p');
+p.innerHTML = 'thirty-two';
+p.className = 'none';
+p.style.borderBottomStyle = 'none';
+document.body.appendChild(p);
+/* p.dotted {border-bottom-style: dotted;} */
+var p = document.createElement('p');
+p.innerHTML = 'thirty-three';
+p.className = 'dotted';
+p.style.borderBottomStyle = 'dotted';
+document.body.appendChild(p);
+/* p.dashed {border-bottom-style: dashed;} */
+var p = document.createElement('p');
+p.innerHTML = 'thirty-four';
+p.className = 'dashed';
+p.style.borderBottomStyle = 'dashed';
+document.body.appendChild(p);
+/* p.solid {border-bottom-style: solid;} */
+var p = document.createElement('p');
+p.innerHTML = 'thirty-five';
+p.className = 'solid';
+p.style.borderBottomStyle = 'solid';
+document.body.appendChild(p);
+/* p.double {border-bottom-style: double;} */
+var p = document.createElement('p');
+p.innerHTML = 'thirty-six';
+p.className = 'double';
+p.style.borderBottomStyle = 'double';
+document.body.appendChild(p);
+/* p.groove {border-bottom-style: groove;} */
+var p = document.createElement('p');
+p.innerHTML = 'thirty-seven';
+p.className = 'groove';
+p.style.borderBottomStyle = 'groove';
+document.body.appendChild(p);
+/* p.ridge {border-bottom-style: ridge;} */
+var p = document.createElement('p');
+p.innerHTML = 'thirty-eight';
+p.className = 'ridge';
+p.style.borderBottomStyle = 'ridge';
+document.body.appendChild(p);
+/* p.inset {border-bottom-style: inset;} */
+var p = document.createElement('p');
+p.innerHTML = 'thirty-nine';
+p.className = 'inset';
+p.style.borderBottomStyle = 'inset';
+document.body.appendChild(p);
+/* p.outset {border-bottom-style: outset;} */
+var p = document.createElement('p');
+p.innerHTML = 'forty';
+p.className = 'outset';
+p.style.borderBottomStyle = 'outset';
+document.body.appendChild(p);
+/* p.one {  border-style: solid;  border-color: #0000ff;} */
+var p = document.createElement('p');
+p.innerHTML = 'forty-one';
+p.className = 'one';
+p.style.borderStyle = 'solid';
+p.style.borderColor = '#0000ff';
+document.body.appendChild(p);
+/* p.two {  border-style: solid;  border-color: #ff0000 #0000ff;} */
+var p = document.createElement('p');
+p.innerHTML = 'forty-two';
+p.className = 'two';
+p.style.borderStyle = 'solid';
+p.style.borderColor = '#ff0000 #0000ff';
+document.body.appendChild(p);
+/* p.three {  border-style: solid;  border-color: #ff0000 #00ff00 #0000ff;} */
+var p = document.createElement('p');
+p.innerHTML = 'forty-three';
+p.className = 'three';
+p.style.borderStyle = 'solid';
+p.style.borderColor = '#ff0000 #00ff00 #0000ff';
+document.body.appendChild(p);
+/* p.four {  border-style: solid;  border-color: #ff0000 #00ff00 #0000ff rgb(250,0,255);} */
+var p = document.createElement('p');
+p.innerHTML = 'forty-four';
+p.className = 'four';
+p.style.borderStyle = 'solid';
+p.style.borderColor = '#ff0000 #00ff00 #0000ff rgb(250,0,255)';
+document.body.appendChild(p);
+/* p.normal {  border: 2px solid red;  padding: 5px;} */
+var p = document.createElement('p');
+p.innerHTML = 'forty-five';
+p.className = 'normal';
+p.style.border = '2px solid red';
+p.style.padding = '5px';
+document.body.appendChild(p);
+/* p.round1 {  border: 2px solid red;  border-radius: 5px;  padding: 5px;} */
+var p = document.createElement('p');
+p.innerHTML = 'forty-six';
+p.className = 'round1';
+p.style.border = '2px solid red';
+p.style.borderRadius = '5px';
+p.style.padding = '5px';
+document.body.appendChild(p);
+/* p.round2 {  border: 2px solid red;  border-radius: 8px;  padding: 5px;} */
+var p = document.createElement('p');
+p.innerHTML = 'forty-seven';
+p.className = 'round2';
+p.style.border = '2px solid red';
+p.style.borderRadius = '8px';
+p.style.padding = '5px';
+document.body.appendChild(p);
+/* p.round3 {  border: 2px solid red;  border-radius: 12px;  padding: 5px;} */
+var p = document.createElement('p');
+p.innerHTML = 'forty-eight';
+p.className = 'round3';
+p.style.border = '2px solid red';
+p.style.borderRadius = '12px';
+p.style.padding = '5px';
+document.body.appendChild(p);
+/* div {  max-width: 400px;  min-width: 100px;  background-color: powderblue;This is some text. This is some text. This is some text.This is some text. This is some text. This is some text.This is some text. This is some text. This is some text.} */
+var div = document.createElement('div');
+div.style.maxWidth = '400px';
+div.style.minWidth = '100px';
+div.style.backgroundColor = 'powderblue';
+div.innerHTML = 'This is some text. This is some text. This is some text.This is some text. This is some text. This is some text.This is some text. This is some text. This is some text.';
+document.body.appendChild(div);
+/* div {  background-color: lightgrey;  width: 300px;  border: 15px solid green;  padding: 50px;  margin: 20px;  This text is the content of the box. We have added a 50px padding, 20px margin and a 15px green border. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.} */
+var div = document.createElement('div');
+div.style.backgroundColor = 'lightgrey';
+div.style.width = '300px';
+div.style.border = '15px solid green';
+div.style.padding = '50px';
+div.style.margin = '20px';
+div.innerHTML = 'This text is the content of the box. We have added a 50px padding, 20px margin and a 15px green border. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
+document.body.appendChild(div);
+/* div {  width: 320px;  padding: 10px;  border: 5px solid gray;  margin: 0;  The picture above is 350px wide. The total width of this element is also 350px.} */
+var div = document.createElement('div');
+div.style.width = '320px';
+div.style.padding = '10px';
+div.style.border = '5px solid gray';
+div.style.margin = '0';
+div.innerHTML = 'The picture above is 350px wide. The total width of this element is also 350px.';
+document.body.appendChild(div);
+/* p {  border: 2px solid black;  outline: #4CAF50 solid 10px;  margin: auto;    padding: 20px;  text-align: center;  This element has a 2px black border and a green outline with a width of 10px.} */
+var p = document.createElement('p');
+p.style.border = '2px solid black';
+p.style.outline = '#4CAF50 solid 10px';
+p.style.margin = 'auto';
+p.style.padding = '20px';
+p.style.textAlign = 'center';
+p.innerHTML = 'This element has a 2px black border and a green outline with a width of 10px.';
+document.body.appendChild(p);
+/* p.ex1 {  border: 1px solid black;  outline-style: solid;  outline-color: red;  outline-width: thin;} */
+var p = document.createElement('p');
+p.className = 'ex1';
+p.style.border = '1px solid black';
+p.style.outlineStyle = 'solid';
+p.style.outlineColor = 'red';
+p.style.outlineWidth = 'thin';
+document.body.appendChild(p);
+/* p.ex2 {  border: 1px solid black;  outline-style: solid;  outline-color: red;  outline-width: medium;} */
+var p = document.createElement('p');
+p.className = 'ex2';
+p.style.border = '1px solid black';
+p.style.outlineStyle = 'solid';
+p.style.outlineColor = 'red';
+p.style.outlineWidth = 'medium';
+document.body.appendChild(p);
+/* p.ex3 {  border: 1px solid black;  outline-style: solid;  outline-color: red;  outline-width: thick;} */
+var p = document.createElement('p');
+p.className = 'ex3';
+p.style.border = '1px solid black';
+p.style.outlineStyle = 'solid';
+p.style.outlineColor = 'red';
+p.style.outlineWidth = 'thick';
+document.body.appendChild(p);
+/* p.ex4 {  border: 1px solid black;  outline-style: solid;  outline-color: red;  outline-width: 4px;} */
+var p = document.createElement('p');
+p.className = 'ex4';
+p.style.border = '1px solid black';
+p.style.outlineStyle = 'solid';
+p.style.outlineColor = 'red';
+p.style.outlineWidth = '4px';
+document.body.appendChild(p);
+/* p {  margin: 30px;  border: 1px solid black;  outline: 1px solid red;  outline-offset: 15px;  This paragraph has an outline 15px outside the border edge.} */
+var p = document.createElement('p');
+p.style.margin = '30px';
+p.style.border = '1px solid black';
+p.style.outline = '1px solid red';
+p.style.outlineOffset = '15px';
+p.innerHTML = 'This paragraph has an outline 15px outside the border edge.';
+document.body.appendChild(p);
+/* h1 {  text-align: center;} */
+var h1 = document.createElement('h1');
+h1.style.textAlign = 'center';
+document.body.appendChild(h1);
+/* h2 {  text-align: left;} */
+var h2 = document.createElement('h2');
+h2.style.textAlign = 'left';
+document.body.appendChild(h2);
+/* add text for each h */
+h1.innerHTML = 'This is a heading';
+h2.innerHTML = 'This is a heading';
+/* h2 text align right */
+h2.style.textAlign = 'right';
+/* <p>A link with no underline: <a href="https://www.w3schools.com">W3Schools.com</a></p> */
+var p = document.createElement('p');
+p.innerHTML = 'A link with no underline: <a href="https://www.w3schools.com">W3Schools.com</a>';
+document.body.appendChild(p);
+/* h1 {  text-decoration: underline;1} */
+h1.style.textDecoration = 'underline';
+/* h2 {  text-decoration: underline red;2} */
+h2.style.textDecoration = 'underline red';
+/* h3 {  text-decoration: underline red double;3} */
+var h3 = document.createElement('h3');
+h3.style.textDecoration = 'underline red double';
+document.body.appendChild(h3);
+/* numerar h */
+h1.innerHTML = '1. This is a heading';
+h2.innerHTML = '2. This is a heading';
+h3.innerHTML = '3. This is a heading';
+/* hola uppercase */
+h1.innerHTML = 'Hola';
+h1.style.textTransform = 'uppercase';
+/* lowercase */
+h2.innerHTML = 'Hola';
+h2.style.textTransform = 'lowercase';
+/* capitalize */
+h3.innerHTML = 'Hola';
+h3.style.textTransform = 'capitalize';
+/* letter-spacing: 5px; */
+h1.style.letterSpacing = '5px';
+/* letter-spacing: -2px; */
+h2.style.letterSpacing = '-2px';
+/* letter-spacing: -12px; */
+h3.style.letterSpacing = '-12px';
+/* line-height: 0.7; */
+h1.style.lineHeight = '0.7';
+/* line-height: 10.7; */
+h2.style.lineHeight = '10.7';
+/* line-height: 0.0; */
+h3.style.lineHeight = '0.0';
+/* direction: rtl;  unicode-bidi: bidi-override; */
+h1.style.direction = 'rtl';
+h1.style.unicodeBidi = 'bidi-override';
+/* text-shadow: 3px 2px red; */
+h2.style.textShadow = '3px 2px red';
+/* p {  white-space: nowrap;  This is some text that will not wrap.  This is some text that will not wrap. */
+var p = document.createElement('p');
+p.style.whiteSpace = 'nowrap';
+p.innerHTML = 'This is some text that will not wrap.  This is some text that will not wrap.';
+document.body.appendChild(p);
+/* This is some text that will not wrap.  This is some text that will not wrap.  This is some text that will not wrap.  This is some text that will not wrap.  This is some text that will not wrap.  This is some text that will not wrap.  This is some text that will not wrap.} */
+p.innerHTML = 'This is some text that will not wrap.  This is some text that will not wrap.  This is some text that will not wrap.  This is some text that will not wrap.  This is some text that will not wrap.  This is some text that will not wrap.  This is some text that will not wrap.';
+/* p.normal {  font-weight: normal;} */
+var p = document.createElement('p');
+p.className = 'normal';
+p.style.fontWeight = 'normal';
+p.innerHTML = '1. This is a paragraph.';
+document.body.appendChild(p);
+/* p.light {  font-weight: lighter;} */
+var p = document.createElement('p');
+p.className = 'light';
+p.style.fontWeight = 'lighter';
+p.innerHTML = '2. This is a paragraph.';
+document.body.appendChild(p);
+/* p.thick {  font-weight: bold;} */
+var p = document.createElement('p');
+p.className = 'thick';
+p.style.fontWeight = 'bold';
+p.innerHTML = '3. This is a paragraph.';
+document.body.appendChild(p);
+/* p.thicker {  font-weight: 900;} */
+var p = document.createElement('p');
+p.className = 'thicker';
+p.style.fontWeight = '900';
+document.body.appendChild(p);
+p.innerHTML = '4. This is a paragraph.';
+var span = document.createElement('span');
+span.style.cursor = 'auto';
+span.innerHTML = 'auto';
+document.body.appendChild(span);
+span.style.cursor = 'crosshair';
+span.innerHTML = 'crosshair';
+document.body.appendChild(span);
+span.style.cursor = 'default';
+span.innerHTML = 'default';
+document.body.appendChild(span);
+span.style.cursor = 'e-resize';
+span.innerHTML = 'e-resize';
+document.body.appendChild(span);
+span.style.cursor = 'help';
+span.innerHTML = 'help';
+document.body.appendChild(span);
+span.style.cursor = 'move';
+span.innerHTML = 'move';
+document.body.appendChild(span);
+span.style.cursor = 'n-resize';
+span.innerHTML = 'n-resize';
+document.body.appendChild(span);
+span.style.cursor = 'ne-resize';
+span.innerHTML = 'ne-resize';
+document.body.appendChild(span);
+span.style.cursor = 'nw-resize';
+span.innerHTML = 'nw-resize';
+document.body.appendChild(span);
+span.style.cursor = 'pointer';
+span.innerHTML = 'pointer';
+document.body.appendChild(span);
+span.style.cursor = 'progress';
+span.innerHTML = 'progress';
+document.body.appendChild(span);
+span.style.cursor = 's-resize';
+span.innerHTML = 's-resize';
+document.body.appendChild(span);
+span.style.cursor = 'se-resize';
+span.innerHTML = 'se-resize';
+document.body.appendChild(span);
+span.style.cursor = 'sw-resize';
+span.innerHTML = 'sw-resize';
+document.body.appendChild(span);
+span.style.cursor = 'text';
+span.innerHTML = 'text';
+document.body.appendChild(span);
+span.style.cursor = 'w-resize';
+span.innerHTML = 'w-resize';
+document.body.appendChild(span);
+span.style.cursor = 'wait';
+span.innerHTML = 'wait';
+document.body.appendChild(span);
+/* <ol>  <li>Coffee</li>  <li>Tea</li>  <li>Coca Cola</li></ol> */
+var ol = document.createElement('ol');
+var li1 = document.createElement('li');
+li1.innerHTML = 'Coffee';
+ol.appendChild(li1);
+var li2 = document.createElement('li');
+li2.innerHTML = 'Tea';
+ol.appendChild(li2);
+var li3 = document.createElement('li');
+li3.innerHTML = 'Coca Cola';
+ol.appendChild(li3);
+document.body.appendChild(ol);
+/* <ul>  <li>Coffee</li>  <li>Tea</li>  <li>Coca Cola</li></ul> */
+var ul = document.createElement('ul');
+var li1 = document.createElement('li');
+li1.innerHTML = 'Coffee';
+ul.appendChild(li1);
+var li2 = document.createElement('li');
+li2.innerHTML = 'Tea';
+ul.appendChild(li2);
+var li3 = document.createElement('li');
+li3.innerHTML = 'Coca Cola';
+ul.appendChild(li3);
+document.body.appendChild(ul);
+/* ol {  background: #ff9999;  padding: 20px;} */
+var ol = document.getElementsByTagName('ol')[0];
+ol.style.background = '#ff9999';
+ol.style.padding = '20px';
+/* ul {  background: #3399ff;  padding: 20px;} */
+var ul = document.getElementsByTagName('ul')[0];
+ul.style.background = '#3399ff';
+ul.style.padding = '20px';
+/* ol li {  background: #ffe5e5;  color: darkred;  padding: 5px;  margin-left: 35px;} */
+var ol = document.getElementsByTagName('ol')[0];
+var li = ol.getElementsByTagName('li');
+for (var i = 0; i < li.length; i++) {
+  li[i].style.background = '#ffe5e5';
+  li[i].style.color = 'darkred';
+  li[i].style.padding = '5px';
+  li[i].style.marginLeft = '35px';
+}
+/* ul li {  background: #cce5ff;  color: darkblue;  margin: 5px;} */
+var ul = document.getElementsByTagName('ul')[0];
+var li = ul.getElementsByTagName('li');
+for (var i = 0; i < li.length; i++) {
+  li[i].style.background = '#cce5ff';
+  li[i].style.color = 'darkblue';
+  li[i].style.margin = '5px';
+}
+/* ul {  list-style-type: none;  padding: 0;  border: 1px solid #ddd;} */
+var ul = document.getElementsByTagName('ul')[0];
+ul.style.listStyleType = 'none';
+ul.style.padding = '0';
+ul.style.border = '1px solid #ddd';
+/* ul li {  padding: 8px 16px;  border-bottom: 1px solid #ddd;} */
+var ul = document.getElementsByTagName('ul')[0];
+var li = ul.getElementsByTagName('li');
+for (var i = 0; i < li.length; i++) {
+  li[i].style.padding = '8px 16px';
+  li[i].style.borderBottom = '1px solid #ddd';
+}
+/* ul li:last-child {  border-bottom: none} */
+var ul = document.getElementsByTagName('ul')[0];
+var li = ul.getElementsByTagName('li');
+li[li.length - 1].style.borderBottom = 'none';
+//hidden scroll
+var div = document.createElement('div');
+div.style.backgroundColor = 'coral';
+div.style.width = '200px';
+div.style.height = '100px';
+div.style.border = '1px solid black';
+div.style.overflow = 'scroll';
+div.innerHTML = 'You can use the overflow property when you want to have better control of the layout. The overflow property specifies what happens if content overflows an element\'s box.';
+document.body.appendChild(div);
+/* Overflow: auto; The auto value is similar to scroll, only it add scrollbars when necessary */
+document.body.style.overflow = 'auto';
+/* imagen float:right; con texto: This is some text. This is some text. This is some text. */
+var imagen = document.createElement('img');
+imagen.src = 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png';
+imagen.style.float = 'right';
+imagen.style.border = '1px dotted black';
+imagen.style.margin = '0px 0px 15px 20px';
+document.body.appendChild(imagen);
+var texto = document.createElement('div');
+texto.innerHTML = 'This is some text. This is some text. This is some text.';
+document.body.appendChild(texto);
+var span = document.createElement('span');
+span.style.float = 'left';
+span.style.width = '0.7em';
+span.style.fontSize = '400%';
+span.style.fontFamily = 'algerian, courier';
+span.style.lineHeight = '80%';
+span.innerHTML = 'H';
+document.body.appendChild(span);
+/* color: #ff0000;  font-variant: small-caps;  You can use the ::first-line pseudo-element to add a special effect to the first line of a text. Some more text. And even more, and more, and more, and more, and more, and more, and more, and more, and more, and more, and more, and more. */
+var style = document.createElement('style');
+style.innerHTML = '::first-line { color: #ff0000; font-variant: small-caps; }';
+document.head.appendChild(style);
+var firstLine = document.createElement('div');
+firstLine.innerHTML = 'You can use the ::first-line pseudo-element to add a special effect to the first line of a text. Some more text. And even more, and more, and more, and more, and more, and more, and more, and more, and more, and more, and more, and more, and more.';
+document.body.appendChild(firstLine);
+/* first-letter {  color: #ff0000;  font-size: xx-large; hola tarola} */
+var style = document.createElement('style');
+style.type = 'text/css';
+style.innerHTML = 'p:first-letter { color: #ff0000; font-size: xx-large; }';
+document.getElementsByTagName('head')[0].appendChild(style);
+/* show */
+var show = document.createElement('div');
+show.innerHTML = '<p>Hello World</p>';
+document.body.appendChild(show);
+/* first-letter {  color: #ff0000;  font-size: xx-large; hola tarola} */
+var style = document.createElement('style');
+style.type = 'text/css';
+style.innerHTML = 'p:first-letter { color: #ff0000; font-size: xx-large; }';
+document.getElementsByTagName('head')[0].appendChild(style);
+/* show */
+var show = document.createElement('div');
+show.innerHTML = '<p>Hello World</p>';
+document.body.appendChild(show);
+/* div.transbox {  margin: 30px;  background-color: #ffffff;  border: 1px solid black;  opacity: 0.6;} */
+var style = document.createElement('style');
+style.type = 'text/css';
+style.innerHTML = 'div.transbox { margin: 30px; background-color: #ffffff; border: 1px solid black; opacity: 0.6; }';
+document.getElementsByTagName('head')[0].appendChild(style);
+/* div.transbox p {margin: 5%;  font-weight: bold;  color: #000000;} */
+var style = document.createElement('style');
+style.type = 'text/css';
+style.innerHTML = 'div.transbox p { margin: 5%; font-weight: bold; color: #000000; }';
+document.getElementsByTagName('head')[0].appendChild(style);
+/* background: url(klematis.jpg) repeat;  border: 2px solid black; */
+var style = document.createElement('style');
+style.type = 'text/css';
+style.innerHTML = 'body { background: url(klematis.jpg) repeat; border: 2px solid black; }';
+document.getElementsByTagName('head')[0].appendChild(style);
+/* actualizar texto: This is some text that is placed in the transparent box. */
+var show = document.createElement('div');
+show.innerHTML = '<div class="transbox"><p>This is some text that is placed in the transparent box.</p></div>';
+document.body.appendChild(show);
+/* ul {  list-style-type: none;  margin: 0;  padding: 0;  width: 200px;  background-color: #f1f1f1;} */
+var style = document.createElement('style');
+style.type = 'text/css';
+style.innerHTML = 'ul { list-style-type: none; margin: 0; padding: 0; width: 200px; background-color: #f1f1f1; }';
+document.getElementsByTagName('head')[0].appendChild(style);
+/* li a {  display: block;color: #000;  padding: 8px 16px;  text-decoration: none;} */
+var style = document.createElement('style');
+style.type = 'text/css';
+style.innerHTML = 'li a { display: block; color: #000; padding: 8px 16px; text-decoration: none; }';
+document.getElementsByTagName('head')[0].appendChild(style);
+/* li a.active {  background-color: #04AA6D;  color: white;} */
+var style = document.createElement('style');
+style.type = 'text/css';
+style.innerHTML = 'li a.active { background-color: #04AA6D; color: white; }';
+document.getElementsByTagName('head')[0].appendChild(style);
+/* li a:hover:not(.activ) {  background-color: #555;  color: white;} */
+var style = document.createElement('style');
+style.type = 'text/css';
+style.innerHTML = 'li a:hover:not(.active) { background-color: #555; color: white; }';
+document.getElementsByTagName('head')[0].appendChild(style);
+/* <li><a class="active" href="#home">Home</a></li> */
+var show = document.createElement('div');
+show.innerHTML = '<ul><li><a class="active" href="#home">Home</a></li></ul>';
+document.body.appendChild(show);
+/* <li><a href="#news">News</a></li> */
+var show = document.createElement('div');
+show.innerHTML = '<ul><li><a href="#news">News</a></li></ul>';
+document.body.appendChild(show);
+/* <li><a href="#contact">Contact</a></li> */
+var show = document.createElement('div');
+show.innerHTML = '<ul><li><a href="#contact">Contact</a></li></ul>';
+document.body.appendChild(show);
+/* <li><a href="#about">About</a></li> */
+var show = document.createElement('div');
+show.innerHTML = '<ul><li><a href="#about">About</a></li></ul>';
+document.body.appendChild(show);
+/* ul {  list-style-type: none;  margin: 0;  padding: 0;  width: 25%;  background-color: #f1f1f1;  position: fixed;  height: 100%;  overflow: auto;} */
+var ul = document.createElement('ul');
+ul.style.listStyleType = 'none';
+ul.style.margin = '0';
+ul.style.padding = '0';
+ul.style.width = '25%';
+ul.style.backgroundColor = '#f1f1f1';
+ul.style.position = 'fixed';
+ul.style.height = '100%';
+ul.style.overflow = 'auto';
+document.body.appendChild(ul);
+/* li a {  display: block;  color: #000;  padding: 8px 16px;  text-decoration: none;} */
+var li = document.createElement('li');
+var a = document.createElement('a');
+a.style.display = 'block';
+a.style.color = '#000';
+a.style.padding = '8px 16px';
+a.style.textDecoration = 'none';
+li.appendChild(a);
+ul.appendChild(li);
+/* li a.active {  background-color: #04AA6D;  color: white;} */
+a.className = 'active';
+a.style.backgroundColor = '#04AA6D';
+a.style.color = 'white';
+/* li a:hover:not(.active) {  background-color: #555;  color: white;} */
+a.addEventListener('mouseover', function() {
+  if (a.className !== 'active') {
+    a.style.backgroundColor = '#555';
+    a.style.color = 'white';
+  }
+});
+/* <li><a class="active" href="#home">Home</a></li> */
+a.className = 'active';
+a.href = '#home';
+a.innerHTML = 'Home';
+/* <li><a href="#news">News</a></li> */
+var li = document.createElement('li');
+var a = document.createElement('a');
+a.href = '#news';
+a.innerHTML = 'News';
+li.appendChild(a);
+ul.appendChild(li);
+/* <li><a href="#contact">Contact</a></li> */
+var li = document.createElement('li');
+var a = document.createElement('a');
+a.href = '#contact';
+a.innerHTML = 'Contact';
+li.appendChild(a);
+ul.appendChild(li);
+/* <li><a href="#about">About</a></li> */
+var li = document.createElement('li');
+var a = document.createElement('a');
+a.href = '#about';
+a.innerHTML = 'About';
+li.appendChild(a);
+ul.appendChild(li);
+/* div style="margin-left:25%;padding:1px 16px;height:1000px;" */
+var div = document.createElement('div');
+div.style.marginLeft = '25%';
+div.style.padding = '1px 16px';
+div.style.height = '1000px';
+document.body.appendChild(div);
+/* <h2>Fixed Full-height Side Nav</h2> */
+var h2 = document.createElement('h2');
+h2.innerHTML = 'Fixed Full-height Side Nav';
+div.appendChild(h2);
+/* <h3>Try to scroll this area, and see how the sidenav sticks to the page</h3> */
+var h3 = document.createElement('h3');
+h3.innerHTML = 'Try to scroll this area, and see how the sidenav sticks to the page';
+div.appendChild(h3);
+/* <p>Notice that this div element has a left margin of 25%. This is because the side navigation is set to 25% width. If you remove the margin, the sidenav will overlay/sit on top of this div.</p> */
+var p = document.createElement('p');
+p.innerHTML = 'Notice that this div element has a left margin of 25%. This is because the side navigation is set to 25% width. If you remove the margin, the sidenav will overlay/sit on top of this div.';
+div.appendChild(p);
+/* <p>Also notice that we have set overflow:auto to sidenav. This will add a scrollbar when the sidenav is too long (for example if it has over 50 links inside of it).</p> */
+var p = document.createElement('p');
+p.innerHTML = 'Also notice that we have set overflow:auto to sidenav. This will add a scrollbar when the sidenav is too long (for example if it has over 50 links inside of it).';
+div.appendChild(p);
+/* <p>Some text..</p> */
+var p = document.createElement('p');
+p.innerHTML = 'Some text..';
+div.appendChild(p);
+/* <p>Some text..</p> */
+var p = document.createElement('p');
+p.innerHTML = 'Some text..';
+div.appendChild(p);
+/* <p>Some text..</p> */
+var p = document.createElement('p');
+p.innerHTML = 'Some text..';
+div.appendChild(p);
+/* <p>Some text..</p> */
+var p = document.createElement('p');
+p.innerHTML = 'Some text..';
+div.appendChild(p);
+/* <p>Some text..</p> */
+var p = document.createElement('p');
+p.innerHTML = 'Some text..';
+div.appendChild(p);
+/* <p>Some text..</p> */
+var p = document.createElement('p');
+p.innerHTML = 'Some text..';
+div.appendChild(p);
+/* <p>Some text..</p> */
+var p = document.createElement('p');
+p.innerHTML = 'Some text..';
+div.appendChild(p);
+/* .dropdown {  position: relative;  display: inline-block;} */
+var style = document.createElement('style');
+style.innerHTML = '.dropdown {  position: relative;  display: inline-block;}';
+document.head.appendChild(style);
+/* .dropdown-content {  display: none;  position: absolute;  background-color: #f9f9f9;  min-width: 160px;  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);  padding: 12px 16px;  z-index: 1;} */
+var style = document.createElement('style');
+style.innerHTML = '.dropdown-content {  display: none;  position: absolute;  background-color: #f9f9f9;  min-width: 160px;  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);  padding: 12px 16px;  z-index: 1;}';
+document.head.appendChild(style);
+/* .dropdown:hover .dropdown-content {  display: block;} */
+var style = document.createElement('style');
+style.innerHTML = '.dropdown:hover .dropdown-content {  display: block;}';
+document.head.appendChild(style);
+/* <h2>Hoverable Dropdown</h2> */
+var h2 = document.createElement('h2');
+h2.innerHTML = 'Hoverable Dropdown';
+document.body.appendChild(h2);
+/* <p>Move the mouse over the text below to open the dropdown content.</p> */
+var p = document.createElement('p');
+p.innerHTML = 'Move the mouse over the text below to open the dropdown content.';
+document.body.appendChild(p);
+/* <div class="dropdown">  <span>Mouse over me</span>  <div class="dropdown-content">  <p>Hello World!</p> */
+var div = document.createElement('div');
+div.className = 'dropdown';
+div.innerHTML = '<span>Mouse over me</span>  <div class="dropdown-content">  <p>Hello World!</p>';
+document.body.appendChild(div);
+/* .dropbtn {  background-color: #4CAF50;  color: white;  padding: 16px;  font-size: 16px;  border: none;  cursor: pointer;} */
+var dropbtn = document.createElement('style');
+dropbtn.innerHTML = '.dropbtn {  background-color: #4CAF50;  color: white;  padding: 16px;  font-size: 16px;  border: none;  cursor: pointer;}';
+document.body.appendChild(dropbtn);
+/* .dropdown {  position: relative;  display: inline-block;} */
+var dropdown = document.createElement('style');
+dropdown.innerHTML = '.dropdown {  position: relative;  display: inline-block;}';
+document.body.appendChild(dropdown);
+/* .dropdown-content {  display: none;  position: absolute;  background-color: #f9f9f9;  min-width: 160px;  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);  z-index: 1;} */
+var dropdownContent = document.createElement('style');
+dropdownContent.innerHTML = '.dropdown-content {  display: none;  position: absolute;  background-color: #f9f9f9;  min-width: 160px;  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);  z-index: 1;}';
+document.body.appendChild(dropdownContent);
+/* .dropdown-content a {  color: black;  padding: 12px 16px;  text-decoration: none;  display: block;} */
+var dropdownContentA = document.createElement('style');
+dropdownContentA.innerHTML = '.dropdown-content a {  color: black;  padding: 12px 16px;  text-decoration: none;  display: block;}';
+document.body.appendChild(dropdownContentA);
+/* .dropdown-content a:hover {background-color: #f1f1f1} */
+var dropdownContentAHover = document.createElement('style');
+dropdownContentAHover.innerHTML = '.dropdown-content a:hover {background-color: #f1f1f1}';
+document.body.appendChild(dropdownContentAHover);
+/* .dropdown:hover .dropdown-content {  display: block;} */
+var dropdownHover = document.createElement('style');
+dropdownHover.innerHTML = '.dropdown:hover .dropdown-content {  display: block;}';
+document.body.appendChild(dropdownHover);
+/* .dropdown:hover .dropbtn {  background-color: #3e8e41;} */
+var dropdownHoverBtn = document.createElement('style');
+dropdownHoverBtn.innerHTML = '.dropdown:hover .dropbtn {  background-color: #3e8e41;}';
+document.body.appendChild(dropdownHoverBtn);
+/* <h2>Dropdown Menu</h2> */
+var h2 = document.createElement('h2');
+h2.innerHTML = 'Dropdown Menu';
+document.body.appendChild(h2);
+/* <p>Move the mouse over the button to open the dropdown menu.</p> */
+var p = document.createElement('p');
+p.innerHTML = 'Move the mouse over the button to open the dropdown menu.';
+document.body.appendChild(p);
+/* <div class="dropdown">  <button class="dropbtn">Dropdown</button>  <div class="dropdown-content">  <a href="#">Link 1</a>  <a href="#">Link 2</a>  <a href="#">Link 3</a> */
+var div = document.createElement('div');
+div.innerHTML = '<div class="dropdown">  <button class="dropbtn">Dropdown</button>  <div class="dropdown-content">  <a href="#">Link 1</a>  <a href="#">Link 2</a>  <a href="#">Link 3</a>';
+document.body.appendChild(div);
+/* .dropbtn {  background-color: #4CAF50;  color: white;  padding: 16px;  font-size: 16px;  border: none;  cursor: pointer;} */
+var dropbtn = document.createElement('style');
+dropbtn.innerHTML = '.dropbtn {  background-color: #4CAF50;  color: white;  padding: 16px;  font-size: 16px;  border: none;  cursor: pointer;}';
+document.body.appendChild(dropbtn);
+/* .dropdown {  position: relative;  display: inline-block;} */
+var dropdown = document.createElement('style');
+dropdown.innerHTML = '.dropdown {  position: relative;  display: inline-block;}';
+document.body.appendChild(dropdown);
+/* .dropdown-content {display: none;  position: absolute;  right: 0;  background-color: #f9f9f9;  min-width: 160px;  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);  z-index: 1;} */
+var dropdownContent = document.createElement('style');
+dropdownContent.innerHTML = '.dropdown-content {display: none;  position: absolute;  right: 0;  background-color: #f9f9f9;  min-width: 160px;  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);  z-index: 1;}';
+document.body.appendChild(dropdownContent);
+/* .dropdown-content a {  color: black;  padding: 12px 16px;  text-decoration: none;  display: block;} */
+var dropdownContentA = document.createElement('style');
+dropdownContentA.innerHTML = '.dropdown-content a {  color: black;  padding: 12px 16px;  text-decoration: none;  display: block;}';
+document.body.appendChild(dropdownContentA);
+/* .dropdown-content a:hover {background-color: #f1f1f1;} */
+var dropdownContentAHover = document.createElement('style');
+dropdownContentAHover.innerHTML = '.dropdown-content a:hover {background-color: #f1f1f1;}';
+document.body.appendChild(dropdownContentAHover);
+/* .dropdown:hover .dropdown-content {display: block;} */
+var dropdownHover = document.createElement('style');
+dropdownHover.innerHTML = '.dropdown:hover .dropdown-content {display: block;}';
+document.body.appendChild(dropdownHover);
+/* .dropdown:hover .dropbtn {  background-color: #3e8e41;} */
+var dropdownHoverBtn = document.createElement('style');
+dropdownHoverBtn.innerHTML = '.dropdown:hover .dropbtn {  background-color: #3e8e41;}';
+document.body.appendChild(dropdownHoverBtn);
+/* <h2>Aligned Dropdown Content</h2> */
+var h2 = document.createElement('h2');
+h2.innerHTML = 'Aligned Dropdown Content';
+document.body.appendChild(h2);
+/* <p>Determine whether the dropdown content should go from left to right or right to left with the left and right properties.</p> */
+var p = document.createElement('p');
+p.innerHTML = 'Determine whether the dropdown content should go from left to right or right to left with the left and right properties.';
+document.body.appendChild(p);
+/* <div class="dropdown" style="float:left;">  <button class="dropbtn">Left</button>  <div class="dropdown-content" style="left:0;">  <a href="#">Link 1</a>  <a href="#">Link 2</a>  <a href="#">Link 3</a> */
+var div = document.createElement('div');
+div.innerHTML = '<div class="dropdown" style="float:left;">  <button class="dropbtn">Left</button>  <div class="dropdown-content" style="left:0;">  <a href="#">Link 1</a>  <a href="#">Link 2</a>  <a href="#">Link 3</a>';
+document.body.appendChild(div);
+/* <div class="dropdown" style="float:right;">  <button class="dropbtn">Right</button>  <div class="dropdown-content">  <a href="#">Link 1</a>  <a href="#">Link 2</a>  <a href="#">Link 3</a> */
+var div = document.createElement('div');
+div.innerHTML = '<div class="dropdown" style="float:right;">  <button class="dropbtn">Right</button>  <div class="dropdown-content">  <a href="#">Link 1</a>  <a href="#">Link 2</a>  <a href="#">Link 3</a>';
+document.body.appendChild(div);
+});
+        </script>
+    </head>
+    
+</html>

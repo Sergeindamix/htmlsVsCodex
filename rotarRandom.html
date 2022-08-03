@@ -1,0 +1,47 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+var imagen = document.createElement('img');
+imagen.src = 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png';
+imagen.style.borderRadius = '50%';
+imagen.style.height = '272px';
+imagen.style.width = '272px';
+document.body.appendChild(imagen);
+
+imagen.style.position = 'absolute';
+imagen.style.top = '50%';
+imagen.style.left = '50%';
+imagen.style.transform = 'translate(-50%, -50%)';
+
+var fondo = document.createElement('img');
+fondo.src = 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png';
+fondo.style.position = 'absolute';
+fondo.style.top = '0';
+fondo.style.left = '0';
+fondo.style.height = '100%';
+fondo.style.width = '100%';
+fondo.style.filter = 'blur(25px)';
+document.body.appendChild(fondo);
+
+setInterval(function() {
+  imagen.style.transform = 'translate(-50%, -50%) rotate(' + (new Date()).getSeconds() + 'deg)';
+}, 1000);
+imagen.style.transition = 'transform 1s';
+
+setInterval(function() {
+  imagen.style.transform = 'translate(-50%, -50%) rotate(' + (new Date()).getSeconds() + 'deg) scale(' + (new Date()).getSeconds() / 60 + ')';
+}, 1000);
+imagen.style.transition = 'transform 1s';
+
+setInterval(function() {
+  imagen.style.transform = 'translate(-50%, -50%) rotate(' + (new Date()).getSeconds() + 'deg) scale(' + (new Date()).getSeconds() / 60 + ') skew(' + (new Date()).getSeconds() + 'deg) rotate(' + Math.random() * 360 + 'deg)';
+}, 1000);
+imagen.style.transition = 'transform 1s';
+});
+        </script>
+    </head>
+   
+</html>

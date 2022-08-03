@@ -1,0 +1,132 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+/* cargar folder de videos y mostrar cada webkitRelativePath */
+var input = document.createElement('input');
+input.type = 'file';
+input.webkitdirectory = true;
+input.addEventListener('change', function(e) {
+  var files = e.target.files;
+  for (var i = 0; i < files.length; i++) {
+    var file = files[i];
+    var div = document.createElement('div');
+    div.innerHTML = file.webkitRelativePath;
+    document.body.appendChild(div);
+  }
+});
+//document.body.appendChild(input);
+/* agregar "C:\Users\tech-\" antes de path */
+var input = document.createElement('input');
+input.type = 'file';
+input.webkitdirectory = true;
+input.addEventListener('change', function(e) {
+  var files = e.target.files;
+  for (var i = 0; i < files.length; i++) {
+    var file = files[i];
+    var div = document.createElement('div');
+    div.innerHTML = 'C:\\Users\\tech-\\' + file.webkitRelativePath;
+    document.body.appendChild(div);
+  }
+});
+//document.body.appendChild(input);
+/* resaltar div.innerHTML mouseover */
+var input = document.createElement('input');
+input.type = 'file';
+input.webkitdirectory = true;
+input.addEventListener('change', function(e) {
+  var files = e.target.files;
+  for (var i = 0; i < files.length; i++) {
+    var file = files[i];
+    var div = document.createElement('div');
+    div.innerHTML = 'C:\\Users\\tech-\\' + file.webkitRelativePath;
+    div.addEventListener('mouseover', function(e) {
+      e.target.style.backgroundColor = 'yellow';
+    });
+    div.addEventListener('mouseout', function(e) {
+      e.target.style.backgroundColor = '';
+    });
+    document.body.appendChild(div);
+  }
+});
+//document.body.appendChild(input);
+/* al pulsar sobre elemento resaltado, abrir ese texto en ventana nueva */
+var input = document.createElement('input');
+input.type = 'file';
+input.webkitdirectory = true;
+input.addEventListener('change', function(e) {
+  var files = e.target.files;
+  for (var i = 0; i < files.length; i++) {
+    var file = files[i];
+    var div = document.createElement('div');
+    div.innerHTML = 'C:\\Users\\tech-\\' + file.webkitRelativePath;
+    div.addEventListener('mouseover', function(e) {
+      e.target.style.backgroundColor = 'yellow';
+    });
+    div.addEventListener('mouseout', function(e) {
+      e.target.style.backgroundColor = '';
+    });
+    div.addEventListener('click', function(e) {
+      window.open(e.target.innerHTML);
+    });
+    document.body.appendChild(div);
+  }
+});
+//document.body.appendChild(input);
+/* abrir en reproductor de video */
+var input = document.createElement('input');
+input.type = 'file';
+input.webkitdirectory = true;
+input.addEventListener('change', function(e) {
+  var files = e.target.files;
+  for (var i = 0; i < files.length; i++) {
+    var file = files[i];
+    var div = document.createElement('div');
+    div.innerHTML = 'C:\\Users\\tech-\\' + file.webkitRelativePath;
+    div.addEventListener('mouseover', function(e) {
+      e.target.style.backgroundColor = 'yellow';
+    });
+    div.addEventListener('mouseout', function(e) {
+      e.target.style.backgroundColor = '';
+    });
+    div.addEventListener('click', function(e) {
+      window.open('http://localhost:8000/video.html?file=' + e.target.innerHTML);
+    });
+    document.body.appendChild(div);
+  }
+});
+//document.body.appendChild(input);
+/* si es video usar src = e.target.innerhtml */
+var input = document.createElement('input');
+input.type = 'file';
+input.webkitdirectory = true;
+input.addEventListener('change', function(e) {
+  var files = e.target.files;
+  for (var i = 0; i < files.length; i++) {
+    var file = files[i];
+    var div = document.createElement('div');
+    div.innerHTML = 'C:\\Users\\tech-\\' + file.webkitRelativePath;
+    div.addEventListener('mouseover', function(e) {
+      e.target.style.backgroundColor = 'yellow';
+    });
+    div.addEventListener('mouseout', function(e) {
+      e.target.style.backgroundColor = '';
+    });
+    div.addEventListener('click', function(e) {
+      if (e.target.innerHTML.match(/\.mp4$/)) {
+        window.open('http://localhost:8000/video.html?file=' + e.target.innerHTML);
+      } else {
+        window.open(e.target.innerHTML);
+      }
+    });
+    document.body.appendChild(div);
+  }
+});
+document.body.appendChild(input);
+});
+        </script>
+    </head>
+    
+</html>

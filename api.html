@@ -1,0 +1,368 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+var css = document.createElement('style');
+css.innerHTML = 'body { background-color: #000; color: #fff; }';
+document.body.appendChild(css);
+var html = document.createElement('html');
+html.innerHTML = '<!DOCTYPE html> <html> <meta name="viewport" content="width=device-width, initial-scale=1"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <style> body {margin:0;} .icon-bar { width: 100%; background-color: #555; overflow: auto; } .icon-bar a { float: left; width: 20%; text-align: center; padding: 12px 0; transition: all 0.3s ease; color: white; font-size: 36px; } .icon-bar a:hover { background-color: #000; } .active { background-color: #04AA6D; } </style> <body> <div class="icon-bar"> <a class="active" href="#"><i class="fa fa-home"></i></a> <a href="#"><i class="fa fa-search"></i></a> <a href="#"><i class="fa fa-envelope"></i></a> <a href="#"><i class="fa fa-globe"></i></a> <a href="#"><i class="fa fa-trash"></i></a> </div> </body> </html>';
+
+document.body.appendChild(html);
+/* agregar imagen random en fondo */
+var imagen = document.createElement('img');
+imagen.src = 'https://source.unsplash.com/random';
+imagen.style.width = '100%';
+imagen.style.height = '100%';
+imagen.style.position = 'absolute';
+imagen.style.top = '0';
+imagen.style.left = '0';
+imagen.style.zIndex = '-1';
+document.body.appendChild(imagen);
+/* dividir pantalla en 12 divs, color par blanco, impar negro */
+var div1 = document.createElement('div');
+div1.style.width = '8.33%';
+div1.style.height = '100%';
+div1.style.backgroundColor = 'white';
+div1.style.opacity = '0.5';
+div1.style.float = 'left';
+document.body.appendChild(div1);
+var div2 = document.createElement('div');
+div2.style.width = '8.33%';
+div2.style.height = '100%';
+div2.style.backgroundColor = 'black';
+div2.style.opacity = '0.5';
+div2.style.float = 'left';
+document.body.appendChild(div2);
+var div3 = document.createElement('div');
+div3.style.width = '8.33%';
+div3.style.height = '100%';
+div3.style.backgroundColor = 'white';
+div3.style.opacity = '0.5';
+div3.style.float = 'left';
+document.body.appendChild(div3);
+var div4 = document.createElement('div');
+div4.style.width = '8.33%';
+div4.style.height = '100%';
+div4.style.backgroundColor = 'black';
+div4.style.opacity = '0.5';
+div4.style.float = 'left';
+document.body.appendChild(div4);
+var div5 = document.createElement('div');
+div5.style.width = '8.33%';
+div5.style.height = '100%';
+div5.style.backgroundColor = 'white';
+div5.style.opacity = '0.5';
+div5.style.float = 'left';
+document.body.appendChild(div5);
+var div6 = document.createElement('div');
+div6.style.width = '8.33%';
+div6.style.height = '100%';
+div6.style.backgroundColor = 'black';
+div6.style.opacity = '0.5';
+div6.style.float = 'left';
+document.body.appendChild(div6);
+var div7 = document.createElement('div');
+div7.style.width = '8.33%';
+div7.style.height = '100%';
+div7.style.backgroundColor = 'white';
+div7.style.opacity = '0.5';
+div7.style.float = 'left';
+document.body.appendChild(div7);
+var div8 = document.createElement('div');
+div8.style.width = '8.33%';
+div8.style.height = '100%';
+div8.style.backgroundColor = 'black';
+div8.style.opacity = '0.5';
+div8.style.float = 'left';
+document.body.appendChild(div8);
+var div9 = document.createElement('div');
+div9.style.width = '8.33%';
+div9.style.height = '100%';
+div9.style.backgroundColor = 'white';
+div9.style.opacity = '0.5';
+div9.style.float = 'left';
+document.body.appendChild(div9);
+var div10 = document.createElement('div');
+div10.style.width = '8.33%';
+div10.style.height = '100%';
+div10.style.backgroundColor = 'black';
+div10.style.opacity = '0.5';
+div10.style.float = 'left';
+document.body.appendChild(div10);
+var div11 = document.createElement('div');
+div11.style.width = '8.33%';
+div11.style.height = '100%';
+div11.style.backgroundColor = 'white';
+div11.style.opacity = '0.5';
+div11.style.float = 'left';
+document.body.appendChild(div11);
+var div12 = document.createElement('div');
+div12.style.width = '8.33%';
+div12.style.height = '100%';
+div12.style.backgroundColor = 'black';
+div12.style.opacity = '0.5';
+div12.style.float = 'left';
+document.body.appendChild(div12);
+/* opacidad 1 */
+div1.style.opacity = '1';
+div2.style.opacity = '1';
+div3.style.opacity = '1';
+div4.style.opacity = '1';
+div5.style.opacity = '1';
+div6.style.opacity = '1';
+div7.style.opacity = '1';
+div8.style.opacity = '1';
+div9.style.opacity = '1';
+div10.style.opacity = '1';
+div11.style.opacity = '1';
+div12.style.opacity = '1';
+/* onmouseover opacity = '0.25', */
+div1.onmouseover = function() {
+  div1.style.opacity = '0.25';
+}
+div1.onmouseout = function() {
+  div1.style.opacity = '1';
+}
+div2.onmouseover = function() {
+  div2.style.opacity = '0.25';
+}
+div2.onmouseout = function() {
+  div2.style.opacity = '1';
+}
+div3.onmouseover = function() {
+  div3.style.opacity = '0.25';
+}
+div3.onmouseout = function() {
+  div3.style.opacity = '1';
+}
+div4.onmouseover = function() {
+  div4.style.opacity = '0.25';
+}
+div4.onmouseout = function() {
+  div4.style.opacity = '1';
+}
+div5.onmouseover = function() {
+  div5.style.opacity = '0.25';
+}
+div5.onmouseout = function() {
+  div5.style.opacity = '1';
+}
+div6.onmouseover = function() {
+  div6.style.opacity = '0.25';
+}
+div6.onmouseout = function() {
+  div6.style.opacity = '1';
+}
+div7.onmouseover = function() {
+  div7.style.opacity = '0.25';
+}
+div7.onmouseout = function() {
+  div7.style.opacity = '1';
+}
+div8.onmouseover = function() {
+  div8.style.opacity = '0.25';
+}
+div8.onmouseout = function() {
+  div8.style.opacity = '1';
+}
+div9.onmouseover = function() {
+  div9.style.opacity = '0.25';
+}
+div9.onmouseout = function() {
+  div9.style.opacity = '1';
+}
+div10.onmouseover = function() {
+  div10.style.opacity = '0.25';
+}
+div10.onmouseout = function() {
+  div10.style.opacity = '1';
+}
+div11.onmouseover = function() {
+  div11.style.opacity = '0.25';
+}
+div11.onmouseout = function() {
+  div11.style.opacity = '1';
+}
+div12.onmouseover = function() {
+  div12.style.opacity = '0.25';
+}
+div12.onmouseout = function() {
+  div12.style.opacity = '1';
+}
+/* texto con una nota musical diferente */
+div1.innerHTML = '&#9835;';
+div1.style.fontSize = '100px';
+div1.style.textAlign = 'center';
+div1.style.verticalAlign = 'middle';
+div1.style.lineHeight = '100px';
+div2.innerHTML = '&#9833;';
+div2.style.fontSize = '100px';
+div2.style.textAlign = 'center';
+div2.style.verticalAlign = 'middle';
+div2.style.lineHeight = '100px';
+div3.innerHTML = '&#9834;';
+div3.style.fontSize = '100px';
+div3.style.textAlign = 'center';
+div3.style.verticalAlign = 'middle';
+div3.style.lineHeight = '100px';
+div4.innerHTML = '&#9833;';
+div4.style.fontSize = '100px';
+div4.style.textAlign = 'center';
+div4.style.verticalAlign = 'middle';
+div4.style.lineHeight = '100px';
+div5.innerHTML = '&#9835;';
+div5.style.fontSize = '100px';
+div5.style.textAlign = 'center';
+div5.style.verticalAlign = 'middle';
+div5.style.lineHeight = '100px';
+div6.innerHTML = '&#9833;';
+div6.style.fontSize = '100px';
+div6.style.textAlign = 'center';
+div6.style.verticalAlign = 'middle';
+div6.style.lineHeight = '100px';
+div7.innerHTML = '&#9835;';
+div7.style.fontSize = '100px';
+div7.style.textAlign = 'center';
+div7.style.verticalAlign = 'middle';
+div7.style.lineHeight = '100px';
+div8.innerHTML = '&#9833;';
+div8.style.fontSize = '100px';
+div8.style.textAlign = 'center';
+div8.style.verticalAlign = 'middle';
+div8.style.lineHeight = '100px';
+div9.innerHTML = '&#9834;';
+div9.style.fontSize = '100px';
+div9.style.textAlign = 'center';
+div9.style.verticalAlign = 'middle';
+div9.style.lineHeight = '100px';
+div10.innerHTML = '&#9833;';
+div10.style.fontSize = '100px';
+div10.style.textAlign = 'center';
+div10.style.verticalAlign = 'middle';
+div10.style.lineHeight = '100px';
+div11.innerHTML = '&#9835;';
+div11.style.fontSize = '100px';
+div11.style.textAlign = 'center';
+div11.style.verticalAlign = 'middle';
+div11.style.lineHeight = '100px';
+div12.innerHTML = '&#9833;';
+div12.style.fontSize = '100px';
+div12.style.textAlign = 'center';
+div12.style.verticalAlign = 'middle';
+div12.style.lineHeight = '100px';
+/* contrastar color */
+div1.style.color = 'black';
+div2.style.color = 'white';
+div3.style.color = 'black';
+div4.style.color = 'white';
+div5.style.color = 'black';
+div6.style.color = 'white';
+div7.style.color = 'black';
+div8.style.color = 'white';
+div9.style.color = 'black';
+div10.style.color = 'white';
+div11.style.color = 'black';
+div12.style.color = 'white';
+/* ocultar barra deslizable */
+document.body.style.overflow = 'hidden';
+/* click show tip */
+var tip = document.createElement('div');
+tip.style.width = '100%';
+tip.style.height = '100%';
+tip.style.position = 'absolute';
+tip.style.top = '0';
+tip.style.left = '0';
+tip.style.zIndex = '1';
+tip.style.backgroundColor = 'black';
+tip.style.opacity = '0.5';
+tip.style.display = 'none';
+document.body.appendChild(tip);
+var tipText = document.createElement('div');
+tipText.style.width = '100%';
+tipText.style.height = '100%';
+tipText.style.position = 'absolute';
+tipText.style.top = '0';
+tipText.style.left = '0';
+tipText.style.zIndex = '2';
+tipText.style.color = 'white';
+tipText.style.fontSize = '100px';
+tipText.style.textAlign = 'center';
+tipText.style.verticalAlign = 'middle';
+tipText.style.lineHeight = '100px';
+tipText.style.display = 'none';
+document.body.appendChild(tipText);
+div1.onclick = function() {
+  tip.style.display = 'block';
+  tipText.style.display = 'block';
+  tipText.innerHTML = '&#9835;';
+}
+div2.onclick = function() {
+  tip.style.display = 'block';
+  tipText.style.display = 'block';
+  tipText.innerHTML = '&#9833;';
+}
+div3.onclick = function() {
+  tip.style.display = 'block';
+  tipText.style.display = 'block';
+  tipText.innerHTML = '&#9834;';
+}
+div4.onclick = function() {
+  tip.style.display = 'block';
+  tipText.style.display = 'block';
+  tipText.innerHTML = '&#9833;';
+}
+div5.onclick = function() {
+  tip.style.display = 'block';
+  tipText.style.display = 'block';
+  tipText.innerHTML = '&#9835;';
+}
+div6.onclick = function() {
+  tip.style.display = 'block';
+  tipText.style.display = 'block';
+  tipText.innerHTML = '&#9833;';
+}
+div7.onclick = function() {
+  tip.style.display = 'block';
+  tipText.style.display = 'block';
+  tipText.innerHTML = '&#9835;';
+}
+div8.onclick = function() {
+  tip.style.display = 'block';
+  tipText.style.display = 'block';
+  tipText.innerHTML = '&#9833;';
+}
+div9.onclick = function() {
+  tip.style.display = 'block';
+  tipText.style.display = 'block';
+  tipText.innerHTML = '&#9834;';
+}
+div10.onclick = function() {
+  tip.style.display = 'block';
+  tipText.style.display = 'block';
+  tipText.innerHTML = '&#9833;';
+}
+div11.onclick = function() {
+  tip.style.display = 'block';
+  tipText.style.display = 'block';
+  tipText.innerHTML = '&#9835;';
+}
+div12.onclick = function() {
+  tip.style.display = 'block';
+  tipText.style.display = 'block';
+  tipText.innerHTML = '&#9833;';
+}
+
+setInterval(function() {
+  if (tip.style.display == 'block') {
+    tip.style.display = 'none';
+    tipText.style.display = 'none';
+  }
+}, 500);
+});
+        </script>
+    </head>
+    
+</html>

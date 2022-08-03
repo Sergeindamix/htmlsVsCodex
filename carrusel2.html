@@ -1,0 +1,92 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+/* cubo centrado en pantalla */
+var cubo = document.createElement('div');
+cubo.style.width = '100px';
+cubo.style.height = '100px';
+cubo.style.backgroundColor = 'red';
+cubo.style.position = 'absolute';
+cubo.style.top = '50%';
+cubo.style.left = '50%';
+cubo.style.marginTop = '-50px';
+cubo.style.marginLeft = '-50px';
+//document.body.appendChild(cubo);
+/* mover en coseno *.1 y seno *.1 */
+var x = 0;
+var y = 0;
+var t = 0;
+var interval = setInterval(function() {
+  x = Math.cos(t) * 500;
+  y = Math.sin(t) * 100;
+  t += 0.0;
+  cubo.style.marginTop = (y - 50) + 'px';
+  cubo.style.marginLeft = (x - 50) + 'px';
+}, 10);
+/* al presionar flecha derecha agregar .05 a t smooth */
+document.addEventListener('keydown', function(e) {
+  if (e.keyCode == 39) {
+    t += 0.05;
+  }
+});
+/* invertir con flecha izquierda */
+document.addEventListener('keydown', function(e) {
+  if (e.keyCode == 37) {
+    t -= 0.05;
+  }
+});
+/* seleccionar cubo */
+var cubo = document.querySelector('div');
+/* crear 10 cubos siguiendo intervalo */
+var cubos = [];
+for (var i = 0; i < 13; i++) {
+  var cubo = document.createElement('div');
+  cubo.style.width = '100px';
+  cubo.style.height = '100px';
+  cubo.style.backgroundColor = 'red';
+  cubo.style.position = 'absolute';
+  cubo.style.top = '50%';
+  cubo.style.left = '50%';
+  cubo.style.marginTop = '-50px';
+  cubo.style.marginLeft = '-50px';
+  //document.body.appendChild(cubo);
+  cubos.push(cubo);
+}
+/* separear por 1000 px */
+var x = 0;
+var y = 0;
+var t = 0;
+var interval = setInterval(function() {
+  for (var i = 0; i < cubos.length; i++) {
+    x = Math.cos(t + i * 1000) * 500;
+    y = Math.sin(t + i * 1000) * 200;
+    t += 0.0;
+    cubos[i].style.marginTop = (y - 50) + 'px';
+    cubos[i].style.marginLeft = (x - 50) + 'px';
+  }
+}, 10);
+/* ocultar ultimo */
+cubos[cubos.length - 1].style.display = 'none';
+/* reemplazar cubos con imagenes de sitio random */
+var cubos = [];
+for (var i = 0; i < 13; i++) {
+  var cubo = document.createElement('img');
+  cubo.style.width = '100px';
+  cubo.style.height = '100px';
+  cubo.style.position = 'absolute';
+  cubo.style.top = '50%';
+  cubo.style.left = '50%';
+  cubo.style.marginTop = '-50px';
+  cubo.style.marginLeft = '-50px';
+  cubo.src = 'http://placekitten.com/g/' + (100 + i * 10) + '/' + (100 + i * 10);
+  document.body.appendChild(cubo);
+  cubos.push(cubo);
+}
+});
+        </script>
+    </head>
+    
+</html>

@@ -1,0 +1,239 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+/* lista 50 basicos de css */
+var lista = document.createElement('ul');
+lista.innerHTML = '<li>1. display</li><li>2. position</li><li>3. float</li><li>4. clear</li><li>5. overflow</li><li>6. width</li><li>7. height</li><li>8. max-width</li><li>9. max-height</li><li>10. min-width</li><li>11. min-height</li><li>12. padding</li><li>13. padding-top</li><li>14. padding-right</li><li>15. padding-bottom</li><li>16. padding-left</li><li>17. margin</li><li>18. margin-top</li><li>19. margin-right</li><li>20. margin-bottom</li><li>21. margin-left</li><li>22. border</li><li>23. border-top</li><li>24. border-right</li><li>25. border-bottom</li><li>26. border-left</li><li>27. border-width</li><li>28. border-top-width</li><li>29. border-right-width</li><li>30. border-bottom-width</li><li>31. border-left-width</li><li>32. border-style</li><li>33. border-top-style</li><li>34. border-right-style</li><li>35. border-bottom-style</li><li>36. border-left-style</li><li>37. border-color</li><li>38. border-top-color</li><li>39. border-right-color</li><li>40. border-bottom-color</li><li>41. border-left-color</li><li>42. border-radius</li><li>43. border-top-left-radius</li><li>44. border-top-right-radius</li><li>45. border-bottom-right-radius</li><li>46. border-bottom-left-radius</li><li>47. border-image</li><li>48. border-image-source</li><li>49. border-image-slice</li><li>50. border-image-width</li>';
+document.body.appendChild(lista);
+/* ejemplo de display */
+var display = document.createElement('div');
+display.innerHTML = '<div style="display: inline-block; width: 100px; height: 100px; background-color: red;"></div><div style="display: inline-block; width: 100px; height: 100px; background-color: yellow;"></div><div style="display: inline-block; width: 100px; height: 100px; background-color: blue;"></div>';
+document.body.appendChild(display);
+/* de posicion */
+var posicion = document.createElement('div');
+posicion.innerHTML = '<div style="position: relative; width: 100px; height: 100px; background-color: red;"></div><div style="position: absolute; width: 100px; height: 100px; background-color: yellow;"></div><div style="position: fixed; width: 100px; height: 100px; background-color: blue;"></div>';
+document.body.appendChild(posicion);
+/* float */
+var flotar = document.createElement('div');
+flotar.innerHTML = '<div style="float: left; width: 100px; height: 100px; background-color: red;"></div><div style="float: right; width: 100px; height: 100px; background-color: yellow;"></div><div style="float: none; width: 100px; height: 100px; background-color: blue;"></div>';
+document.body.appendChild(flotar);
+/* 4 */
+var clear = document.createElement('div');
+clear.innerHTML = '<div style="float: left; width: 100px; height: 100px; background-color: red;"></div><div style="float: left; width: 100px; height: 100px; background-color: yellow;"></div><div style="float: left; width: 100px; height: 100px; background-color: blue;"></div><div style="clear: both; width: 100px; height: 100px; background-color: green;"></div>';
+document.body.appendChild(clear);
+/* 5 */
+var overflow = document.createElement('div');
+overflow.innerHTML = '<div style="width: 100px; height: 100px; background-color: red;"><div style="width: 200px; height: 200px; background-color: yellow;"></div></div>';
+document.body.appendChild(overflow);
+/* 6 */
+var width = document.createElement('div');
+width.innerHTML = '<div style="width: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(width);
+/* 7 */
+var height = document.createElement('div');
+height.innerHTML = '<div style="width: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(height);
+/* 8 */
+var maxWidth = document.createElement('div');
+maxWidth.innerHTML = '<div style="max-width: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(maxWidth);
+/* 9 */
+var maxHeight = document.createElement('div');
+maxHeight.innerHTML = '<div style="max-height: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(maxHeight);
+/* 10 */
+var minWidth = document.createElement('div');
+minWidth.innerHTML = '<div style="min-width: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(minWidth);
+/* 11 color random */
+var minHeight = document.createElement('div');
+minHeight.innerHTML = '<div style="min-height: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(minHeight);
+/* 12 */
+var padding = document.createElement('div');
+padding.innerHTML = '<div style="padding: 10px; width: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(padding);
+/* siguiente */
+var paddingTop = document.createElement('div');
+paddingTop.innerHTML = '<div style="padding-top: 10px; width: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(paddingTop);
+/* siguiente */
+var paddingRight = document.createElement('div');
+paddingRight.innerHTML = '<div style="padding-right: 10px; width: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(paddingRight);
+/* next */
+var paddingBottom = document.createElement('div');
+paddingBottom.innerHTML = '<div style="padding-bottom: 10px; width: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(paddingBottom);
+/* asi hasta completar lista */
+var paddingLeft = document.createElement('div');
+paddingLeft.innerHTML = '<div style="padding-left: 10px; width: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(paddingLeft);
+/* , */
+var margin = document.createElement('div');
+margin.innerHTML = '<div style="margin: 10px; width: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(margin);
+/* , */
+var marginTop = document.createElement('div');
+marginTop.innerHTML = '<div style="margin-top: 10px; width: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(marginTop);
+/* , */
+var marginRight = document.createElement('div');
+marginRight.innerHTML = '<div style="margin-right: 10px; width: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(marginRight);
+/* , */
+var marginBottom = document.createElement('div');
+marginBottom.innerHTML = '<div style="margin-bottom: 10px; width: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(marginBottom);
+/* , */
+var marginLeft = document.createElement('div');
+marginLeft.innerHTML = '<div style="margin-left: 10px; width: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(marginLeft);
+/* , */
+var border = document.createElement('div');
+border.innerHTML = '<div style="border: 10px solid red; width: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(border);
+/* , */
+var borderTop = document.createElement('div');
+borderTop.innerHTML = '<div style="border-top: 10px solid red; width: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(borderTop);
+/* , */
+var borderRight = document.createElement('div');
+borderRight.innerHTML = '<div style="border-right: 10px solid red; width: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(borderRight);
+/* , */
+var borderBottom = document.createElement('div');
+borderBottom.innerHTML = '<div style="border-bottom: 10px solid red; width: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(borderBottom);
+/* , */
+var borderLeft = document.createElement('div');
+borderLeft.innerHTML = '<div style="border-left: 10px solid red; width: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(borderLeft);
+/* azul */
+var borderWidth = document.createElement('div');
+borderWidth.innerHTML = '<div style="border-width: 10px; width: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(borderWidth);
+/* , */
+var borderTopWidth = document.createElement('div');
+borderTopWidth.innerHTML = '<div style="border-top-width: 10px; width: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(borderTopWidth);
+/* , */
+var borderRightWidth = document.createElement('div');
+borderRightWidth.innerHTML = '<div style="border-right-width: 10px; width: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(borderRightWidth);
+/* , */
+var borderBottomWidth = document.createElement('div');
+borderBottomWidth.innerHTML = '<div style="border-bottom-width: 10px; width: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(borderBottomWidth);
+/* , */
+var borderLeftWidth = document.createElement('div');
+borderLeftWidth.innerHTML = '<div style="border-left-width: 10px; width: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(borderLeftWidth);
+/* , */
+var borderStyle = document.createElement('div');
+borderStyle.innerHTML = '<div style="border-style: solid; width: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(borderStyle);
+/* , */
+var borderTopStyle = document.createElement('div');
+borderTopStyle.innerHTML = '<div style="border-top-style: solid; width: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(borderTopStyle);
+/* , */
+var borderRightStyle = document.createElement('div');
+borderRightStyle.innerHTML = '<div style="border-right-style: solid; width: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(borderRightStyle);
+/* , */
+var borderBottomStyle = document.createElement('div');
+borderBottomStyle.innerHTML = '<div style="border-bottom-style: solid; width: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(borderBottomStyle);
+/* , */
+var borderLeftStyle = document.createElement('div');
+borderLeftStyle.innerHTML = '<div style="border-left-style: solid; width: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(borderLeftStyle);
+/* , */
+var borderColor = document.createElement('div');
+borderColor.innerHTML = '<div style="border-color: red; width: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(borderColor);
+/* , */
+var borderTopColor = document.createElement('div');
+borderTopColor.innerHTML = '<div style="border-top-color: red; width: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(borderTopColor);
+/* , */
+var borderRightColor = document.createElement('div');
+borderRightColor.innerHTML = '<div style="border-right-color: red; width: 100px; height: 100px; background-color: blue;"></div>';
+document.body.appendChild(borderRightColor);
+/* ,, */
+var borderBottomColor = document.createElement('div');
+borderBottomColor.innerHTML = '<div style="border-bottom-color: black; width: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(borderBottomColor);
+/* , */
+var borderLeftColor = document.createElement('div');
+borderLeftColor.innerHTML = '<div style="border-left-color: red; width: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(borderLeftColor);
+/* , */
+var borderRadius = document.createElement('div');
+borderRadius.innerHTML = '<div style="border-radius: 10px; width: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(borderRadius);
+/* , */
+var borderTopLeftRadius = document.createElement('div');
+borderTopLeftRadius.innerHTML = '<div style="border-top-left-radius: 10px; width: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(borderTopLeftRadius);
+/* , */
+var borderTopRightRadius = document.createElement('div');
+borderTopRightRadius.innerHTML = '<div style="border-top-right-radius: 10px; width: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(borderTopRightRadius);
+/* , */
+var borderBottomRightRadius = document.createElement('div');
+borderBottomRightRadius.innerHTML = '<div style="border-bottom-right-radius: 10px; width: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(borderBottomRightRadius);
+/* , */
+var borderBottomLeftRadius = document.createElement('div');
+borderBottomLeftRadius.innerHTML = '<div style="border-bottom-left-radius: 10px; width: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(borderBottomLeftRadius);
+/* , */
+var borderImage = document.createElement('div');
+borderImage.innerHTML = '<div style="border-image: url(https://source.unsplash.com/random/2) 30 30 round; width: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(borderImage);
+/* , */
+var borderImageSource = document.createElement('div');
+borderImageSource.innerHTML = '<div style="border-image-source: url(https://source.unsplash.com/random/); width: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(borderImageSource);
+/* , */
+var borderImageSlice = document.createElement('div');
+borderImageSlice.innerHTML = '<div style="border-image-slice: 30; width: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(borderImageSlice);
+/* , */
+var borderImageWidth = document.createElement('div');
+borderImageWidth.innerHTML = '<div style="border-image-width: 30; width: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(borderImageWidth);
+/* , */
+var borderImageOutset = document.createElement('div');
+borderImageOutset.innerHTML = '<div style="border-image-outset: 30; width: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(borderImageOutset);
+/* , */
+var borderImageRepeat = document.createElement('div');
+borderImageRepeat.innerHTML = '<div style="border-image-repeat: round; width: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(borderImageRepeat);
+/* , */
+var borderImageRepeatX = document.createElement('div');
+borderImageRepeatX.innerHTML = '<div style="border-image-repeat: round; width: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(borderImageRepeatX);
+/* , */
+var borderImageRepeatY = document.createElement('div');
+borderImageRepeatY.innerHTML = '<div style="border-image-repeat: round; width: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(borderImageRepeatY);
+/* , */
+var borderCollapse = document.createElement('div');
+borderCollapse.innerHTML = '<div style="border-collapse: collapse; width: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(borderCollapse);
+/* , */
+var borderSpacing = document.createElement('div');
+borderSpacing.innerHTML = '<div style="border-spacing: 10px; width: 100px; height: 100px; background-color: red;"></div>';
+document.body.appendChild(borderSpacing);
+});
+        </script>
+    </head>
+    
+</html>

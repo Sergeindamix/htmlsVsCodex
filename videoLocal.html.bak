@@ -1,0 +1,155 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+/* cargar carpeta de archivos locales, solo video */
+
+/* lista desplegable */
+var select = document.createElement('select');
+var option = document.createElement('option');
+/*option.innerHTML = 'Option 1';
+select.appendChild(option);
+option = document.createElement('option');
+option.innerHTML = 'Option 2';
+select.appendChild(option);*/
+select.addEventListener('change', function(e) {
+  var videos = document.getElementsByTagName('video');
+  for (var i = 0; i < videos.length; i++) {
+    videos[i].style.display = 'none';
+  }
+  videos[select.selectedIndex].style.display = 'block';
+  videos[select.selectedIndex].play();
+});
+//document.body.appendChild(select);
+/* slide de duracion del video */
+var input2 = document.createElement('input');
+input2.type = 'range';
+input2.min = 0;
+input2.max = 1;
+input2.step = 0.01;
+input2.addEventListener('input', function(e) {
+  video.currentTime = video.duration * input2.value;
+  text.value = Math.round(input2.value * 100) + '%';
+});
+document.body.appendChild(input2);
+var text = document.createElement('input');
+text.type = 'text';
+text.value = '0%';
+text.addEventListener('input', function(e) {
+  video.currentTime = video.duration * parseFloat(text.value) / 100;
+  input2.value = parseFloat(text.value) / 100;
+});
+document.body.appendChild(text);
+/* crear array de archivos cargados */
+var input = document.createElement('input');
+input.type = 'file';
+input.multiple = true;
+input.accept = 'video/*';
+input.webkitdirectory = true;
+input.addEventListener('change', function(e) {
+  var files = e.target.files;
+  //var select = document.createElement('select');
+  if(files.firstChild) {
+    files.removeChild(files.firstChild);
+	}else
+	
+  for (var i = 0; i < files.length; i++) {
+    var file = files[i];
+	var option = document.createElement('option');
+	option.innerHTML = file.name;
+    select.appendChild(option);
+    var video = document.createElement('video');
+    video.src = URL.createObjectURL(file);
+    video.controls = false;
+	video.style.width = '50%';
+    video.style.height = '50%';
+    document.body.appendChild(video);
+	var list = document.createElement('ul');
+    list.style.display = 'none';
+    for (var j = 0; j < files.length; j++) {
+      var item = document.createElement('li');
+      item.innerHTML = files[j].name;
+      list.appendChild(item);
+    }
+	}
+    document.body.appendChild(list);
+	//document.body.appendChild(select);
+  }
+});
+document.body.appendChild(input);
+
+/* overflow hidden */
+document.body.style.overflow = 'hidden';
+/* actualizar video de los 4 botones por el video de select change */
+var select = document.createElement('select');
+/*var option = document.createElement('option');
+option.innerHTML = 'Option 1';
+select.appendChild(option);
+option = document.createElement('option');
+option.innerHTML = 'Option 2';
+select.appendChild(option);*/
+select.addEventListener('change', function(e) {
+  var videos = document.getElementsByTagName('video');
+  for (var i = 0; i < videos.length; i++) {
+    videos[i].style.display = 'none';
+  }
+  videos[select.selectedIndex].style.display = 'block';
+  videos[select.selectedIndex].play();
+  video = videos[select.selectedIndex];
+});
+document.body.appendChild(select);
+var boton1 = document.createElement('button');
+boton1.innerHTML = '1/4';
+boton1.addEventListener('click', function(e) {
+  video.currentTime = 0*video.duration / 4;
+});
+document.body.appendChild(boton1);
+var boton2 = document.createElement('button');
+boton2.innerHTML = '2/4';
+boton2.addEventListener('click', function(e) {
+  video.currentTime = video.duration / 4;
+});
+document.body.appendChild(boton2);
+var boton3 = document.createElement('button');
+boton3.innerHTML = '3/4';
+boton3.addEventListener('click', function(e) {
+  video.currentTime = video.duration / 2;
+});
+document.body.appendChild(boton3);
+var boton4 = document.createElement('button');
+boton4.innerHTML = '4/4';
+boton4.addEventListener('click', function(e) {
+  video.currentTime = video.duration/4 * 3;
+});
+document.body.appendChild(boton4);
+/* aplicar botones en reproductor */
+var botonPlay = document.createElement('button');
+botonPlay.innerHTML = 'Play';
+botonPlay.addEventListener('click', function(e) {
+  video.play();
+});
+document.body.appendChild(botonPlay);
+var botonPause = document.createElement('button');
+botonPause.innerHTML = 'Pause';
+botonPause.addEventListener('click', function(e) {
+  video.pause();
+});
+document.body.appendChild(botonPause);
+var botonStop = document.createElement('button');
+botonStop.innerHTML = 'Stop';
+botonStop.addEventListener('click', function(e) {
+  video.pause();
+  video.currentTime = 0;
+});
+document.body.appendChild(botonStop);
+/* scroll up with mouse wheel */
+document.body.addEventListener('wheel', function(e) {
+  window.scrollBy(0, e.deltaY);
+});
+});
+        </script>
+    </head>
+    
+</html>

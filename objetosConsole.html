@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <title>Bootstrap Example</title>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+/* arreglo de 10 elemetos */
+var arreglo = [];
+for (var i = 0; i < 10; i++) {
+  arreglo.push(i);
+}
+console.log(arreglo);
+/* array[...arreglo] */
+const array = [...arreglo];
+console.log(array);
+/* var agregado => [...vars] */
+var agregado = [...arreglo, ...array];
+console.log(agregado);
+/* objeto con propiedades, tamaño: 500, fondo: negro, texto: objeto1 */
+var objeto1 = {
+  size: 500,
+  fondo: 'negro',
+  texto: 'objeto1'
+};
+console.log(objeto1);
+/* objeto1.tamaño */
+console.log(objeto1.size);
+/* objeto1['tamaño'] */
+console.log(objeto1['tamaño']);//error undefined
+/* objeto.add([]); */
+objeto1.add = function(arreglo) {
+  return arreglo.map(function(elemento) {
+    return elemento + 1;
+  });
+};
+console.log(objeto1.add(arreglo));
+/* objeto1.arreglo.push("elem+"); */
+objeto1.arreglo = [...arreglo];
+objeto1.arreglo.push('elem+');
+console.log(objeto1.arreglo);
+/* objeto1.arreglo = [reasignar objeto] */
+objeto1.arreglo = ["reasignar objeto"];
+console.log(objeto1.arreglo);
+/* objeto1.agregado = "propiedad nueva" */
+objeto1.agregado = "propiedad nueva";
+console.log(objeto1);
+/* objeto1["stilo"] = solido; */
+objeto1["stilo"] = "solido";
+console.log(objeto1);
+/* delete.objeto1.texto */
+delete objeto1.texto;
+console.log(objeto1);
+/* funcion buscarPopiedad(propiedad) => objeto1[propiedad]; */
+function buscarPropiedad(propiedad) {
+  return objeto1[propiedad];
+}
+console.log(buscarPropiedad("stilo"));
+/* objeto1.hasownproperty(); */
+console.log(objeto1.hasOwnProperty("stilo"));
+/* if(objeto1.hasownproperty() */
+if (objeto1.hasOwnProperty("stilo")) {
+  console.log(objeto1,"si tiene la propiedad",objeto1.stilo);
+} else {
+  console.log("stilo","no tiene la propiedad");
+}
+//<h2 id="subtitulo">is in da house</h2>
+var elementos = [
+	
+	
+	{
+		"nombre": "header",
+		"h1": "<h1 id='titulo'>Sergeindamix</h1>",
+		"h2": "<h2 id='subtitulo'>is in da house</h2>"
+	},
+{
+		"nombre": "footer",
+		"a": "<a href='#titulo'>ir arriba</a> <br>",
+		"a2": "<a href mailto: '   @gmail.com'>@gmail.com</a> <br>",
+		"p": "<p>2022</p>"
+		
+	},
+	{
+		"nombre": "section",
+		"article": "<article>",
+		"h2": "<h2>news</h2>",
+		"p": "<p>contenido</p>",
+		"img":"<img src='img/img.png' width='400' alt=''>",
+		"p2": "<p>acerca de la imagen se muestra shadrtoy</p>"
+	},
+	
+	{
+		"nombre": "body",
+		"h1": "<h1id='titulo'>Titulo</h1>",
+		"img": "<img src='img/img.png' height='500px' />",
+		"a": "<a href='https://google.com'>google</a>"
+	},
+	{}
+];
+var elemento = elementos[0];
+  
+console.log(elemento);
+
+function setElemento(nombre, propiedad){
+	for(var i = 0; i < elementos.length; i++){
+		if(elementos[i].nombre === nombre){
+			elemento = document.createElement(nombre);
+			elemento.innerHTML = elementos[i][propiedad];
+			document.body.appendChild(elemento);
+			
+			return elementos[i][propiedad] || "la propiedad no existe";
+		}
+	}
+	return "El nombre no esta en la lista";
+}
+setElemento("header","h1");
+setElemento("header","h2");
+setElemento("section","article");
+setElemento("section","h2");
+setElemento("section","p");
+setElemento("section","img");
+setElemento("section","p2");
+setElemento("footer","a");
+setElemento("footer","a2");
+var style = document.createElement('style');
+style.innerHTML = 'header, section, footer { text-align: center; color: rgb(9, 9, 9); }';
+document.head.appendChild(style);
+/*console.log(setElemento("head","h1"));
+console.log(setElemento("head","img"));
+console.log(setElemento("head","a"));*/
+});
+        </script>
+    </head>
+    
+</html>

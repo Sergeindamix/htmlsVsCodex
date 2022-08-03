@@ -1,0 +1,61 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+/* caja de texto */
+var texto = document.createElement('input');
+texto.type = 'text';
+texto.id = 'texto';
+texto.style.whiteSpace = 'nowrap';
+document.body.appendChild(texto);
+/* texto en caja se muestra en nuevo div */
+var boton = document.createElement('input');
+boton.type = 'button';
+boton.value = 'css';
+boton.onclick = function() {
+  var texto = document.getElementById('texto').value;
+  var div = document.createElement('div');
+  div.innerHTML = texto;
+  document.body.appendChild(div);
+  /* el contenido de la caja se agrega a style.innerHTM   L */
+  var style = document.createElement('style');
+  style.innerHTML = '[title~=flower] { border: 5px solid yellow; }';
+  document.head.appendChild(style);
+};
+document.body.appendChild(boton);
+/* <h2>CSS [attribute~="value"] Selector</h2> */
+var h2 = document.createElement('h2');
+h2.innerHTML = 'CSS [attribute~="value"] Selector';
+document.body.appendChild(h2);
+/* <p>All images with the title attribute containing the word "flower" get a yellow border.</p> */
+var p = document.createElement('p');
+p.innerHTML = 'All images with the title attribute containing the word "flower" get a yellow border.';
+document.body.appendChild(p);
+/* <img src="klematis.jpg" title="klematis flower" width="150" height="113"> */
+var img = document.createElement('img');
+img.src = 'klematis.jpg';
+img.title = 'klematis flower';
+img.width = '150';
+img.height = '113';
+document.body.appendChild(img);
+/* <img src="img_flwr.gif" title="flower" width="224" height="162"> */
+var img = document.createElement('img');
+img.src = 'img_flwr.gif';
+img.title = 'flower';
+img.width = '224';
+img.height = '162';
+document.body.appendChild(img);
+/* <img src="img_tree.gif" title="tree" width="200" height="358"> */
+var img = document.createElement('img');
+img.src = 'img_tree.gif';
+img.title = 'tree';
+img.width = '200';
+img.height = '358';
+document.body.appendChild(img);
+});
+        </script>
+    </head>
+    
+</html>

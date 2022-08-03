@@ -1,0 +1,511 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+/* css */
+var css = document.createElement('style');
+css.innerHTML = 'body { background-color: #000; color: #fff; }';
+document.body.appendChild(css);
+
+/* div id="container" */
+var container = document.createElement('div');
+container.id = 'container';
+document.body.appendChild(container);
+/* ul id="menu" */
+var menu = document.createElement('ul');
+menu.id = 'menu';
+container.appendChild(menu);
+/* <li><a href="#">About Me</a> */
+var aboutMe = document.createElement('li');
+var aboutMeLink = document.createElement('a');
+aboutMeLink.href = '#';
+aboutMeLink.innerHTML = 'About Me';
+aboutMe.appendChild(aboutMeLink);
+menu.appendChild(aboutMe);
+/* <ul> */
+var subMenu = document.createElement('ul');
+aboutMe.appendChild(subMenu);
+/* <li><a href="#">Lorem ipsum dolor</a></li> */
+var loremIpsum = document.createElement('li');
+var loremIpsumLink = document.createElement('a');
+loremIpsumLink.href = '#';
+loremIpsumLink.innerHTML = 'Lorem ipsum dolor';
+loremIpsum.appendChild(loremIpsumLink);
+subMenu.appendChild(loremIpsum);
+/* <li><a href="#">Maecenas lacinia sem</a></li> */
+var maecenasLacinia = document.createElement('li');
+var maecenasLaciniaLink = document.createElement('a');
+maecenasLaciniaLink.href = '#';
+maecenasLaciniaLink.innerHTML = 'Maecenas lacinia sem';
+maecenasLacinia.appendChild(maecenasLaciniaLink);
+subMenu.appendChild(maecenasLacinia);
+/* <li><a href="#">Suspendisse fringilla</a></li> */
+var suspendisseFringilla = document.createElement('li');
+var suspendisseFringillaLink = document.createElement('a');
+suspendisseFringillaLink.href = '#';
+suspendisseFringillaLink.innerHTML = 'Suspendisse fringilla';
+suspendisseFringilla.appendChild(suspendisseFringillaLink);
+subMenu.appendChild(suspendisseFringilla);
+/* <li><a href="#">Portfolio</a> */
+var portfolio = document.createElement('li');
+var portfolioLink = document.createElement('a');
+portfolioLink.href = '#';
+portfolioLink.innerHTML = 'Portfolio';
+portfolio.appendChild(portfolioLink);
+menu.appendChild(portfolio);
+/* <ul> */
+var subMenu2 = document.createElement('ul');
+portfolio.appendChild(subMenu2);
+/* <li><a href="#">Lorem ipsum dolor</a></li> */
+var loremIpsum2 = document.createElement('li');
+var loremIpsumLink2 = document.createElement('a');
+loremIpsumLink2.href = '#';
+loremIpsumLink2.innerHTML = 'Lorem ipsum dolor';
+loremIpsum2.appendChild(loremIpsumLink2);
+subMenu2.appendChild(loremIpsum2);
+/* <li><a href="#">Maecenas dignissim fermentum luctus</a></li> */
+var maecenasDignissim = document.createElement('li');
+var maecenasDignissimLink = document.createElement('a');
+maecenasDignissimLink.href = '#';
+maecenasDignissimLink.innerHTML = 'Maecenas dignissim fermentum luctus';
+maecenasDignissim.appendChild(maecenasDignissimLink);
+subMenu2.appendChild(maecenasDignissim);
+/* <li><a href="#">Suspendisse fringilla</a></li> */
+var suspendisseFringilla2 = document.createElement('li');
+var suspendisseFringillaLink2 = document.createElement('a');
+suspendisseFringillaLink2.href = '#';
+suspendisseFringillaLink2.innerHTML = 'Suspendisse fringilla';
+suspendisseFringilla2.appendChild(suspendisseFringillaLink2);
+subMenu2.appendChild(suspendisseFringilla2);
+/* <li><a href="#">Lorem ipsum dolor</a></li> */
+var loremIpsum3 = document.createElement('li');
+var loremIpsumLink3 = document.createElement('a');
+loremIpsumLink3.href = '#';
+loremIpsumLink3.innerHTML = 'Lorem ipsum dolor';
+loremIpsum3.appendChild(loremIpsumLink3);
+subMenu2.appendChild(loremIpsum3);
+/* <li><a href="#">Maecenas lacinia sem</a></li> */
+var maecenasLacinia2 = document.createElement('li');
+var maecenasLaciniaLink2 = document.createElement('a');
+maecenasLaciniaLink2.href = '#';
+maecenasLaciniaLink2.innerHTML = 'Maecenas lacinia sem';
+maecenasLacinia2.appendChild(maecenasLaciniaLink2);
+subMenu2.appendChild(maecenasLacinia2);
+/* <li><a href="#">Suspendisse fringilla</a></li> */
+var suspendisseFringilla3 = document.createElement('li');
+var suspendisseFringillaLink3 = document.createElement('a');
+suspendisseFringillaLink3.href = '#';
+suspendisseFringillaLink3.innerHTML = 'Suspendisse fringilla';
+suspendisseFringilla3.appendChild(suspendisseFringillaLink3);
+subMenu2.appendChild(suspendisseFringilla3);
+/* </ul> */
+subMenu2.removeChild(loremIpsum3);
+subMenu2.removeChild(maecenasLacinia2);
+subMenu2.removeChild(suspendisseFringilla3);
+/* </li> */
+menu.removeChild(portfolio);
+/* <li><a href="#">Clients</a> */
+var clients = document.createElement('li');
+var clientsLink = document.createElement('a');
+clientsLink.href = '#';
+clientsLink.innerHTML = 'Clients';
+clients.appendChild(clientsLink);
+menu.appendChild(clients);
+/* <ul> */
+var subMenu3 = document.createElement('ul');
+clients.appendChild(subMenu3);
+/* <li><a href="#">Lorem ipsum dolor</a></li> */
+var loremIpsum4 = document.createElement('li');
+var loremIpsumLink4 = document.createElement('a');
+loremIpsumLink4.href = '#';
+loremIpsumLink4.innerHTML = 'Lorem ipsum dolor';
+loremIpsum4.appendChild(loremIpsumLink4);
+subMenu3.appendChild(loremIpsum4);
+/* <li><a href="#">Maecenas lacinia sem</a></li> */
+var maecenasLacinia3 = document.createElement('li');
+var maecenasLaciniaLink3 = document.createElement('a');
+maecenasLaciniaLink3.href = '#';
+maecenasLaciniaLink3.innerHTML = 'Maecenas lacinia sem';
+maecenasLacinia3.appendChild(maecenasLaciniaLink3);
+subMenu3.appendChild(maecenasLacinia3);
+/* <li><a href="#">Suspendisse fringilla</a></li> */
+var suspendisseFringilla4 = document.createElement('li');
+var suspendisseFringillaLink4 = document.createElement('a');
+suspendisseFringillaLink4.href = '#';
+suspendisseFringillaLink4.innerHTML = 'Suspendisse fringilla';
+suspendisseFringilla4.appendChild(suspendisseFringillaLink4);
+subMenu3.appendChild(suspendisseFringilla4);
+/* <li><a href="#">Contact Me</a> */
+var contactMe = document.createElement('li');
+var contactMeLink = document.createElement('a');
+contactMeLink.href = '#';
+contactMeLink.innerHTML = 'Contact Me';
+contactMe.appendChild(contactMeLink);
+menu.appendChild(contactMe);
+/* <ul> */
+var subMenu4 = document.createElement('ul');
+contactMe.appendChild(subMenu4);
+/* <li><a href="#">Lorem ipsum dolor</a></li> */
+var loremIpsum5 = document.createElement('li');
+var loremIpsumLink5 = document.createElement('a');
+loremIpsumLink5.href = '#';
+loremIpsumLink5.innerHTML = 'Lorem ipsum dolor';
+loremIpsum5.appendChild(loremIpsumLink5);
+subMenu4.appendChild(loremIpsum5);
+/* <li><a href="#">Maecenas dignissim fermentum luctus</a></li> */
+var maecenasDignissim2 = document.createElement('li');
+var maecenasDignissimLink2 = document.createElement('a');
+maecenasDignissimLink2.href = '#';
+maecenasDignissimLink2.innerHTML = 'Maecenas dignissim fermentum luctus';
+maecenasDignissim2.appendChild(maecenasDignissimLink2);
+subMenu4.appendChild(maecenasDignissim2);
+/* <li><a href="#">Suspendisse fringilla</a> */
+var suspendisseFringilla5 = document.createElement('li');
+var suspendisseFringillaLink5 = document.createElement('a');
+suspendisseFringillaLink5.href = '#';
+suspendisseFringillaLink5.innerHTML = 'Suspendisse fringilla';
+suspendisseFringilla5.appendChild(suspendisseFringillaLink5);
+subMenu4.appendChild(suspendisseFringilla5);
+/* padding: 30px; */
+var padding = document.createElement('style');
+padding.innerHTML = '#container { padding: 30px; }';
+document.body.appendChild(padding);
+/* font-family: "Helvetica Neue", helvetica, arial; */
+var fontFamily = document.createElement('style');
+fontFamily.innerHTML = '#container { font-family: "Helvetica Neue", helvetica, arial; }';
+document.body.appendChild(fontFamily);
+/* background: url('https://subtlepatterns.com/patterns/white_carbonfiber.png'); */
+var background = document.createElement('style');
+background.innerHTML = '#container { background: url(\'https://subtlepatterns.com/patterns/white_carbonfiber.png\'); }';
+document.body.appendChild(background);
+/* #container */
+var container2 = document.createElement('style');
+container2.innerHTML = '#container { width: 960px; margin: 0 auto; }';
+document.body.appendChild(container2);
+/* position: relative; */
+var position = document.createElement('style');
+position.innerHTML = '#container { position: relative; }';
+document.body.appendChild(position);
+/* width: 940px; */
+var width = document.createElement('style');
+width.innerHTML = '#container { width: 940px; }';
+document.body.appendChild(width);
+/* #container:after */
+var containerAfter = document.createElement('style');
+containerAfter.innerHTML = '#container:after { content: ""; display: table; clear: both; }';
+document.body.appendChild(containerAfter);
+/* content: ""; */
+var content = document.createElement('style');
+content.innerHTML = '#container:after { content: ""; }';
+document.body.appendChild(content);
+/* display: block; */
+var display = document.createElement('style');
+display.innerHTML = '#container:after { display: block; }';
+document.body.appendChild(display);
+/* clear: both; */
+var clear = document.createElement('style');
+clear.innerHTML = '#container:after { clear: both; }';
+document.body.appendChild(clear);
+/* height: 0; */
+var height = document.createElement('style');
+height.innerHTML = '#container:after { height: 0; }';
+document.body.appendChild(height);
+/* #menu */
+var menu2 = document.createElement('style');
+menu2.innerHTML = '#menu { float: left; width: 240px; }';
+document.body.appendChild(menu2);
+/* position: relative; */
+var position2 = document.createElement('style');
+position2.innerHTML = '#menu { position: relative; }';
+document.body.appendChild(position2);
+/* float: left; */
+var float = document.createElement('style');
+float.innerHTML = '#menu { float: left; }';
+document.body.appendChild(float);
+/* width: 100%; */
+var width2 = document.createElement('style');
+width2.innerHTML = '#menu { width: 100%; }';
+document.body.appendChild(width2);
+/* padding: 0 20px; */
+var padding2 = document.createElement('style');
+padding2.innerHTML = '#menu { padding: 0 20px; }';
+document.body.appendChild(padding2);
+/* border-radius: 3px; */
+var borderRadius = document.createElement('style');
+borderRadius.innerHTML = '#menu { border-radius: 3px; }';
+document.body.appendChild(borderRadius);
+/* box-shadow: inset 0 1px 1px rgba(255,255,255,.5), inset 0 -1px 0 rgba(0,0,0,.15), 0 1px 3px rgba(0,0,0,.15); */
+var boxShadow = document.createElement('style');
+boxShadow.innerHTML = '#menu { box-shadow: inset 0 1px 1px rgba(255,255,255,.5), inset 0 -1px 0 rgba(0,0,0,.15), 0 1px 3px rgba(0,0,0,.15); }';
+document.body.appendChild(boxShadow);
+/* background: #ccc; */
+var background2 = document.createElement('style');
+background2.innerHTML = '#menu { background: #ccc; }';
+document.body.appendChild(background2);
+/* #menu, #menu ul */
+var menu3 = document.createElement('style');
+menu3.innerHTML = '#menu, #menu ul { list-style: none; margin: 0; padding: 0; }';
+document.body.appendChild(menu3);
+/* list-style: none; */
+var listStyle = document.createElement('style');
+listStyle.innerHTML = '#menu, #menu ul { list-style: none; }';
+document.body.appendChild(listStyle);
+/* #menu > li */
+var menu4 = document.createElement('style');
+menu4.innerHTML = '#menu > li { position: relative; }';
+document.body.appendChild(menu4);
+/* float: left; */
+var float2 = document.createElement('style');
+float2.innerHTML = '#menu > li { float: left; }';
+document.body.appendChild(float2);
+/* position: relative; */
+var position3 = document.createElement('style');
+position3.innerHTML = '#menu > li { position: relative; }';
+document.body.appendChild(position3);
+/* border-right: 1px solid rgba(0,0,0,.1); */
+var borderRight = document.createElement('style');
+borderRight.innerHTML = '#menu > li { border-right: 1px solid rgba(0,0,0,.1); }';
+document.body.appendChild(borderRight);
+/* box-shadow: 1px 0 0 rgba(255,255,255,.25); */
+var boxShadow2 = document.createElement('style');
+boxShadow2.innerHTML = '#menu > li { box-shadow: 1px 0 0 rgba(255,255,255,.25); }';
+document.body.appendChild(boxShadow2);
+/* perspective: 1000px; */
+var perspective = document.createElement('style');
+perspective.innerHTML = '#menu > li { perspective: 1000px; }';
+document.body.appendChild(perspective);
+/* #menu > li:first-child */
+var menu5 = document.createElement('style');
+menu5.innerHTML = '#menu > li:first-child { border-radius: 3px 0 0 3px; }';
+document.body.appendChild(menu5);
+/* border-left: 1px solid rgba(255,255,255,.25); */
+var borderLeft = document.createElement('style');
+borderLeft.innerHTML = '#menu > li:first-child { border-left: 1px solid rgba(255,255,255,.25); }';
+document.body.appendChild(borderLeft);
+/* box-shadow: -1px 0 0 rgba(0,0,0,.1), 1px 0 0 rgba(255,255,255,.25); */
+var boxShadow3 = document.createElement('style');
+boxShadow3.innerHTML = '#menu > li:first-child { box-shadow: -1px 0 0 rgba(0,0,0,.1), 1px 0 0 rgba(255,255,255,.25); }';
+document.body.appendChild(boxShadow3);
+/* #menu a */
+var menu6 = document.createElement('style');
+menu6.innerHTML = '#menu a { display: block; padding: 10px 20px; color: #333; text-decoration: none; }';
+document.body.appendChild(menu6);
+/* display: block; */
+var display2 = document.createElement('style');
+display2.innerHTML = '#menu a { display: block; }';
+document.body.appendChild(display2);
+/* position: relative; */
+var position4 = document.createElement('style');
+position4.innerHTML = '#menu a { position: relative; }';
+document.body.appendChild(position4);
+/* z-index: 10; */
+var zIndex = document.createElement('style');
+zIndex.innerHTML = '#menu a { z-index: 10; }';
+document.body.appendChild(zIndex);
+/* padding: 13px 20px 13px 20px; */
+var padding3 = document.createElement('style');
+padding3.innerHTML = '#menu a { padding: 13px 20px 13px 20px; }';
+document.body.appendChild(padding3);
+/* text-decoration: none; */
+var textDecoration = document.createElement('style');
+textDecoration.innerHTML = '#menu a { text-decoration: none; }';
+document.body.appendChild(textDecoration);
+/* color: rgba(75,75,75,1); */
+var color = document.createElement('style');
+color.innerHTML = '#menu a { color: rgba(75,75,75,1); }';
+document.body.appendChild(color);
+/* line-height: 1; */
+var lineHeight = document.createElement('style');
+lineHeight.innerHTML = '#menu a { line-height: 1; }';
+document.body.appendChild(lineHeight);
+/* font-weight: 600; */
+var fontWeight = document.createElement('style');
+fontWeight.innerHTML = '#menu a { font-weight: 600; }';
+document.body.appendChild(fontWeight);
+/* font-size: 12px; */
+var fontSize = document.createElement('style');
+fontSize.innerHTML = '#menu a { font-size: 12px; }';
+document.body.appendChild(fontSize);
+/* letter-spacing: -.05em; */
+var letterSpacing = document.createElement('style');
+letterSpacing.innerHTML = '#menu a { letter-spacing: -.05em; }';
+document.body.appendChild(letterSpacing);
+/* background: transparent; */
+var background3 = document.createElement('style');
+background3.innerHTML = '#menu a { background: transparent; }';
+document.body.appendChild(background3);
+/* text-shadow: 0 1px 1px rgba(255,255,255,.9); */
+var textShadow = document.createElement('style');
+textShadow.innerHTML = '#menu a { text-shadow: 0 1px 1px rgba(255,255,255,.9); }';
+document.body.appendChild(textShadow);
+/* transition: all .25s ease-in-out; */
+var transition = document.createElement('style');
+transition.innerHTML = '#menu a { transition: all .25s ease-in-out; }';
+document.body.appendChild(transition);
+/* #menu > li:hover > a */
+var menu7 = document.createElement('style');
+menu7.innerHTML = '#menu > li:hover > a { background: rgba(255,255,255,.1); }';
+document.body.appendChild(menu7);
+/* background: #333; */
+var background4 = document.createElement('style');
+background4.innerHTML = '#menu > li:hover > a { background: #333; }';
+document.body.appendChild(background4);
+/* color: rgba(0,223,252,1); */
+var color2 = document.createElement('style');
+color2.innerHTML = '#menu > li:hover > a { color: rgba(0,223,252,1); }';
+document.body.appendChild(color2);
+/* text-shadow: none; */
+var textShadow2 = document.createElement('style');
+textShadow2.innerHTML = '#menu > li:hover > a { text-shadow: none; }';
+document.body.appendChild(textShadow2);
+/* #menu li ul */
+var menu8 = document.createElement('style');
+menu8.innerHTML = '#menu li ul { position: absolute; left: -9999px; top: -9999px; }';
+document.body.appendChild(menu8);
+/* position: absolute; */
+var position5 = document.createElement('style');
+position5.innerHTML = '#menu li ul { position: absolute; }';
+document.body.appendChild(position5);
+/* left: 0; */
+var left = document.createElement('style');
+left.innerHTML = '#menu li ul { left: 0; }';
+document.body.appendChild(left);
+/* z-index: 1; */
+var zIndex2 = document.createElement('style');
+zIndex2.innerHTML = '#menu li ul { z-index: 1; }';
+document.body.appendChild(zIndex2);
+/* width: 200px; */
+var width3 = document.createElement('style');
+width3.innerHTML = '#menu li ul { width: 200px; }';
+document.body.appendChild(width3);
+/* padding: 0; */
+var padding4 = document.createElement('style');
+padding4.innerHTML = '#menu li ul { padding: 0; }';
+document.body.appendChild(padding4);
+/* opacity: 0; */
+var opacity = document.createElement('style');
+opacity.innerHTML = '#menu li ul { opacity: 0; }';
+document.body.appendChild(opacity);
+/* visibility: hidden; */
+var visibility = document.createElement('style');
+visibility.innerHTML = '#menu li ul { visibility: hidden; }';
+document.body.appendChild(visibility);
+/* border-bottom-left-radius: 4px; */
+var borderBottomLeftRadius = document.createElement('style');
+borderBottomLeftRadius.innerHTML = '#menu li ul { border-bottom-left-radius: 4px; }';
+document.body.appendChild(borderBottomLeftRadius);
+/* border-bottom-right-radius: 4px; */
+var borderBottomRightRadius = document.createElement('style');
+borderBottomRightRadius.innerHTML = '#menu li ul { border-bottom-right-radius: 4px; }';
+document.body.appendChild(borderBottomRightRadius);
+/* background: transparent; */
+var background5 = document.createElement('style');
+background5.innerHTML = '#menu li ul { background: transparent; }';
+document.body.appendChild(background5);
+/* overflow: hidden; */
+var overflow = document.createElement('style');
+overflow.innerHTML = '#menu li ul { overflow: hidden; }';
+document.body.appendChild(overflow);
+/* transform-origin: 50% 0%; */
+var transformOrigin = document.createElement('style');
+transformOrigin.innerHTML = '#menu li ul { transform-origin: 50% 0%; }';
+document.body.appendChild(transformOrigin);
+/* #menu li:hover ul */
+var menu9 = document.createElement('style');
+menu9.innerHTML = '#menu li:hover ul { left: 0; top: 100%; opacity: 1; visibility: visible; }';
+document.body.appendChild(menu9);
+/* padding: 15px 0; */
+var padding5 = document.createElement('style');
+padding5.innerHTML = '#menu li:hover ul { padding: 15px 0; }';
+document.body.appendChild(padding5);
+/* background: #333; */
+var background6 = document.createElement('style');
+background6.innerHTML = '#menu li:hover ul { background: #333; }';
+document.body.appendChild(background6);
+/* opacity: 1; */
+var opacity2 = document.createElement('style');
+opacity2.innerHTML = '#menu li:hover ul { opacity: 1; }';
+document.body.appendChild(opacity2);
+/* visibility: visible; */
+var visibility2 = document.createElement('style');
+visibility2.innerHTML = '#menu li:hover ul { visibility: visible; }';
+document.body.appendChild(visibility2);
+/* box-shadow: 1px 1px 7px rgba(0,0,0,.5); */
+var boxShadow4 = document.createElement('style');
+boxShadow4.innerHTML = '#menu li:hover ul { box-shadow: 1px 1px 7px rgba(0,0,0,.5); }';
+document.body.appendChild(boxShadow4);
+/* #menu li:hover ul */
+var css = document.createElement('style');
+css.innerHTML = '#menu li:hover ul { display: block; }';
+document.body.appendChild(css);
+/* padding: 15px 0; */
+var css = document.createElement('style');
+css.innerHTML = '#menu li:hover ul { display: block; padding: 15px 0; }';
+document.body.appendChild(css);
+/* background: #333; */
+var css = document.createElement('style');
+css.innerHTML = '#menu li:hover ul { display: block; padding: 15px 0; background: #333; }';
+document.body.appendChild(css);
+/* opacity: 1; */
+var css = document.createElement('style');
+css.innerHTML = '#menu li:hover ul { display: block; padding: 15px 0; background: #333; opacity: 1; }';
+document.body.appendChild(css);
+/* visibility: visible; */
+var css = document.createElement('style');
+css.innerHTML = '#menu li:hover ul { display: block; padding: 15px 0; background: #333; opacity: 1; visibility: visible; }';
+document.body.appendChild(css);
+/* box-shadow: 1px 1px 7px rgba(0,0,0,.5); */
+var css = document.createElement('style');
+css.innerHTML = '#menu li:hover ul { display: block; padding: 15px 0; background: #333; opacity: 1; visibility: visible; box-shadow: 1px 1px 7px rgba(0,0,0,.5); }';
+document.body.appendChild(css);
+/* animation-name: swingdown; */
+var css = document.createElement('style');
+css.innerHTML = '#menu li:hover ul { display: block; padding: 15px 0; background: #333; opacity: 1; visibility: visible; box-shadow: 1px 1px 7px rgba(0,0,0,.5); animation-name: swingdown; }';
+document.body.appendChild(css);
+/* animation-duration: 1s; */
+var css = document.createElement('style');
+css.innerHTML = '#menu li:hover ul { display: block; padding: 15px 0; background: #333; opacity: 1; visibility: visible; box-shadow: 1px 1px 7px rgba(0,0,0,.5); animation-name: swingdown; animation-duration: 1s; }';
+document.body.appendChild(css);
+/* animation-timing-function: ease; */
+var css = document.createElement('style');
+css.innerHTML = '#menu li:hover ul { display: block; padding: 15px 0; background: #333; opacity: 1; visibility: visible; box-shadow: 1px 1px 7px rgba(0,0,0,.5); animation-name: swingdown; animation-duration: 1s; animation-timing-function: ease; }';
+document.body.appendChild(css);
+/* @keyframes swingdown { */
+var style = document.createElement('style');
+style.innerHTML = '@keyframes swingdown {';
+document.head.appendChild(style);
+/* 0% { */
+style.innerHTML += '0% {';
+/* opacity: .99999; */
+style.innerHTML += 'opacity: .99999;';
+/* transform: rotateX(90deg); */
+style.innerHTML += 'transform: rotateX(90deg);';
+/* 30% { */
+style.innerHTML += '30% {';
+/* transform: rotateX(-20deg) rotateY(5deg); */
+style.innerHTML += 'transform: rotateX(-20deg) rotateY(5deg);';
+/* animation-timing-function: ease-in-out; */
+style.innerHTML += 'animation-timing-function: ease-in-out;';
+/* 65% { */
+style.innerHTML += '65% {';
+/* transform: rotateX(20deg) rotateY(-3deg); */
+style.innerHTML += 'transform: rotateX(20deg) rotateY(-3deg);';
+/* animation-timing-function: ease-in-out; */
+style.innerHTML += 'animation-timing-function: ease-in-out;';
+/* 100% { */
+style.innerHTML += '100% {';
+/* transform: rotateX(0); */
+style.innerHTML += 'transform: rotateX(0);';
+/* animation-timing-function: ease-in-out; */
+style.innerHTML += 'animation-timing-function: ease-in-out;';
+/* texto blanco en submenus */
+var textoBlanco = document.createElement('style');
+textoBlanco.innerHTML = '#menu ul li a { color: #fff; }';
+document.body.appendChild(textoBlanco);
+});
+        </script>
+    </head>
+    
+</html>

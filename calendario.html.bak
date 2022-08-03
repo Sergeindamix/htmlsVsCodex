@@ -1,0 +1,57 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+/* api spotify */
+var spotify = document.createElement('div');
+spotify.innerHTML = '<iframe src="https://open.spotify.com/embed/track/0eGsygTp906u18L0Oimnem" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>';
+document.body.appendChild(spotify);
+/* crear similar para archivos locales */
+var local = document.createElement('div');
+local.innerHTML = '<iframe src="file:3dText.html" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>';
+document.body.appendChild(local);
+var boton = document.createElement('div');
+boton.innerHTML = '<input type="file" id="files" name="files[]" multiple />';
+document.body.appendChild(boton);
+/* al cargar archivo agregar a un array */
+var archivos = [];
+var input = document.getElementById('files');
+input.addEventListener('change', function(e) {
+  var file = input.files[0];
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    archivos.push(reader.result);
+  }
+  reader.readAsText(file);
+});
+/* crear lista desplegable con items de array */
+var lista = document.createElement('div');
+lista.innerHTML = '<select id="lista"></select>';
+document.body.appendChild(lista);
+var select = document.getElementById('lista');
+for (var i = 0; i < archivos.length; i++) {
+  var option = document.createElement('option');
+  option.value = archivos[i];
+  option.text = archivos[i];
+  select.appendChild(option);
+}
+/* al cargar archivo actualizar lista */
+var input = document.getElementById('files');
+input.addEventListener('change', function(e) {
+  var file = input.files[0];
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    var option = document.createElement('option');
+    option.value = reader.result;
+    option.text = reader.result;
+    select.appendChild(option);
+  }
+  reader.readAsText(file);
+});
+});
+        </script>
+    </head>
+    
+</html>

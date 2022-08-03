@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+.flex-container {
+  display: -webkit-flex;
+  display: flex;
+  //-webkit-flex-direction: row-reverse;//column-reverse;//column;//row-reverse;//invertir orden
+  //flex-direction: row-reverse;//column-reverse;//column;//row-reverse;//invertir orden
+  //-webkit-justify-content: space-around;//space-between;//center;
+  //justify-content: space-around;//space-between;//center;
+  //-webkit-align-items: center;//flex-end;//flex-start;//stretch;
+  //align-items: center;//flex-end;//flex-start;//stretch;
+  -webkit-flex-wrap: wrap-reverse;//wrap;//nowrap;
+  flex-wrap: wrap-reverse;//wrap;//nowrap;
+  width: 300px;
+  height: 250px;
+  background-color: lightgrey;
+}
+
+.flex-item {
+  background-color: cornflowerblue;
+  width: 75px;
+  height: 75px;
+  margin: auto;//10px;
+}
+</style>
+</head>
+<body>
+
+<div class="flex-container">
+  <div class="flex-item">flex item 1</div>
+  <div class="flex-item">flex item 2</div>
+  <div class="flex-item">flex item 3</div>  
+</div>
+
+</body>
+</html>

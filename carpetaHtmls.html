@@ -1,0 +1,166 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+
+
+var file = document.createElement('input');
+file.type = 'file';
+file.multiple = true;
+file.webkitdirectory = true;
+file.addEventListener('change', function(e) {
+  console.log(e.target.files);
+  var file = e.target.files[e.target.files.length - 1];
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    var html = e.target.result;
+    var iframe = document.createElement('iframe');
+	iframe.style.width = '100%';
+	iframe.style.height = '100%';
+    iframe.src = 'data:text/html;charset=utf-8,' + encodeURI(html);
+    document.body.appendChild(iframe);
+  };
+  reader.readAsText(file);
+});
+/* visualizar el primer archivo */
+var file = document.createElement('input');
+file.type = 'file';
+file.multiple = true;
+file.webkitdirectory = true;
+file.addEventListener('change', function(e) {
+  console.log(e.target.files);
+  var file = e.target.files[0];
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    var html = e.target.result;
+    var iframe = document.createElement('iframe');
+    iframe.style.width = '100%';
+    iframe.style.height = '100%';
+    iframe.src = 'data:text/html;charset=utf-8,' + encodeURI(html);
+    document.body.appendChild(iframe);
+  };
+  reader.readAsText(file);
+});
+/* generar bucle con wait of seconds */
+var file = document.createElement('input');
+file.type = 'file';
+file.multiple = true;
+file.webkitdirectory = true;
+file.addEventListener('change', function(e) {
+  console.log(e.target.files);
+  var files = e.target.files;
+  var i = 0;
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    var html = e.target.result;
+    var iframe = document.createElement('iframe');
+    iframe.style.width = '100%';
+    iframe.style.height = '100%';
+    iframe.src = 'data:text/html;charset=utf-8,' + encodeURI(html);
+    document.body.appendChild(iframe);
+    setTimeout(function() {
+      document.body.removeChild(iframe);
+      i++;
+      if (i < files.length) {
+        reader.readAsText(files[i]);
+      }
+    }, 10000);
+  };
+  reader.readAsText(files[i]);
+});
+/* fade in en .05 segundos */
+function fadein() {
+  var iframe = document.getElementsByTagName('iframe')[0];
+  iframe.style.opacity = 0;
+  var op = 0.1;
+  var timer = setInterval(function() {
+    if (op >= 1) {
+      clearInterval(timer);
+    }
+    iframe.style.opacity = op;
+    iframe.style.filter = 'alpha(opacity=' + op * 100 + ')';
+    op += op * 0.1;
+  }, 5);
+}
+/* fade out .05 segundos */
+function fadeout() {
+  var iframe = document.getElementsByTagName('iframe')[0];
+  iframe.style.opacity = 1;
+  var op = 0.1;
+  var timer = setInterval(function() {
+    if (op >= 1) {
+      clearInterval(timer);
+    }
+    iframe.style.opacity = 1-op;
+    iframe.style.filter = 'alpha(opacity=' + op * 100 + ')';
+    op += op * 0.1;
+  }, 5);
+}
+/* transition fadeout cada x segundos */
+var file = document.createElement('input');
+var files;
+file.type = 'file';
+file.multiple = true;
+file.webkitdirectory = true;
+file.addEventListener('change', function(e) {
+  console.log(e.target.files);
+  files = e.target.files;
+  var i = 0;
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    var html = e.target.result;
+    var iframe = document.createElement('iframe');
+    iframe.style.width = '100%';
+    iframe.style.height = '100%';
+    iframe.src = 'data:text/html;charset=utf-8,' + encodeURI(html);
+    iframe.style.opacity = 0;
+    document.body.appendChild(iframe);
+	var option = document.createElement('option');
+    option.innerHTML = files[i].name;
+    dropdown.appendChild(option);
+    setTimeout(function() {
+      fadein();
+      setTimeout(function() {
+        fadeout();
+        setTimeout(function() {
+          document.body.removeChild(iframe);
+          i++;
+          if (i < files.length) {
+            reader.readAsText(files[i]);
+          }
+        }, 0000);
+      }, 1000);
+    }, 0000);
+  };
+  reader.readAsText(files[i]);
+});
+document.body.appendChild(file);
+/* crear dropdown vacio */
+var dropdown = document.createElement('select');
+document.body.appendChild(dropdown);
+/* funcion cambio de seleccion de dropdown */
+dropdown.addEventListener('change', function(e) {
+  var html = e.target.value;
+  var iframe = document.createElement('iframe');
+  iframe.style.width = '100%';
+  iframe.style.height = '100%';
+  iframe.src = 'data:text/html;charset=utf-8,' + encodeURI(html);
+  iframe.style.opacity = 0;
+  document.body.appendChild(iframe);
+  setTimeout(function() {
+    fadein();
+    setTimeout(function() {
+      fadeout();
+      setTimeout(function() {
+        document.body.removeChild(iframe);
+      }, 1000);
+    }, 1000);
+  }, 1000);
+});
+});
+        </script>
+    </head>
+    
+</html>

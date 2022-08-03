@@ -1,0 +1,227 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+/* css */
+var css = document.createElement('style');
+css.innerHTML = 'body { background-color: #000; color: #fff; }';
+document.body.appendChild(css);
+/* 10 palabras random, tamaño random, posicion random */
+var palabras = ['hola', 'adios', 'amor', 'odio', 'paz', 'guerra', 'felicidad', 'tristeza', 'alegria', 'tristeza'];
+var colores = ['#f00', '#0f0', '#00f', '#ff0', '#0ff', '#f0f'];
+for (var i = 0; i < 10; i++) {
+  var palabra = document.createElement('div');
+  palabra.innerHTML = palabras[Math.floor(Math.random() * palabras.length)];
+  palabra.style.position = 'absolute';
+  palabra.style.left = Math.floor(Math.random() * window.innerWidth) + 'px';
+  palabra.style.top = Math.floor(Math.random() * window.innerHeight) + 'px';
+  palabra.style.fontSize = Math.floor(Math.random() * 100) + 'px';
+  palabra.style.color = colores[Math.floor(Math.random() * colores.length)];
+  document.body.appendChild(palabra);
+}
+/* 20 palabras */
+var palabras = ['hola', 'adios', 'amor', 'odio', 'paz', 'guerra', 'felicidad', 'tristeza', 'alegria', 'tristeza', 'hola', 'adios', 'amor', 'odio', 'paz', 'guerra', 'felicidad', 'tristeza', 'alegria', 'tristeza'];
+var colores = ['#f00', '#0f0', '#00f', '#ff0', '#0ff', '#f0f'];
+for (var i = 0; i < 20; i++) {
+  var palabra = document.createElement('div');
+  palabra.innerHTML = palabras[Math.floor(Math.random() * palabras.length)];
+  palabra.style.position = 'absolute';
+  palabra.style.left = Math.floor(Math.random() * window.innerWidth) + 'px';
+  palabra.style.top = Math.floor(Math.random() * window.innerHeight) + 'px';
+  palabra.style.fontSize = Math.floor(Math.random() * 100) + 'px';
+  palabra.style.color = colores[Math.floor(Math.random() * colores.length)];
+  document.body.appendChild(palabra);
+}
+/* mover en y con mouse wheel */
+var palabras = ['hola', 'adios', 'amor', 'odio', 'paz', 'guerra', 'felicidad', 'tristeza', 'alegria', 'tristeza', 'hola', 'adios', 'amor', 'odio', 'paz', 'guerra', 'felicidad', 'tristeza', 'alegria', 'tristeza'];
+var colores = ['#f00', '#0f0', '#00f', '#ff0', '#0ff', '#f0f'];
+for (var i = 0; i < 20; i++) {
+  var palabra = document.createElement('div');
+  palabra.innerHTML = palabras[Math.floor(Math.random() * palabras.length)];
+  palabra.style.position = 'absolute';
+  palabra.style.left = Math.floor(Math.random() * window.innerWidth) + 'px';
+  palabra.style.top = Math.floor(Math.random() * window.innerHeight) + 'px';
+  palabra.style.fontSize = Math.floor(Math.random() * 100) + 'px';
+  palabra.style.color = colores[Math.floor(Math.random() * colores.length)];
+  document.body.appendChild(palabra);
+}
+var x = 0;
+var y = 0;
+var speed = 0.1;
+/* transicion smooth */
+document.addEventListener('wheel', function(e) {
+  x += e.deltaX * speed;
+  y += e.deltaY * speed;
+  var delta = e.deltaY;
+  var palabras = document.querySelectorAll('div');
+  for (var i = 0; i < palabras.length; i++) {
+    palabras[i].style.transition = 'transform 0.5s';
+    palabras[i].style.transform = 'translate(' + x + 'px, ' + y + 'px)';
+	if (palabras[i].getBoundingClientRect().bottom > window.innerHeight){
+	palabras[i].style.display = 'none';
+  } else {
+    palabras[i].style.display = 'block';
+  }
+	//palabras[i].style.top = parseInt(palabras[i].style.top) + delta + 'px';
+  }
+});
+/* css */
+var css = document.createElement('style');
+css.innerHTML = 'body { background-color: #000; color: #fff; }';
+document.body.appendChild(css);
+/* lista de fuentes */
+var fonts = [
+  'Arial',
+  'Arial Black',
+  'Comic Sans MS',
+  'Courier New',
+  'Georgia',
+  'Impact',
+  'Lucida Console',
+  'Lucida Sans Unicode',
+  'Palatino Linotype',
+  'Tahoma',
+  'Times New Roman',
+  'Trebuchet MS',
+  'Verdana'
+];
+/* contar fuentes */
+var fontCount = fonts.length;
+/* mostrar fontCount */
+var fontCountDisplay = document.createElement('div');
+fontCountDisplay.innerHTML = 'Font Count: ' + fontCount;
+document.body.appendChild(fontCountDisplay);
+/* fontCount  tamaño enorme */
+fontCountDisplay.style.fontSize = '100px';
+/* importar fuente Zilla+Slab+Highlight y mostrar */
+var fontLink = document.createElement('link');
+fontLink.href = 'https://fonts.googleapis.com/css?family=Zilla+Slab+Highlight';
+fontLink.rel = 'stylesheet';
+document.head.appendChild(fontLink);
+/* mostrar */
+fontCountDisplay.style.fontFamily = 'Zilla Slab Highlight';
+/* importar ultimas 10 fuentes del sitio y mostrarlas */
+var fontLink = document.createElement('link');
+fontLink.href = 'https://fonts.googleapis.com/css?family=Zilla+Slab+Highlight|Roboto+Mono|Roboto+Condensed|Roboto|Roboto+Slab|Open+Sans+Condensed:300|Open+Sans|Lato|Indie+Flower|Inconsolata|Droid+Sans+Mono';
+fontLink.rel = 'stylesheet';
+document.head.appendChild(fontLink);
+/* mostrar Roboto+Mono */
+fontCountDisplay.style.fontFamily = 'Roboto Mono';
+/* Roboto+Condensed */
+fontCountDisplay.style.fontFamily = 'Roboto Condensed';
+/* continuar */
+fontCountDisplay.style.fontFamily = 'Roboto';
+/* , */
+fontCountDisplay.style.fontFamily = 'Roboto Slab';
+/* , */
+fontCountDisplay.style.fontFamily = 'Open Sans Condensed';
+/* , */
+fontCountDisplay.style.fontFamily = 'Open Sans';
+/* , */
+fontCountDisplay.style.fontFamily = 'Lato';
+/* , */
+fontCountDisplay.style.fontFamily = 'Indie Flower';
+/* , */
+fontCountDisplay.style.fontFamily = 'Inconsolata';
+/* , */
+fontCountDisplay.style.fontFamily = 'Droid Sans Mono';
+/* , */
+fontCountDisplay.style.fontFamily = 'Zilla Slab Highlight';
+/* cambiar cada segundo */
+setInterval(function() {
+  var randomFont = fonts[Math.floor(Math.random() * fonts.length)];
+  fontCountDisplay.style.fontFamily = randomFont;
+}, 1000);
+/* importar otrs 10 fuentes diferentes */
+var fontLink = document.createElement('link');
+fontLink.href = 'https://fonts.googleapis.com/css?family=Pacifico|Orbitron|Noto+Sans|Montserrat|Merriweather|Lobster|Josefin+Sans|Gloria+Hallelujah|Fredoka+One|Covered+By+Your+Grace';
+fontLink.rel = 'stylesheet';
+document.head.appendChild(fontLink);
+/* agregar todas las importadas a la lista */
+fonts.push('Pacifico');
+fonts.push('Orbitron');
+fonts.push('Noto Sans');
+fonts.push('Montserrat');
+fonts.push('Merriweather');
+fonts.push('Lobster');
+fonts.push('Josefin Sans');
+fonts.push('Gloria Hallelujah');
+fonts.push('Fredoka One');
+fonts.push('Covered By Your Grace');
+/* actualizar contador */
+fontCount = fonts.length;
+fontCountDisplay.innerHTML = 'Font Count: ' + fontCount;
+/* fonts.length de palabras random */
+var randomWords = [];
+for (var i = 0; i < fonts.length; i++) {
+  randomWords.push(Math.random().toString(36).substring(7));
+}
+/* mostrar */
+/* guardar nombre de fuente en var */
+var currentFont = randomWordsDisplay.style.fontFamily;
+var randomWordsDisplay = document.createElement('div');
+randomWordsDisplay.innerHTML = currentFont;
+//randomWords.join(' ');
+document.body.appendChild(randomWordsDisplay);
+/* cada una con su correspondiente fuente */
+setInterval(function() {
+  /* guardar nombre de fuente en var */
+var currentFont = randomWordsDisplay.style.fontFamily;
+  randomWordsDisplay.style.fontFamily = currentFont;
+}, 1000);
+/* agrega otras 10 fuentes */
+var fontLink = document.createElement('link');
+fontLink.href = 'https://fonts.googleapis.com/css?family=Architects+Daughter|Bangers|Black+Ops+One|Bungee+Inline|Chewy|Creepster|Dancing+Script|Dawning+of+a+New+Day|Dosis|Droid+Serif|Faster+One|Fugaz+One|Gravitas+One|Great+Vibes|Henny+Penny|Indie+Flower|Kaushan+Script|Lobster|Lobster+Two|Luckiest+Guy|Merienda|Merienda+One|Monoton|Mountains+of+Christmas|Nixie+One|Nothing+You+Could+Do|Open+Sans+Condensed:300|Open+Sans|Oswald|Pacifico|Permanent+Marker|Playball|Poiret+One|Rancho|Reenie+Beanie|Righteous|Shadows+Into+Light|Shadows+Into+Light+Two|Special+Elite|Tangerine|UnifrakturMaguntia|Vast+Shadow|Waiting+for+the+Sunrise';
+fontLink.rel = 'stylesheet';
+document.head.appendChild(fontLink);
+/* agregar a la lista */
+fonts.push('Architects Daughter');
+fonts.push('Bangers');
+fonts.push('Black Ops One');
+fonts.push('Bungee Inline');
+fonts.push('Chewy');
+fonts.push('Creepster');
+fonts.push('Dancing Script');
+fonts.push('Dawning of a New Day');
+fonts.push('Dosis');
+fonts.push('Droid Serif');
+fonts.push('Faster One');
+fonts.push('Fugaz One');
+fonts.push('Gravitas One');
+fonts.push('Great Vibes');
+fonts.push('Henny Penny');
+fonts.push('Indie Flower');
+fonts.push('Kaushan Script');
+fonts.push('Lobster');
+fonts.push('Lobster Two');
+fonts.push('Luckiest Guy');
+fonts.push('Merienda');
+fonts.push('Merienda One');
+fonts.push('Monoton');
+fonts.push('Mountains of Christmas');
+fonts.push('Nixie One');
+fonts.push('Nothing You Could Do');
+fonts.push('Open Sans Condensed');
+fonts.push('Open Sans');
+fonts.push('Oswald');
+fonts.push('Pacifico');
+fonts.push('Permanent Marker');
+fonts.push('Playball');
+fonts.push('Poiret One');
+fonts.push('Rancho');
+fonts.push('Reenie Beanie');
+fonts.push('Righteous');
+fonts.push('Shadows Into Light');
+fonts.push('Shadows Into Light Two');
+fonts.push('Special Elite');
+fonts.push('Tangerine');
+fonts.push('UnifrakturMaguntia');
+fonts.push('Vast Shadow');
+fonts.push('Waiting for the Sunrise');
+});
+        </script>
+    </head>
+    
+</html>

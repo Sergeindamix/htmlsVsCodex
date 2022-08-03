@@ -1,0 +1,63 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+var txt = document.createElement('input');
+txt.setAttribute('type', 'text');
+txt.setAttribute('id', 'txt');
+txt.setAttribute('placeholder', 'Ingrese un numero');
+document.body.appendChild(txt);
+
+var unidad = document.createElement('input');
+unidad.setAttribute('type', 'text');
+unidad.setAttribute('id', 'unidad');
+unidad.setAttribute('placeholder', 'Ingrese unidad');
+document.body.appendChild(unidad);
+
+var btn = document.createElement('button');
+btn.setAttribute('id', 'btn');
+btn.innerHTML = 'Validar';
+document.body.appendChild(btn);
+
+btn.onclick = function() {
+  var txt = document.getElementById('txt').value;
+  var unidad = document.getElementById('unidad').value;
+  var resultado = document.createElement('div');
+  
+  document.body.appendChild(resultado);
+  for (var i = 0; i < txt.length; i++) {
+    setTimeout(function(x) {
+      return function() {
+        var resultado = document.createElement('div');
+        resultado.setAttribute('id', 'resultado');
+        resultado.innerHTML = txt[x];
+        document.body.appendChild(resultado);
+      };
+    }(i), 500 * i);
+  }
+}
+
+btn.onclick = function() {
+  var txt = document.getElementById('txt').value;
+  var unidad = document.getElementById('unidad').value;
+  var resultado = document.createElement('div');
+  
+  document.body.appendChild(resultado);
+  for (var i = 0; i < txt.length; i++) {
+    setTimeout(function(x) {
+      return function() {
+        var resultado = document.createElement('div');
+        resultado.setAttribute('id', 'resultado');
+        resultado.innerHTML = txt[x];
+        document.body.appendChild(resultado);
+      };
+    }(i), 500 * i);
+  }
+}
+});
+        </script>
+    </head>
+    
+</html>

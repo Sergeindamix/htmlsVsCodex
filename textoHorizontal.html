@@ -1,0 +1,20 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+/* cada elemento del texto "X" se mostrara con delay de .5 segundos */
+var text = "PRODUSERGE";
+var i = 0;
+var interval = setInterval(function() {
+  document.body.innerHTML += text[i];
+  i++;
+  if (i == text.length) {
+    clearInterval(interval);
+  }
+}, 500);
+});
+        </script>
+    </head>
+    
+</html>

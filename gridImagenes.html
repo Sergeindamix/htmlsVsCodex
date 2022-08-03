@@ -1,0 +1,48 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+var grid = document.createElement('div');
+grid.style.width = '300px';
+grid.style.height = '300px';
+grid.style.display = 'grid';
+grid.style.gridTemplateColumns = '1fr 1fr 1fr';
+grid.style.gridTemplateRows = '1fr 1fr 1fr';
+grid.style.border = '1px solid black';
+document.body.appendChild(grid);
+
+var cell = document.createElement('div');
+cell.style.border = '1px solid black';
+cell.style.textAlign = 'center';
+cell.style.fontSize = '2em';
+for (var i = 0; i < 9; i++) {
+  var cell = cell.cloneNode(true);
+  cell.innerHTML = i + 1;
+  cell.id = 'cell' + (i + 1);
+  grid.appendChild(cell);
+}
+
+var colors = ['red', 'green', 'blue', 'yellow', 'orange', 'purple', 'pink', 'brown', 'black'];
+for (var i = 0; i < 9; i++) {
+  document.getElementById('cell' + (i + 1)).style.backgroundColor = colors[i];
+}
+
+var images = ['https://www.w3schools.com/css/img_fjords.jpg', 'https://www.w3schools.com/css/img_lights.jpg', 'https://www.w3schools.com/css/img_mountains.jpg', 'https://www.w3schools.com/css/img_forest.jpg', 'https://www.w3schools.com/css/img_snow.jpg', 'https://www.w3schools.com/css/img_5terre.jpg', 'https://www.w3schools.com/css/img_forest.jpg', 'https://www.w3schools.com/css/img_lights.jpg', 'https://www.w3schools.com/css/img_mountains.jpg'];
+for (var i = 0; i < 9; i++) {
+  document.getElementById('cell' + (i + 1)).style.backgroundImage = 'url(' + images[i] + ')';
+  document.getElementById('cell' + (i + 1)).style.backgroundSize = 'cover';
+}
+
+grid.style.width = '100vw';
+grid.style.height = '100vh';
+
+for (var i = 0; i < 9; i++) {
+  document.getElementById('cell' + (i + 1)).innerHTML = '';
+}
+});
+        </script>
+    </head>
+    
+</html>

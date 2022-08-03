@@ -1,0 +1,25 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+var img = document.createElement('img');
+img.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/2000px-Star_Wars_Logo.svg.png';
+document.body.appendChild(img);
+
+img.style.width = '100%';
+img.style.height = '100%';
+
+var negative = function() {
+  img.style.filter = 'invert(100%)';
+  setTimeout(function() {
+    img.style.filter = 'invert(0%)';
+  }, 100);
+};
+setInterval(negative, 200);
+});
+        </script>
+    </head>
+    
+</html>

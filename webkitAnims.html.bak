@@ -1,0 +1,261 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+/* css */
+var css = document.createElement('style');
+css.innerHTML = 'body { background-color: #000; color: #fff; }';
+document.body.appendChild(css);
+/* array de 3 animaciones diferentes webkit */
+var css = document.createElement('style');
+css.innerHTML = '@-webkit-keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } @-webkit-keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } } @-webkit-keyframes fadeInOut { from { opacity: 0; } 50% { opacity: 1; } to { opacity: 0; } }';
+document.body.appendChild(css);
+/* funcion para aplicar keyframes animaciones */
+function applyAnimation(element, animation) {
+  element.style.webkitAnimationName = animation;
+  element.style.webkitAnimationDuration = '1s';
+  element.style.webkitAnimationTimingFunction = 'ease-in-out';
+  element.style.webkitAnimationIterationCount = 'infinite';
+}
+/* aplicar una animacion cada segundo */
+var css = document.createElement('style');
+css.innerHTML = '@-webkit-keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } @-webkit-keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } } @-webkit-keyframes fadeInOut { from { opacity: 0; } 50% { opacity: 1; } to { opacity: 0; } }';
+document.body.appendChild(css);
+function applyAnimation(element, animation) {
+  element.style.webkitAnimationName = animation;
+  element.style.webkitAnimationDuration = '1s';
+  element.style.webkitAnimationTimingFunction = 'ease-in-out';
+  element.style.webkitAnimationIterationCount = 'infinite';
+}
+var animations = ['fadeIn', 'fadeOut', 'fadeInOut'];
+var index = 0;
+setInterval(function() {
+  var helloWorld = document.createElement('div');
+  helloWorld.innerHTML = 'Hello World';
+  document.body.appendChild(helloWorld);
+  applyAnimation(helloWorld, animations[index]);
+  index = (index + 1) % animations.length;
+}, 1000);
+/* ahora la animacion es de tamaño */
+var css = document.createElement('style');
+css.innerHTML = '@-webkit-keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } @-webkit-keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } } @-webkit-keyframes fadeInOut { from { opacity: 0; } 50% { opacity: 1; } to { opacity: 0; } } @-webkit-keyframes scaleUp { from { -webkit-transform: scale(0); } to { -webkit-transform: scale(1); } } @-webkit-keyframes scaleDown { from { -webkit-transform: scale(1); } to { -webkit-transform: scale(0); } }';
+document.body.appendChild(css);
+function applyAnimation(element, animation) {
+  element.style.webkitAnimationName = animation;
+  element.style.webkitAnimationDuration = '1s';
+  element.style.webkitAnimationTimingFunction = 'ease-in-out';
+  element.style.webkitAnimationIterationCount = 'infinite';
+}
+var animations = ['fadeIn', 'fadeOut', 'fadeInOut', 'scaleUp', 'scaleDown'];
+var index = 0;
+setInterval(function() {
+  var helloWorld = document.createElement('div');
+  helloWorld.innerHTML = 'Hello World';
+  document.body.appendChild(helloWorld);
+  applyAnimation(helloWorld, animations[index]);
+  index = (index + 1) % animations.length;
+}, 1000);
+/* ahora en color */
+var css = document.createElement('style');
+css.innerHTML = '@-webkit-keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } @-webkit-keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } } @-webkit-keyframes fadeInOut { from { opacity: 0; } 50% { opacity: 1; } to { opacity: 0; } } @-webkit-keyframes scaleUp { from { -webkit-transform: scale(0); } to { -webkit-transform: scale(1); } } @-webkit-keyframes scaleDown { from { -webkit-transform: scale(1); } to { -webkit-transform: scale(0); } } @-webkit-keyframes colorize { from { color: #fff; } to { color: #f00; } }';
+document.body.appendChild(css);
+function applyAnimation(element, animation) {
+  element.style.webkitAnimationName = animation;
+  element.style.webkitAnimationDuration = '1s';
+  element.style.webkitAnimationTimingFunction = 'ease-in-out';
+  element.style.webkitAnimationIterationCount = 'infinite';
+}
+var animations = ['fadeIn', 'fadeOut', 'fadeInOut', 'scaleUp', 'scaleDown', 'colorize'];
+var index = 0;
+setInterval(function() {
+  var helloWorld = document.createElement('div');
+  helloWorld.innerHTML = 'Hello World';
+  document.body.appendChild(helloWorld);
+  applyAnimation(helloWorld, animations[index]);
+  index = (index + 1) % animations.length;
+}, 1000);
+/* ahora flip */
+var css = document.createElement('style');
+css.innerHTML = '@-webkit-keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } @-webkit-keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } } @-webkit-keyframes fadeInOut { from { opacity: 0; } 50% { opacity: 1; } to { opacity: 0; } } @-webkit-keyframes scaleUp { from { -webkit-transform: scale(0); } to { -webkit-transform: scale(1); } } @-webkit-keyframes scaleDown { from { -webkit-transform: scale(1); } to { -webkit-transform: scale(0); } } @-webkit-keyframes colorize { from { color: #fff; } to { color: #f00; } } @-webkit-keyframes flip { from { -webkit-transform: rotateY(0deg); } to { -webkit-transform: rotateY(360deg); } }';
+document.body.appendChild(css);
+function applyAnimation(element, animation) {
+  element.style.webkitAnimationName = animation;
+  element.style.webkitAnimationDuration = '1s';
+  element.style.webkitAnimationTimingFunction = 'ease-in-out';
+  element.style.webkitAnimationIterationCount = 'infinite';
+}
+var animations = ['fadeIn', 'fadeOut', 'fadeInOut', 'scaleUp', 'scaleDown', 'colorize', 'flip'];
+var index = 0;
+setInterval(function() {
+  var helloWorld = document.createElement('div');
+  helloWorld.innerHTML = 'Hello World';
+  document.body.appendChild(helloWorld);
+  applyAnimation(helloWorld, animations[index]);
+  index = (index + 1) % animations.length;
+}, 1000);
+/* ahora hide, show */
+var css = document.createElement('style');
+css.innerHTML = '@-webkit-keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } @-webkit-keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } } @-webkit-keyframes fadeInOut { from { opacity: 0; } 50% { opacity: 1; } to { opacity: 0; } } @-webkit-keyframes scaleUp { from { -webkit-transform: scale(0); } to { -webkit-transform: scale(1); } } @-webkit-keyframes scaleDown { from { -webkit-transform: scale(1); } to { -webkit-transform: scale(0); } } @-webkit-keyframes colorize { from { color: #fff; } to { color: #f00; } } @-webkit-keyframes flip { from { -webkit-transform: rotateY(0deg); } to { -webkit-transform: rotateY(360deg); } } @-webkit-keyframes hide { from { opacity: 1; } to { opacity: 0; } } @-webkit-keyframes show { from { opacity: 0; } to { opacity: 1; } }';
+document.body.appendChild(css);
+function applyAnimation(element, animation) {
+  element.style.webkitAnimationName = animation;
+  element.style.webkitAnimationDuration = '1s';
+  element.style.webkitAnimationTimingFunction = 'ease-in-out';
+  element.style.webkitAnimationIterationCount = 'infinite';
+}
+var animations = ['fadeIn', 'fadeOut', 'fadeInOut', 'scaleUp', 'scaleDown', 'colorize', 'flip', 'hide', 'show'];
+var index = 0;
+setInterval(function() {
+  var helloWorld = document.createElement('div');
+  helloWorld.innerHTML = 'Hello World';
+  document.body.appendChild(helloWorld);
+  applyAnimation(helloWorld, animations[index]);
+  index = (index + 1) % animations.length;
+}, 1000);
+/* ahora bounce */
+var css = document.createElement('style');
+css.innerHTML = '@-webkit-keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } @-webkit-keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } } @-webkit-keyframes fadeInOut { from { opacity: 0; } 50% { opacity: 1; } to { opacity: 0; } } @-webkit-keyframes scaleUp { from { -webkit-transform: scale(0); } to { -webkit-transform: scale(1); } } @-webkit-keyframes scaleDown { from { -webkit-transform: scale(1); } to { -webkit-transform: scale(0); } } @-webkit-keyframes colorize { from { color: #fff; } to { color: #f00; } } @-webkit-keyframes flip { from { -webkit-transform: rotateY(0deg); } to { -webkit-transform: rotateY(360deg); } } @-webkit-keyframes hide { from { opacity: 1; } to { opacity: 0; } } @-webkit-keyframes show { from { opacity: 0; } to { opacity: 1; } } @-webkit-keyframes bounce { from { -webkit-transform: translateY(0); } to { -webkit-transform: translateY(-100px); } }';
+document.body.appendChild(css);
+function applyAnimation(element, animation) {
+  element.style.webkitAnimationName = animation;
+  element.style.webkitAnimationDuration = '1s';
+  element.style.webkitAnimationTimingFunction = 'ease-in-out';
+  element.style.webkitAnimationIterationCount = 'infinite';
+}
+var animations = ['fadeIn', 'fadeOut', 'fadeInOut', 'scaleUp', 'scaleDown', 'colorize', 'flip', 'hide', 'show', 'bounce'];
+var index = 0;
+setInterval(function() {
+  var helloWorld = document.createElement('div');
+  helloWorld.innerHTML = 'Hello World';
+  document.body.appendChild(helloWorld);
+  applyAnimation(helloWorld, animations[index]);
+  index = (index + 1) % animations.length;
+}, 1000);
+/* ahora speed */
+var css = document.createElement('style');
+css.innerHTML = '@-webkit-keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } @-webkit-keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } } @-webkit-keyframes fadeInOut { from { opacity: 0; } 50% { opacity: 1; } to { opacity: 0; } } @-webkit-keyframes scaleUp { from { -webkit-transform: scale(0); } to { -webkit-transform: scale(1); } } @-webkit-keyframes scaleDown { from { -webkit-transform: scale(1); } to { -webkit-transform: scale(0); } } @-webkit-keyframes colorize { from { color: #fff; } to { color: #f00; } } @-webkit-keyframes flip { from { -webkit-transform: rotateY(0deg); } to { -webkit-transform: rotateY(360deg); } } @-webkit-keyframes hide { from { opacity: 1; } to { opacity: 0; } } @-webkit-keyframes show { from { opacity: 0; } to { opacity: 1; } } @-webkit-keyframes bounce { from { -webkit-transform: translateY(0); } to { -webkit-transform: translateY(-100px); } } @-webkit-keyframes speed { from { -webkit-transform: translateX(0); } to { -webkit-transform: translateX(100px); } }';
+document.body.appendChild(css);
+function applyAnimation(element, animation) {
+  element.style.webkitAnimationName = animation;
+  element.style.webkitAnimationDuration = '1s';
+  element.style.webkitAnimationTimingFunction = 'ease-in-out';
+  element.style.webkitAnimationIterationCount = 'infinite';
+}
+var animations = ['fadeIn', 'fadeOut', 'fadeInOut', 'scaleUp', 'scaleDown', 'colorize', 'flip', 'hide', 'show', 'bounce', 'speed'];
+var index = 0;
+setInterval(function() {
+  var helloWorld = document.createElement('div');
+  helloWorld.innerHTML = 'Hello World';
+  document.body.appendChild(helloWorld);
+  applyAnimation(helloWorld, animations[index]);
+  index = (index + 1) % animations.length;
+}, 1000);
+/* ahora posicion */
+var css = document.createElement('style');
+css.innerHTML = '@-webkit-keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } @-webkit-keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } } @-webkit-keyframes fadeInOut { from { opacity: 0; } 50% { opacity: 1; } to { opacity: 0; } } @-webkit-keyframes scaleUp { from { -webkit-transform: scale(0); } to { -webkit-transform: scale(1); } } @-webkit-keyframes scaleDown { from { -webkit-transform: scale(1); } to { -webkit-transform: scale(0); } } @-webkit-keyframes colorize { from { color: #fff; } to { color: #f00; } } @-webkit-keyframes flip { from { -webkit-transform: rotateY(0deg); } to { -webkit-transform: rotateY(360deg); } } @-webkit-keyframes hide { from { opacity: 1; } to { opacity: 0; } } @-webkit-keyframes show { from { opacity: 0; } to { opacity: 1; } } @-webkit-keyframes bounce { from { -webkit-transform: translateY(0); } to { -webkit-transform: translateY(-100px); } } @-webkit-keyframes speed { from { -webkit-transform: translateX(0); } to { -webkit-transform: translateX(100px); } } @-webkit-keyframes position { from { -webkit-transform: translate(0, 0); } to { -webkit-transform: translate(100px, 100px); } }';
+document.body.appendChild(css);
+function applyAnimation(element, animation) {
+  element.style.webkitAnimationName = animation;
+  element.style.webkitAnimationDuration = '1s';
+  element.style.webkitAnimationTimingFunction = 'ease-in-out';
+  element.style.webkitAnimationIterationCount = 'infinite';
+}
+var animations = ['fadeIn', 'fadeOut', 'fadeInOut', 'scaleUp', 'scaleDown', 'colorize', 'flip', 'hide', 'show', 'bounce', 'speed', 'position'];
+var index = 0;
+setInterval(function() {
+  var helloWorld = document.createElement('div');
+  helloWorld.innerHTML = 'Hello World';
+  document.body.appendChild(helloWorld);
+  applyAnimation(helloWorld, animations[index]);
+  index = (index + 1) % animations.length;
+}, 1000);
+/* ahora curva */
+var css = document.createElement('style');
+css.innerHTML = '@-webkit-keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } @-webkit-keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } } @-webkit-keyframes fadeInOut { from { opacity: 0; } 50% { opacity: 1; } to { opacity: 0; } } @-webkit-keyframes scaleUp { from { -webkit-transform: scale(0); } to { -webkit-transform: scale(1); } } @-webkit-keyframes scaleDown { from { -webkit-transform: scale(1); } to { -webkit-transform: scale(0); } } @-webkit-keyframes colorize { from { color: #fff; } to { color: #f00; } } @-webkit-keyframes flip { from { -webkit-transform: rotateY(0deg); } to { -webkit-transform: rotateY(360deg); } } @-webkit-keyframes hide { from { opacity: 1; } to { opacity: 0; } } @-webkit-keyframes show { from { opacity: 0; } to { opacity: 1; } } @-webkit-keyframes bounce { from { -webkit-transform: translateY(0); } to { -webkit-transform: translateY(-100px); } } @-webkit-keyframes speed { from { -webkit-transform: translateX(0); } to { -webkit-transform: translateX(100px); } } @-webkit-keyframes position { from { -webkit-transform: translate(0, 0); } to { -webkit-transform: translate(100px, 100px); } } @-webkit-keyframes curve { from { -webkit-transform: translate(0, 0); } to { -webkit-transform: translate(100px, 100px); } }';
+document.body.appendChild(css);
+function applyAnimation(element, animation) {
+  element.style.webkitAnimationName = animation;
+  element.style.webkitAnimationDuration = '1s';
+  element.style.webkitAnimationTimingFunction = 'ease-in-out';
+  element.style.webkitAnimationIterationCount = 'infinite';
+}
+var animations = ['fadeIn', 'fadeOut', 'fadeInOut', 'scaleUp', 'scaleDown', 'colorize', 'flip', 'hide', 'show', 'bounce', 'speed', 'position', 'curve'];
+var index = 0;
+setInterval(function() {
+  var helloWorld = document.createElement('div');
+  helloWorld.innerHTML = 'Hello World';
+  document.body.appendChild(helloWorld);
+  applyAnimation(helloWorld, animations[index]);
+  index = (index + 1) % animations.length;
+}, 1000);
+/* ahora rotar */
+var css = document.createElement('style');
+css.innerHTML = '@-webkit-keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } @-webkit-keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } } @-webkit-keyframes fadeInOut { from { opacity: 0; } 50% { opacity: 1; } to { opacity: 0; } } @-webkit-keyframes scaleUp { from { -webkit-transform: scale(0); } to { -webkit-transform: scale(1); } } @-webkit-keyframes scaleDown { from { -webkit-transform: scale(1); } to { -webkit-transform: scale(0); } } @-webkit-keyframes colorize { from { color: #fff; } to { color: #f00; } } @-webkit-keyframes flip { from { -webkit-transform: rotateY(0deg); } to { -webkit-transform: rotateY(360deg); } } @-webkit-keyframes hide { from { opacity: 1; } to { opacity: 0; } } @-webkit-keyframes show { from { opacity: 0; } to { opacity: 1; } } @-webkit-keyframes bounce { from { -webkit-transform: translateY(0); } to { -webkit-transform: translateY(-100px); } } @-webkit-keyframes speed { from { -webkit-transform: translateX(0); } to { -webkit-transform: translateX(100px); } } @-webkit-keyframes position { from { -webkit-transform: translate(0, 0); } to { -webkit-transform: translate(100px, 100px); } } @-webkit-keyframes curve { from { -webkit-transform: translate(0, 0); } to { -webkit-transform: translate(100px, 100px); } } @-webkit-keyframes rotate { from { -webkit-transform: rotate(0deg); } to { -webkit-transform: rotate(360deg); } }';
+document.body.appendChild(css);
+function applyAnimation(element, animation) {
+  element.style.webkitAnimationName = animation;
+  element.style.webkitAnimationDuration = '1s';
+  element.style.webkitAnimationTimingFunction = 'ease-in-out';
+  element.style.webkitAnimationIterationCount = 'infinite';
+}
+var animations = ['fadeIn', 'fadeOut', 'fadeInOut', 'scaleUp', 'scaleDown', 'colorize', 'flip', 'hide', 'show', 'bounce', 'speed', 'position', 'curve', 'rotate'];
+var index = 0;
+setInterval(function() {
+  var helloWorld = document.createElement('div');
+  helloWorld.innerHTML = 'Hello World';
+  document.body.appendChild(helloWorld);
+  applyAnimation(helloWorld, animations[index]);
+  index = (index + 1) % animations.length;
+}, 1000);
+/* ahora textura */
+var css = document.createElement('style');
+css.innerHTML = '@-webkit-keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } @-webkit-keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } } @-webkit-keyframes fadeInOut { from { opacity: 0; } 50% { opacity: 1; } to { opacity: 0; } } @-webkit-keyframes scaleUp { from { -webkit-transform: scale(0); } to { -webkit-transform: scale(1); } } @-webkit-keyframes scaleDown { from { -webkit-transform: scale(1); } to { -webkit-transform: scale(0); } } @-webkit-keyframes colorize { from { color: #fff; } to { color: #f00; } } @-webkit-keyframes flip { from { -webkit-transform: rotateY(0deg); } to { -webkit-transform: rotateY(360deg); } } @-webkit-keyframes hide { from { opacity: 1; } to { opacity: 0; } } @-webkit-keyframes show { from { opacity: 0; } to { opacity: 1; } } @-webkit-keyframes bounce { from { -webkit-transform: translateY(0); } to { -webkit-transform: translateY(-100px); } } @-webkit-keyframes speed { from { -webkit-transform: translateX(0); } to { -webkit-transform: translateX(100px); } } @-webkit-keyframes position { from { -webkit-transform: translate(0, 0); } to { -webkit-transform: translate(100px, 100px); } } @-webkit-keyframes curve { from { -webkit-transform: translate(0, 0); } to { -webkit-transform: translate(100px, 100px); } } @-webkit-keyframes rotate { from { -webkit-transform: rotate(0deg); } to { -webkit-transform: rotate(360deg); } } @-webkit-keyframes texture { from { background-image: url(http://www.google.com/intl/en_ALL/images/logo.gif); } to { background-image: url(http://www.google.com/intl/en_ALL/images/logo_sm.gif); } }';
+document.body.appendChild(css);
+function applyAnimation(element, animation) {
+  element.style.webkitAnimationName = animation;
+  element.style.webkitAnimationDuration = '1s';
+  element.style.webkitAnimationTimingFunction = 'ease-in-out';
+  element.style.webkitAnimationIterationCount = 'infinite';
+}
+var animations = ['fadeIn', 'fadeOut', 'fadeInOut', 'scaleUp', 'scaleDown', 'colorize', 'flip', 'hide', 'show', 'bounce', 'speed', 'position', 'curve', 'rotate', 'texture'];
+var index = 0;
+setInterval(function() {
+  var helloWorld = document.createElement('div');
+  helloWorld.innerHTML = 'Hello World';
+  document.body.appendChild(helloWorld);
+  applyAnimation(helloWorld, animations[index]);
+  index = (index + 1) % animations.length;
+}, 1000);
+/* solo mostrar pantalla */
+document.body.style.backgroundColor = 'black';
+document.body.style.color = 'white';
+document.body.style.fontFamily = 'monospace';
+document.body.style.fontSize = '2em';
+document.body.style.textAlign = 'center';
+document.body.style.padding = '1em';
+/* si sale de pantalla se oculta */
+document.body.style.overflow = 'hidden';
+var css = document.createElement('style');
+css.innerHTML = '@-webkit-keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } @-webkit-keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } } @-webkit-keyframes fadeInOut { from { opacity: 0; } 50% { opacity: 1; } to { opacity: 0; } } @-webkit-keyframes scaleUp { from { -webkit-transform: scale(0); } to { -webkit-transform: scale(1); } } @-webkit-keyframes scaleDown { from { -webkit-transform: scale(1); } to { -webkit-transform: scale(0); } } @-webkit-keyframes colorize { from { color: #fff; } to { color: #f00; } } @-webkit-keyframes flip { from { -webkit-transform: rotateY(0deg); } to { -webkit-transform: rotateY(360deg); } } @-webkit-keyframes hide { from { opacity: 1; } to { opacity: 0; } } @-webkit-keyframes show { from { opacity: 0; } to { opacity: 1; } } @-webkit-keyframes bounce { from { -webkit-transform: translateY(0); } to { -webkit-transform: translateY(-100px); } } @-webkit-keyframes speed { from { -webkit-transform: translateX(0); } to { -webkit-transform: translateX(100px); } } @-webkit-keyframes position { from { -webkit-transform: translate(0, 0); } to { -webkit-transform: translate(100px, 100px); } } @-webkit-keyframes curve { from { -webkit-transform: translate(0, 0); } to { -webkit-transform: translate(100px, 100px); } } @-webkit-keyframes rotate { from { -webkit-transform: rotate(0deg); } to { -webkit-transform: rotate(360deg); } } @-webkit-keyframes texture { from { background-image: url(http://www.google.com/intl/en_ALL/images/logo.gif); } to { background-image: url(http://www.google.com/intl/en_ALL/images/logo_sm.gif); } }';
+document.body.appendChild(css);
+function applyAnimation(element, animation) {
+  element.style.webkitAnimationName = animation;
+  element.style.webkitAnimationDuration = '1s';
+  element.style.webkitAnimationTimingFunction = 'ease-in-out';
+  element.style.webkitAnimationIterationCount = 'infinite';
+}
+var animations = ['fadeIn', 'fadeOut', 'fadeInOut', 'scaleUp', 'scaleDown', 'colorize', 'flip', 'hide', 'show', 'bounce', 'speed', 'position', 'curve', 'rotate', 'texture'];
+var index = 0;
+setInterval(function() {
+  var helloWorld = document.createElement('div');
+  helloWorld.innerHTML = 'Hello World';
+  document.body.appendChild(helloWorld);
+  applyAnimation(helloWorld, animations[index]);
+  index = (index + 1) % animations.length;
+}, 1000);
+});
+        </script>
+    </head>
+    
+</html>

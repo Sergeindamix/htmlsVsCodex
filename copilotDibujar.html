@@ -1,0 +1,197 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+/* canvas */
+var canvas = document.createElement('canvas');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+document.body.appendChild(canvas);
+var ctx = canvas.getContext('2d');
+/* crear una funcion para dibujar una linea */
+function drawLine(x1, y1, x2, y2) {
+  ctx.beginPath();
+  ctx.moveTo(x1, y1);
+  ctx.lineTo(x2, y2);
+  ctx.stroke();
+}
+/* crear una funcion para dibujar un rectangulo */
+function drawRect(x, y, width, height) {
+  ctx.beginPath();
+  ctx.rect(x, y, width, height);
+  ctx.stroke();
+}
+// crear una funcion para dibujar un circulo
+function dibujarCirculo(x, y, radio, color){
+    ctx.fillStyle = color;
+    ctx.beginPath();
+    ctx.arc(x, y, radio, 0, 2 * Math.PI);
+    ctx.fill();
+}
+//crear una funcion para dibujar un texto
+function dibujarTexto(texto, x, y, color){
+    ctx.fillStyle = color;
+    ctx.fillText(texto, x, y);
+}
+// crear una funcion para dibujar una imagen
+function dibujarImagen(imagen, x, y, ancho, alto){
+    ctx.drawImage(imagen, x, y, ancho, alto);
+}
+/* al arrastrar con mouse, llamar a crear rect */
+canvas.onmousedown = function(e) {
+  var x = e.clientX;
+  var y = e.clientY;
+  canvas.onmousemove = function(e) {
+    var x2 = e.clientX;
+    var y2 = e.clientY;
+    drawRect(x, y, x2 - x, y2 - y);
+  };
+};
+canvas.onmouseup = function(e) {
+  canvas.onmousemove = null;
+};
+/* al pulsar supr limpiar canvas */
+document.onkeydown = function(e) {
+  if (e.keyCode == 46) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }
+};
+/* actualizar dibujo a circulo */
+canvas.onmousedown = function(e) {
+  var x = e.clientX;
+  var y = e.clientY;
+  canvas.onmousemove = function(e) {
+    var x2 = e.clientX;
+    var y2 = e.clientY;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawLine(x, y, x2, y2);
+  };
+};
+canvas.onmouseup = function(e) {
+  canvas.onmousemove = null;
+};
+/* ahora a dibujarCirculo */
+canvas.onmousedown = function(e) {
+  var x = e.clientX;
+  var y = e.clientY;
+  canvas.onmousemove = function(e) {
+    var x2 = e.clientX;
+    var y2 = e.clientY;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    dibujarCirculo(x, y, Math.sqrt(Math.pow(x2 - x, 2) + Math.pow(y2 - y, 2)), 'red');
+  };
+};
+canvas.onmouseup = function(e) {
+  canvas.onmousemove = null;
+};
+/* dibujarTexto */
+canvas.onmousedown = function(e) {
+  var x = e.clientX;
+  var y = e.clientY;
+  canvas.onmousemove = function(e) {
+    var x2 = e.clientX;
+    var y2 = e.clientY;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    dibujarTexto('hola', x, y, 'red');
+  };
+};
+canvas.onmouseup = function(e) {
+  canvas.onmousemove = null;
+};
+/* dibujarImagen */
+var imagen = new Image();
+imagen.src = 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png';
+canvas.onmousedown = function(e) {
+  var x = e.clientX;
+  var y = e.clientY;
+  canvas.onmousemove = function(e) {
+    var x2 = e.clientX;
+    var y2 = e.clientY;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    dibujarImagen(imagen, x, y, x2 - x, y2 - y);
+  };
+};
+canvas.onmouseup = function(e) {
+  canvas.onmousemove = null;
+};
+/* crear switch con cada una de las funciones */
+var dibujar = 'linea';
+canvas.onmousedown = function(e) {
+  var x = e.clientX;
+  var y = e.clientY;
+  canvas.onmousemove = function(e) {
+    var x2 = e.clientX;
+    var y2 = e.clientY;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    switch (dibujar) {
+      case 'linea':
+        drawLine(x, y, x2, y2);
+        break;
+      case 'rectangulo':
+        drawRect(x, y, x2 - x, y2 - y);
+        break;
+      case 'circulo':
+        dibujarCirculo(x, y, Math.sqrt(Math.pow(x2 - x, 2) + Math.pow(y2 - y, 2)), 'red');
+        break;
+      case 'texto':
+        dibujarTexto('hola', x, y, 'red');
+        break;
+      case 'imagen':
+        dibujarImagen(imagen, x, y, x2 - x, y2 - y);
+        break;
+    }
+  };
+};
+canvas.onmouseup = function(e) {
+  canvas.onmousemove = null;
+};
+/* al pulsar 1 cambia el valor de dibujar */
+document.onkeydown = function(e) {
+  if (e.keyCode == 49) {
+    dibujar = 'linea';
+  }
+};
+/* ahora siguiente */
+document.onkeydown = function(e) {
+  if (e.keyCode == 49) {
+    dibujar = 'linea';
+  }
+  if (e.keyCode == 50) {
+    dibujar = 'rectangulo';
+  }
+};
+/* ahora con todos */
+/* todos */
+document.onkeydown = function(e) {
+  if (e.keyCode == 49) {
+    dibujar = 'linea';
+  }
+  if (e.keyCode == 50) {
+    dibujar = 'rectangulo';
+  }
+  if (e.keyCode == 51) {
+    dibujar = 'circulo';
+  }
+  if (e.keyCode == 52) {
+    dibujar = 'texto';
+  }
+  if (e.keyCode == 53) {
+    dibujar = 'imagen';
+  }
+};
+/* mostrar instrucciones en pantalla */
+/* instrucciones */
+var instrucciones = document.createElement('div');
+instrucciones.innerHTML = '1: linea, 2: rectangulo, 3: circulo, 4: texto, 5: imagen';
+document.body.appendChild(instrucciones);
+/* float */
+instrucciones.style.position = 'fixed';
+instrucciones.style.top = '0';
+instrucciones.style.left = '0';
+});
+        </script>
+    </head>
+    
+</html>

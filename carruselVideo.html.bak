@@ -1,0 +1,111 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+
+
+/* Frame estilo YouTube con 5 videos */
+var videos = [
+  {
+    title: 'The Matrix',
+    url: 'https://www.youtube.com/embed/m8e-FF8MsqU'
+  },
+  {
+    title: 'The Matrix Reloaded',
+    url: 'https://www.youtube.com/embed/zLAhRiUeJ8E'
+  },
+  {
+    title: 'The Matrix Revolutions',
+    url: 'https://www.youtube.com/embed/N6RibCcJ5pI'
+  },
+  {
+    title: 'The Animatrix',
+    url: 'https://www.youtube.com/embed/lG0Ys-2d4qA'
+  },
+  {
+    title: 'The Matrix Revisited',
+    url: 'https://www.youtube.com/embed/JNwNXF9Y6kY'
+  }
+];
+var frame = document.createElement('div');
+frame.style.width = '640px';
+frame.style.height = '360px';
+frame.style.border = '1px solid black';
+frame.style.margin = '10px';
+frame.style.display = 'inline-block';
+var video = document.createElement('iframe');
+video.style.width = '640px';
+video.style.height = '360px';
+video.style.border = 'none';
+video.src = videos[0].url;
+var title = document.createElement('div');
+title.style.width = '640px';
+title.style.height = '30px';
+title.style.backgroundColor = 'black';
+title.style.color = 'white';
+title.style.textAlign = 'center';
+title.style.fontSize = '20px';
+title.innerHTML = videos[0].title;
+frame.appendChild(video);
+frame.appendChild(title);
+document.body.appendChild(frame);
+/* Formato carrusel */
+var carousel = document.createElement('div');
+carousel.style.width = '640px';
+carousel.style.height = '360px';
+carousel.style.border = '1px solid black';
+carousel.style.margin = '10px';
+carousel.style.display = 'inline-block';
+var carouselVideo = document.createElement('iframe');
+carouselVideo.style.width = '640px';
+carouselVideo.style.height = '360px';
+carouselVideo.style.border = 'none';
+carouselVideo.src = videos[0].url;
+var carouselTitle = document.createElement('div');
+carouselTitle.style.width = '640px';
+carouselTitle.style.height = '30px';
+carouselTitle.style.backgroundColor = 'black';
+carouselTitle.style.color = 'white';
+carouselTitle.style.textAlign = 'center';
+carouselTitle.style.fontSize = '20px';
+carouselTitle.innerHTML = videos[0].title;
+var carouselButton = document.createElement('button');
+carouselButton.style.width = '640px';
+carouselButton.style.height = '30px';
+carouselButton.style.backgroundColor = 'black';
+carouselButton.style.color = 'white';
+carouselButton.style.textAlign = 'center';
+carouselButton.style.fontSize = '20px';
+carouselButton.innerHTML = 'Next';
+carousel.appendChild(carouselVideo);
+carousel.appendChild(carouselTitle);
+carousel.appendChild(carouselButton);
+document.body.appendChild(carousel);
+var index = 0;
+carouselButton.addEventListener('click', function() {
+  index = (index + 1) % videos.length;
+  carouselVideo.src = videos[index].url;
+  carouselTitle.innerHTML = videos[index].title;
+});
+/* También agregar botón anterior */
+var carouselButtonPrev = document.createElement('button');
+carouselButtonPrev.style.width = '640px';
+carouselButtonPrev.style.height = '30px';
+carouselButtonPrev.style.backgroundColor = 'black';
+carouselButtonPrev.style.color = 'white';
+carouselButtonPrev.style.textAlign = 'center';
+carouselButtonPrev.style.fontSize = '20px';
+carouselButtonPrev.innerHTML = 'Prev';
+carousel.insertBefore(carouselButtonPrev, carouselButton);
+carouselButtonPrev.addEventListener('click', function() {
+  index = (index - 1 + videos.length) % videos.length;
+  carouselVideo.src = videos[index].url;
+  carouselTitle.innerHTML = videos[index].title;
+});
+});
+        </script>
+    </head>
+    
+</html>

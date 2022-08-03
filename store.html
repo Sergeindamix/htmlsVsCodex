@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Produ-Serge</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default rounded borders and increase the bottom margin */ 
+    .navbar {
+      margin-bottom: 50px;
+      border-radius: 0;
+    }
+    
+    /* Remove the jumbotron's default bottom margin */ 
+     .jumbotron {
+      margin-bottom: 0;
+    }
+   
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 300px;
+    }
+	.navbar {
+	  position: fixed;
+	  top: 0;
+	  width: 100%;	  
+	  z-index: 1;
+	}
+	body {  
+		background-image: url("https://source.unsplash.com/random");
+		background-attachment: fixed;
+		background-repeat: repeat-x;
+	    }
+	.panel-body{
+		width: 100%;
+		height:0%;
+	}
+	
+  </style>
+</head>
+<body>
+
+<div class="jumbotron">
+  <div class="container text-center">
+    <h1>Produ-Serge</h1>      
+    <p>Instrumentos, Software y Todo para tus creaciones</p>
+  </div>
+</div>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Logo</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="videoBackground.html">Products</a></li>
+        <li><a href="parallaxWeb.html">Deals</a></li>
+        <li><a href="menus.html">Stores</a></li>
+        <li><a href="profileCard.html">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">    
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">BLACK FRIDAY DEAL</div>
+        <div class="panel-body"><img src="'https://source.unsplash.com/random/5' + '?w=800'" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel panel-danger">
+        <div class="panel-heading">BLACK FRIDAY DEAL</div>
+        <div class="panel-body"><img src="'https://source.unsplash.com/random/4' + '?w=800'" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel panel-success">
+        <div class="panel-heading">BLACK FRIDAY DEAL</div>
+        <div class="panel-body"><img src="'https://source.unsplash.com/random/3' + '?w=800'" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+      </div>
+    </div>
+  </div>
+</div><br>
+
+<div class="container">    
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">BLACK FRIDAY DEAL</div>
+        <div class="panel-body"><img src="'https://source.unsplash.com/random/2' + '?w=800'" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel panel-primary">
+        <div class="panel-heading">BLACK FRIDAY DEAL</div>
+        <div class="panel-body"><img src="'https://source.unsplash.com/random/1' + '?w=800'" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel panel-primary">
+        <div class="panel-heading">BLACK FRIDAY DEAL</div>
+        <div class="panel-body"><img src="'https://source.unsplash.com/random/0' + '?w=800'" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+      </div>
+    </div>
+  </div>
+</div><br><br>
+<script>
+var container = document.createElement('div');
+container.className = 'container';
+document.body.appendChild(container);
+var row = document.createElement('div');
+row.className = 'row';
+container.appendChild(row);
+var col = document.createElement('div');
+col.className = 'col-sm-4';
+row.appendChild(col);
+var panel = document.createElement('div');
+panel.className = 'panel panel-primary';
+col.appendChild(panel);
+var panelHeading = document.createElement('div');
+panelHeading.className = 'panel-heading';
+panelHeading.innerHTML = 'BLACK FRIDAY DEAL';
+panel.appendChild(panelHeading);
+var panelBody = document.createElement('div');
+panelBody.className = 'panel-body';
+panel.appendChild(panelBody);
+var img = document.createElement('img');
+img.src = 'https://source.unsplash.com/random/5';
+img.className = 'img-responsive';
+img.style.width = '100%';
+img.alt = 'Image';
+panelBody.appendChild(img);
+var panelFooter = document.createElement('div');
+panelFooter.className = 'panel-footer';
+panelFooter.innerHTML = 'Buy 50 mobiles and get a gift card';
+panel.appendChild(panelFooter);
+/* crear otros 11 */
+var col2 = col.cloneNode(true);
+row.appendChild(col2);
+var col3 = col.cloneNode(true);
+row.appendChild(col3);
+var col4 = col.cloneNode(true);
+row.appendChild(col4);
+var col5 = col.cloneNode(true);
+row.appendChild(col5);
+var col6 = col.cloneNode(true);
+row.appendChild(col6);
+var col7 = col.cloneNode(true);
+row.appendChild(col7);
+var col8 = col.cloneNode(true);
+row.appendChild(col8);
+var col9 = col.cloneNode(true);
+row.appendChild(col9);
+var col10 = col.cloneNode(true);
+row.appendChild(col10);
+var col11 = col.cloneNode(true);
+row.appendChild(col11);
+var col12 = col.cloneNode(true);
+row.appendChild(col12);
+/* con image diferente */
+var cols = document.getElementsByClassName('col-sm-4');
+for (var i = 0; i < cols.length; i++) {
+  var img = cols[i].getElementsByTagName('img')[0];
+  img.src = 'https://source.unsplash.com/random/' + (i + 1) + '?w=800' + (i + 1);
+  img.style.width = '100%';
+  img.style.height = '500px';
+  img.style.objectFit = 'cover';
+  img.parentNode.parentNode.parentNode.style.cursor = 'pointer';
+  img.parentNode.parentNode.parentNode.onclick = function() {
+    window.open('https://www.facebook.com/', '_blank');
+  };
+  img.parentNode.parentNode.parentNode.onmouseover = function() {
+    this.style.opacity = '0.5';
+  };
+  img.parentNode.parentNode.parentNode.onmouseout = function() {
+    this.style.opacity = '1';
+  };
+  img.parentNode.parentNode.parentNode.style.transition = 'all 0.5s';
+}
+var flipBox = document.createElement('div');
+flipBox.className = 'flip-box';
+var flipBoxInner = document.createElement('div');
+flipBoxInner.className = 'flip-box-inner';
+flipBox.appendChild(flipBoxInner);
+var flipBoxFront = document.createElement('div');
+flipBoxFront.className = 'flip-box-front';
+flipBoxFront.innerHTML = '<h2>Front Side</h2>';
+flipBoxInner.appendChild(flipBoxFront);
+var flipBoxBack = document.createElement('div');
+flipBoxBack.className = 'flip-box-back';
+flipBoxBack.innerHTML = '<h2>Back Side</h2>';
+flipBoxInner.appendChild(flipBoxBack);
+document.body.appendChild(flipBox);
+
+var style = document.createElement('style');
+style.innerHTML = 'body { font-family: Arial, Helvetica, sans-serif; } .flip-box { background-color: transparent; width: 300px; height: 200px; border: 1px solid #f1f1f1; perspective: 1000px; } .flip-box-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.8s; transform-style: preserve-3d; } .flip-box:hover .flip-box-inner { transform: rotateY(180deg); } .flip-box-front, .flip-box-back { position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; } .flip-box-front { background-color: #bbb; color: black; } .flip-box-back { background-color: dodgerblue; color: white; transform: rotateY(180deg); }';
+document.head.appendChild(style);
+/* clonar 2 veces */
+var flipBoxClone = flipBox.cloneNode(true);
+document.body.appendChild(flipBoxClone);
+var flipBoxClone = flipBox.cloneNode(true);
+document.body.appendChild(flipBoxClone);
+var flipBoxClone = flipBox.cloneNode(true);
+document.body.appendChild(flipBoxClone);
+var flipBoxClone = flipBox.cloneNode(true);
+document.body.appendChild(flipBoxClone);
+/* float left */
+var style = document.createElement('style');
+style.innerHTML = '.flip-box { float: left; }';
+document.head.appendChild(style);
+/* renombrar cada front size numerado */
+var flipBoxFront = document.getElementsByClassName('flip-box-front');
+for (var i = 0; i < flipBoxFront.length; i++) {
+  flipBoxFront[i].innerHTML = '<h2>Front Side ' + (i + 1) + '</h2>';
+}
+/* back side */
+var flipBoxBack = document.getElementsByClassName('flip-box-back');
+for (var i = 0; i < flipBoxBack.length; i++) {
+  flipBoxBack[i].innerHTML = '<h2>Back Side ' + (i + 1) + '</h2>';
+}
+/* imagen random y cover en front side */
+var flipBoxFront = document.getElementsByClassName('flip-box-front');
+for (var i = 0; i < flipBoxFront.length; i++) {
+  var img = document.createElement('img');
+  img.src = 'https://source.unsplash.com/random/' + (i + 1) + '?w=800' + (i + 1);
+  img.style.width = '100%';
+  img.style.height = '100%';
+  img.style.objectFit = 'cover';
+  flipBoxFront[i].appendChild(img);
+}
+/* otra en back side */
+var flipBoxBack = document.getElementsByClassName('flip-box-back');
+for (var i = 0; i < flipBoxBack.length; i++) {
+  var img = document.createElement('img');
+  img.src = 'https://source.unsplash.com/random/' + (i + 10) + '?w=800' + (i + 1);
+  img.style.width = '100%';
+  img.style.height = '100%';
+  img.style.objectFit = 'cover';
+  flipBoxBack[i].appendChild(img);
+}
+
+
+</script>
+<footer class="container-fluid text-center">
+  <p>Online Store Copyright</p>  
+  <form class="form-inline">Get deals:
+    <input type="email" class="form-control" size="50" placeholder="Email Address">
+    <button type="button" class="btn btn-danger">Sign Up</button>
+  </form>
+</footer>
+
+</body>
+</html>

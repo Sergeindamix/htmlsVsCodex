@@ -1,0 +1,81 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+var img = document.createElement('img');
+img.src = 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png';
+img.style.position = 'absolute';
+img.style.left = '0px';
+img.style.top = '0px';
+document.body.appendChild(img);
+
+var copyAndFade = function() {
+  var imgCopy = img.cloneNode(true);
+  imgCopy.style.opacity = 1;
+  imgCopy.style.left = parseInt(img.style.left) + img.width + 'px';
+  document.body.appendChild(imgCopy);
+  var fade = function() {
+    imgCopy.style.opacity = imgCopy.style.opacity - 0.01;
+    if (imgCopy.style.opacity > 0) {
+      setTimeout(fade, 10);
+    } else {
+      document.body.removeChild(imgCopy);
+    }
+  };
+  fade();
+};
+
+var moveRight = function() {
+  var left = parseInt(img.style.left);
+  img.style.left = (left + 1) + 'px';
+  if (left < (window.innerWidth - img.width)) {
+    setTimeout(moveRight, 10);
+  } else {
+    moveDown();
+  }
+  copyAndFade();
+};
+
+var moveDown = function() {
+  var top = parseInt(img.style.top);
+  img.style.top = (top + 1) + 'px';
+  if (top < (window.innerHeight - img.height)) {
+    setTimeout(moveDown, 10);
+  } else {
+    moveLeft();
+  }
+  copyAndFade();
+};
+
+var moveLeft = function() {
+  var left = parseInt(img.style.left);
+  img.style.left = (left - 1) + 'px';
+  if (left > 0) {
+    setTimeout(moveLeft, 10);
+  } else {
+    moveUp();
+  }
+  copyAndFade();
+};
+
+var moveUp = function() {
+  var top = parseInt(img.style.top);
+  img.style.top = (top - 1) + 'px';
+  if (top > 0) {
+    setTimeout(moveUp, 10);
+  } else {
+    moveRight();
+  }
+  copyAndFade();
+};
+
+moveRight();
+
+document.body.removeChild(img);
+});
+        </script>
+    </head>
+    
+</html>

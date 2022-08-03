@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <title>reactVsCodex</title>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+var html = document.createElement('html');
+html.innerHTML = '<!DOCTYPE html> <html> <meta name="viewport" content="width=device-width, initial-scale=1"> <link rel="stylesheet" type="text/css" href="https://unpkg.com/augmented-ui@2/augmented-ui.min.css"> <style> .pitch-core { --aug-border: initial; --aug-border-all: 7px; --aug-border-bg: radial-gradient( at top, gold 25%, transparent 50%), url("https://i.pinimg.com/originals/f2/8b/62/f28b62e3c73e0991d51e6c0dcb412360.gif") 50% 50% / 100% 100%; --aug-inlay: initial; --aug-inlay-all: 4px; --aug-inlay-bg: radial-gradient( at center center, gold, black); --aug-inlay-opacity: 0.5; --aug-clip-b1: initial; --aug-clip-b2: initial; --aug-b-extend1: 50%; } .pitch-core:not(:hover) { --aug-clip-tl1: initial; --aug-tl-inset1: 30px; --aug-tl1-alt-join-in: initial; --aug-scoop-tr1: initial; --aug-tr1: 25px; } .pitch-core:hover { --aug-clip-t1: initial; --aug-clip-t2: initial; --aug-clip-r1: initial; --aug-clip-r2: initial; --aug-clip-l1: initial; --aug-clip-l2: initial; --aug-t-extend1: 50%; --aug-r-extend1: 50%; --aug-l-extend1: 50%; } </style> <body>  </body> </html>';
+
+document.body.appendChild(html);
+
+var div = document.createElement('div');
+//div.className = 'pitch-core';
+//div.setAttribute('data-augmented-ui', '');
+div.innerHTML = 'ejemplo de augmented-ui';
+div.style.position = 'fixed';
+div.style.top = '50%';
+div.style.left = '50%';
+div.style.width = '50%';
+div.style.height = '50%';
+div.style.transform = 'translate(-50%, -50%)';
+div.style.textAlign = 'center';
+div.style.lineHeight = '50%';
+div.style.backgroundImage = 'url(https://picsum.photos/1920/1080/?random)';
+div.style.backgroundImage = 'url(https://i.pinimg.com/originals/d3/27/63/d327635099eee0bd6f192b6fd9bd5757.gif)';
+div.style.backgroundSize = 'cover';
+div.style.backgroundRepeat = 'no-repeat';
+div.style.backgroundPosition = 'center';
+/* numero entero random */
+/* img src es igual q fondo */
+var div = document.createElement('div');
+div.id = 'example1';
+div.innerHTML = `'<div style="background-image: url(https://picsum.photos/500/25${Math.floor(Math.random() * 10)}/?random)"><img src="https://picsum.photos/500/25${Math.floor(Math.random() * 10)}/?random"></div>'`;
+//document.body.appendChild(div);
+
+var num = Math.floor(Math.random() * 100);
+
+/* input file, carpeta de imagenes */
+var input = document.createElement('input');
+input.type = 'file';
+input.multiple = true;
+input.accept = 'image/*';
+//document.body.appendChild(input);
+/* carpeta */
+var input = document.createElement('input');
+input.type = 'file';
+input.webkitdirectory = true;
+document.body.appendChild(input);
+/* al cargar carpeta, push archivos en array */
+var carga = false;
+var array = [];
+input.onchange = function(e) {
+  carga = true;
+  var files = e.target.files;
+  for (var i = 0; i < files.length; i++) {
+    array.push(files[i]);
+  }
+  input.style.display = 'none';
+};
+/* crear 10 rectangulos con imagen random, alto 250, ancho 500 */
+var rectangulos = [];
+for (var i = 0; i < 10; i++) {
+  var rectangulo = document.createElement('div');
+  rectangulo.className = 'pitch-core';
+  rectangulo.setAttribute('data-augmented-ui', 'all-hexangle-up border');
+	rectangulo.className = 'reticle';
+	rectangulo.style.setProperty('--aug-all-width', '150px');
+	rectangulo.style.setProperty('--reticle-color', '#00bfff');
+	rectangulo.style.setProperty('--reticle-size', 'calc(var(--aug-all-width) * 0.25)');
+	rectangulo.style.setProperty('--aug-border-bg', 'radial-gradient( circle at top center, var(--reticle-color) var(--reticle-size), transparent var(--reticle-size) ), radial-gradient( circle at bottom 13.92% right 6.89%, var(--reticle-color) var(--reticle-size), transparent var(--reticle-size) ), radial-gradient( circle at bottom 13.92% left 6.89%, var(--reticle-color) var(--reticle-size), transparent var(--reticle-size) )');
+		
+  rectangulo.style.width = '500px';
+  rectangulo.style.height = '250px';
+  rectangulo.style.backgroundImage = 'url(https://source.unsplash.com/random)';
+  rectangulo.style.backgroundSize = 'cover';
+  rectangulo.style.backgroundPosition = 'center';
+  rectangulo.style.margin = '10px';
+  rectangulo.style.float = 'left';
+  rectangulo.style.border = '1px solid black';
+  rectangulos.push(rectangulo);
+  document.body.appendChild(rectangulo);
+}
+/* scalar .25 */
+for (var i = 0; i < rectangulos.length; i++) {
+  rectangulos[i].style.transform = 'scale(.25)';
+}
+
+/* crear wheel y acomodarlos en el wheel */
+var wheel = document.createElement('div');
+wheel.style.width = '500px';
+wheel.style.height = '500px';
+wheel.style.borderRadius = '50%';
+wheel.style.border = '1px solid black';
+wheel.style.margin = '10px';
+wheel.style.float = 'left';
+wheel.style.position = 'relative';
+document.body.style.overflow = 'hidden';
+//document.body.appendChild(wheel);
+for (var i = 0; i < rectangulos.length; i++) {
+  rectangulos[i].style.position = 'absolute';
+  rectangulos[i].style.top = '50%';
+  rectangulos[i].style.left = '50%';
+  rectangulos[i].style.transform = 'translate(-50%, -50%) rotate(' + (i * 36) + 'deg) translate(0, -200px)';
+}
+/* al pulsar flecha arriba, girar wheel */
+document.addEventListener('keydown', function(event) {
+  if (event.keyCode == 38) {
+    for (var i = 0; i < rectangulos.length; i++) {
+      rectangulos[i].style.transition = 'transform 1s';
+      rectangulos[i].style.transform = 'translate(-50%, -50%) rotate(' + ((i * 36) + 36) + 'deg) translate(0, -200px)';
+    }
+  }
+});
+/* invertir con flecha abajo */
+document.addEventListener('keydown', function(event) {
+  if (event.keyCode == 40) {
+    for (var i = 0; i < rectangulos.length; i++) {
+      rectangulos[i].style.transition = 'transform 1s';
+      rectangulos[i].style.transform = 'translate(-50%, -50%) rotate(' + ((i * 36) - 36) + 'deg) translate(0, -200px)';
+    }
+  }
+});
+/* cada ves que se presionan las flechas, se acumula la rotacion */
+var rotation = 0;
+document.addEventListener('keydown', function(event) {
+  if (event.keyCode == 38) {
+    rotation += 36;
+    for (var i = 0; i < rectangulos.length; i++) {
+      rectangulos[i].style.transition = 'transform 1s';
+      rectangulos[i].style.transform = 'translate(-50%, -50%) rotate(' + ((i * 36) + rotation) + 'deg) translate(0, -200px)';
+    }
+  }
+  if (event.keyCode == 40) {
+    rotation -= 36;
+    for (var i = 0; i < rectangulos.length; i++) {
+      rectangulos[i].style.transition = 'transform 1s';
+      rectangulos[i].style.transform = 'translate(-50%, -50%) rotate(' + ((i * 36) + rotation) + 'deg) translate(0, -200px)';
+    }
+  }
+});
+
+/* cada vez que un rectangulo esta a 10% de su posicion original, traer al frente */
+
+var rotation = 0;
+document.addEventListener('keydown', function(event) {
+  if (event.keyCode == 38) {
+    rotation += 36;
+    for (var i = 0; i < rectangulos.length; i++) {
+      rectangulos[i].style.transition = 'transform 1s';
+      rectangulos[i].style.transform = 'translate(-50%, -50%) rotate(' + ((i * 36) + rotation) + 'deg) translate(0, -200px)';
+      
+	  if (((i * 36) + rotation) % 360 < 2 || ((i * 36) + rotation) % 360 > 358) {
+        rectangulos[i].style.zIndex = '1';
+      } else {
+        rectangulos[i].style.zIndex = '0';
+      }
+    }
+  }
+  if (event.keyCode == 40) {
+    rotation -= 36;
+    for (var i = 0; i < rectangulos.length; i++) {
+	  
+   	  rectangulos[i].style.transition = 'transform 1s';
+      rectangulos[i].style.transform = 'translate(-50%, -50%) rotate(' + ((i * 36) + rotation) + 'deg) translate(0, -200px)';
+      
+	  if(carga ){
+		rectangulos[i].style.backgroundImage = 'url(' + URL.createObjectURL(array[i]) + ')';
+      }
+	  
+	  if (((i * 36) + rotation) % 360 < 2 || ((i * 36) + rotation) % 360 > 358) {
+        rectangulos[i].style.zIndex = '1';
+      } else {
+        rectangulos[i].style.zIndex = '0';
+      }
+    }
+	carga = false;
+  }
+  
+});
+
+/* funcion, si no se mueve el mouse por 5 segundos, crear fondo de pantalla animado */
+var timeoutID;
+function setup() {
+  this.addEventListener("mousemove", resetTimer, false);
+  this.addEventListener("mousedown", resetTimer, false);
+  this.addEventListener("keypress", resetTimer, false);
+  this.addEventListener("DOMMouseScroll", resetTimer, false);
+  this.addEventListener("mousewheel", resetTimer, false);
+  this.addEventListener("touchmove", resetTimer, false);
+  this.addEventListener("MSPointerMove", resetTimer, false);
+  startTimer();
+}
+setup();
+function startTimer() {
+  // wait 2 seconds before calling goInactive
+  timeoutID = window.setTimeout(goInactive, 10000);
+}
+function resetTimer(e) {
+  window.clearTimeout(timeoutID);
+  goActive();
+}
+function goInactive() {
+  // do something
+  var body = document.getElementsByTagName("body")[0];
+  body.style.background = "url('https://media.giphy.com/media/3o7TKQYBVy9Q7xZqU0/giphy.gif')";
+  body.style.backgroundSize = "cover";
+}
+function goActive() {
+  // do something
+  var body = document.getElementsByTagName("body")[0];
+  body.style.background = "none";
+  startTimer();
+}
+});
+
+        </script>
+    </head>
+    
+</html>

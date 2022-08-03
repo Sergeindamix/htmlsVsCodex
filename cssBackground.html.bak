@@ -1,0 +1,68 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+/* <h1>Hello World!</h1> */
+var helloWorld = document.createElement('h1');
+helloWorld.innerHTML = 'Hello World!';
+document.body.appendChild(helloWorld);
+/* <p>This page has a light blue background color!</p> */
+var lightBlue = document.createElement('p');
+lightBlue.innerHTML = 'This page has a light blue background color!';
+document.body.appendChild(lightBlue);
+/* body {  background-color: lightblue;} */
+document.body.style.backgroundColor = 'lightblue';
+/* <h1>CSS background-color example!</h1>This is a text inside a div element. */
+var h1 = document.createElement('h1');
+h1.innerHTML = 'CSS background-color example!';
+document.body.appendChild(h1);
+var div = document.createElement('div');
+div.innerHTML = 'This is a text inside a div element.';
+document.body.appendChild(div);
+/* <p>This paragraph has its own background color.</p>We are still in the div element. */
+var p = document.createElement('p');
+p.innerHTML = 'This paragraph has its own background color.';
+document.body.appendChild(p);
+var div = document.createElement('div');
+div.innerHTML = 'We are still in the div element.';
+document.body.appendChild(div);
+/* h1 {  background-color: green;} */
+document.querySelectorAll('h1').forEach(function(el) {
+  el.style.backgroundColor = 'green';
+});
+/* div {background-color: lightblue;} */
+document.querySelectorAll('div').forEach(function(el) {
+  el.style.backgroundColor = 'lightblue';
+});
+/* p {  background-color: yellow;} */
+document.querySelectorAll('p').forEach(function(el) {
+  el.style.backgroundColor = 'yellow';
+});
+/* <h1>Hello World!</h1> */
+var helloWorld = document.createElement('h1');
+helloWorld.innerHTML = 'Hello World!';
+document.body.appendChild(helloWorld);
+/* <p>This page has an image as the background!</p> */
+var p = document.createElement('p');
+p.innerHTML = 'This page has an image as the background!';
+document.body.appendChild(p);
+/* body {  background-image: url("https://source.unsplash.com/random");} */
+document.body.style.backgroundImage = 'url("https://source.unsplash.com/random")';
+/* body {  background-repeat: repeat-x;} */
+document.body.style.backgroundRepeat = 'repeat-x';
+/* body {  background-repeat: no-repeat;  background-position: right top;  margin-right: 200px;} */
+document.body.style.backgroundRepeat = 'no-repeat';
+document.body.style.backgroundPosition = 'right top';
+document.body.style.marginRight = '200px';
+/* background-attachment: fixed; */
+document.body.style.backgroundAttachment = 'fixed';
+/* body {  background: #ffffff url("img_tree.png") no-repeat right top;  margin-right: 200px;} */
+document.body.style.background = '#ffffff url("https://source.unsplash.com/random") no-repeat right top';
+document.body.style.marginRight = '200px';
+});
+        </script>
+    </head>
+    
+</html>

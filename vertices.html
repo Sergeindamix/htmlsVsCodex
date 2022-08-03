@@ -1,0 +1,68 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+var fondo = document.createElement('canvas');
+fondo.width = window.innerWidth;
+fondo.height = window.innerHeight;
+document.body.appendChild(fondo);
+var ctx = fondo.getContext('2d');
+
+var vertices = [];
+var numVertices = 100;
+var maxRadius = Math.min(fondo.width, fondo.height) / 2;
+var minRadius = maxRadius / 2;
+var maxSpeed = 0.1;
+var maxAcceleration = 0.001;
+var maxRadiusChange = 0.1;
+var maxRotation = 0.1;
+
+function Vertex(x, y, radius, speed, acceleration, radiusChange, rotation) {
+  this.x = x;
+  this.y = y;
+  this.radius = radius;
+  this.speed = speed;
+  this.acceleration = acceleration;
+  this.radiusChange = radiusChange;
+  this.rotation = rotation;
+}
+
+function init() {
+  for (var i = 0; i < numVertices; i++) {
+    var angle = Math.random() * 2 * Math.PI;
+    var radius = minRadius + Math.random() * (maxRadius - minRadius);
+    var x = fondo.width / 2 + radius * Math.cos(angle);
+    var y = fondo.height / 2 + radius * Math.sin(angle);
+    var speed = Math.random() * maxSpeed;
+    var acceleration = Math.random() * maxAcceleration;
+    var radiusChange = Math.random() * maxRadiusChange;
+    var rotation = Math.random() * maxRotation;
+    vertices.push(new Vertex(x, y, radius, speed, acceleration, radiusChange, rotation));
+  }
+}
+
+function draw() {
+  ctx.clearRect(0, 0, fondo.width, fondo.height);
+  for (var i = 0; i < numVertices; i++) {
+    var vertex = vertices[i];
+    vertex.speed += vertex.acceleration;
+    vertex.radius += vertex.radiusChange;
+    vertex.rotation += vertex.speed;
+    vertex.x = fondo.width / 2 + vertex.radius * Math.cos(vertex.rotation);
+    vertex.y = fondo.height / 2 + vertex.radius * Math.sin(vertex.rotation);
+    ctx.beginPath();
+    ctx.arc(vertex.x, vertex.y, 2, 0, 2 * Math.PI, false);
+    ctx.fillStyle = '#000000';
+    ctx.fill();
+  }
+}
+
+init();
+setInterval(draw, 10);
+});
+        </script>
+    </head>
+    
+</html>

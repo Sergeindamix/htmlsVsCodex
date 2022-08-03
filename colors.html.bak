@@ -1,0 +1,119 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+/* 10 divs posicion, colo y tamaño random */
+for (var i = 0; i < 100; i++) {
+  var div = document.createElement('div');
+  div.style.position = 'absolute';
+  div.style.left = Math.random() * 100 + '%';
+  div.style.top = Math.random() * 100 + '%';
+  div.style.width = Math.random() * 100 + 'px';
+  div.style.height = Math.random() * 100 + 'px';
+  div.style.backgroundColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+  document.body.appendChild(div);
+}
+/* colores neon */
+var colors = ['#FF0000', '#00FF00', '#0000FF', '#FFFF00', '#00FFFF', '#FF00FF'];
+for (var i = 0; i < 100; i++) {
+  var div = document.createElement('div');
+  div.style.position = 'absolute';
+  div.style.left = Math.random() * 100 + '%';
+  div.style.top = Math.random() * 100 + '%';
+  div.style.width = Math.random() * 100 + 'px';
+  div.style.height = Math.random() * 100 + 'px';
+  div.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+  document.body.appendChild(div);
+}
+/* colores pastel */
+var colors = ['#FFB6C1', '#F0FFFF', '#F0FFF0', '#F5FFFA', '#F0F8FF', '#F8F8FF'];
+for (var i = 0; i < 100; i++) {
+  var div = document.createElement('div');
+  div.style.position = 'absolute';
+  div.style.left = Math.random() * 100 + '%';
+  div.style.top = Math.random() * 100 + '%';
+  div.style.width = Math.random() * 100 + 'px';
+  div.style.height = Math.random() * 100 + 'px';
+  div.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+  document.body.appendChild(div);
+}
+/* colores escalados */
+var colors = ['#FF0000', '#FF3300', '#FF6600', '#FF9900', '#FFCC00', '#FFFF00'];
+for (var i = 0; i < 100; i++) {
+  var div = document.createElement('div');
+  div.style.position = 'absolute';
+  div.style.left = Math.random() * 100 + '%';
+  div.style.top = Math.random() * 100 + '%';
+  div.style.width = Math.random() * 100 + 'px';
+  div.style.height = Math.random() * 100 + 'px';
+  div.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+  document.body.appendChild(div);
+}
+/* gradientes */
+var colors = ['#FF0000', '#FF3300', '#FF6600', '#FF9900', '#FFCC00', '#FFFF00'];
+for (var i = 0; i < 100; i++) {
+  var div = document.createElement('div');
+  div.style.position = 'absolute';
+  div.style.left = Math.random() * 100 + '%';
+  div.style.top = Math.random() * 100 + '%';
+  div.style.width = Math.random() * 100 + 'px';
+  div.style.height = Math.random() * 100 + 'px';
+  div.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+  div.style.backgroundImage = 'linear-gradient(to right, ' + colors[Math.floor(Math.random() * colors.length)] + ', ' + colors[Math.floor(Math.random() * colors.length)] + ')';
+  document.body.appendChild(div);
+}
+/* enmarcados */
+var colors = ['#FF0000', '#FF3300', '#FF6600', '#FF9900', '#FFCC00', '#FFFF00'];
+for (var i = 0; i < 100; i++) {
+  var div = document.createElement('div');
+  div.style.position = 'absolute';
+  div.style.left = Math.random() * 100 + '%';
+  div.style.top = Math.random() * 100 + '%';
+  div.style.width = Math.random() * 100 + 'px';
+  div.style.height = Math.random() * 100 + 'px';
+  div.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+  div.style.backgroundImage = 'linear-gradient(to right, ' + colors[Math.floor(Math.random() * colors.length)] + ', ' + colors[Math.floor(Math.random() * colors.length)] + ')';
+  div.style.border = '1px solid ' + colors[Math.floor(Math.random() * colors.length)];
+  document.body.appendChild(div);
+}
+/* animados */
+var colors = ['#FF0000', '#FF3300', '#FF6600', '#FF9900', '#FFCC00', '#FFFF00'];
+for (var i = 0; i < 100; i++) {
+  var div = document.createElement('div');
+  div.style.position = 'absolute';
+  div.style.left = Math.random() * 100 + '%';
+  div.style.top = Math.random() * 100 + '%';
+  div.style.width = Math.random() * 100 + 'px';
+  div.style.height = Math.random() * 100 + 'px';
+  div.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+  div.style.backgroundImage = 'linear-gradient(to right, ' + colors[Math.floor(Math.random() * colors.length)] + ', ' + colors[Math.floor(Math.random() * colors.length)] + ')';
+  div.style.border = '1px solid ' + colors[Math.floor(Math.random() * colors.length)];
+  div.style.animation = 'spin ' + Math.random() * 10 + 's linear infinite';
+  document.body.appendChild(div);
+}
+/* mostrar */
+var css = document.createElement('style');
+css.innerHTML = '@-webkit-keyframes spin { from { -webkit-transform: rotate(0deg); } to { -webkit-transform: rotate(360deg); } }';
+document.body.appendChild(css);
+/* overflow hidden */
+var css = document.createElement('style');
+css.innerHTML = 'body { overflow: hidden; }';
+document.body.appendChild(css);
+/* actualizar fondo con img.src = 'https://source.unsplash.com/random/' + Math.floor(Math.random() * 1000) + 'x' + Math.floor(Math.random() * 1000); */
+var img = document.createElement('img');
+img.src = 'https://source.unsplash.com/random/' + Math.floor(Math.random() * 1000) + 'x' + Math.floor(Math.random() * 1000);
+img.onload = function() {
+  var css = document.createElement('style');
+  css.innerHTML = 'body { background-image: url("' + img.src + '"); }';
+  document.body.appendChild(css);
+};
+/* full screen sin deformar */
+var css = document.createElement('style');
+css.innerHTML = 'body { background-size: cover; }';
+document.body.appendChild(css);
+});
+        </script>
+    </head>
+    
+</html>

@@ -1,0 +1,197 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+/* crear lista de elemento de pagina web */
+var lista = document.createElement('ul');
+//document.body.appendChild(lista);
+/* enlistar elementos basicos de html */
+var elementos = ['html', 'head', 'title', 'body', 'h1', 'p', 'a'];
+for (var i = 0; i < elementos.length; i++) {
+  var elemento = document.createElement('li');
+  elemento.innerHTML = elementos[i];
+  lista.appendChild(elemento);
+}
+
+/* crear cada uno de esos elementos, utilizando css */
+var elementos = ['html', 'head', 'title', 'body', 'h1', 'p', 'a'];
+for (var i = 0; i < elementos.length; i++) {
+  var elemento = document.createElement(elementos[i]);
+  elemento.innerHTML = elementos[i];
+  elemento.style.color = '#' + Math.floor(Math.random() * 16777215).toString(16);
+  //document.body.appendChild(elemento);
+}
+/* title: hola, grande, centrado */
+var title = document.createElement('title');
+title.innerHTML = 'Hola';
+document.head.appendChild(title);
+var h1 = document.createElement('h1');
+h1.innerHTML = 'Hola';
+h1.style.fontSize = '100px';
+h1.style.textAlign = 'center';
+//document.body.appendChild(h1);
+/* convertir en dropdown estas variables */
+var elementos = ['html', 'head', 'title', 'body', 'h1', 'p', 'a'];
+var select = document.createElement('select');
+for (var i = 0; i < elementos.length; i++) {
+  var option = document.createElement('option');
+  option.innerHTML = elementos[i];
+  select.appendChild(option);
+}
+document.body.appendChild(select);
+
+/* al cambiar seleccion, crear ese elemento */
+select.onchange = function() {
+  var elemento = document.createElement(select.value);
+  elemento.innerHTML = select.value;
+  document.body.appendChild(elemento);
+}
+/* si selecciono title, mostrar una caja de texto */
+var input = document.createElement('input');
+input.type = 'text';
+input.style.display = 'none';
+document.body.appendChild(input);
+select.onchange = function() {
+  if (select.value != '') {
+    input.style.display = 'block';
+  } else {
+    input.style.display = 'none';
+  }
+}
+input.style.display = 'block';
+/* title.innerHTML: input */
+select.onchange = function() {
+  if (select.value != '') {
+    input.style.display = 'block';
+  } else {
+    input.style.display = 'none';
+	select.style.display = 'none';
+	button.style.display = 'block';
+  }
+  var elemento = document.createElement(select.value);
+  elemento.innerHTML = input.value;
+  document.body.appendChild(elemento);
+}
+/* si input display none, mostrar boton */
+var button = document.createElement('button');
+button.innerHTML = 'Edit';
+button.style.display = 'none';
+document.body.appendChild(button);
+/* al pulsar mostrar input */
+button.onclick = function() {
+  button.style.display = 'none';
+  select.style.display = 'block';
+  input.style.display = 'block';
+  input.value = '';
+}
+/* si la opcion es h1: h1.style.fontSize = '100px';h1.style.textAlign = 'center'; */
+select.onchange = function() {
+  if (select.value != 'html') {
+    input.style.display = 'block';
+  } else {
+    input.style.display = 'none';
+	select.style.display = 'none';
+	button.style.display = 'block';
+	dropdown.style.display = 'block';
+	button.style.display = 'block';
+  }
+  
+  var elemento = document.createElement(select.value);
+  elemento.innerHTML = input.value;
+  elemento.style.width = '100%';
+  elemento.style.textAlign = 'center';
+  document.body.appendChild(elemento);
+}
+
+
+/* lista elementos html */
+var lista = document.getElementsByTagName('*');
+for (var i = 0; i < lista.length; i++) {
+  console.log(lista[i].tagName);
+}
+/* mostrar en dropdown */
+var lista = document.getElementsByTagName('*');
+var dropdown = document.createElement('select');
+for (var i = 0; i < lista.length; i++) {
+  var option = document.createElement('option');
+  option.innerHTML = lista[i].tagName;
+  dropdown.appendChild(option);
+}
+//document.body.appendChild(dropdown);
+/* color fondo random para cada elemento */
+var lista = document.getElementsByTagName('*');
+for (var i = 0; i < lista.length; i++) {
+  lista[i].style.backgroundColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+}
+
+/* si el elemento es '', detener */
+var lista = document.getElementsByTagName('*');
+for (var i = 0; i < lista.length; i++) {
+  if (lista[i].tagName == '') {
+    break;
+  }
+  lista[i].style.backgroundColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+}
+//document.body.appendChild(dropdown);
+/* cambiar color a elemento seleccionado */
+var lista = document.getElementsByTagName('*');
+var dropdown = document.createElement('select');
+for (var i = 0; i < lista.length; i++) {
+  var option = document.createElement('option');
+  option.innerHTML = lista[i].tagName;
+  dropdown.appendChild(option);
+}
+document.body.appendChild(dropdown);
+dropdown.addEventListener('change', function() {
+  var lista = document.getElementsByTagName('*');
+  for (var i = 0; i < lista.length; i++) {
+    if (lista[i].tagName == dropdown.value) {
+      lista[i].style.backgroundColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+    }
+  }
+});
+/* al cambiar seleccion, actualizar innerhtml: '' */
+var lista = document.getElementsByTagName('*');
+var dropdown = document.createElement('select');
+for (var i = 0; i < lista.length; i++) {
+  var option = document.createElement('option');
+  option.innerHTML = lista[i].tagName;
+  dropdown.appendChild(option);
+}
+//document.body.appendChild(dropdown);
+dropdown.onchange = function() {
+  var selected = dropdown.options[dropdown.selectedIndex].innerHTML;
+  for (var i = 0; i < lista.length; i++) {
+    if (lista[i].tagName == selected) {
+      lista[i].innerHTML = '';
+    }
+  }
+}
+/* crear boton para esto */
+var lista = document.getElementsByTagName('*');
+var dropdown = document.createElement('select');
+for (var i = 0; i < lista.length; i++) {
+  var option = document.createElement('option');
+  option.innerHTML = lista[i].tagName;
+  dropdown.appendChild(option);
+}
+document.body.appendChild(dropdown);
+var button = document.createElement('button');
+button.innerHTML = 'Clear';
+document.body.appendChild(button);
+button.onclick = function() {
+  var selected = dropdown.options[dropdown.selectedIndex].innerHTML;
+  for (var i = 0; i < lista.length; i++) {
+    if (lista[i].tagName == selected) {
+      lista[i].innerHTML = '';
+    }
+  }
+}
+dropdown.style.display = 'none';
+button.style.display = 'none';
+});
+        </script>
+    </head>
+    
+</html>

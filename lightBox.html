@@ -1,0 +1,196 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+/* Lightbox image desde sitio random */
+var img = document.createElement('img');
+img.src = 'https://source.unsplash.com/random/800x600';
+img.style.display = 'block';
+img.style.margin = '0 auto';
+img.style.maxWidth = '100%';
+img.style.maxHeight = '100%';
+img.style.boxShadow = '0 0 10px black';
+img.onclick = function() {
+  //document.body.removeChild(img);
+};
+//document.body.appendChild(img);
+/* al pulsar sobre la imagen oscurecer y abrir ventana flotante con la imagen */
+var img = document.createElement('img');
+img.src = 'https://source.unsplash.com/random/800x600';
+img.style.display = 'block';
+img.style.margin = '0 auto';
+img.style.maxWidth = '100%';
+img.style.maxHeight = '100%';
+img.style.boxShadow = '0 0 10px black';
+img.onclick = function() {
+  var overlay = document.createElement('div');
+  overlay.style.position = 'fixed';
+  overlay.style.top = 0;
+  overlay.style.left = 0;
+  overlay.style.width = '100%';
+  overlay.style.height = '100%';
+  overlay.style.backgroundColor = 'rgba(0,0,0,0.9)';
+  overlay.style.zIndex = 999;
+  document.body.appendChild(overlay);
+  var img2 = document.createElement('img');
+  img2.src = img.src;
+  img2.style.display = 'block';
+  img2.style.margin = '0 auto';
+  img2.style.maxWidth = '100%';
+  img2.style.maxHeight = '100%';
+  img2.style.boxShadow = '0 0 10px black';
+  img2.onclick = function() {
+    document.body.removeChild(overlay);
+  };
+  overlay.appendChild(img2);
+};
+//document.body.appendChild(img);
+/* regresar al pulsar fuera de imagen */
+var img = document.createElement('img');
+img.src = 'https://source.unsplash.com/random/800x600';
+img.style.display = 'block';
+img.style.margin = '0 auto';
+img.style.maxWidth = '100%';
+img.style.maxHeight = '100%';
+img.style.boxShadow = '0 0 10px black';
+img.onclick = function() {
+  var overlay = document.createElement('div');
+  overlay.style.position = 'fixed';
+  overlay.style.top = 0;
+  overlay.style.left = 0;
+  overlay.style.width = '100%';
+  overlay.style.height = '100%';
+  overlay.style.backgroundColor = 'rgba(0,0,0,0.9)';
+  overlay.style.zIndex = 999;
+  document.body.appendChild(overlay);
+  var img2 = document.createElement('img');
+  img2.src = img.src;
+  img2.style.display = 'block';
+  img2.style.margin = '0 auto';
+  img2.style.maxWidth = '100%';
+  img2.style.maxHeight = '100%';
+  img2.style.boxShadow = '0 0 10px black';
+  img2.onclick = function() {
+    document.body.removeChild(overlay);
+  };
+  overlay.appendChild(img2);
+  overlay.onclick = function() {
+    document.body.removeChild(overlay);
+  };
+};
+//document.body.appendChild(img);
+/* ITEM OVERLAYS */
+var img = document.createElement('img');
+img.src = 'https://source.unsplash.com/random/800x600';
+img.style.display = 'block';
+img.style.margin = '0 auto';
+img.style.maxWidth = '100%';
+img.style.maxHeight = '100%';
+img.style.boxShadow = '0 0 10px black';
+img.onclick = function() {
+  var overlay = document.createElement('div');
+  overlay.style.position = 'fixed';
+  overlay.style.top = 0;
+  overlay.style.left = 0;
+  overlay.style.width = '100%';
+  overlay.style.height = '100%';
+  overlay.style.backgroundColor = 'rgba(0,0,0,0.9)';
+  overlay.style.zIndex = 999;
+  document.body.appendChild(overlay);
+  var img2 = document.createElement('img');
+  img2.src = img.src;
+  img2.style.display = 'block';
+  img2.style.margin = '0 auto';
+  img2.style.maxWidth = '100%';
+  img2.style.maxHeight = '100%';
+  img2.style.boxShadow = '0 0 10px black';
+  img2.onclick = function() {
+    document.body.removeChild(overlay);
+  };
+  overlay.appendChild(img2);
+  overlay.onclick = function() {
+    document.body.removeChild(overlay);
+  };
+  var item = document.createElement('div');
+  item.style.position = 'fixed';
+  item.style.bottom = '10px';
+  item.style.left = '10px';
+  item.style.width = '100px';
+  item.style.height = '100px';
+  item.style.backgroundColor = 'rgba(255,255,255,0.9)';
+  item.style.zIndex = 1000;
+  item.style.borderRadius = '50%';
+  item.style.boxShadow = '0 0 10px black';
+  item.style.cursor = 'pointer';
+  item.onclick = function() {
+    alert('You clicked the item!');
+  };
+  overlay.appendChild(item);
+};
+//document.body.appendChild(img);
+/* Variable Backgrounds */
+var img = document.createElement('img');
+img.src = 'https://source.unsplash.com/random/800x600';
+img.style.display = 'block';
+img.style.margin = '0 auto';
+img.style.maxWidth = '100%';
+img.style.maxHeight = '100%';
+img.style.boxShadow = '0 0 10px black';
+img.onclick = function() {
+  var overlay = document.createElement('div');
+  overlay.style.position = 'fixed';
+  overlay.style.top = 0;
+  overlay.style.left = 0;
+  overlay.style.width = '100%';
+  overlay.style.height = '100%';
+  overlay.style.backgroundColor = 'rgba(0,0,0,0.9)';
+  overlay.style.zIndex = 999;
+  document.body.appendChild(overlay);
+  var img2 = document.createElement('img');
+  img2.src = img.src;
+  img2.style.display = 'block';
+  img2.style.margin = '0 auto';
+  img2.style.maxWidth = '100%';
+  img2.style.maxHeight = '100%';
+  img2.style.boxShadow = '0 0 10px black';
+  img2.onclick = function() {
+    document.body.removeChild(overlay);
+  };
+  overlay.appendChild(img2);
+  overlay.onclick = function() {
+    document.body.removeChild(overlay);
+  };
+  var item = document.createElement('div');
+  item.style.position = 'fixed';
+  item.style.bottom = '10px';
+  item.style.left = '10px';
+  item.style.width = '100px';
+  item.style.height = '100px';
+  item.style.backgroundColor = 'rgba(255,255,255,0.9)';
+  item.style.zIndex = 1000;
+  item.style.borderRadius = '50%';
+  item.style.boxShadow = '0 0 10px black';
+  item.style.cursor = 'pointer';
+  item.onclick = function() {
+    alert('You clicked the item!');
+  };
+  overlay.appendChild(item);
+  var bg = document.createElement('img');
+  bg.src = 'https://source.unsplash.com/random/800x600';
+  bg.style.position = 'fixed';
+  bg.style.top = 0;
+  bg.style.left = 0;
+  bg.style.width = '100%';
+  bg.style.height = '100%';
+  bg.style.zIndex = 998;
+  bg.style.opacity = 0.5;
+  overlay.appendChild(bg);
+};
+document.body.appendChild(img);
+});
+        </script>
+    </head>
+    
+</html>

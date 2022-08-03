@@ -1,0 +1,28 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+var img = document.createElement('img');
+img.src = 'https://source.unsplash.com/random/' + Math.random();
+document.body.appendChild(img);
+setInterval(function() {
+  img.src = 'https://source.unsplash.com/random/' + Math.random();
+}, 3000);
+
+img.style.borderRadius = '50%';
+
+img.style.width = '100%';
+img.style.height = '100%';
+
+img.style.objectFit = 'cover';
+
+setInterval(function() {
+  document.body.style.backgroundImage = 'url(' + img.src + ')';
+}, 2999);
+});
+        </script>
+    </head>
+    
+</html>

@@ -1,0 +1,211 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+var lista = document.createElement('ul');
+lista.innerHTML = '<li>1. Variables</li><li>2. Operadores</li><li>3. Condicionales</li><li>4. Ciclos</li><li>5. Funciones</li><li>6. Objetos</li><li>7. Arreglos</li><li>8. Eventos</li><li>9. Formularios</li><li>10. Cookies</li><li>11. LocalStorage</li><li>12. JSON</li><li>13. AJAX</li><li>14. DOM</li><li>15. Canvas</li><li>16. SVG</li><li>17. WebGL</li><li>18. Web Workers</li><li>19. Web Sockets</li><li>20. WebRTC</li><li>21. Geolocation</li><li>22. History API</li><li>23. Drag and Drop</li><li>24. File API</li><li>25. Audio API</li><li>26. Video API</li><li>27. Web Speech API</li><li>28. Web Animations API</li><li>29. Web Components</li><li>30. Shadow DOM</li><li>31. Templates</li><li>32. Promises</li><li>33. Generators</li><li>34. Iterators</li><li>35. Proxies</li><li>36. Sets</li><li>37. Maps</li><li>38. WeakMaps</li><li>39. WeakSets</li><li>40. Typed Arrays</li><li>41. Symbols</li><li>42. Math</li><li>43. Date</li><li>44. RegExp</li><li>45. JSON</li><li>46. Error Handling</li><li>47. Modules</li><li>48. Classes</li><li>49. Promises</li><li>50. Generators</li><li>51. Iterators</li><li>52. Proxies</li><li>53. Sets</li><li>54. Maps</li><li>55. WeakMaps</li><li>56. WeakSets</li><li>57. Typed Arrays</li><li>58. Symbols</li><li>59. Math</li><li>60. Date</li><li>61. RegExp</li><li>62. JSON</li><li>63. Error Handling</li><li>64. Modules</li><li>65. Classes</li><li>66. Promises</li><li>67. Generators</li><li>68. Iterators</li><li>69. Proxies</li><li>70. Sets</li><li>71. Maps</li><li>72. WeakMaps</li><li>73. WeakSets</li><li>74. Typed Arrays</li><li>75. Symbols</li><li>76. Math</li><li>77. Date</li><li>78. RegExp</li><li>79. JSON</li><li>80. Error Handling</li><li>81. Modules</li><li>82. Classes</li><li>83. Promises</li><li>84. Generators</li><li>85. Iterators</li><li>86. Proxies</li><li>87. Sets</li><li>88. Maps</li><li>89. WeakMaps</li><li>90. WeakSets</li><li>91. Typed Arrays</li><li>92. Symbols</li><li>93. Math</li><li>94. Date</li><li>95. RegExp</li><li>96. JSON</li><li>97. Error Handling</li><li>98. Modules</li><li>99. Classes</li><li>100. Promises</li>';
+document.body.appendChild(lista);
+
+/* 1 */
+var variables = document.createElement('div');
+variables.innerHTML = '<button onclick="var nombre = \'Juan\'; alert(nombre);">Variables</button>';
+document.body.appendChild(variables);
+/* 2 */
+var operadores = document.createElement('div');
+operadores.innerHTML = '<button onclick="var a = 1; var b = 2; alert(a + b);">Operadores</button>';
+document.body.appendChild(operadores);
+/* condicionales */
+var condicionales = document.createElement('div');
+condicionales.innerHTML = '<button onclick="var a = 1; var b = 2; if (a > b) { alert(\'a es mayor que b\'); } else { alert(\'a es menor que b\'); }">Condicionales</button>';
+document.body.appendChild(condicionales);
+/* 4 */
+var ciclos = document.createElement('div');
+ciclos.innerHTML = '<button onclick="for (var i = 0; i < 3; i++) { alert(i); }">Ciclos</button>';
+document.body.appendChild(ciclos);
+/* 5 */
+var funciones = document.createElement('div');
+funciones.innerHTML = '<button onclick="function saludar() { alert(\'Hola Mundo\'); } saludar();">Funciones</button>';
+document.body.appendChild(funciones);
+/* 6 */
+var objetos = document.createElement('div');
+objetos.innerHTML = '<button onclick="var persona = { nombre: \'Juan\', apellido: \'Perez\' }; alert(persona.nombre);">Objetos</button>';
+document.body.appendChild(objetos);
+/* 7 */
+var arreglos = document.createElement('div');
+arreglos.innerHTML = '<button onclick="var arreglo = [\'Hola\', \'Mundo\']; alert(arreglo[0]);">Arreglos</button>';
+document.body.appendChild(arreglos);
+/* 9 */
+var formularios = document.createElement('div');
+formularios.innerHTML = '<form id="formulario"><input type="text" id="nombre" name="nombre" placeholder="Nombre" /><input type="text" id="apellido" name="apellido" placeholder="Apellido" /><input type="submit" value="Enviar" /></form>';
+document.body.appendChild(formularios);
+
+var eventos = document.createElement('div');
+eventos.innerHTML = '<button onclick="alert(\'Hola Mundo\')">Hola Mundo</button>';
+document.body.appendChild(eventos);
+
+var cookies = document.createElement('div');
+cookies.innerHTML = '<button onclick="document.cookie=\'nombre=Juan\'">Agregar Cookie</button>';
+document.body.appendChild(cookies);
+
+var localStorage = document.createElement('div');
+localStorage.innerHTML = '<button onclick="localStorage.setItem(\'nombre\', \'Juan\')">Agregar LocalStorage</button>';
+document.body.appendChild(localStorage);
+
+var json = document.createElement('div');
+json.innerHTML = '<button onclick="var persona = {nombre: \'Juan\', apellido: \'Perez\'}; alert(JSON.stringify(persona))">JSON</button>';
+document.body.appendChild(json);
+
+var ajax = document.createElement('div');
+ajax.innerHTML = '<button onclick="var xhr = new XMLHttpRequest(); xhr.open(\'GET\', \'https://jsonplaceholder.typicode.com/posts/1\', true); xhr.onload = function() { alert(xhr.responseText); }; xhr.send();">AJAX</button>';
+document.body.appendChild(ajax);
+
+var dom = document.createElement('div');
+dom.innerHTML = '<button onclick="alert(document.getElementById(\'titulo\').innerHTML)">DOM</button>';
+document.body.appendChild(dom);
+
+var canvas = document.createElement('div');
+canvas.innerHTML = '<canvas id="canvas" width="200" height="200"></canvas>';
+document.body.appendChild(canvas);
+
+var svg = document.createElement('div');
+svg.innerHTML = '<svg width="200" height="200"><circle cx="100" cy="100" r="100" fill="red" /></svg>';
+document.body.appendChild(svg);
+
+var webgl = document.createElement('div');
+webgl.innerHTML = '<canvas id="webgl" width="200" height="200"></canvas>';
+document.body.appendChild(webgl);
+
+var webWorkers = document.createElement('div');
+webWorkers.innerHTML = '<button onclick="var worker = new Worker(\'worker.js\'); worker.onmessage = function(e) { alert(e.data); }; worker.postMessage(\'Hola Mundo\');">Web Workers</button>';
+document.body.appendChild(webWorkers);
+
+var webSockets = document.createElement('div');
+webSockets.innerHTML = '<button onclick="var socket = new WebSocket(\'ws://echo.websocket.org\'); socket.onmessage = function(e) { alert(e.data); }; socket.send(\'Hola Mundo\');">Web Sockets</button>';
+document.body.appendChild(webSockets);
+
+var webRTC = document.createElement('div');
+webRTC.innerHTML = '<button onclick="var pc = new RTCPeerConnection(); pc.onicecandidate = function(e) { alert(e.candidate); }; pc.createDataChannel(\'chat\'); pc.createOffer().then(function(offer) { pc.setLocalDescription(offer); });">WebRTC</button>';
+document.body.appendChild(webRTC);
+
+
+
+var geolocation = document.createElement('div');
+geolocation.innerHTML = '<button onclick="navigator.geolocation.getCurrentPosition(function(position) { alert(position.coords.latitude + \', \' + position.coords.longitude); });">Geolocation</button>';
+document.body.appendChild(geolocation);
+
+var historyAPI = document.createElement('div');
+historyAPI.innerHTML = '<button onclick="history.pushState({}, \'\', \'/\');">History API</button>';
+document.body.appendChild(historyAPI);
+
+var dragAndDrop = document.createElement('div');
+dragAndDrop.innerHTML = '<div id="drag" draggable="true" ondragstart="event.dataTransfer.setData(\'text/plain\', \'Hola Mundo\')">Arrastrame</div>';
+document.body.appendChild(dragAndDrop);
+
+var fileAPI = document.createElement('div');
+fileAPI.innerHTML = '<input type="file" id="file" onchange="alert(this.files[0].name)">';
+document.body.appendChild(fileAPI);
+
+
+
+var audioAPI = document.createElement('div');
+audioAPI.innerHTML = '<audio id="audio" src="audio.mp3" controls></audio>';
+document.body.appendChild(audioAPI);
+
+var videoAPI = document.createElement('div');
+videoAPI.innerHTML = '<video id="video" src="video.mp4" controls></video>';
+document.body.appendChild(videoAPI);
+
+var webSpeechAPI = document.createElement('div');
+webSpeechAPI.innerHTML = '<button onclick="var recognition = new webkitSpeechRecognition(); recognition.onresult = function(e) { alert(e.results[0][0].transcript); }; recognition.start();">Web Speech API</button>';
+document.body.appendChild(webSpeechAPI);
+
+var webAnimationsAPI = document.createElement('div');
+webAnimationsAPI.innerHTML = '<button onclick="var anim = document.getElementById(\'anim\').animate([{ transform: \'translateX(0)\' }, { transform: \'translateX(100px)\' }], { duration: 1000 }); anim.onfinish = function() { alert(\'Termino la animacion\'); };">Web Animations API</button>';
+document.body.appendChild(webAnimationsAPI);
+
+var webComponents = document.createElement('div');
+webComponents.innerHTML = '<button is="mi-boton" onclick="alert(\'Hola Mundo\')">Web Components</button>';
+document.body.appendChild(webComponents);
+
+var shadowDOM = document.createElement('div');
+shadowDOM.innerHTML = '<button id="shadow">Shadow DOM</button>';
+document.body.appendChild(shadowDOM);
+
+var templates = document.createElement('div');
+templates.innerHTML = '<template id="template"><h1>Hola Mundo</h1></template>';
+document.body.appendChild(templates);
+
+var promises = document.createElement('div');
+promises.innerHTML = '<button onclick="var promise = new Promise(function(resolve, reject) { setTimeout(function() { resolve(\'Hola Mundo\'); }, 1000); }); promise.then(function(value) { alert(value); });">Promises</button>';
+document.body.appendChild(promises);
+
+var generators = document.createElement('div');
+generators.innerHTML = '<button onclick="var generator = function*() { yield \'Hola\'; yield \'Mundo\'; }; var gen = generator(); alert(gen.next().value); alert(gen.next().value);">Generators</button>';
+document.body.appendChild(generators);
+
+var iterators = document.createElement('div');
+iterators.innerHTML = '<button onclick="var iterable = { [Symbol.iterator]() { var i = 0; return { next() { return { value: i++, done: i > 3 }; } }; } }; for (var value of iterable) { alert(value); }">Iterators</button>';
+document.body.appendChild(iterators);
+
+var proxies = document.createElement('div');
+proxies.innerHTML = '<button onclick="var persona = { nombre: \'Juan\', apellido: \'Perez\' }; var proxy = new Proxy(persona, { get: function(target, property) { return \'Hola Mundo\'; } }); alert(proxy.nombre);">Proxies</button>';
+document.body.appendChild(proxies);
+
+var sets = document.createElement('div');
+sets.innerHTML = '<button onclick="var set = new Set([\'Hola\', \'Mundo\']); set.add(\'Hola\'); set.add(\'Mundo\'); alert(set.size);">Sets</button>';
+document.body.appendChild(sets);
+
+var maps = document.createElement('div');
+maps.innerHTML = '<button onclick="var map = new Map([[\'nombre\', \'Juan\'], [\'apellido\', \'Perez\']]); map.set(\'nombre\', \'Juan\'); map.set(\'apellido\', \'Perez\'); alert(map.size);">Maps</button>';
+document.body.appendChild(maps);
+
+var weakMaps = document.createElement('div');
+weakMaps.innerHTML = '<button onclick="var weakMap = new WeakMap([[{ nombre: \'Juan\' }, \'Hola Mundo\']]); weakMap.set({ nombre: \'Juan\' }, \'Hola Mundo\'); alert(weakMap.size);">WeakMaps</button>';
+document.body.appendChild(weakMaps);
+
+var weakSets = document.createElement('div');
+weakSets.innerHTML = '<button onclick="var weakSet = new WeakSet([{ nombre: \'Juan\' }]); weakSet.add({ nombre: \'Juan\' }); alert(weakSet.size);">WeakSets</button>';
+document.body.appendChild(weakSets);
+
+var typedArrays = document.createElement('div');
+typedArrays.innerHTML = '<button onclick="var typedArray = new Uint8Array([1, 2, 3]); alert(typedArray.length);">Typed Arrays</button>';
+document.body.appendChild(typedArrays);
+
+var symbols = document.createElement('div');
+symbols.innerHTML = '<button onclick="var symbol = Symbol(\'Hola Mundo\'); alert(symbol.toString());">Symbols</button>';
+document.body.appendChild(symbols);
+
+var math = document.createElement('div');
+math.innerHTML = '<button onclick="alert(Math.PI);">Math</button>';
+document.body.appendChild(math);
+
+var date = document.createElement('div');
+date.innerHTML = '<button onclick="alert(new Date().toLocaleString());">Date</button>';
+document.body.appendChild(date);
+
+var regExp = document.createElement('div');
+regExp.innerHTML = '<button onclick="alert(/Hola Mundo/.test(\'Hola Mundo\'));">RegExp</button>';
+document.body.appendChild(regExp);
+
+var json = document.createElement('div');
+json.innerHTML = '<button onclick="var persona = { nombre: \'Juan\', apellido: \'Perez\' }; alert(JSON.stringify(persona));">JSON</button>';
+document.body.appendChild(json);
+
+var errorHandling = document.createElement('div');
+errorHandling.innerHTML = '<button onclick="try { throw new Error(\'Hola Mundo\'); } catch(e) { alert(e.message); }">Error Handling</button>';
+document.body.appendChild(errorHandling);
+
+var modules = document.createElement('div');
+modules.innerHTML = '<button onclick="import(\'module.js\').then(function(module) { alert(module.default); });">Modules</button>';
+document.body.appendChild(modules);
+
+var classes = document.createElement('div');
+classes.innerHTML = '<button onclick="class Persona { constructor(nombre, apellido) { this.nombre = nombre; this.apellido = apellido; } } var persona = new Persona(\'Juan\', \'Perez\'); alert(persona.nombre);">Classes</button>';
+document.body.appendChild(classes);
+});
+        </script>
+    </head>
+    
+</html>

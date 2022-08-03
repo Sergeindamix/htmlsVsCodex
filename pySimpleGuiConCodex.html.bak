@@ -1,0 +1,163 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+/* header: Image Viewer */
+var header = document.createElement('h1');
+header.innerHTML = 'Image Viewer';
+document.body.appendChild(header);
+/* input file, carpeta, solo imagenes */
+var input = document.createElement('input');
+input.type = 'file';
+input.accept = 'image/*';
+input.webkitdirectory = true;
+document.body.appendChild(input);
+
+/* lista vacia */
+var lista = document.createElement('ul');
+document.body.appendChild(lista);
+/* al cargar archivos, cargar en lista */
+var imagenes = [];
+input.addEventListener('change', function(e) {
+  var files = e.target.files;
+  for (var i = 0; i < files.length; i++) {
+    
+	var img = document.createElement('img');
+    img.src = URL.createObjectURL(input.files[i]);    
+    imagenes.push(img.src);
+	}
+});
+        
+/* todos los elementos son hijos de un contenedor main */
+var main = document.createElement('main');
+while (document.body.firstChild) {
+  main.appendChild(document.body.firstChild);
+}
+document.body.appendChild(main);
+/* main tiene un divisor vertical */
+main.style.display = 'flex';
+main.style.flexDirection = 'row';
+/* mostrar bordes */
+main.style.border = '1px solid #ccc';
+/* main alto auto */
+main.style.height = 'auto';
+/* ancho 3/4 */
+main.style.width = 'auto%';
+/* centrado */
+main.style.margin = '0 auto';
+/* dividir main verticalmente */
+var divisor = document.createElement('div');
+divisor.style.flex = '1';
+divisor.style.borderLeft = '1px solid #ccc';
+main.appendChild(divisor);
+/* crear visor de imagenes en segunda mitad */
+var visor = document.createElement('div');
+visor.style.flex = '50';//tamaño maximo
+visor.style.display = 'flex';
+visor.style.flexDirection = 'column';
+visor.style.justifyContent = 'center';
+visor.style.alignItems = 'center';
+main.appendChild(visor);
+document.body.appendChild(header);
+document.body.appendChild(main);
+/* al mostrar lista, cada elemento es hover */
+lista.addEventListener('mouseover', function(e) {
+  if (e.target.tagName === 'LI') {
+    e.target.style.backgroundColor = '#eee';
+  }
+});
+/* else return */
+lista.addEventListener('mouseout', function(e) {
+  if (e.target.tagName === 'LI') {
+    e.target.style.backgroundColor = '';
+  }
+});
+/* mouseover, visualiza esa imagen, mouseout, la oculta */
+lista.addEventListener('mouseover', function(e) {
+  if (e.target.tagName === 'LI') {
+    var file = e.target.files[0];
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    var img = document.createElement('img');
+    img.src = e.target.result;
+    document.body.appendChild(img);
+  };
+  reader.readAsDataURL(file);
+	}
+	//
+  }
+});
+lista.addEventListener('mouseout', function(e) {
+  if (e.target.tagName === 'LI') {
+    while (visor.firstChild) {
+      visor.removeChild(visor.firstChild);
+    }
+  }
+});
+/* input change, copiar imagenes y guardarlas en lista */
+input.addEventListener('change', function(e) {
+  var files = e.target.files;
+  for (var i = 0; i < files.length; i++) {
+    var file = files[i];
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      var li = document.createElement('li');
+      var img = document.createElement('img');
+      img.src = e.target.result;
+      img.style.maxWidth = '1%';
+      img.style.maxHeight = '1%';
+      li.appendChild(img);
+      lista.appendChild(li);
+      updateDropdown();
+    };
+    reader.readAsDataURL(file);
+  }
+});
+/* al cargar archivos crear dropdown para acceder a las imagenes */
+var dropdown = document.createElement('select');
+dropdown.style.margin = '10px';
+//main.appendChild(dropdown);//descomenta para ver dropdown
+/* actualizar dropdow desde lista */
+function updateDropdown() {
+  while (dropdown.firstChild) {
+    dropdown.removeChild(dropdown.firstChild);
+  }
+  for (var i = 0; i < lista.children.length; i++) {
+    var option = document.createElement('option');
+    option.value = i;
+    option.innerHTML = i;
+    dropdown.appendChild(option);
+  }
+}
+/* al cambiar drop down, mostrar esa imagen */
+dropdown.addEventListener('change', function(e) {
+  var index = e.target.value;
+  var li = lista.children[index];
+  var img = li.firstChild;
+  var src = img.src;
+  var img2 = document.createElement('img');
+  img2.src = src;
+  img2.style.maxWidth = '100%';
+  img2.style.maxHeight = '100%';
+  visor.innerHTML = '';//actualiza a none
+  visor.appendChild(img2);//actualiza a imagen
+});
+/* webkitfolder  es hijo de div */
+var div = document.createElement('div');
+div.appendChild(input);
+document.body.appendChild(div);
+/* mouseover, hint nombre, else return */
+document.body.onmouseover = function(event) {
+  if (event.target.id == 'lista') {
+    event.target.title = 'hint';
+  } else {
+    return;
+  }
+};
+});
+        </script>
+    </head>
+    
+</html>

@@ -1,0 +1,80 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+/* crear figura random svg cada segungo y eliminar cada 5 */
+var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+svg.setAttribute("width", "100%");
+svg.setAttribute("height", "100%");
+svg.setAttribute("viewBox", "0 0 100 100");
+document.body.appendChild(svg);
+var svgNS = svg.namespaceURI;
+var circle = document.createElementNS(svgNS,'circle');
+circle.setAttributeNS(null,'cx',50);
+circle.setAttributeNS(null,'cy',50);
+circle.setAttributeNS(null,'r',50);
+circle.setAttributeNS(null,'fill','red');
+svg.appendChild(circle);
+var rect = document.createElementNS(svgNS,'rect');
+rect.setAttributeNS(null,'x',25);
+rect.setAttributeNS(null,'y',25);
+rect.setAttributeNS(null,'width',50);
+rect.setAttributeNS(null,'height',50);
+rect.setAttributeNS(null,'fill','blue');
+svg.appendChild(rect);
+var line = document.createElementNS(svgNS,'line');
+line.setAttributeNS(null,'x1',0);
+line.setAttributeNS(null,'y1',0);
+line.setAttributeNS(null,'x2',100);
+line.setAttributeNS(null,'y2',100);
+line.setAttributeNS(null,'stroke','green');
+line.setAttributeNS(null,'stroke-width',2);
+svg.appendChild(line);
+var polygon = document.createElementNS(svgNS,'polygon');
+polygon.setAttributeNS(null,'points','50,0 100,50 50,100 0,50');
+polygon.setAttributeNS(null,'fill','yellow');
+svg.appendChild(polygon);
+var polyline = document.createElementNS(svgNS,'polyline');
+polyline.setAttributeNS(null,'points','0,0 50,50 100,0');
+polyline.setAttributeNS(null,'stroke','orange');
+polyline.setAttributeNS(null,'stroke-width',2);
+polyline.setAttributeNS(null,'fill','none');
+svg.appendChild(polyline);
+var text = document.createElementNS(svgNS,'text');
+text.setAttributeNS(null,'x',50);
+text.setAttributeNS(null,'y',50);
+text.setAttributeNS(null,'font-size',50);
+text.setAttributeNS(null,'text-anchor','middle');
+text.setAttributeNS(null,'dominant-baseline','central');
+text.setAttributeNS(null,'fill','white');
+text.textContent = 'SVG';
+svg.appendChild(text);
+var path = document.createElementNS(svgNS,'path');
+path.setAttributeNS(null,'d','M0,0 L50,50 L100,0 Z');
+path.setAttributeNS(null,'fill','purple');
+svg.appendChild(path);
+var ellipse = document.createElementNS(svgNS,'ellipse');
+ellipse.setAttributeNS(null,'cx',50);
+ellipse.setAttributeNS(null,'cy',50);
+ellipse.setAttributeNS(null,'rx',50);
+ellipse.setAttributeNS(null,'ry',25);
+ellipse.setAttributeNS(null,'fill','black');
+svg.appendChild(ellipse);
+var figures = [circle, rect, line, polygon, polyline, text, path, ellipse];
+var randomFigure = function() {
+  var random = Math.floor(Math.random() * figures.length);
+  var figure = figures[random];
+  var clone = figure.cloneNode(true);
+  svg.appendChild(clone);
+  setTimeout(function() {
+    svg.removeChild(clone);
+  }, 5000);
+};
+setInterval(randomFigure, 1000);
+});
+        </script>
+    </head>
+    
+</html>

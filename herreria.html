@@ -1,0 +1,31 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+var tabla = document.createElement('table');
+tabla.setAttribute('border', '1');
+tabla.setAttribute('cellspacing', '0');
+tabla.setAttribute('cellpadding', '5');
+var tblBody = document.createElement('tbody');
+for (var i = 0; i < 16; i++) {
+  var fila = document.createElement('tr');
+  for (var j = 0; j < 17; j++) {
+    var celda = document.createElement('td');
+    var textoCelda = document.createTextNode('Fila ' + i + ', Columna ' + j);
+    celda.appendChild(textoCelda);
+    if (j < 4 || j > 12 || i < 5) {
+      celda.style.backgroundColor = '#FF0000';
+    }
+    fila.appendChild(celda);
+  }
+  tblBody.appendChild(fila);
+}
+tabla.appendChild(tblBody);
+document.body.appendChild(tabla);
+});
+        </script>
+    </head>
+    
+</html>

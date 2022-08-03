@@ -1,0 +1,187 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+/* calendario google, con agenda */
+var calendario = document.createElement('iframe');
+calendario.src = 'https://calendar.google.com/calendar/embed?src=techno.rifa%40gmail.com&ctz=America%2FMexico_City';
+calendario.style.width = '800px';
+calendario.style.height = '600px';
+document.body.appendChild(calendario);
+var table = document.createElement('table');
+table.setAttribute('border', '1');
+table.setAttribute('cellpadding', '5');
+table.setAttribute('cellspacing', '0');
+table.setAttribute('width', '100%');
+var tbody = document.createElement('tbody');
+var tr = document.createElement('tr');
+var td = document.createElement('td');
+td.setAttribute('colspan', '7');
+td.setAttribute('align', 'center');
+td.setAttribute('bgcolor', '#cccccc');
+td.innerHTML = '<b>Calendario</b>';
+tr.appendChild(td);
+tbody.appendChild(tr);
+tr = document.createElement('tr');
+td = document.createElement('td');
+td.setAttribute('align', 'center');
+td.setAttribute('bgcolor', '#cccccc');
+td.innerHTML = '<b>L</b>';
+tr.appendChild(td);
+td = document.createElement('td');
+td.setAttribute('align', 'center');
+td.setAttribute('bgcolor', '#cccccc');
+td.innerHTML = '<b>M</b>';
+tr.appendChild(td);
+td = document.createElement('td');
+td.setAttribute('align', 'center');
+td.setAttribute('bgcolor', '#cccccc');
+td.innerHTML = '<b>X</b>';
+tr.appendChild(td);
+td = document.createElement('td');
+td.setAttribute('align', 'center');
+td.setAttribute('bgcolor', '#cccccc');
+td.innerHTML = '<b>J</b>';
+tr.appendChild(td);
+td = document.createElement('td');
+td.setAttribute('align', 'center');
+td.setAttribute('bgcolor', '#cccccc');
+td.innerHTML = '<b>V</b>';
+tr.appendChild(td);
+td = document.createElement('td');
+td.setAttribute('align', 'center');
+td.setAttribute('bgcolor', '#cccccc');
+td.innerHTML = '<b>S</b>';
+tr.appendChild(td);
+td = document.createElement('td');
+td.setAttribute('align', 'center');
+td.setAttribute('bgcolor', '#cccccc');
+td.innerHTML = '<b>D</b>';
+tr.appendChild(td);
+tbody.appendChild(tr);
+var dia = 1;
+for (var i = 0; i < 5; i++) {
+  tr = document.createElement('tr');
+  for (var j = 0; j < 7; j++) {
+    td = document.createElement('td');
+    td.setAttribute('align', 'center');
+    td.setAttribute('bgcolor', '#ffffff');
+    td.innerHTML = dia;
+    tr.appendChild(td);
+    dia++;
+  }
+  tbody.appendChild(tr);
+}
+table.appendChild(tbody);
+document.body.appendChild(table);
+
+var meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+var fecha = new Date();
+var mes = fecha.getMonth();
+var anio = fecha.getFullYear();
+var diaSemana = new Date(anio, mes, 1).getDay();
+var diasMes = new Date(anio, mes + 1, 0).getDate();
+var diasMesAnterior = new Date(anio, mes, 0).getDate();
+var diasMesSiguiente = new Date(anio, mes + 2, 0).getDate();
+var dia = 1;
+var diaMesAnterior = diasMesAnterior - diaSemana + 1;
+var diaMesSiguiente = 1;
+var trs = table.getElementsByTagName('tr');
+trs[0].getElementsByTagName('td')[0].innerHTML = '<b>' + meses[mes] + '</b>';
+for (var i = 2; i < trs.length; i++) {
+  var tds = trs[i].getElementsByTagName('td');
+  for (var j = 0; j < tds.length; j++) {
+    if (dia <= diasMes) {
+      tds[j].innerHTML = dia;
+      dia++;
+    } else {
+      tds[j].innerHTML = diaMesSiguiente;
+      diaMesSiguiente++;
+    }
+  }
+}
+
+
+/* al pulsar tds[j].innerHTML generar web */
+var dia = fecha.getDate();
+var trs = table.getElementsByTagName('tr');
+for (var i = 2; i < trs.length - 2; i++) {
+  var tds = trs[i].getElementsByTagName('td');
+  for (var j = 0; j < tds.length; j++) {
+    if (tds[j].innerHTML == dia) {
+      tds[j].setAttribute('bgcolor', '#ffcccc');
+	  tds[j].innerHTML = '<input type="file" accept="text/html" id="files" name="files[]" multiple />';
+	  tds[j].onchange = e => { 
+    // getting a hold of the file reference
+    var file = e.target.files[0]; 
+    // setting up the reader
+    var reader = new FileReader();
+    reader.readAsText(file,'UTF-8');
+    // here we tell the reader what to do when it's done reading...
+    reader.onload = readerEvent => {
+      var content = readerEvent.target.result; // this is the content!
+	  var li = document.createElement('li');
+	  li.innerHTML = content;
+      list.appendChild(li);
+      document.body.innerHTML = content;
+	}
+	  }
+  
+	}				
+  }		
+}
+
+/* api spotify */
+var spotify = document.createElement('div');
+spotify.innerHTML = '<iframe src="https://open.spotify.com/embed/track/0eGsygTp906u18L0Oimnem" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>';
+document.body.appendChild(spotify);
+/* crear similar para archivos locales */
+var local = document.createElement('div');
+local.innerHTML = '<iframe src="file:3dText.html" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>';
+document.body.appendChild(local);
+
+var boton = document.createElement('div');
+boton.innerHTML = '<input type="file" id="files" name="files[]" multiple />';
+document.body.appendChild(boton);
+/* al cargar archivo agregar a un array */
+var archivos = [];
+var input = document.getElementById('files');
+input.addEventListener('change', function(e) {
+  var file = input.files[0];
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    archivos.push(reader.result);
+  }
+  reader.readAsText(file);
+});
+/* crear lista desplegable con items de array */
+var lista = document.createElement('div');
+lista.innerHTML = '<select id="lista"></select>';
+document.body.appendChild(lista);
+var select = document.getElementById('lista');
+for (var i = 0; i < archivos.length; i++) {
+  var option = document.createElement('option');
+  option.value = archivos[i];
+  option.text = archivos[i];
+  select.appendChild(option);
+}
+/* al cargar archivo actualizar lista */
+var input = document.getElementById('files');
+input.addEventListener('change', function(e) {
+  var file = input.files[0];
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    var option = document.createElement('option');
+    option.value = reader.result;
+    option.text = reader.result;
+    select.appendChild(option);
+  }
+  reader.readAsText(file);
+});
+});
+        </script>
+    </head>
+    
+</html>

@@ -1,0 +1,30 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+var img = document.createElement('img');
+img.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/2000px-Star_Wars_Logo.svg.png';
+document.body.appendChild(img);
+
+img.style.width = '100%';
+img.style.height = '100%';
+
+var scale = 1;
+setInterval(function() {
+  scale += 0.1;
+  img.style.transform = 'scale(' + scale + ')';
+}, 1000);
+
+setInterval(function() {
+  scale = 0.1;
+  img.style.transform = 'scale(' + scale + ')';
+}, 5000);
+
+img.style.transition = 'transform 1s';
+});
+        </script>
+    </head>
+   
+</html>

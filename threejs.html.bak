@@ -1,0 +1,16 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+var iframe = document.createElement('iframe');
+iframe.src = 'http://webglsamples.googlecode.com/hg/aquarium/aquarium.html';
+iframe.width = '100%';
+iframe.height = '100%';
+document.body.appendChild(iframe);
+});
+        </script>
+    </head>
+    
+</html>

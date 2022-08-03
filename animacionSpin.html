@@ -1,0 +1,32 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+/* css */
+var css = document.createElement('style');
+css.innerHTML = 'body { background-color: #000; color: #fff; }';
+document.body.appendChild(css);
+/* quad */
+var quad = document.createElement('div');
+quad.style.width = '100px';
+quad.style.height = '100px';
+quad.style.backgroundColor = '#f00';
+document.body.appendChild(quad);
+/* aplicar animacion -webkit-transform-origin */
+var css = document.createElement('style');
+css.innerHTML = 'body { -webkit-animation: spin 1s linear infinite; }';
+document.body.appendChild(css);
+/* mostrar */
+var css = document.createElement('style');
+css.innerHTML = '@-webkit-keyframes spin { from { -webkit-transform: rotate(0deg); } to { -webkit-transform: rotate(360deg); } }';
+document.body.appendChild(css);
+/* overflow hidden */
+var css = document.createElement('style');
+css.innerHTML = 'body { overflow: hidden; }';
+document.body.appendChild(css);
+});
+        </script>
+    </head>
+    
+</html>

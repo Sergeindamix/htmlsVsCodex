@@ -1,0 +1,55 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+/* else if circle.style.borderRadius es 50 decrementar a 0 */
+var circle = document.createElement('div');
+circle.style.width = '100px';
+circle.style.height = '100px';
+circle.style.background = 'red';
+circle.style.borderRadius = '50%';
+document.body.appendChild(circle);
+var borderRadius = 50;
+var borderRadiusInterval = setInterval(function() {
+  borderRadius -= 1;
+  circle.style.borderRadius = borderRadius + '%';
+  if (borderRadius <= 0) {
+    clearInterval(borderRadiusInterval);
+  }
+}, 10);
+var borderRadius = 0;
+var borderRadiusInterval = setInterval(function() {
+  borderRadius += 1;
+  circle.style.borderRadius = borderRadius + '%';
+  if (borderRadius >= 50) {
+    clearInterval(borderRadiusInterval);
+  }
+}, 10);
+setInterval(function() {
+  if (circle.style.borderRadius === '0%') {
+    var borderRadius = 0;
+    var borderRadiusInterval = setInterval(function() {
+      borderRadius += 1;
+      circle.style.borderRadius = borderRadius + '%';
+      if (borderRadius >= 50) {
+        clearInterval(borderRadiusInterval);
+      }
+    }, 10);
+  } else if (circle.style.borderRadius === '50%') {
+    var borderRadius = 50;
+    var borderRadiusInterval = setInterval(function() {
+      borderRadius -= 1;
+      circle.style.borderRadius = borderRadius + '%';
+      if (borderRadius <= 0) {
+        clearInterval(borderRadiusInterval);
+      }
+    }, 10);
+  }
+}, 3000);
+});
+        </script>
+    </head>
+    
+</html>

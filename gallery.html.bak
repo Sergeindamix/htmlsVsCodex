@@ -1,0 +1,93 @@
+
+<!-- saved from url=(0050)file:///C:/Users/tech-/Downloads/index%20(46).html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><style></style><style>div.gallery {  margin: 5px;  border: 1px solid #ccc;  float: left;  width: 180px;}div.gallery:hover {  border: 1px solid #777;}div.gallery img {  width: 100%;  height: auto;}div.desc {  padding: 15px;  text-align: center;}</style><style>div.gallery {  margin: 5px;  border: 1px solid #ccc;  float: left;  width: 180px;}div.gallery:hover {  border: 1px solid #777;}div.gallery img {  width: 100%;  height: auto;}div.desc {  padding: 15px;  text-align: center;}</style></head><body><script>var css = document.createElement('style');
+css.innerHTML = 'body { background-color: #000; color: #fff; }';
+document.body.appendChild(css);
+var input = document.createElement('input');
+input.type = 'text';
+input.value = 'div.gallery {  margin: 5px;  border: 1px solid #ccc;  float: left;  width: 180px;}div.gallery:hover {  border: 1px solid #777;}div.gallery img {  width: 100%;  height: auto;}div.desc {  padding: 15px;  text-align: center;}';
+//document.body.appendChild(input);
+/* el contenido de la caja se agrega a style.innerHTML */
+var style = document.createElement('style');
+style.innerHTML = input.value;
+document.head.appendChild(style);
+/* aplicar caja de texto con boton */
+var button = document.createElement('button');
+button.innerHTML = 'Aplicar';
+button.onclick = function() {
+  style.innerHTML = input.value;
+};
+//document.body.appendChild(button);
+/* <div class="gallery">  <a target="_blank" href="img_5terre.jpg">    <img src="img_5terre.jpg" alt="Cinque Terre" width="600" height="400"> */
+var gallery = document.createElement('div');
+gallery.className = 'gallery';
+document.body.appendChild(gallery);
+var a = document.createElement('a');
+a.target = '_blank';
+a.href = 'img_5terre.jpg';
+gallery.appendChild(a);
+var img = document.createElement('img');
+img.src = 'https://source.unsplash.com/random/' + Math.random();
+img.alt = 'Cinque Terre';
+img.width = '600';
+img.height = '400';
+a.appendChild(img);
+/* <div class="desc">Add a description of the image here</div> */
+var desc = document.createElement('div');
+desc.className = 'desc';
+desc.innerHTML = 'Add a description of the image here';
+gallery.appendChild(desc);
+/* <div class="gallery">  <a target="_blank" href="img_forest.jpg">    <img src="img_forest.jpg" alt="Forest" width="600" height="400">  <div class="desc">Add a description of the image here</div> */
+var gallery = document.createElement('div');
+gallery.className = 'gallery';
+document.body.appendChild(gallery);
+var a = document.createElement('a');
+a.target = '_blank';
+a.href = 'img_forest.jpg';
+gallery.appendChild(a);
+var img = document.createElement('img');
+img.src = 'https://source.unsplash.com/random/' + Math.random();
+img.alt = 'Forest';
+img.width = '600';
+img.height = '400';
+a.appendChild(img);
+var desc = document.createElement('div');
+desc.className = 'desc';
+desc.innerHTML = 'Add a description of the image here';
+gallery.appendChild(desc);
+/* <div class="gallery">  <a target="_blank" href="img_lights.jpg">    <img src="img_lights.jpg" alt="Northern Lights" width="600" height="400">  <div class="desc">Add a description of the image here</div> */
+var gallery = document.createElement('div');
+gallery.className = 'gallery';
+document.body.appendChild(gallery);
+var a = document.createElement('a');
+a.target = '_blank';
+a.href = 'img_lights.jpg';
+gallery.appendChild(a);
+var img = document.createElement('img');
+img.src = 'https://source.unsplash.com/random/' + Math.random();
+img.alt = 'Northern Lights';
+img.width = '600';
+img.height = '400';
+a.appendChild(img);
+var desc = document.createElement('div');
+desc.className = 'desc';
+desc.innerHTML = 'Add a description of the image here';
+gallery.appendChild(desc);
+/* <div class="gallery">  <a target="_blank" href="img_mountains.jpg">    <img src="img_mountains.jpg" alt="Mountains" width="600" height="400">  <div class="desc">Add a description of the image here</div> */
+var gallery = document.createElement('div');
+gallery.className = 'gallery';
+document.body.appendChild(gallery);
+var a = document.createElement('a');
+a.target = '_blank';
+a.href = 'img_mountains.jpg';
+gallery.appendChild(a);
+var img = document.createElement('img');
+img.src = 'https://source.unsplash.com/random/' + Math.random();
+img.alt = 'Mountains';
+img.width = '600';
+img.height = '400';
+a.appendChild(img);
+var desc = document.createElement('div');
+desc.className = 'desc';
+desc.innerHTML = 'Add a description of the image here';
+gallery.appendChild(desc);</script><style>body { background-color: #000; color: #fff; }</style><div class="gallery"><a target="_blank" href="file:///C:/Users/tech-/Downloads/img_5terre.jpg"><img src="./gallery_files/0.2044128420893392" alt="Cinque Terre" width="600" height="400"></a><div class="desc">Add a description of the image here</div></div><div class="gallery"><a target="_blank" href="file:///C:/Users/tech-/Downloads/img_forest.jpg"><img src="./gallery_files/0.2422698535216108" alt="Forest" width="600" height="400"></a><div class="desc">Add a description of the image here</div></div><div class="gallery"><a target="_blank" href="file:///C:/Users/tech-/Downloads/img_lights.jpg"><img src="./gallery_files/0.6621803808186659" alt="Northern Lights" width="600" height="400"></a><div class="desc">Add a description of the image here</div></div><div class="gallery"><a target="_blank" href="file:///C:/Users/tech-/Downloads/img_mountains.jpg"><img src="./gallery_files/0.4849959517181959" alt="Mountains" width="600" height="400"></a><div class="desc">Add a description of the image here</div></div><style>body { background-color: #000; color: #fff; }</style><div class="gallery"><a target="_blank" href="file:///C:/Users/tech-/Downloads/img_5terre.jpg"><img src="./gallery_files/0.0012829955873707721" alt="Cinque Terre" width="600" height="400"></a><div class="desc">Add a description of the image here</div></div><div class="gallery"><a target="_blank" href="file:///C:/Users/tech-/Downloads/img_forest.jpg"><img src="./gallery_files/0.3626057451442575" alt="Forest" width="600" height="400"></a><div class="desc">Add a description of the image here</div></div><div class="gallery"><a target="_blank" href="file:///C:/Users/tech-/Downloads/img_lights.jpg"><img src="./gallery_files/0.07357362579609528" alt="Northern Lights" width="600" height="400"></a><div class="desc">Add a description of the image here</div></div><div class="gallery"><a target="_blank" href="file:///C:/Users/tech-/Downloads/img_mountains.jpg"><img src="./gallery_files/0.9155393412346216" alt="Mountains" width="600" height="400"></a><div class="desc">Add a description of the image here</div></div></body></html>

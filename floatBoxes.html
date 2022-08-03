@@ -1,0 +1,48 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+/* <div class="clearfix">  <div class="box" style="background-color:#bbb">  <p>Some text inside the box.</p>  </div>  <div class="box" style="background-color:#ccc">  <p>Some text inside the box.</p>  </div>  <div class="box" style="background-color:#ddd">  <p>Some text inside the box.</p>  </div></div> */
+var clearfix = document.createElement('div');
+clearfix.className = 'clearfix';
+document.body.appendChild(clearfix);
+var box = document.createElement('div');
+box.className = 'box';
+box.style.backgroundColor = '#bbb';
+clearfix.appendChild(box);
+var p = document.createElement('p');
+p.innerHTML = 'Some text inside the box.';
+box.appendChild(p);
+var box = document.createElement('div');
+box.className = 'box';
+box.style.backgroundColor = '#ccc';
+clearfix.appendChild(box);
+var p = document.createElement('p');
+p.innerHTML = 'Some text inside the box.';
+box.appendChild(p);
+var box = document.createElement('div');
+box.className = 'box';
+box.style.backgroundColor = '#ddd';
+clearfix.appendChild(box);
+var p = document.createElement('p');
+p.innerHTML = 'Some text inside the box.';
+box.appendChild(p);
+/* * {  box-sizing: border-box;} */
+var style = document.createElement('style');
+style.innerHTML = '* {  box-sizing: border-box;}';
+document.head.appendChild(style);
+/* .box {  float: left;  width: 33.33%;  padding: 50px;} */
+var style = document.createElement('style');
+style.innerHTML = '.box {  float: left;  width: 33.33%;  padding: 50px;}';
+document.head.appendChild(style);
+/* .clearfix::after {  content: "";  clear: both;  display: table;} */
+var style = document.createElement('style');
+style.innerHTML = '.clearfix::after {  content: "";  clear: both;  display: table;}';
+document.head.appendChild(style);
+});
+        </script>
+    </head>
+    
+</html>

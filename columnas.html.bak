@@ -1,0 +1,34 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+/* tabla de 5 columnas en una fila */
+var tabla = document.createElement('table');
+var fila = document.createElement('tr');
+var columna = document.createElement('td');
+var columna2 = document.createElement('td');
+var columna3 = document.createElement('td');
+var columna4 = document.createElement('td');
+var columna5 = document.createElement('td');
+columna.innerHTML = '1';
+columna2.innerHTML = '2';
+columna3.innerHTML = '3';
+columna4.innerHTML = '4';
+columna5.innerHTML = '5';
+fila.appendChild(columna);
+fila.appendChild(columna2);
+fila.appendChild(columna3);
+fila.appendChild(columna4);
+fila.appendChild(columna5);
+tabla.appendChild(fila);
+document.body.appendChild(tabla);
+/* escalar a tamaño de pantalla */
+tabla.style.width = '100%';
+
+});
+        </script>
+    </head>
+    
+</html>

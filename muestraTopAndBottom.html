@@ -1,0 +1,31 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+/* mostrar en porcentajes */
+var hola = document.createElement('div');
+hola.innerHTML = 'hola';
+hola.style.position = 'absolute';
+hola.style.top = '0px';
+hola.style.left = '0px';
+hola.style.width = '100%';
+hola.style.height = '100%';
+hola.style.backgroundColor = '#000';
+hola.style.color = '#fff';
+hola.style.fontSize = '20px';
+hola.style.textAlign = 'center';
+hola.style.lineHeight = '100%';
+hola.style.zIndex = '9999';
+hola.style.display = 'none';
+document.body.appendChild(hola);
+document.body.onmousemove = function(e) {
+  hola.style.display = 'block';
+  hola.innerHTML = 'top: ' + (e.clientY / window.innerHeight * 100) + '%<br>bottom: ' + ((window.innerHeight - e.clientY) / window.innerHeight * 100) + '%';
+}
+});
+        </script>
+    </head>
+    
+</html>

@@ -1,0 +1,127 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+/* lista desplegable con un elemento default */
+/* api spotify */
+var spotify = document.createElement('div');
+spotify.innerHTML = '<iframe src="https://open.spotify.com/embed/track/0eGsygTp906u18L0Oimnem" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>';
+document.body.appendChild(spotify);
+/* crear similar para archivos locales */
+var local = document.createElement('div');
+local.innerHTML = '<iframe src="file:3dText.html" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>';
+document.body.appendChild(local);
+var boton = document.createElement('div');
+boton.innerHTML = '<input type="file" id="files" name="files[]" multiple />';
+document.body.appendChild(boton);
+/* al cargar archivo agregar a un array */
+var archivos = [];
+var input = document.getElementById('files');
+input.addEventListener('change', function(e) {
+  var file = input.files[0];
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    archivos.push(reader.result);
+  }
+  reader.readAsText(file);
+});
+/* crear lista desplegable con items de array */
+var lista = document.createElement('div');
+lista.innerHTML = '<select id="lista"></select>';
+document.body.appendChild(lista);
+/* lista desplegable con un elemento default */
+var select = document.getElementById('lista');
+var option = document.createElement('option');
+option.innerHTML = 'Default';
+select.appendChild(option);
+document.body.appendChild(select);
+for (var i = 0; i < archivos.length; i++) {
+  var option = document.createElement('option');
+  option.value = archivos[i];
+  option.text = archivos[i];
+  select.appendChild(option);
+}
+/* agregar archivos a lista */
+var archivos = [];
+var input = document.getElementById('files');
+input.addEventListener('change', function(e) {
+  var file = input.files[0];
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    var option = document.createElement('option');
+    option.value = reader.result;
+    option.text = reader.result;
+    select.appendChild(option);
+  }
+  reader.readAsText(file);
+});
+
+/* al cambiar select, visualizar ese html */
+
+var select = document.getElementById('lista');
+select.addEventListener('change', function(e) {
+  var iframe = document.createElement('iframe');
+  var html = document.getElementById('lista').value;
+  iframe.style.width = '50%';
+  iframe.style.height = '50%';
+  iframe.src = 'data:text/html;charset=utf-8,' + encodeURI(html);
+  document.body.appendChild(iframe);  
+});
+var remote = document.createElement('div');
+remote.innerHTML = '<div id="remote" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 99999;"><div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"><div style="display: inline-block;"><button id="up" style="width: 100px; height: 100px; border-radius: 50%; background-color: #fff; border: none; font-size: 50px;">&#8593;</button></div><div style="display: inline-block;"><button id="left" style="width: 100px; height: 100px; border-radius: 50%; background-color: #fff; border: none; font-size: 50px;">&#8592;</button><button id="ok" style="width: 100px; height: 100px; border-radius: 50%; background-color: #fff; border: none; font-size: 50px;">OK</button><button id="right" style="width: 100px; height: 100px; border-radius: 50%; background-color: #fff; border: none; font-size: 50px;">&#8594;</button></div><div style="display: inline-block;"><button id="down" style="width: 100px; height: 100px; border-radius: 50%; background-color: #fff; border: none; font-size: 50px;">&#8595;</button></div></div></div>';
+document.body.appendChild(remote);
+
+document.getElementById('up').addEventListener('click', function() {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'http://192.168.1.100:8080/keypress/Up', true);
+  xhr.send();
+});
+
+document.getElementById('down').addEventListener('click', function() {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'http://192.168.1.100:8080/keypress/Down', true);
+  xhr.send();
+});
+
+document.getElementById('left').addEventListener('click', function() {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'http://192.168.1.100:8080/keypress/Left', true);
+  xhr.send();
+});
+
+document.getElementById('right').addEventListener('click', function() {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'http://192.168.1.100:8080/keypress/Right', true);
+  xhr.send();
+});
+
+document.getElementById('ok').addEventListener('click', function() {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'http://192.168.1.100:8080/keypress/Select', true);
+  xhr.send();
+});
+/* vincular tv */
+var vincular = document.createElement('div');
+vincular.innerHTML = '<div id="vincular" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 99999;"><div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"><div style="display: inline-block;"><button id="vincular" style="width: 100px; height: 100px; border-radius: 50%; background-color: #fff; border: none; font-size: 50px;">Vincular</button></div></div></div>';
+document.body.appendChild(vincular);
+document.getElementById('vincular').addEventListener('click', function() {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'http://192.168.1.100:8080/pairing/add', true);
+  xhr.send();
+});
+/* evitar error: ERR_CONNECTION_TIMED_OUT */
+var evitar = document.createElement('div');
+evitar.innerHTML = '<div id="evitar" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 99999;"><div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"><div style="display: inline-block;"><button id="evitar" style="width: 100px; height: 100px; border-radius: 50%; background-color: #fff; border: none; font-size: 50px;">Evitar</button></div></div></div>';
+document.body.appendChild(evitar);
+document.getElementById('evitar').addEventListener('click', function() {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'http://192.168.1.100:8080/pairing/add', true);
+  xhr.send();
+});
+});
+        </script>
+    </head>
+    
+</html>

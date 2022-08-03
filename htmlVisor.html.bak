@@ -1,0 +1,58 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+/* cargar carpeta de htmls */
+var htmls = [];
+var htmls_dir = "htmls/";
+var htmls_files = ["index.html", "about.html", "contact.html"];
+for (var i = 0; i < htmls_files.length; i++) {
+  htmls[i] = htmls_dir + htmls_files[i];
+}
+/* mostrar lista */
+var lista = document.createElement('ul');
+for (var i = 0; i < htmls.length; i++) {
+  var item = document.createElement('li');
+  item.innerHTML = htmls[i];
+  lista.appendChild(item);
+}
+document.body.appendChild(lista);
+/* mouseover resalta */
+/* resaltar con mouseover, else return */
+var lista = document.getElementsByTagName('li');
+for (var i = 0; i < lista.length; i++) {
+  lista[i].addEventListener('mouseover', function() {
+    this.style.backgroundColor = '#eee';
+  });
+  lista[i].addEventListener('mouseout', function() {
+    this.style.backgroundColor = '#fff';
+  });
+}
+/* actualizar container.innerhtml al elemento resaltado */
+var lista = document.getElementsByTagName('li');
+var container = document.createElement('div');
+container.id = 'container';
+document.body.appendChild(container);
+for (var i = 0; i < lista.length; i++) {
+  lista[i].addEventListener('click', function() {
+    var html = document.createElement('iframe');
+    html.src = this.innerHTML;
+    container.innerHTML = '';
+    container.appendChild(html);
+  });
+  lista[i].addEventListener('mouseover', function() {
+    var html = document.createElement('iframe');
+    html.src = this.innerHTML;
+    container.innerHTML = '';
+    container.appendChild(html);
+  });
+}
+});
+        </script>
+    </head>
+    <body style="margin: 0;">
+        
+    </body>
+</html>

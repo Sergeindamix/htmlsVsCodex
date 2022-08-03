@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)https://beta.openai.com/codex-javascript-sandbox -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="icon" type="image/svg+xml" href="https://openaiapi-site.azureedge.net/public-assets/d/dcc1f77974/favicon.svg"><link rel="icon" type="image/png" href="https://openaiapi-site.azureedge.net/public-assets/d/dcc1f77974/favicon.png"><link rel="mask-icon" href="https://openaiapi-site.azureedge.net/public-assets/d/dcc1f77974/mask-icon.svg" color="#000000"><link rel="preconnect" href="https://cdn.openai.com/"><link rel="preconnect" href="https://fonts.googleapis.com/"><link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&amp;display=swap" rel="stylesheet"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#000000"><meta name="description" content="An API for accessing new AI models developed by OpenAI"><meta property="og:title" content="OpenAI API"><meta property="og:image" content="https://beta.openai.com/curl.png"><meta property="og:description" content="An API for accessing new AI models developed by OpenAI"><meta property="og:url" content="https://beta.openai.com"><link rel="manifest" href="https://openaiapi-site.azureedge.net/public-assets/d/dcc1f77974/manifest.json"><title>OpenAI API</title><script type="text/javascript" async="" src="https://widget.intercom.io/widget/dgkjq2bp"></script><script async="" src="https://www.google-analytics.com/analytics.js"></script><script defer="defer" src="https://openaiapi-site.azureedge.net/public-assets/d/dcc1f77974/static/js/main.b9aeb4a1.js"></script><link href="https://openaiapi-site.azureedge.net/public-assets/d/dcc1f77974/static/css/main.a22a7028.css" rel="stylesheet"><style data-emotion="css"></style><link rel="stylesheet" type="text/css" href="https://openaiapi-site.azureedge.net/public-assets/d/dcc1f77974/static/css/107.42f47512.chunk.css"><style></style></head><body class="app-wrapper-no-header"><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"><div class="route-container"><div class="page-wrapper app-wrapper"><div class="app-header"><div class="left-menu"><div class="branding"><a class="logo-link" href="https://beta.openai.com/overview"><div style="width: 24px; height: 24px;"><svg data-name="OpenAI Logo" width="24px" height="24px" viewBox="140 140 520 520"><defs><lineargradient id="linear" x1="100%" y1="22%" x2="0%" y2="78%"><stop offset="0%" stop-color="rgb(131,211,231)"></stop><stop offset="2%" stop-color="rgb(127,203,229)"></stop><stop offset="25%" stop-color="rgb(86,115,217)"></stop><stop offset="49%" stop-color="rgb(105,80,190)"></stop><stop offset="98%" stop-color="rgb(197,59,119)"></stop><stop offset="100%" stop-color="rgb(197,59,119)"></stop></lineargradient></defs><path id="logo" d="m617.24 354a126.36 126.36 0 0 0 -10.86-103.79 127.8 127.8 0 0 0 -137.65-61.32 126.36 126.36 0 0 0 -95.31-42.49 127.81 127.81 0 0 0 -121.92 88.49 126.4 126.4 0 0 0 -84.5 61.3 127.82 127.82 0 0 0 15.72 149.86 126.36 126.36 0 0 0 10.86 103.79 127.81 127.81 0 0 0 137.65 61.32 126.36 126.36 0 0 0 95.31 42.49 127.81 127.81 0 0 0 121.96-88.54 126.4 126.4 0 0 0 84.5-61.3 127.82 127.82 0 0 0 -15.76-149.81zm-190.66 266.49a94.79 94.79 0 0 1 -60.85-22c.77-.42 2.12-1.16 3-1.7l101-58.34a16.42 16.42 0 0 0 8.3-14.37v-142.39l42.69 24.65a1.52 1.52 0 0 1 .83 1.17v117.92a95.18 95.18 0 0 1 -94.97 95.06zm-204.24-87.23a94.74 94.74 0 0 1 -11.34-63.7c.75.45 2.06 1.25 3 1.79l101 58.34a16.44 16.44 0 0 0 16.59 0l123.31-71.2v49.3a1.53 1.53 0 0 1 -.61 1.31l-102.1 58.95a95.16 95.16 0 0 1 -129.85-34.79zm-26.57-220.49a94.71 94.71 0 0 1 49.48-41.68c0 .87-.05 2.41-.05 3.48v116.68a16.41 16.41 0 0 0 8.29 14.36l123.31 71.19-42.69 24.65a1.53 1.53 0 0 1 -1.44.13l-102.11-59a95.16 95.16 0 0 1 -34.79-129.81zm350.74 81.62-123.31-71.2 42.69-24.64a1.53 1.53 0 0 1 1.44-.13l102.11 58.95a95.08 95.08 0 0 1 -14.69 171.55c0-.88 0-2.42 0-3.49v-116.68a16.4 16.4 0 0 0 -8.24-14.36zm42.49-63.95c-.75-.46-2.06-1.25-3-1.79l-101-58.34a16.46 16.46 0 0 0 -16.59 0l-123.31 71.2v-49.3a1.53 1.53 0 0 1 .61-1.31l102.1-58.9a95.07 95.07 0 0 1 141.19 98.44zm-267.11 87.87-42.7-24.65a1.52 1.52 0 0 1 -.83-1.17v-117.92a95.07 95.07 0 0 1 155.9-73c-.77.42-2.11 1.16-3 1.7l-101 58.34a16.41 16.41 0 0 0 -8.3 14.36zm23.19-50 54.92-31.72 54.92 31.7v63.42l-54.92 31.7-54.92-31.7z" fill="#202123"></path></svg></div></a></div><div class="menu-container"><a class="nav-item" href="https://beta.openai.com/">Overview</a><a class="nav-item" href="https://beta.openai.com/docs">Documentation</a><a class="nav-item" href="https://beta.openai.com/examples">Examples</a><a class="nav-item" href="https://beta.openai.com/playground">Playground</a></div></div><div class="right-menu"><div class="header-upgrade-container"><a role="button" class="header-upgrade-btn" href="https://beta.openai.com/account/billing"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 20 20" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path></svg>&nbsp;Upgrade</a></div><div class="header-support"><button tabindex="0" class="btn btn-md btn-minimal btn-neutral header-support-btn" type="button"><span class="btn-label-wrap"><span class="btn-node"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"></path><path d="M623.6 316.7C593.6 290.4 554 276 512 276s-81.6 14.5-111.6 40.7C369.2 344 352 380.7 352 420v7.6c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V420c0-44.1 43.1-80 96-80s96 35.9 96 80c0 31.1-22 59.6-56.1 72.7-21.2 8.1-39.2 22.3-52.1 40.9-13.1 19-19.9 41.8-19.9 64.9V620c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8v-22.7a48.3 48.3 0 0 1 30.9-44.8c59-22.7 97.1-74.7 97.1-132.5.1-39.3-17.1-76-48.3-103.3zM472 732a40 40 0 1 0 80 0 40 40 0 1 0-80 0z"></path></svg></span><span class="btn-label-inner">Help‍</span></span></button></div><div class="user-section" aria-haspopup="true" aria-expanded="false"><div class="avatar mr-2"><div>S</div></div><div class="user-details"><div class="user-details-org">Personal</div></div></div></div><div class="mobile-menu-toggle" role="button"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></div></div><div class="codex-sandbox iframe-app"><div class="left-panel"><div class="sandbox-title"><div class="title-logo" style="width: 26px; height: 26px;"><svg data-name="OpenAI Logo" width="26px" height="26px" viewBox="140 140 520 520"><defs><lineargradient id="linear" x1="100%" y1="22%" x2="0%" y2="78%"><stop offset="0%" stop-color="rgb(131,211,231)"></stop><stop offset="2%" stop-color="rgb(127,203,229)"></stop><stop offset="25%" stop-color="rgb(86,115,217)"></stop><stop offset="49%" stop-color="rgb(105,80,190)"></stop><stop offset="98%" stop-color="rgb(197,59,119)"></stop><stop offset="100%" stop-color="rgb(197,59,119)"></stop></lineargradient></defs><path id="logo" d="m617.24 354a126.36 126.36 0 0 0 -10.86-103.79 127.8 127.8 0 0 0 -137.65-61.32 126.36 126.36 0 0 0 -95.31-42.49 127.81 127.81 0 0 0 -121.92 88.49 126.4 126.4 0 0 0 -84.5 61.3 127.82 127.82 0 0 0 15.72 149.86 126.36 126.36 0 0 0 10.86 103.79 127.81 127.81 0 0 0 137.65 61.32 126.36 126.36 0 0 0 95.31 42.49 127.81 127.81 0 0 0 121.96-88.54 126.4 126.4 0 0 0 84.5-61.3 127.82 127.82 0 0 0 -15.76-149.81zm-190.66 266.49a94.79 94.79 0 0 1 -60.85-22c.77-.42 2.12-1.16 3-1.7l101-58.34a16.42 16.42 0 0 0 8.3-14.37v-142.39l42.69 24.65a1.52 1.52 0 0 1 .83 1.17v117.92a95.18 95.18 0 0 1 -94.97 95.06zm-204.24-87.23a94.74 94.74 0 0 1 -11.34-63.7c.75.45 2.06 1.25 3 1.79l101 58.34a16.44 16.44 0 0 0 16.59 0l123.31-71.2v49.3a1.53 1.53 0 0 1 -.61 1.31l-102.1 58.95a95.16 95.16 0 0 1 -129.85-34.79zm-26.57-220.49a94.71 94.71 0 0 1 49.48-41.68c0 .87-.05 2.41-.05 3.48v116.68a16.41 16.41 0 0 0 8.29 14.36l123.31 71.19-42.69 24.65a1.53 1.53 0 0 1 -1.44.13l-102.11-59a95.16 95.16 0 0 1 -34.79-129.81zm350.74 81.62-123.31-71.2 42.69-24.64a1.53 1.53 0 0 1 1.44-.13l102.11 58.95a95.08 95.08 0 0 1 -14.69 171.55c0-.88 0-2.42 0-3.49v-116.68a16.4 16.4 0 0 0 -8.24-14.36zm42.49-63.95c-.75-.46-2.06-1.25-3-1.79l-101-58.34a16.46 16.46 0 0 0 -16.59 0l-123.31 71.2v-49.3a1.53 1.53 0 0 1 .61-1.31l102.1-58.9a95.07 95.07 0 0 1 141.19 98.44zm-267.11 87.87-42.7-24.65a1.52 1.52 0 0 1 -.83-1.17v-117.92a95.07 95.07 0 0 1 155.9-73c-.77.42-2.11 1.16-3 1.7l-101 58.34a16.41 16.41 0 0 0 -8.3 14.36zm23.19-50 54.92-31.72 54.92 31.7v63.42l-54.92 31.7-54.92-31.7z"></path></svg></div><div class="title-text">Codex JavaScript Sandbox</div></div><div class="iframe-container"><iframe title="generated" class="iframe" width="100%" height="100%" frameborder="none" sandbox="allow-scripts" src="./videoTest_files/sandbox.html"></iframe></div><div class="query-container"><textarea class="query-box" placeholder="Provide instructions..."></textarea><div class="submit-button" tabindex="0"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 20 20" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></div></div></div><div class="right-panel"><div class="right-panel-header"><div class="indicators-wrap"><div class="indicators" aria-haspopup="true" aria-expanded="false"></div></div><div class="right-actions"><div class="clear">Clear all</div><div class="jsfiddle-form"><form method="post" action="https://jsfiddle.net/api/post/library/pure" target="check"><textarea name="html" readonly="">
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;script&gt;
+        document.addEventListener("DOMContentLoaded", function() {
+
+var netflix = document.createElement('div');
+netflix.innerHTML = '&lt;div class="row"&gt;&lt;div class="col-md-4"&gt;&lt;div class="thumbnail"&gt;&lt;img src="https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg" alt="..."&gt;&lt;div class="caption"&gt;&lt;h3&gt;Thumbnail label&lt;/h3&gt;&lt;p&gt;...&lt;/p&gt;&lt;p&gt;&lt;a href="#" class="btn btn-primary" role="button"&gt;Button&lt;/a&gt; &lt;a href="#" class="btn btn-default" role="button"&gt;Button&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="col-md-4"&gt;&lt;div class="thumbnail"&gt;&lt;img src="https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg" alt="..."&gt;&lt;div class="caption"&gt;&lt;h3&gt;Thumbnail label&lt;/h3&gt;&lt;p&gt;...&lt;/p&gt;&lt;p&gt;&lt;a href="#" class="btn btn-primary" role="button"&gt;Button&lt;/a&gt; &lt;a href="#" class="btn btn-default" role="button"&gt;Button&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="col-md-4"&gt;&lt;div class="thumbnail"&gt;&lt;img src="https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg" alt="..."&gt;&lt;div class="caption"&gt;&lt;h3&gt;Thumbnail label&lt;/h3&gt;&lt;p&gt;...&lt;/p&gt;&lt;p&gt;&lt;a href="#" class="btn btn-primary" role="button"&gt;Button&lt;/a&gt; &lt;a href="#" class="btn btn-default" role="button"&gt;Button&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;';
+document.body.appendChild(netflix);
+});
+        &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body style="margin: 0;"&gt;
+        &lt;div style="background-color: black; position: fixed; bottom: 0; width: 100%; height: 20px; padding: 20px; opacity: .85; z-index: 1000;"&gt;
+            &lt;svg id="Layer_1" data-name="Layer 1" height="40px" width="40px" style="top: -8px;
+            position: relative;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800"&gt;&lt;defs&gt;&lt;style&gt;.cls-1{fill:#fff;}&lt;/style&gt;&lt;/defs&gt;&lt;title&gt;openai-symbol-flat-white&lt;/title&gt;&lt;path class="cls-1" d="M617.24,354a126.36,126.36,0,0,0-10.86-103.79,127.8,127.8,0,0,0-137.65-61.32,126.36,126.36,0,0,0-95.31-42.49A127.81,127.81,0,0,0,251.5,234.89,126.4,126.4,0,0,0,167,296.19a127.82,127.82,0,0,0,15.72,149.86,126.36,126.36,0,0,0,10.86,103.79,127.81,127.81,0,0,0,137.65,61.32,126.36,126.36,0,0,0,95.31,42.49A127.81,127.81,0,0,0,548.5,565.11,126.4,126.4,0,0,0,633,503.81,127.82,127.82,0,0,0,617.24,354ZM426.58,620.49a94.79,94.79,0,0,1-60.85-22c.77-.42,2.12-1.16,3-1.7l101-58.34a16.42,16.42,0,0,0,8.3-14.37V381.69l42.69,24.65a1.52,1.52,0,0,1,.83,1.17V525.43A95.18,95.18,0,0,1,426.58,620.49ZM222.34,533.26A94.74,94.74,0,0,1,211,469.56c.75.45,2.06,1.25,3,1.79l101,58.34a16.44,16.44,0,0,0,16.59,0l123.31-71.2v49.3a1.53,1.53,0,0,1-.61,1.31L352.19,568.05A95.16,95.16,0,0,1,222.34,533.26ZM195.77,312.77a94.71,94.71,0,0,1,49.48-41.68c0,.87-.05,2.41-.05,3.48V391.25a16.41,16.41,0,0,0,8.29,14.36L376.8,476.8l-42.69,24.65a1.53,1.53,0,0,1-1.44.13l-102.11-59A95.16,95.16,0,0,1,195.77,312.77Zm350.74,81.62L423.2,323.19l42.69-24.64a1.53,1.53,0,0,1,1.44-.13l102.11,58.95a95.08,95.08,0,0,1-14.69,171.55c0-.88,0-2.42,0-3.49V408.75A16.4,16.4,0,0,0,546.51,394.39ZM589,330.44c-.75-.46-2.06-1.25-3-1.79L485,270.31a16.46,16.46,0,0,0-16.59,0l-123.31,71.2v-49.3a1.53,1.53,0,0,1,.61-1.31L447.81,232A95.07,95.07,0,0,1,589,330.44ZM321.89,418.31l-42.7-24.65a1.52,1.52,0,0,1-.83-1.17V274.57a95.07,95.07,0,0,1,155.9-73c-.77.42-2.11,1.16-3,1.7l-101,58.34a16.41,16.41,0,0,0-8.3,14.36Zm23.19-50L400,336.59l54.92,31.7v63.42L400,463.41l-54.92-31.7Z"/&gt;&lt;/svg&gt;
+            &lt;div style="display: inline-block; color: white; vertical-align: top; margin-top: 4px; font-family: Helvetica, sans-serif;"&gt;
+                Code generated by &lt;a style="color: white; text-decoration: none; font-weight: bold;" href="https://openai.com/blog/openai-codex/"&gt;OpenAI Codex&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</textarea><button class="export" type="submit">Export to JSFiddle</button></form></div><div class="info-button"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M256 90c44.3 0 86 17.3 117.4 48.6C404.7 170 422 211.7 422 256s-17.3 86-48.6 117.4C342 404.7 300.3 422 256 422s-86-17.3-117.4-48.6C107.3 342 90 300.3 90 256s17.3-86 48.6-117.4C170 107.3 211.7 90 256 90m0-42C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"></path><path d="M277 360h-42V235h42v125zm0-166h-42v-42h42v42z"></path></svg></div></div></div><div id="scrollable-code" class="scrollable-code"><div class="code-block-wrapper"><div class="code-block"><div class="modify-container"><div class="edit"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 20 20" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"></path></svg></div><div class="delete"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 20 20" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg></div></div><pre class="hljs syntax-highlighter light"><code class="language-javascript" style="white-space: pre-wrap;"><span class=""><span class="hljs-comment">/* clonar netflix con muestras de videos mouseover */</span><span class="">
+</span></span><span class=""><span class=""></span><span class="hljs-keyword">var</span><span class=""> netflix = </span><span class="hljs-built_in">document</span><span class="">.createElement(</span><span class="hljs-string">'div'</span><span class="">);
+</span></span><span class=""><span class="">netflix.innerHTML = </span><span class="hljs-string">'&lt;div class="row"&gt;&lt;div class="col-md-4"&gt;&lt;div class="thumbnail"&gt;&lt;img src="https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg" alt="..."&gt;&lt;div class="caption"&gt;&lt;h3&gt;Thumbnail label&lt;/h3&gt;&lt;p&gt;...&lt;/p&gt;&lt;p&gt;&lt;a href="#" class="btn btn-primary" role="button"&gt;Button&lt;/a&gt; &lt;a href="#" class="btn btn-default" role="button"&gt;Button&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="col-md-4"&gt;&lt;div class="thumbnail"&gt;&lt;img src="https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg" alt="..."&gt;&lt;div class="caption"&gt;&lt;h3&gt;Thumbnail label&lt;/h3&gt;&lt;p&gt;...&lt;/p&gt;&lt;p&gt;&lt;a href="#" class="btn btn-primary" role="button"&gt;Button&lt;/a&gt; &lt;a href="#" class="btn btn-default" role="button"&gt;Button&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="col-md-4"&gt;&lt;div class="thumbnail"&gt;&lt;img src="https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg" alt="..."&gt;&lt;div class="caption"&gt;&lt;h3&gt;Thumbnail label&lt;/h3&gt;&lt;p&gt;...&lt;/p&gt;&lt;p&gt;&lt;a href="#" class="btn btn-primary" role="button"&gt;Button&lt;/a&gt; &lt;a href="#" class="btn btn-default" role="button"&gt;Button&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;'</span><span class="">;
+</span></span><span class=""><span class=""></span><span class="hljs-built_in">document</span><span class="">.body.appendChild(netflix);
+</span></span><span class=""></span></code></pre></div></div></div></div></div></div></div><div class="layers-root"></div></div><div portal-container=""><div><span class="css-1qgklur"></span></div></div><iframe id="intercom-frame" style="position: absolute !important; opacity: 0 !important; width: 1px !important; height: 1px !important; top: 0 !important; left: 0 !important; border: none !important; display: block !important; z-index: -1 !important; pointer-events: none;" aria-hidden="true" tabindex="-1" title="Intercom" src="./videoTest_files/saved_resource.html"></iframe><div class="intercom-lightweight-app"><style id="intercom-lightweight-app-style" type="text/css">
+  @keyframes intercom-lightweight-app-launcher {
+    from {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes intercom-lightweight-app-gradient {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes intercom-lightweight-app-messenger {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .intercom-lightweight-app {
+    position: fixed;
+    z-index: 2147483001;
+    width: 0;
+    height: 0;
+    font-family: intercom-font, "Helvetica Neue", "Apple Color Emoji", Helvetica, Arial, sans-serif;
+  }
+
+  .intercom-lightweight-app-gradient {
+    position: fixed;
+    z-index: 2147483002;
+    width: 500px;
+    height: 500px;
+    bottom: 0;
+    right: 0;
+    pointer-events: none;
+    background: radial-gradient(
+      ellipse at bottom right,
+      rgba(29, 39, 54, 0.16) 0%,
+      rgba(29, 39, 54, 0) 72%);
+    animation: intercom-lightweight-app-gradient 200ms ease-out;
+  }
+
+  .intercom-lightweight-app-launcher {
+    position: fixed;
+    z-index: 2147483003;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #202123;
+    cursor: pointer;
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.06), 0 2px 32px 0 rgba(0, 0, 0, 0.16);
+    animation: intercom-lightweight-app-launcher 250ms ease;
+  }
+
+  .intercom-lightweight-app-launcher:focus {
+    outline: none;
+    
+  }
+
+  .intercom-lightweight-app-launcher-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    transition: transform 100ms linear, opacity 80ms linear;
+  }
+
+  .intercom-lightweight-app-launcher-icon-open {
+    
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+      
+  }
+
+  .intercom-lightweight-app-launcher-icon-open svg {
+    width: 28px;
+    height: 32px;
+  }
+
+  .intercom-lightweight-app-launcher-icon-open svg path {
+    fill: rgb(255, 255, 255);
+  }
+
+  .intercom-lightweight-app-launcher-icon-self-serve {
+    
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+      
+  }
+
+  .intercom-lightweight-app-launcher-icon-self-serve svg {
+    height: 56px;
+  }
+
+  .intercom-lightweight-app-launcher-icon-self-serve svg path {
+    fill: rgb(255, 255, 255);
+  }
+
+  .intercom-lightweight-app-launcher-custom-icon-open {
+    max-height: 36px;
+    max-width: 36px;
+    
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+      
+  }
+
+  .intercom-lightweight-app-launcher-icon-minimize {
+    
+        opacity: 0;
+        transform: rotate(-60deg) scale(0);
+      
+  }
+
+  .intercom-lightweight-app-launcher-icon-minimize svg {
+    width: 16px;
+  }
+
+  .intercom-lightweight-app-launcher-icon-minimize svg path {
+    fill: rgb(255, 255, 255);
+  }
+
+  .intercom-lightweight-app-messenger {
+    position: fixed;
+    z-index: 2147483003;
+    overflow: hidden;
+    background-color: white;
+    animation: intercom-lightweight-app-messenger 250ms ease-out;
+    
+        width: 376px;
+        height: calc(100% - 40px);
+        max-height: 704px;
+        min-height: 250px;
+        right: 20px;
+        bottom: 20px;
+        box-shadow: 0 5px 40px rgba(0,0,0,0.16);
+        border-radius: 8px;
+      
+  }
+
+  .intercom-lightweight-app-messenger-header {
+    height: 75px;
+    background: linear-gradient(
+      135deg,
+      rgb(32, 33, 35) 0%,
+      rgb(0, 0, 0) 100%
+    );
+  }
+
+  @media print {
+    .intercom-lightweight-app {
+      display: none;
+    }
+  }
+</style></div></body></html>

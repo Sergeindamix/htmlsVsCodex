@@ -1,0 +1,323 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+/* css */
+var css = document.createElement('style');
+css.innerHTML = 'body { background-color: #000; color: #fff; }';
+document.body.appendChild(css);
+
+/* mostrar 6 iconos */
+var iconos = [
+  'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png',
+  'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png',
+  'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png',
+  'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png',
+  'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png',
+  'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png'
+];
+for (var i = 0; i < iconos.length; i++) {
+  var img = document.createElement('img');
+  img.src = iconos[i];
+  //document.body.appendChild(img);
+}
+
+/* pivote de iconos centrado en contenedor */
+var div = document.createElement('div');
+div.style.width = '300px';
+div.style.height = '300px';
+div.style.borderRadius = '50%';
+div.style.backgroundColor = '#fff';
+div.style.position = 'absolute';
+div.style.left = '50%';
+div.style.top = '50%';
+div.style.transform = 'translate(-50%, -50%)';
+div.style.overflow = 'hidden';
+for (var i = 0; i < iconos.length; i++) {
+  var img = document.createElement('img');
+  img.src = iconos[i];
+  img.style.position = 'absolute';
+  img.style.left = '-120px';
+  img.style.bottom = '60px';
+  img.style.transformOrigin = '50% 50%';
+  img.style.transform = 'rotate(' + (i * 180 / iconos.length) + 'deg) scale(.75)';
+  //img.style.borderRadius = '150%';
+  div.appendChild(img);
+}
+document.body.appendChild(div);
+/* css */
+var css = document.createElement('style');
+css.innerHTML = 'body { background-color: #000; color: #fff; }';
+//document.body.appendChild(css);
+/* nueva div centrada en pantalla */
+
+var contenedor = document.createElement('div');
+contenedor.setAttribute('class', 'contenedor');
+document.body.appendChild(contenedor);
+var contenedor2 = document.createElement('div');
+contenedor2.setAttribute('class', 'contenedor');
+document.body.appendChild(contenedor2);
+var contenedor3 = document.createElement('div');
+contenedor3.setAttribute('class', 'contenedor');
+document.body.appendChild(contenedor3);
+var contenedor4 = document.createElement('div');
+contenedor4.setAttribute('class', 'contenedor');
+document.body.appendChild(contenedor4);
+var contenedor5 = document.createElement('div');
+contenedor5.setAttribute('class', 'contenedor');
+document.body.appendChild(contenedor5);
+var contenedor6 = document.createElement('div');
+contenedor6.setAttribute('class', 'contenedor');
+document.body.appendChild(contenedor6);
+/* logo facebook */
+var logoFacebook = document.createElement('img');
+logoFacebook.setAttribute('src', 'https://www.facebook.com/images/fb_icon_325x325.png');
+logoFacebook.setAttribute('class', 'logo');
+contenedor.appendChild(logoFacebook);
+/* logo whatsapp */
+var logoWhatsapp = document.createElement('img');
+logoWhatsapp.setAttribute('src', 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2000px-WhatsApp.svg.png');
+logoWhatsapp.setAttribute('class', 'logo');
+contenedor2.appendChild(logoWhatsapp);
+/* logo instagram */
+var logoInstagram = document.createElement('img');
+logoInstagram.setAttribute('src', 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2000px-Instagram_logo_2016.svg.png');
+logoInstagram.setAttribute('class', 'logo');
+contenedor3.appendChild(logoInstagram);
+/* otros 3 logos */
+var logoTwitter = document.createElement('img');
+logoTwitter.setAttribute('src', 'https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Twitter_bird_logo_2012.svg/1259px-Twitter_bird_logo_2012.svg.png');
+logoTwitter.setAttribute('class', 'logo');
+contenedor4.appendChild(logoTwitter);
+var logoYoutube = document.createElement('img');
+logoYoutube.setAttribute('src', 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Logo_of_YouTube_%282015-2017%29.svg/2000px-Logo_of_YouTube_%282015-2017%29.svg.png');
+logoYoutube.setAttribute('class', 'logo');
+contenedor5.appendChild(logoYoutube);
+var logoLinkedin = document.createElement('img');
+logoLinkedin.setAttribute('src', 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/768px-LinkedIn_logo_initials.png');
+logoLinkedin.setAttribute('class', 'logo');
+contenedor6.appendChild(logoLinkedin);
+/* escalar tamaños para que se muestren todos */
+logoFacebook.setAttribute('width', '100');
+logoFacebook.setAttribute('height', '100');
+logoWhatsapp.setAttribute('width', '100');
+logoWhatsapp.setAttribute('height', '100');
+logoInstagram.setAttribute('width', '100');
+logoInstagram.setAttribute('height', '100');
+logoTwitter.setAttribute('width', '100');
+logoTwitter.setAttribute('height', '100');
+logoYoutube.setAttribute('width', '100');
+logoYoutube.setAttribute('height', '100');
+logoLinkedin.setAttribute('width', '100');
+logoLinkedin.setAttribute('height', '100');
+/* el pivote de los contenedores es en la esquina derecha inferior */
+contenedor.setAttribute('style', 'position: absolute; bottom: 0; right: 0;');
+contenedor2.setAttribute('style', 'position: absolute; bottom: 0; right: 0;');
+contenedor3.setAttribute('style', 'position: absolute; bottom: 0; right: 0;');
+contenedor4.setAttribute('style', 'position: absolute; bottom: 0; right: 0;');
+contenedor5.setAttribute('style', 'position: absolute; bottom: 0; right: 0;');
+contenedor6.setAttribute('style', 'position: absolute; bottom: 0; right: 0;');
+/* rotar sin perder el centro de pantalla */
+contenedor.setAttribute('style', 'position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(0deg);');
+contenedor2.setAttribute('style', 'position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(60deg);');
+contenedor3.setAttribute('style', 'position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(120deg);');
+contenedor4.setAttribute('style', 'position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(180deg);');
+contenedor5.setAttribute('style', 'position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(240deg);');
+contenedor6.setAttribute('style', 'position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(300deg);');
+/* ancho 100 */
+contenedor.setAttribute('style', 'position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(0deg); width: 100px;');
+contenedor2.setAttribute('style', 'position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(60deg); width: 100px;');
+contenedor3.setAttribute('style', 'position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(120deg); width: 100px;');
+contenedor4.setAttribute('style', 'position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(180deg); width: 100px;');
+contenedor5.setAttribute('style', 'position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(240deg); width: 100px;');
+contenedor6.setAttribute('style', 'position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(300deg); width: 100px;');
+/* logos a la derecha de su contenedor */
+logoFacebook.setAttribute('style', 'position: absolute; top: 50%; left: 100%; transform: translate(-50%, -50%);');
+logoWhatsapp.setAttribute('style', 'position: absolute; top: 50%; left: 100%; transform: translate(-50%, -50%);');
+logoInstagram.setAttribute('style', 'position: absolute; top: 50%; left: 100%; transform: translate(-50%, -50%);');
+logoTwitter.setAttribute('style', 'position: absolute; top: 50%; left: 100%; transform: translate(-50%, -50%);');
+logoYoutube.setAttribute('style', 'position: absolute; top: 50%; left: 100%; transform: translate(-50%, -50%);');
+logoLinkedin.setAttribute('style', 'position: absolute; top: 50%; left: 100%; transform: translate(-50%, -50%);');
+/* ancho 200 */
+contenedor.setAttribute('style', 'position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(0deg); width: 200px;');
+contenedor2.setAttribute('style', 'position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(60deg); width: 200px;');
+contenedor3.setAttribute('style', 'position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(120deg); width: 200px;');
+contenedor4.setAttribute('style', 'position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(180deg); width: 200px;');
+contenedor5.setAttribute('style', 'position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(240deg); width: 200px;');
+contenedor6.setAttribute('style', 'position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(300deg); width: 200px;');
+/* revertir rotacion de logos rotando negativamente */
+logoFacebook.setAttribute('style', 'position: absolute; top: 50%; left: 100%; transform: translate(-50%, -50%) rotate(-0deg);');
+logoWhatsapp.setAttribute('style', 'position: absolute; top: 50%; left: 100%; transform: translate(-50%, -50%) rotate(-60deg);');
+logoInstagram.setAttribute('style', 'position: absolute; top: 50%; left: 100%; transform: translate(-50%, -50%) rotate(-120deg);');
+logoTwitter.setAttribute('style', 'position: absolute; top: 50%; left: 100%; transform: translate(-50%, -50%) rotate(-180deg);');
+logoYoutube.setAttribute('style', 'position: absolute; top: 50%; left: 100%; transform: translate(-50%, -50%) rotate(-240deg);');
+logoLinkedin.setAttribute('style', 'position: absolute; top: 50%; left: 100%; transform: translate(-50%, -50%) rotate(-300deg);');
+/* crear array con logos */
+var logos = [logoFacebook, logoWhatsapp, logoInstagram, logoTwitter, logoYoutube, logoLinkedin];
+var div = document.createElement('div');
+div.style.width = '300px';
+div.style.height = '300px';
+div.style.borderRadius = '50%';
+div.style.backgroundColor = '#fff';
+div.style.position = 'absolute';
+div.style.left = '50%';
+div.style.top = '50%';
+div.style.transform = 'translate(-50%, -50%)';
+div.style.overflow = 'hidden';
+for (var i = 0; i < logos.length; i++) {
+  var img = document.createElement('img');
+  img.src = logos[i];
+  img.style.position = 'absolute';
+  img.style.left = '-60px';
+  img.style.bottom = '60px';
+  img.style.transformOrigin = '50% 50%';
+  img.style.transform = 'rotate(' + (i * 180 / logos.length) + 'deg) scale(.75)';
+  //img.style.borderRadius = '150%';
+  div.appendChild(img);
+}
+//document.body.appendChild(div);
+/* logos en div */
+for (var i = 0; i < logos.length; i++) {
+  logos[i].setAttribute('style', 'position: absolute; top: 50%; left: 100%; transform: translate(-50%, -50%) rotate(-' + i * 60 + 'deg);');
+}
+/* body, .nav, .menu */
+var body = document.body;
+var nav = document.createElement('div');
+nav.className = 'nav';
+var menu = document.createElement('div');
+menu.className = 'menu';
+/* display: flex; */
+body.style.display = 'flex';
+nav.style.display = 'flex';
+menu.style.display = 'flex';
+/* justify-content: center; */
+body.style.justifyContent = 'center';
+nav.style.justifyContent = 'center';
+menu.style.justifyContent = 'center';
+/* align-items: center; */
+body.style.alignItems = 'center';
+nav.style.alignItems = 'center';
+menu.style.alignItems = 'center';
+/* nav */
+document.body.appendChild(nav);
+/* position: relative; */
+nav.style.position = 'relative';
+/* background-color: #fff; */
+nav.style.backgroundColor = '#fff';
+/* padding: 20px; */
+nav.style.padding = '20px';
+/* transition: 0.5s; */
+nav.style.transition = '0.5s';
+/* border-radius: 50px; */
+nav.style.borderRadius = '50px';
+/* overflow: hidden; */
+nav.style.overflow = 'hidden';
+/* box-shadow: 0 8px 15px rgba(0,0,0,.2); */
+nav.style.boxShadow = '0 8px 15px rgba(0,0,0,.2)';
+/* menu */
+nav.appendChild(menu);
+/* margin: 0; */
+menu.style.margin = '0';
+/* padding: 0; */
+menu.style.padding = '0';
+/* width: 0; */
+menu.style.width = '0';
+/* overflow: hidden; */
+menu.style.overflow = 'hidden';
+/* transition: 0.5s; */
+menu.style.transition = '0.5s';
+/* nav input:checked ~ .menu */
+var input = document.createElement('input');
+input.type = 'checkbox';
+nav.insertBefore(input, menu);
+/* width: 450px; */
+input.onchange = function() {
+  if (input.checked) {
+    menu.style.width = '450px';
+  } else {
+    menu.style.width = '0';
+  }
+}
+/* menu li */
+var li = document.createElement('li');
+menu.appendChild(li);
+/* list-style: none; */
+li.style.listStyle = 'none';
+/* margin: 0 10px; */
+li.style.margin = '0 10px';
+/* menu li a */
+var a = document.createElement('a');
+li.appendChild(a);
+/* text-decoration: none; */
+a.style.textDecoration = 'none';
+/* color: #666; */
+a.style.color = '#666';
+/* text-transform: uppercase; */
+a.style.textTransform = 'uppercase';
+/* font-weight: 600; */
+a.style.fontWeight = '600';
+/* transition: 0.5s; */
+a.style.transition = '0.5s';
+/* menu li a:hover */
+a.onmouseover = function() {
+  a.style.color = '#000';
+}
+/* color: #161919; */
+a.onmouseout = function() {
+  a.style.color = '#666';
+}
+/* al activar menu mostrar links */
+input.onchange = function() {
+  if (input.checked) {
+    menu.style.width = '450px';
+    a.innerHTML = 'Home';
+    var a2 = document.createElement('a');
+    li.appendChild(a2);
+    a2.style.textDecoration = 'none';
+    a2.style.color = '#666';
+    a2.style.textTransform = 'uppercase';
+    a2.style.fontWeight = '600';
+    a2.style.transition = '0.5s';
+    a2.onmouseover = function() {
+      a2.style.color = '#000';
+    }
+    a2.onmouseout = function() {
+      a2.style.color = '#666';
+    }
+    a2.innerHTML = 'About';
+    var a3 = document.createElement('a');
+    li.appendChild(a3);
+    a3.style.textDecoration = 'none';
+    a3.style.color = '#666';
+    a3.style.textTransform = 'uppercase';
+    a3.style.fontWeight = '600';
+    a3.style.transition = '0.5s';
+    a3.onmouseover = function() {
+      a3.style.color = '#000';
+    }
+    a3.onmouseout = function() {
+      a3.style.color = '#666';
+    }
+    a3.innerHTML = 'Contact';
+  } else {
+    menu.style.width = '0';
+  }
+}
+/* links llevan a tres redes sociales */
+a.onclick = function() {
+  window.open('https://www.facebook.com/');
+}
+a2.onclick = function() {
+  window.open('https://www.instagram.com/');
+}
+a3.onclick = function() {
+  window.open('https://twitter.com/');
+}
+
+});
+        </script>
+    </head>
+    
+</html>

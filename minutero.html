@@ -1,0 +1,50 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+/* manecillas de reloj */
+var manecillas = document.createElement('div');
+manecillas.innerHTML = '<svg width="100" height="100">' +
+  '<circle cx="50" cy="50" r="45" stroke="black" stroke-width="3" fill="red" />' +
+  '<line x1="50" y1="50" x2="50" y2="16" style="stroke:rgb(255,0,0);stroke-width:2" />' +
+  '<line x1="50" y1="50" x2="16" y2="50" style="stroke:rgb(0,255,0);stroke-width:2" />' +
+  '<line x1="50" y1="50" x2="50" y2="84" style="stroke:rgb(0,0,255);stroke-width:2" />' +
+  '<line x1="50" y1="50" x2="84" y2="50" style="stroke:rgb(255,255,0);stroke-width:2" />' +
+  '</svg>';
+document.body.appendChild(manecillas);
+/* actualizar a hora actual cada segundo */
+var actualizar = function() {
+  var fecha = new Date();
+  var hora = fecha.getHours();
+  var minutos = fecha.getMinutes();
+  var segundos = fecha.getSeconds();
+  var milisegundos = fecha.getMilliseconds();
+  var hora_radianes = (hora / 12) * 2 * Math.PI;
+  var minutos_radianes = (minutos / 60) * 2 * Math.PI;
+  var segundos_radianes = (segundos / 60) * 2 * Math.PI;
+  var milisegundos_radianes = (milisegundos / 1000) * 2 * Math.PI;
+  var hora_x = 50 + Math.sin(hora_radianes) * 40;
+  var hora_y = 50 - Math.cos(hora_radianes) * 40;
+  var minutos_x = 50 + Math.sin(minutos_radianes) * 40;
+  var minutos_y = 50 - Math.cos(minutos_radianes) * 40;
+  var segundos_x = 50 + Math.sin(segundos_radianes) * 40;
+  var segundos_y = 50 - Math.cos(segundos_radianes) * 40;
+  var milisegundos_x = 50 + Math.sin(milisegundos_radianes) * 40;
+  var milisegundos_y = 50 - Math.cos(milisegundos_radianes) * 40;
+  document.getElementsByTagName('line')[0].setAttribute('x2', hora_x);
+  document.getElementsByTagName('line')[0].setAttribute('y2', hora_y);
+  document.getElementsByTagName('line')[1].setAttribute('x2', minutos_x);
+  document.getElementsByTagName('line')[1].setAttribute('y2', minutos_y);
+  document.getElementsByTagName('line')[2].setAttribute('x2', segundos_x);
+  document.getElementsByTagName('line')[2].setAttribute('y2', segundos_y);
+  document.getElementsByTagName('line')[3].setAttribute('x2', milisegundos_x);
+  document.getElementsByTagName('line')[3].setAttribute('y2', milisegundos_y);
+};
+setInterval(actualizar, 1);
+});
+        </script>
+    </head>
+    
+</html>

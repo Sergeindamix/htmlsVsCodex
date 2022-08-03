@@ -1,0 +1,27 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+/* que es threejs? */
+var threejs = document.createElement('div');
+threejs.innerHTML = 'Three.js es una biblioteca de JavaScript que permite crear y mostrar animaciones 3D en el navegador, de una manera sencilla y sin necesidad de plugins. ';
+document.body.appendChild(threejs);
+/* agrega librerias necesarias */
+var librerias = document.createElement('div');
+librerias.innerHTML = '<script src="https://threejs.org/build/three.min.js"></script>';
+document.body.appendChild(librerias);
+/* crea un ejemplo */
+var ejemplo = document.createElement('div');
+ejemplo.innerHTML = '<script>var scene = new THREE.Scene();var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );var renderer = new THREE.WebGLRenderer();renderer.setSize( window.innerWidth, window.innerHeight );document.body.appendChild( renderer.domElement );var geometry = new THREE.BoxGeometry( 1, 1, 1 );var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );var cube = new THREE.Mesh( geometry, material );scene.add( cube );camera.position.z = 5;var animate = function () {requestAnimationFrame( animate );cube.rotation.x += 0.01;cube.rotation.y += 0.01;renderer.render( scene, camera );};animate();</script>';
+document.body.appendChild(ejemplo);
+/* renderiza */
+var renderiza = document.createElement('div');
+renderiza.innerHTML = '<script>renderer.render( scene, camera );</script>';
+document.body.appendChild(renderiza);
+});
+        </script>
+    </head>
+    
+</html>
